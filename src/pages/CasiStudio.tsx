@@ -135,7 +135,7 @@ const cases = [
   },
   {
     id: "custom-gpt-email",
-    title: "Agente GPT che risponde automaticamente alle mail e che riassume le ultime news sull'AI",
+    title: "Agente GPT per rispondere alle mail e riassumere AI-news",
     description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
     date: new Date('2025-02-13'),
     image: 'https://i.ibb.co/KzNTDF0D/loffredo.jpg',
@@ -165,6 +165,11 @@ function CasiStudio() {
   const [currentPage, setCurrentPage] = useState(1);
   const casesPerPage = 3;
   
+  // Funzione per scrollare in cima alla pagina
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Ordina i casi studio per data (dal più recente)
   const sortedCases = cases.sort((a, b) => b.date.getTime() - a.date.getTime());
   
@@ -175,10 +180,6 @@ function CasiStudio() {
   const getCurrentCases = () => {
     const startIndex = (currentPage - 1) * casesPerPage;
     return sortedCases.slice(startIndex, startIndex + casesPerPage);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -227,7 +228,10 @@ function CasiStudio() {
         {totalPages > 1 && (
           <div className="flex justify-center mt-12 gap-2">
             <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              onClick={() => {
+                setCurrentPage(prev => Math.max(prev - 1, 1));
+                scrollToTop();
+              }}
               disabled={currentPage === 1}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
             >
@@ -236,7 +240,10 @@ function CasiStudio() {
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
               <button
                 key={page}
-                onClick={() => setCurrentPage(page)}
+                onClick={() => {
+                  setCurrentPage(page);
+                  scrollToTop();
+                }}
                 className={`px-4 py-2 rounded-lg ${
                   currentPage === page 
                     ? 'bg-[#274f36]' 
@@ -247,7 +254,10 @@ function CasiStudio() {
               </button>
             ))}
             <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              onClick={() => {
+                setCurrentPage(prev => Math.max(Math.min(prev + 1, totalPages), 1));
+                scrollToTop();
+              }}
               disabled={currentPage === totalPages}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
             >

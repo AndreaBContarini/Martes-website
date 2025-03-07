@@ -25,7 +25,7 @@ function ChiSiamo() {
           <div className="text-center">
             <div className="mb-6 relative">
               <img
-                src="/src/images/riccardo.jpg"
+                src="https://i.ibb.co/vCqSnZ9M/riccardo.jpg"
                 alt="Riccardo"
                 className="w-64 h-64 rounded-full mx-auto object-cover"
               />
@@ -41,7 +41,7 @@ function ChiSiamo() {
           <div className="text-center">
             <div className="mb-6">
               <img
-                src="/src/images/andrea.jpg"
+                src="https://i.ibb.co/LXzJRgsw/andrea.jpg"
                 alt="Andrea"
                 className="w-64 h-64 rounded-full mx-auto object-cover"
               />

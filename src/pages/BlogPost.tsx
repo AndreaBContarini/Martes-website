@@ -106,7 +106,7 @@ const posts = {
       <p>Questa combinazione di pre-addestramento e ottimizzazione permette ai GPT di essere estremamente adattabili e performanti in numerosi scenari.</p>
 
       <div class="flex justify-center my-8">
-        <img src="/src/images/gpt1.png" alt="GPT AI" class="w-1/2 h-auto rounded-lg shadow-lg" />
+        <img src="https://i.ibb.co/mCN2FBY1/gpt1.png" alt="GPT AI" class="w-1/2 h-auto rounded-lg shadow-lg" />
       </div>
 
       <h2 class="text-3xl font-bold mt-8 mb-4">Efficienza e Benefici</h2>
@@ -119,7 +119,7 @@ const posts = {
       <p>Infine, i GPT favoriscono decisioni strategiche più rapide, fornendo insight immediati e pertinenti, migliorando così la competitività di qualsiasi business. Adottarli significa investire in un futuro tecnologico più connesso, dinamico e produttivo.</p>
 
       <div class="flex justify-center my-8">
-        <img src="/src/images/gpt2.png" alt="GPT Business Applications" class="w-1/2 h-auto rounded-lg shadow-lg" />
+        <img src="https://i.ibb.co/0RkHckZJ/gpt2.png" alt="GPT Business Applications" class="w-1/2 h-auto rounded-lg shadow-lg" />
       </div>
 
       <h2 class="text-3xl font-bold mt-8 mb-4">Chi Può Beneficiare dei GPT? Alcuni esempi...</h2>

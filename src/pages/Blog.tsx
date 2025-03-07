@@ -11,7 +11,7 @@ const posts = [
       'Analisi approfondita di DeepSeek, la sua natura open source, i costi delle API e le principali differenze rispetto ai concorrenti come ChatGPT e Gemini.',
     date: '2025-02-01',
     readTime: '2 min',
-    image: '/src/images/deepseek.png',
+    image: 'https://i.ibb.co/4Z0rBPkd/deepseek.png',
   },
   {
     id: 'gpt-la-rivoluzione-dellintelligenza-artificiale-nel-business',
@@ -19,7 +19,7 @@ const posts = [
     excerpt: 'Scopri come i modelli GPT stanno trasformando il business, ottimizzando processi e creando nuove opportunità nel mondo digitale.',
     date: '2024-12-9',
     readTime: '3 min',
-    image: '/src/images/gpt.png',
+    image: 'https://i.ibb.co/cX34TXsk/gpt.png',
   },
   {
     id: 'cold-emailing-nuovi-clienti',
@@ -27,7 +27,7 @@ const posts = [
     excerpt: 'In questo breve articolo parliamo di come ottimizzare le cosiddette "cold email" per ottenere ottimi risultati e feedback da potenziali nuovi clienti.',
     date: '2024-10-09',
     readTime: '5 min',
-    image: '/src/images/cold_email.png',
+    image: 'https://emailchef.com/wp-content/uploads/2019/09/cold-email-1200x720.png',
   },
   {
     id: 'chatbot-ai-e-assistenti-vocali-la-nuova-frontiera-del-customer-service',
@@ -43,7 +43,7 @@ const posts = [
     excerpt: "Il prompt engineering è essenziale per sfruttare al meglio l'AI. Scopri come migliorare la precisione di ChatGPT, automazioni e altri strumenti con prompt efficaci.",
     date: '2024-09-10',
     readTime: '2 min',
-    image: '/src/images/prompt.png',  
+    image: 'https://as2.ftcdn.net/v2/jpg/06/04/23/55/1000_F_604235513_V3gyViUUBvZyICKwwVud0635qLPosMMI.jpg',  
   },
   {
     id: 'gpt-4o-openai-lancia-il-nuovo-modello',
@@ -59,6 +59,11 @@ function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
   
+  // Funzione per scrollare in cima alla pagina
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Ordina i post per data (più recenti prima)
   const sortedPosts = [...posts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -72,10 +77,6 @@ function Blog() {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     return sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -118,7 +119,7 @@ function Blog() {
         <div className="flex justify-center items-center mt-12 gap-4">
           <button
             onClick={() => {
-              setCurrentPage(prev => prev - 1);
+              setCurrentPage(prev => Math.max(prev - 1, 1));
               scrollToTop();
             }}
             disabled={currentPage === 1}
@@ -150,7 +151,7 @@ function Blog() {
           
           <button
             onClick={() => {
-              setCurrentPage(prev => prev + 1);
+              setCurrentPage(prev => Math.max(Math.min(prev + 1, totalPages), 1));
               scrollToTop();
             }}
             disabled={currentPage === totalPages}
