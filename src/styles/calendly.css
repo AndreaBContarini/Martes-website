@@ -1,0 +1,14 @@
+.calendly-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 
