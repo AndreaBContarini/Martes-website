@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageSquare, Brain, Zap } from 'lucide-react';
 
 function ServicesSection() {
