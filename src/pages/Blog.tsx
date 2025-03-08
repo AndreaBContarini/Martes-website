@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
@@ -11,7 +11,7 @@ const posts = [
       'Analisi approfondita di DeepSeek, la sua natura open source, i costi delle API e le principali differenze rispetto ai concorrenti come ChatGPT e Gemini.',
     date: '2025-02-01',
     readTime: '2 min',
-    image: 'https://i.ibb.co/4Z0rBPkd/deepseek.png',
+    image: 'https://i2.res.24o.it/images2010/S24/Documenti/2025/01/29/Immagini/Ritagli/2025-01-27T220904Z_708316342_RC2MICAKD27B_RTRMADP_5_DEEPSEEK-MARKETS-U74210843137xwO-1440x752@IlSole24Ore-Web.JPG',
   },
   {
     id: 'gpt-la-rivoluzione-dellintelligenza-artificiale-nel-business',
@@ -19,7 +19,7 @@ const posts = [
     excerpt: 'Scopri come i modelli GPT stanno trasformando il business, ottimizzando processi e creando nuove opportunità nel mondo digitale.',
     date: '2024-12-9',
     readTime: '3 min',
-    image: 'https://i.ibb.co/cX34TXsk/gpt.png',
+    image: 'https://fireflies.ai/blog/content/images/size/w2000/2022/12/What-is-GPT.jpg',
   },
   {
     id: 'cold-emailing-nuovi-clienti',
@@ -35,7 +35,7 @@ const posts = [
     excerpt: "Grazie all'intelligenza artificiale e ai modelli linguistici avanzati (LLM) come GPT-4, i chatbot moderni offrono assistenza personalizzata, migliorano il servizio clienti e ottimizzano l'efficienza aziendale",
     date: '2024-11-29',
     readTime: '4 min',
-    image: 'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=506,h=530,fit=crop/mk39w0PZ1DIe7Dp6/dalla-e-2024-08-18-18.17.29---a-futuristic-digital-image-resembling-a-chatbot-with-a-sleek-and-modern-interface.-the-design-features-glowing-neon-elements-in-dark-green-0a6900-m2WQGvBpDliVrZkN.webp'
+    image: 'https://www.emmemedia.com/wp-content/uploads/2024/06/chatbot-e-intelligenza-artificiale.jpg',
   },
   {
     id: 'prompt-engineering-come-sfruttare-al-110percent-lai',
@@ -57,26 +57,61 @@ const posts = [
 
 function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
   const postsPerPage = 3;
+  
+  useEffect(() => {
+    const preloadImages = async () => {
+      try {
+        const imagePromises = posts.map(post => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = post.image;
+            img.onload = resolve;
+            img.onerror = reject;
+          });
+        });
+        
+        await Promise.allSettled(imagePromises);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Errore nel precaricamento delle immagini:', error);
+        setIsLoading(false);
+      }
+    };
+    
+    preloadImages();
+    
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Ordina i post per data (più recenti prima)
   const sortedPosts = [...posts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
-  // Calcola il numero totale di pagine
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
   
-  // Ottiene i post per la pagina corrente
   const getCurrentPosts = () => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     return sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen pt-32 pb-20 bg-black w-full flex justify-center items-center">
+        <div className="text-white text-xl">Caricamento...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-black w-full">
@@ -97,6 +132,9 @@ function Blog() {
                   alt={post.title}
                   className="w-full h-48 object-cover article-cover mx-auto grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
                   loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://placehold.co/600x400/000000/FFFFFF?text=Martes+AI';
+                  }}
                 />
               </div>
               <div className="p-4 md:p-6">
@@ -114,7 +152,6 @@ function Blog() {
           ))}
         </div>
 
-        {/* Paginazione */}
         <div className="flex justify-center items-center mt-10 md:mt-12 gap-2 md:gap-4">
           <button
             onClick={() => {

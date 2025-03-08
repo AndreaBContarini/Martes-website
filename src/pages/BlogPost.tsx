@@ -194,7 +194,7 @@ const posts = {
     `, 
   },
   'chatbot-ai-e-assistenti-vocali-la-nuova-frontiera-del-customer-service':{
-    title: "Chatbot AI e Assistenti Vocali: La Nuova Frontiera del Customer Service",
+    title: "Chatbot AI e Assistenti Vocali",
     date: "9 dicembre 2024",
     description: "Con l'evoluzione dell'intelligenza artificiale e l'introduzione dei modelli linguistici avanzati (LLM) come GPT-4 e simili, i chatbot moderni sono in grado di gestire conversazioni complesse, offrire raccomandazioni personalizzate e supportare i clienti in modo altamente personalizzato. Questi sistemi non solo automatizzano il servizio clienti, ma lo trasformano, migliorando l'efficienza operativa e la soddisfazione del cliente",
     content: `

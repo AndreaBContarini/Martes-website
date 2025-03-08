@@ -1,15 +1,29 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../images/logo.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   
   const scrollToForm = () => {
-    const formElement = document.getElementById('contact-form');
-    if (formElement) {
-      formElement.scrollIntoView({ behavior: 'smooth' });
+    // Se non siamo nella homepage, prima navighiamo alla homepage
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Utilizziamo setTimeout per dare tempo alla navigazione di completarsi
+      setTimeout(() => {
+        const formElement = document.getElementById('contact-form');
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Se siamo già nella homepage, scorriamo direttamente al form
+      const formElement = document.getElementById('contact-form');
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -30,7 +44,7 @@ function Navbar() {
           <span className="text-xl font-semibold text-white">Martes AI</span>
         </Link>
 
-        {/* Contenitore relativo per l’hamburger + dropdown */}
+        {/* Contenitore relativo per l'hamburger + dropdown */}
         <div className="relative">
           {/* Pulsante hamburger */}
           <button

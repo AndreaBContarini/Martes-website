@@ -190,7 +190,7 @@ function Home() {
                         value="1500-2500"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "1200-1800"}
+                        checked={formData.budget === "1500-2500"}
                       />
                       1.500€ - 2.500€
                     </label>
@@ -201,7 +201,7 @@ function Home() {
                         value="2500-3500"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "1800-2500"}
+                        checked={formData.budget === "2500-3500"}
                       />
                       2.500€ - 3.500€
                     </label>
@@ -212,7 +212,7 @@ function Home() {
                         value="3500-5000"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "2500-5000"}
+                        checked={formData.budget === "3500-5000"}
                       />
                       3.500€ - 5.000€
                     </label>
