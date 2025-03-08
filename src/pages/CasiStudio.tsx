@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const cases = [
   {
@@ -164,6 +164,12 @@ const cases = [
 function CasiStudio() {
   const [currentPage, setCurrentPage] = useState(1);
   const casesPerPage = 3;
+  const location = useLocation();
+  
+  // Effetto per scrollare all'inizio della pagina quando viene caricata o quando cambia l'URL
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   
   // Funzione per scrollare in cima alla pagina
   const scrollToTop = () => {

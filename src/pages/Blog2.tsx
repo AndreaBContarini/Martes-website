@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 
@@ -56,10 +56,15 @@ const blogPosts = [
 ];
 
 const Blog2 = () => {
-  // Stato per la paginazione
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const postsPerPage = 3;
+  const location = useLocation();
+
+  // Effetto per scrollare all'inizio della pagina quando viene caricata o quando cambia l'URL
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Effetto per simulare il caricamento
   useEffect(() => {
@@ -67,9 +72,6 @@ const Blog2 = () => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 300);
-    
-    // Scroll to top quando la pagina viene caricata
-    window.scrollTo(0, 0);
     
     return () => clearTimeout(timer);
   }, []);
