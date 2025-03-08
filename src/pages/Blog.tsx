@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 
+// Semplifichiamo gli URL delle immagini e usiamo immagini più leggere
 const posts = [
   {
     id: 'deepseek-alternativa-open-source-a-chatgpt-e-gemini',
@@ -11,7 +12,7 @@ const posts = [
       'Analisi approfondita di DeepSeek, la sua natura open source, i costi delle API e le principali differenze rispetto ai concorrenti come ChatGPT e Gemini.',
     date: '2025-02-01',
     readTime: '2 min',
-    image: 'https://i2.res.24o.it/images2010/S24/Documenti/2025/01/29/Immagini/Ritagli/2025-01-27T220904Z_708316342_RC2MICAKD27B_RTRMADP_5_DEEPSEEK-MARKETS-U74210843137xwO-1440x752@IlSole24Ore-Web.JPG',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=DeepSeek',
   },
   {
     id: 'gpt-la-rivoluzione-dellintelligenza-artificiale-nel-business',
@@ -19,7 +20,7 @@ const posts = [
     excerpt: 'Scopri come i modelli GPT stanno trasformando il business, ottimizzando processi e creando nuove opportunità nel mondo digitale.',
     date: '2024-12-9',
     readTime: '3 min',
-    image: 'https://fireflies.ai/blog/content/images/size/w2000/2022/12/What-is-GPT.jpg',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT',
   },
   {
     id: 'cold-emailing-nuovi-clienti',
@@ -27,7 +28,7 @@ const posts = [
     excerpt: 'In questo breve articolo parliamo di come ottimizzare le cosiddette "cold email" per ottenere ottimi risultati e feedback da potenziali nuovi clienti.',
     date: '2024-10-09',
     readTime: '5 min',
-    image: 'https://emailchef.com/wp-content/uploads/2019/09/cold-email-1200x720.png',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Cold+Email',
   },
   {
     id: 'chatbot-ai-e-assistenti-vocali-la-nuova-frontiera-del-customer-service',
@@ -35,7 +36,7 @@ const posts = [
     excerpt: "Grazie all'intelligenza artificiale e ai modelli linguistici avanzati (LLM) come GPT-4, i chatbot moderni offrono assistenza personalizzata, migliorano il servizio clienti e ottimizzano l'efficienza aziendale",
     date: '2024-11-29',
     readTime: '4 min',
-    image: 'https://www.emmemedia.com/wp-content/uploads/2024/06/chatbot-e-intelligenza-artificiale.jpg',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Chatbot',
   },
   {
     id: 'prompt-engineering-come-sfruttare-al-110percent-lai',
@@ -43,7 +44,7 @@ const posts = [
     excerpt: "Il prompt engineering è essenziale per sfruttare al meglio l'AI. Scopri come migliorare la precisione di ChatGPT, automazioni e altri strumenti con prompt efficaci.",
     date: '2024-09-10',
     readTime: '2 min',
-    image: 'https://as2.ftcdn.net/v2/jpg/06/04/23/55/1000_F_604235513_V3gyViUUBvZyICKwwVud0635qLPosMMI.jpg',  
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Prompt+Engineering',  
   },
   {
     id: 'gpt-4o-openai-lancia-il-nuovo-modello',
@@ -51,7 +52,7 @@ const posts = [
     excerpt: "OpenAI ha lanciato GPT-o1, un modello AI più veloce, economico e avanzato. Ideale per sviluppatori e aziende, ottimizza i progetti AI con prestazioni migliorate. In questo articolo, esploriamo le sue novità e vantaggi.",
     date: '2024-07-04',
     readTime: '2 min',
-    image: 'https://www.editalo.pro/wp-content/uploads/2023/03/gpt-4-sera-verdadera-revolucion-sector-inteligencia-artificial-2934662-1024x576.webp',  
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT-o1',  
   }
 ];
 
@@ -60,31 +61,12 @@ function Blog() {
   const [isLoading, setIsLoading] = useState(true);
   const postsPerPage = 3;
   
+  // Semplifichiamo il caricamento
   useEffect(() => {
-    const preloadImages = async () => {
-      try {
-        const imagePromises = posts.map(post => {
-          return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = post.image;
-            img.onload = resolve;
-            img.onerror = reject;
-          });
-        });
-        
-        await Promise.allSettled(imagePromises);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Errore nel precaricamento delle immagini:', error);
-        setIsLoading(false);
-      }
-    };
-    
-    preloadImages();
-    
+    // Timeout breve per mostrare il caricamento
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 500);
     
     return () => clearTimeout(timer);
   }, []);
@@ -93,18 +75,22 @@ function Blog() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Ordina i post per data (più recenti prima)
   const sortedPosts = [...posts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
+  // Calcola il numero totale di pagine
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
   
+  // Ottiene i post per la pagina corrente
   const getCurrentPosts = () => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     return sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
   };
 
+  // Se sta caricando, mostra un indicatore di caricamento
   if (isLoading) {
     return (
       <div className="min-h-screen pt-32 pb-20 bg-black w-full flex justify-center items-center">
@@ -127,15 +113,18 @@ function Blog() {
               className="bg-black/40 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 w-full border border-gray-800"
             >
               <div className="w-full">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 object-cover article-cover mx-auto grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://placehold.co/600x400/000000/FFFFFF?text=Martes+AI';
-                  }}
-                />
+                <div className="w-full h-48 bg-[#274f36]/20 flex items-center justify-center">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-48 object-cover article-cover mx-auto grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                    loading="lazy"
+                    onError={(e) => {
+                      // Fallback per immagini non caricate
+                      e.currentTarget.src = 'https://placehold.co/600x400/274f36/FFFFFF?text=Martes+AI';
+                    }}
+                  />
+                </div>
               </div>
               <div className="p-4 md:p-6">
                 <div className="flex items-center text-sm text-gray-400 mb-3">
@@ -152,6 +141,7 @@ function Blog() {
           ))}
         </div>
 
+        {/* Paginazione */}
         <div className="flex justify-center items-center mt-10 md:mt-12 gap-2 md:gap-4">
           <button
             onClick={() => {
