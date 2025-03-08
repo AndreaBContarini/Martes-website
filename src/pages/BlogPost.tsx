@@ -82,6 +82,17 @@ const posts = {
     description:
       "Esplora il potenziale dei Generative Pre-trained Transformers (GPT): strumenti avanzati che stanno rivoluzionando il modo in cui le aziende comunicano, automatizzano e personalizzano i loro servizi.",
     content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/cnmfmvFPszc" 
+          title="Rivoluzionare il proprio business con i GPT"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
       <p>Nel panorama tecnologico attuale, i modelli linguistici di grandi dimensioni (Large Language Models, o LLM), come i Generative Pre-trained Transformers (GPT), stanno emergendo come strumenti innovativi e potenti per una vasta gamma di applicazioni. Dai professionisti del settore giuridico, alle agenzie di viaggio, agli e-commerce, questi modelli si dimostrano un alleato versatile ed efficace per migliorare produttività, efficienza e personalizzazione.</p>
 
       <h3 class="text-3xl font-bold mt-8 mb-4">Ma cos'è esattamente un GPT e come può essere utilizzato a favore del proprio business?</h3>
@@ -312,7 +323,7 @@ const posts = {
   'gpt-4o-openai-lancia-il-nuovo-modello': {
     title: "GPT-o1: OpenAI Lancia il Nuovo Modello",
     date: "4 luglio 2024",
-    description: "OpenAI ha lanciato GPT-O1, il nuovo modello di intelligenza artificiale che offre API più veloci e meno costose. Con miglioramenti significativi in termini di velocità, costo e funzionalità avanzate, GPT-4o rappresenta una soluzione ideale per sviluppatori e aziende che cercano di ottimizzare i loro progetti AI. In questo articolo, analizziamo le novità di GPT-4o e perché è un’opzione vincente per sfruttare l'intelligenza artificiale in modo più efficiente.",
+    description: "OpenAI ha lanciato GPT-O1, il nuovo modello di intelligenza artificiale che offre API più veloci e meno costose. Con miglioramenti significativi in termini di velocità, costo e funzionalità avanzate, GPT-4o rappresenta una soluzione ideale per sviluppatori e aziende che cercano di ottimizzare i loro progetti AI. In questo articolo, analizziamo le novità di GPT-4o e perché è un'opzione vincente per sfruttare l'intelligenza artificiale in modo più efficiente.",
     content: `
       <iframe 
         src="https://youtube.com/embed/mI1xjJPXCNA" 
@@ -336,12 +347,12 @@ const posts = {
 <p>Una delle novità più entusiasmanti di GPT-o1 è il miglior supporto linguistico. Ora, ChatGPT può gestire fino a 50 lingue diverse, coprendo il 97% della popolazione mondiale con una qualità e velocità notevolmente migliorate. Questo rende GPT-o1 una soluzione perfetta per chi vuole sviluppare applicazioni AI destinate a un pubblico globale. La capacità di lavorare con una varietà così ampia di lingue apre la strada a nuove opportunità di automazione, customer service e traduzione in mercati fino ad ora difficili da penetrare.</p>
 
 <h3>4. App Desktop ChatGPT: Un Assistente AI Potenziato per macOS</h3>
-<p>OpenAI ha anche introdotto un’app desktop per macOS, che rappresenta un notevole upgrade rispetto alle versioni precedenti. L'app funziona sia in modalità testuale che vocale, permettendo agli utenti di interagire con ChatGPT non solo attraverso il testo ma anche tramite comandi vocali. Questo trasforma ChatGPT in un vero e proprio assistente virtuale, simile a Siri ma con steroidi.</p>
+<p>OpenAI ha anche introdotto un'app desktop per macOS, che rappresenta un notevole upgrade rispetto alle versioni precedenti. L'app funziona sia in modalità testuale che vocale, permettendo agli utenti di interagire con ChatGPT non solo attraverso il testo ma anche tramite comandi vocali. Questo trasforma ChatGPT in un vero e proprio assistente virtuale, simile a Siri ma con steroidi.</p>
 
-<p>Inoltre, la nuova funzionalità di condivisione dello schermo consente di fornire input video, offrendo così una gamma di interazioni completamente nuova. Che tu stia cercando di eseguire operazioni complesse o semplicemente comunicare tramite voce, l'app desktop fornisce flessibilità e potenza in un’interfaccia facile da usare.</p>
+<p>Inoltre, la nuova funzionalità di condivisione dello schermo consente di fornire input video, offrendo così una gamma di interazioni completamente nuova. Che tu stia cercando di eseguire operazioni complesse o semplicemente comunicare tramite voce, l'app desktop fornisce flessibilità e potenza in un'interfaccia facile da usare.</p>
 
 <h3>5. Vantaggi per gli Utenti Gratuiti: ChatGPT-4 per Tutti</h3>
-<p>Una delle notizie più attese riguarda l’accesso per gli utenti gratuiti. OpenAI ha annunciato che l'uso di ChatGPT-4, dei GPTs personalizzati e della nuova app desktop sarà presto disponibile anche per gli utenti che non hanno un abbonamento Plus. Questo apre la porta a una democratizzazione dell'uso dell'AI, rendendo accessibili le funzionalità avanzate a tutti, non solo agli utenti premium.</p>
+<p>Una delle notizie più attese riguarda l'accesso per gli utenti gratuiti. OpenAI ha annunciato che l'uso di ChatGPT-4, dei GPTs personalizzati e della nuova app desktop sarà presto disponibile anche per gli utenti che non hanno un abbonamento Plus. Questo apre la porta a una democratizzazione dell'uso dell'AI, rendendo accessibili le funzionalità avanzate a tutti, non solo agli utenti premium.</p>
 
 <h3>6. Nuove Capacità di GPT-o1: Testi nelle Immagini, Output Audio e 3D</h3>
 <p>Sul blog ufficiale di OpenAI, sono stati presentati alcuni casi d'uso di GPT-o1, che mostrano i significativi progressi fatti:</p>
@@ -353,7 +364,7 @@ const posts = {
 </ul>
 
 <h3>Conclusione</h3>
-<p>Con GPT-o1, OpenAI sta spingendo i confini dell'intelligenza artificiale verso nuove vette. Velocità, costo ridotto e nuove funzionalità rendono questo modello una scelta ideale per chi cerca una soluzione AI potente, flessibile e accessibile su scala globale. Con il supporto per più lingue, funzionalità avanzate nell’app desktop, e accesso gratuito a ChatGPT-4, il futuro dell'AI è più accessibile che mai.</p>
+<p>Con GPT-o1, OpenAI sta spingendo i confini dell'intelligenza artificiale verso nuove vette. Velocità, costo ridotto e nuove funzionalità rendono questo modello una scelta ideale per chi cerca una soluzione AI potente, flessibile e accessibile su scala globale. Con il supporto per più lingue, funzionalità avanzate nell'app desktop, e accesso gratuito a ChatGPT-4, il futuro dell'AI è più accessibile che mai.</p>
 
 `
   }
