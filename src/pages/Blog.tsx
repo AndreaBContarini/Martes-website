@@ -79,19 +79,19 @@ function Blog() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-gradient-to-b from-black via-black to-[#274f36] w-full">
+    <div className="min-h-screen pt-32 pb-20 bg-black w-full">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mb-20">Blog</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-20 text-white">Blog</h1>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {getCurrentPosts().map((post) => (
             <Link
               key={post.id}
               to={`/blog/${post.id}`}
               onClick={scrollToTop}
-              className="bg-black/40 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 w-full"
+              className="bg-black/40 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 w-full border border-gray-800"
             >
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="w-full">
                 <img
                   src={post.image}
                   alt={post.title}
@@ -99,34 +99,34 @@ function Blog() {
                   loading="lazy"
                 />
               </div>
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-400 mb-4">
+              <div className="p-4 md:p-6">
+                <div className="flex items-center text-sm text-gray-400 mb-3">
                   <span>
                     {format(new Date(post.date), 'd MMMM yyyy', { locale: it })}
                   </span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="text-xl font-bold mb-4">{post.title}</h2>
-                <p className="text-gray-300">{post.excerpt}</p>
+                <h2 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">{post.title}</h2>
+                <p className="text-gray-300 text-sm md:text-base">{post.excerpt}</p>
               </div>
             </Link>
           ))}
         </div>
 
         {/* Paginazione */}
-        <div className="flex justify-center items-center mt-12 gap-4">
+        <div className="flex justify-center items-center mt-10 md:mt-12 gap-2 md:gap-4">
           <button
             onClick={() => {
               setCurrentPage(prev => Math.max(prev - 1, 1));
               scrollToTop();
             }}
             disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base ${
               currentPage === 1 
                 ? 'bg-gray-600 cursor-not-allowed' 
                 : 'bg-[#274f36] hover:bg-[#1a3524]'
-            } transition-colors`}
+            } transition-colors text-white`}
           >
             Precedente
           </button>
@@ -138,11 +138,11 @@ function Blog() {
                 setCurrentPage(pageNum);
                 scrollToTop();
               }}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base transition-colors ${
                 currentPage === pageNum 
                   ? 'bg-[#274f36]' 
                   : 'bg-black/40 hover:bg-[#274f36]/50'
-              }`}
+              } text-white`}
             >
               {pageNum}
             </button>
@@ -154,11 +154,11 @@ function Blog() {
               scrollToTop();
             }}
             disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base ${
               currentPage === totalPages 
                 ? 'bg-gray-600 cursor-not-allowed' 
                 : 'bg-[#274f36] hover:bg-[#1a3524]'
-            } transition-colors`}
+            } transition-colors text-white`}
           >
             Successivo
           </button>
