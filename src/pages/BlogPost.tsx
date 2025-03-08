@@ -140,7 +140,7 @@ const posts = {
     `,
   },
    'cold-emailing-nuovi-clienti': {
-     title: 'Cold Emailing: Strategie per Aumentare i Tassi di Risposta e Connettersi con Nuovi Clienti',
+     title: 'Cold Emailing: Strategie per Aumentare i Tassi di Risposta',
      date: '9 ottobre 2024',
      description: 'Scopri come ottimizzare le "cold email" per ottenere risposte e feedback dai potenziali clienti...',
      content: `

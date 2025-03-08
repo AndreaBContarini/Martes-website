@@ -59,7 +59,6 @@ function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
   
-  // Funzione per scrollare in cima alla pagina
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -80,7 +79,7 @@ function Blog() {
   };
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-gradient-to-b from-black via-black to-[#274f36]">
+    <div className="min-h-screen pt-32 pb-20 bg-gradient-to-b from-black via-black to-[#274f36] w-full">
       <div className="container mx-auto px-4">
         <h1 className="text-5xl font-bold text-center mb-20">Blog</h1>
 
@@ -90,7 +89,7 @@ function Blog() {
               key={post.id}
               to={`/blog/${post.id}`}
               onClick={scrollToTop}
-              className="bg-black/40 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
+              className="bg-black/40 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 w-full"
             >
               <div className="aspect-w-16 aspect-h-9">
                 <img
@@ -151,7 +150,7 @@ function Blog() {
           
           <button
             onClick={() => {
-              setCurrentPage(prev => Math.max(Math.min(prev + 1, totalPages), 1));
+              setCurrentPage(prev => Math.min(prev + 1, totalPages));
               scrollToTop();
             }}
             disabled={currentPage === totalPages}

@@ -255,7 +255,7 @@ function CasiStudio() {
             ))}
             <button
               onClick={() => {
-                setCurrentPage(prev => Math.max(Math.min(prev + 1, totalPages), 1));
+                setCurrentPage(prev => Math.min(prev + 1, totalPages));
                 scrollToTop();
               }}
               disabled={currentPage === totalPages}
