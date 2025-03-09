@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const cases = [
   {
@@ -190,6 +191,20 @@ function CasiStudio() {
 
   return (
     <div className="pt-32 pb-20">
+      <Helmet>
+        <title>Casi Studio Martes AI | Successi con Automazioni AI, Chatbot e Lead Generation</title>
+        <meta name="description" content="Scopri i casi di successo di aziende che hanno implementato automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Risultati concreti e ROI misurabili." />
+        <meta name="keywords" content="casi studio AI, automazioni basate su AI, chatbot, agenti AI, lead generation con AI, successi AI, ROI intelligenza artificiale, implementazioni AI" />
+        <meta property="og:title" content="Casi Studio Martes AI | Successi con Automazioni AI e Chatbot" />
+        <meta property="og:description" content="Casi di successo di aziende che hanno implementato automazioni AI, chatbot e strategie di lead generation con risultati concreti." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.martes-ai.com/casi-studio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Casi Studio Martes AI | Successi con AI" />
+        <meta name="twitter:description" content="Casi di successo con automazioni AI, chatbot e lead generation per il business." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.martes-ai.com/casi-studio" />
+      </Helmet>
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
           Casi Studio

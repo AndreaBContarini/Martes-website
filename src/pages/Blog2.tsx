@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
+import { Helmet } from 'react-helmet-async';
 
 // Definizione dei post del blog con immagini statiche e leggere
 const blogPosts = [
@@ -132,6 +133,20 @@ const Blog2 = () => {
 
   return (
     <div className="min-h-screen bg-black pt-24 pb-16">
+      <Helmet>
+        <title>Blog Martes AI | Automazioni AI, Chatbot e Lead Generation con Intelligenza Artificiale</title>
+        <meta name="description" content="Scopri le ultime novità su automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Articoli, guide e casi studio per ottimizzare il tuo business con l'AI." />
+        <meta name="keywords" content="blog AI, automazioni basate su AI, chatbot, agenti AI, lead generation con AI, intelligenza artificiale per business, casi studio AI" />
+        <meta property="og:title" content="Blog Martes AI | Automazioni AI e Chatbot" />
+        <meta property="og:description" content="Articoli, guide e casi studio su automazioni AI, chatbot e lead generation con intelligenza artificiale per il tuo business." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.martes-ai.com/blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog Martes AI | Automazioni e Chatbot" />
+        <meta name="twitter:description" content="Articoli e guide su automazioni AI, chatbot e lead generation per il tuo business." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.martes-ai.com/blog" />
+      </Helmet>
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 text-white">Blog</h1>
         

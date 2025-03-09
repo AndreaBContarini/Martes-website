@@ -86,12 +86,18 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Martes AI - Soluzioni di Intelligenza Artificiale per il Business</title>
-        <meta name="description" content="Martes AI offre soluzioni innovative di intelligenza artificiale per automatizzare e ottimizzare i processi aziendali. Scopri come l'AI può trasformare il tuo business." />
-        <meta name="keywords" content="intelligenza artificiale, AI, automazione, business, chatbot, machine learning, digital transformation" />
-        <meta property="og:title" content="Martes AI - Soluzioni AI per il Business" />
-        <meta property="og:description" content="Scopri come l'intelligenza artificiale può trasformare il tuo business con Martes AI." />
-        <meta property="og:image" content="../src/images/logo.png" />
+        <title>Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business</title>
+        <meta name="description" content="Trasforma il tuo business con soluzioni di intelligenza artificiale personalizzate: automazioni basate su AI, chatbot avanzati e agenti AI per lead generation. Ottimizza i processi aziendali e aumenta i risultati con Martes AI." />
+        <meta name="keywords" content="automazioni basate su AI, agenti AI e chatbot lead generation con AI, intelligenza artificiale per business, automazione processi aziendali, soluzioni AI personalizzate, AI per PMI, consulenza AI" />
+        <meta property="og:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business" />
+        <meta property="og:description" content="Soluzioni di intelligenza artificiale personalizzate per il tuo business: automazioni AI, chatbot avanzati e lead generation con AI. Scopri come ottimizzare i tuoi processi con Martes AI." />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.martes-ai.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot" />
+        <meta name="twitter:description" content="Soluzioni di intelligenza artificiale personalizzate: Automazioni AI, Agenti AI e Chatbot e lead generation per il tuo business." />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.martes-ai.com" />
       </Helmet>
       <div className="flex flex-col items-center w-full">

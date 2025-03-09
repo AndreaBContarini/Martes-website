@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SocialLinks from '../components/SocialLinks';
+import { Helmet } from 'react-helmet-async';
 
 function ChiSiamo() {
   const location = useLocation();
@@ -21,6 +22,20 @@ function ChiSiamo() {
 
   return (
     <div className="pt-32 pb-20">
+      <Helmet>
+        <title>Chi Siamo | Martes AI - Esperti in Automazioni AI, Chatbot e Lead Generation</title>
+        <meta name="description" content="Il team di Martes AI: esperti in automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Scopri la nostra missione e competenze." />
+        <meta name="keywords" content="esperti AI, team automazioni AI, specialisti chatbot, consulenti agenti AI, lead generation con AI, intelligenza artificiale per business" />
+        <meta property="og:title" content="Chi Siamo | Martes AI - Esperti in Automazioni AI e Chatbot" />
+        <meta property="og:description" content="Scopri il team di Martes AI: esperti in automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.martes-ai.com/chi-siamo" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Chi Siamo | Martes AI - Esperti in AI" />
+        <meta name="twitter:description" content="Il team di esperti in automazioni AI, chatbot e lead generation di Martes AI." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.martes-ai.com/chi-siamo" />
+      </Helmet>
       <div className="container mx-auto px-4">
         <h1 className="text-5xl font-bold text-center mb-12">Chi siamo</h1>
         
