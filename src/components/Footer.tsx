@@ -24,8 +24,8 @@ function Footer() {
           
           <div>
             <h4 className="text-lg font-bold mb-4 text-white">Contatti</h4>
-            <a href="mailto:andrea@martes-ai.com" className="text-gray-400 hover:text-white block transition-colors duration-200">
-              info@martes-ai.com
+            <a href="mailto:contact@martes-ai.com" className="text-gray-400 hover:text-white block transition-colors duration-200">
+              contact@martes-ai.com
             </a>
           </div>
 

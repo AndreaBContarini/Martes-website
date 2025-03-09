@@ -41,7 +41,7 @@ function Terms() {
     <p>Martes AI fornisce i Servizi "<strong>così come sono</strong>" senza alcuna garanzia di risultato. Il Cliente è responsabile dei contenuti generati tramite il Software.</p>
 
     <h2>8. Trattamento dei Dati e Privacy</h2>
-    <p>L’informativa privacy è disponibile su <a href="https://www.martes-ai.com/privacy-policy">https://www.martes-ai.com/privacy-policy</a>.</p>
+    <p>L’informativa privacy è disponibile su <a href="https://www.martes-ai.com/privacy">https://www.martes-ai.com/privacy</a>.</p>
 
     <h2>9. Modifiche ai Termini di Servizio</h2>
     <p>Martes AI si riserva il diritto di modificare le presenti Condizioni Generali con un preavviso di <strong>30 giorni</strong>. Se il Cliente non accetta le modifiche, può recedere dal contratto senza penalità.</p>
