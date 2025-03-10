@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const cases = [
   {
@@ -135,7 +136,7 @@ const cases = [
   },
   {
     id: "custom-gpt-email",
-    title: "Agente GPT che risponde automaticamente alle mail e che riassume le ultime news sull'AI",
+    title: "Agente GPT per rispondere alle mail e riassumere AI-news",
     description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
     date: new Date('2025-02-13'),
     image: 'https://i.ibb.co/KzNTDF0D/loffredo.jpg',
@@ -164,7 +165,18 @@ const cases = [
 function CasiStudio() {
   const [currentPage, setCurrentPage] = useState(1);
   const casesPerPage = 3;
+  const location = useLocation();
   
+  // Effetto per scrollare all'inizio della pagina quando viene caricata o quando cambia l'URL
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  // Funzione per scrollare in cima alla pagina
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Ordina i casi studio per data (dal più recente)
   const sortedCases = cases.sort((a, b) => b.date.getTime() - a.date.getTime());
   
@@ -177,12 +189,22 @@ function CasiStudio() {
     return sortedCases.slice(startIndex, startIndex + casesPerPage);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <div className="pt-32 pb-20">
+      <Helmet>
+        <title>Casi Studio Martes AI | Successi con Automazioni AI, Chatbot e Lead Generation</title>
+        <meta name="description" content="Scopri i casi di successo di aziende che hanno implementato automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Risultati concreti e ROI misurabili." />
+        <meta name="keywords" content="casi studio AI, automazioni basate su AI, chatbot, agenti AI, lead generation con AI, successi AI, ROI intelligenza artificiale, implementazioni AI" />
+        <meta property="og:title" content="Casi Studio Martes AI | Successi con Automazioni AI e Chatbot" />
+        <meta property="og:description" content="Casi di successo di aziende che hanno implementato automazioni AI, chatbot e strategie di lead generation con risultati concreti." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.martes-ai.com/casi-studio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Casi Studio Martes AI | Successi con AI" />
+        <meta name="twitter:description" content="Casi di successo con automazioni AI, chatbot e lead generation per il business." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.martes-ai.com/casi-studio" />
+      </Helmet>
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
           Casi Studio
@@ -227,7 +249,10 @@ function CasiStudio() {
         {totalPages > 1 && (
           <div className="flex justify-center mt-12 gap-2">
             <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              onClick={() => {
+                setCurrentPage(prev => Math.max(prev - 1, 1));
+                scrollToTop();
+              }}
               disabled={currentPage === 1}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
             >
@@ -236,7 +261,10 @@ function CasiStudio() {
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
               <button
                 key={page}
-                onClick={() => setCurrentPage(page)}
+                onClick={() => {
+                  setCurrentPage(page);
+                  scrollToTop();
+                }}
                 className={`px-4 py-2 rounded-lg ${
                   currentPage === page 
                     ? 'bg-[#274f36]' 
@@ -247,11 +275,14 @@ function CasiStudio() {
               </button>
             ))}
             <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              onClick={() => {
+                setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                scrollToTop();
+              }}
               disabled={currentPage === totalPages}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
             >
-              Successiva
+              Successivo
             </button>
           </div>
         )}

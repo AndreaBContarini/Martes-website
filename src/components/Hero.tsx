@@ -67,8 +67,6 @@ function Hero() {
                 <span className="absolute bottom-0 left-0 right-0 h-2 bg-[#274f36]/40 blur-sm"></span>
                 <span className="absolute bottom-0 left-0 right-0 h-1 bg-[#274f36]"></span>
               </span>
-              <br />
-              Martes AI è il tuo partner per l'innovazione digitale
             </h2>
 
             <div className="flex flex-col md:flex-row gap-4 justify-center mt-6 mb-12">

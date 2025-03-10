@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 
+// Semplifichiamo gli URL delle immagini e usiamo immagini più leggere
 const posts = [
   {
     id: 'deepseek-alternativa-open-source-a-chatgpt-e-gemini',
@@ -11,7 +12,7 @@ const posts = [
       'Analisi approfondita di DeepSeek, la sua natura open source, i costi delle API e le principali differenze rispetto ai concorrenti come ChatGPT e Gemini.',
     date: '2025-02-01',
     readTime: '2 min',
-    image: '/src/images/deepseek.png',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=DeepSeek',
   },
   {
     id: 'gpt-la-rivoluzione-dellintelligenza-artificiale-nel-business',
@@ -19,7 +20,7 @@ const posts = [
     excerpt: 'Scopri come i modelli GPT stanno trasformando il business, ottimizzando processi e creando nuove opportunità nel mondo digitale.',
     date: '2024-12-9',
     readTime: '3 min',
-    image: '/src/images/gpt.png',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT',
   },
   {
     id: 'cold-emailing-nuovi-clienti',
@@ -27,7 +28,7 @@ const posts = [
     excerpt: 'In questo breve articolo parliamo di come ottimizzare le cosiddette "cold email" per ottenere ottimi risultati e feedback da potenziali nuovi clienti.',
     date: '2024-10-09',
     readTime: '5 min',
-    image: '/src/images/cold_email.png',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Cold+Email',
   },
   {
     id: 'chatbot-ai-e-assistenti-vocali-la-nuova-frontiera-del-customer-service',
@@ -35,7 +36,7 @@ const posts = [
     excerpt: "Grazie all'intelligenza artificiale e ai modelli linguistici avanzati (LLM) come GPT-4, i chatbot moderni offrono assistenza personalizzata, migliorano il servizio clienti e ottimizzano l'efficienza aziendale",
     date: '2024-11-29',
     readTime: '4 min',
-    image: 'https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=506,h=530,fit=crop/mk39w0PZ1DIe7Dp6/dalla-e-2024-08-18-18.17.29---a-futuristic-digital-image-resembling-a-chatbot-with-a-sleek-and-modern-interface.-the-design-features-glowing-neon-elements-in-dark-green-0a6900-m2WQGvBpDliVrZkN.webp'
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Chatbot',
   },
   {
     id: 'prompt-engineering-come-sfruttare-al-110percent-lai',
@@ -43,7 +44,7 @@ const posts = [
     excerpt: "Il prompt engineering è essenziale per sfruttare al meglio l'AI. Scopri come migliorare la precisione di ChatGPT, automazioni e altri strumenti con prompt efficaci.",
     date: '2024-09-10',
     readTime: '2 min',
-    image: '/src/images/prompt.png',  
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Prompt+Engineering',  
   },
   {
     id: 'gpt-4o-openai-lancia-il-nuovo-modello',
@@ -51,14 +52,29 @@ const posts = [
     excerpt: "OpenAI ha lanciato GPT-o1, un modello AI più veloce, economico e avanzato. Ideale per sviluppatori e aziende, ottimizza i progetti AI con prestazioni migliorate. In questo articolo, esploriamo le sue novità e vantaggi.",
     date: '2024-07-04',
     readTime: '2 min',
-    image: 'https://www.editalo.pro/wp-content/uploads/2023/03/gpt-4-sera-verdadera-revolucion-sector-inteligencia-artificial-2934662-1024x576.webp',  
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT-o1',  
   }
 ];
 
 function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
   const postsPerPage = 3;
   
+  // Semplifichiamo il caricamento
+  useEffect(() => {
+    // Timeout breve per mostrare il caricamento
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Ordina i post per data (più recenti prima)
   const sortedPosts = [...posts].sort((a, b) => 
     new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -74,59 +90,70 @@ function Blog() {
     return sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  // Se sta caricando, mostra un indicatore di caricamento
+  if (isLoading) {
+    return (
+      <div className="min-h-screen pt-32 pb-20 bg-black w-full flex justify-center items-center">
+        <div className="text-white text-xl">Caricamento...</div>
+      </div>
+    );
+  }
 
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-gradient-to-b from-black via-black to-[#274f36]">
+    <div className="min-h-screen pt-32 pb-20 bg-black w-full">
       <div className="container mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mb-20">Blog</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-12 md:mb-20 text-white">Blog</h1>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {getCurrentPosts().map((post) => (
             <Link
               key={post.id}
               to={`/blog/${post.id}`}
               onClick={scrollToTop}
-              className="bg-black/40 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
+              className="bg-black/40 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300 w-full border border-gray-800"
             >
-              <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-48 object-cover article-cover mx-auto grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
-                  loading="lazy"
-                />
+              <div className="w-full">
+                <div className="w-full h-48 bg-[#274f36]/20 flex items-center justify-center">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-48 object-cover article-cover mx-auto grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer"
+                    loading="lazy"
+                    onError={(e) => {
+                      // Fallback per immagini non caricate
+                      e.currentTarget.src = 'https://placehold.co/600x400/274f36/FFFFFF?text=Martes+AI';
+                    }}
+                  />
+                </div>
               </div>
-              <div className="p-6">
-                <div className="flex items-center text-sm text-gray-400 mb-4">
+              <div className="p-4 md:p-6">
+                <div className="flex items-center text-sm text-gray-400 mb-3">
                   <span>
                     {format(new Date(post.date), 'd MMMM yyyy', { locale: it })}
                   </span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <h2 className="text-xl font-bold mb-4">{post.title}</h2>
-                <p className="text-gray-300">{post.excerpt}</p>
+                <h2 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-white">{post.title}</h2>
+                <p className="text-gray-300 text-sm md:text-base">{post.excerpt}</p>
               </div>
             </Link>
           ))}
         </div>
 
         {/* Paginazione */}
-        <div className="flex justify-center items-center mt-12 gap-4">
+        <div className="flex justify-center items-center mt-10 md:mt-12 gap-2 md:gap-4">
           <button
             onClick={() => {
-              setCurrentPage(prev => prev - 1);
+              setCurrentPage(prev => Math.max(prev - 1, 1));
               scrollToTop();
             }}
             disabled={currentPage === 1}
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base ${
               currentPage === 1 
                 ? 'bg-gray-600 cursor-not-allowed' 
                 : 'bg-[#274f36] hover:bg-[#1a3524]'
-            } transition-colors`}
+            } transition-colors text-white`}
           >
             Precedente
           </button>
@@ -138,11 +165,11 @@ function Blog() {
                 setCurrentPage(pageNum);
                 scrollToTop();
               }}
-              className={`px-4 py-2 rounded-lg transition-colors ${
+              className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base transition-colors ${
                 currentPage === pageNum 
                   ? 'bg-[#274f36]' 
                   : 'bg-black/40 hover:bg-[#274f36]/50'
-              }`}
+              } text-white`}
             >
               {pageNum}
             </button>
@@ -150,15 +177,15 @@ function Blog() {
           
           <button
             onClick={() => {
-              setCurrentPage(prev => prev + 1);
+              setCurrentPage(prev => Math.min(prev + 1, totalPages));
               scrollToTop();
             }}
             disabled={currentPage === totalPages}
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-3 py-2 md:px-4 md:py-2 rounded-lg text-sm md:text-base ${
               currentPage === totalPages 
                 ? 'bg-gray-600 cursor-not-allowed' 
                 : 'bg-[#274f36] hover:bg-[#1a3524]'
-            } transition-colors`}
+            } transition-colors text-white`}
           >
             Successivo
           </button>
