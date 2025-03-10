@@ -273,6 +273,19 @@ function Home() {
                     className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition"
                     onChange={handleChange}
                     value={formData.website}
+                    onFocus={(e) => {
+                      if (!e.target.value) {
+                        setFormData(prev => ({
+                          ...prev,
+                          website: 'https://'
+                        }));
+                      } else if (!e.target.value.startsWith('https://')) {
+                        setFormData(prev => ({
+                          ...prev,
+                          website: `https://${e.target.value}`
+                        }));
+                      }
+                    }}
                   />
                 </div>
 

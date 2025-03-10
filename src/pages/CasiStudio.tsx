@@ -282,7 +282,7 @@ function CasiStudio() {
               disabled={currentPage === totalPages}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
             >
-              Successiva
+              Successivo
             </button>
           </div>
         )}
