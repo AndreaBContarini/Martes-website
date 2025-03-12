@@ -3,6 +3,65 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
 
 const posts = {
+  'claude-37-sonnet-intelligenza-artificiale-ibrida-rivoluzionaria': {
+    title: "Claude 3.7 Sonnet: L'Intelligenza Artificiale Ibrida Rivoluzionaria",
+    date: '15 Marzo 2025',
+    description:
+      "Anthropic ha lanciato Claude 3.7 Sonnet, un modello di intelligenza artificiale che introduce il \"ragionamento ibrido\", combinando risposte rapide con analisi approfondite. Questo articolo confronta Claude 3.7 Sonnet con la versione precedente, Claude 3.5 Sonnet, evidenziando funzionalità, esempi pratici, costi e casi d'uso ideali.",
+    content: `
+      <h2 class="text-3xl font-bold mt-8 mb-4">Introduzione a Claude 3.7 Sonnet</h2>
+      <p>
+        <strong>Claude 3.7 Sonnet</strong> rappresenta un significativo passo avanti nel campo dell'<strong>intelligenza artificiale</strong>. La sua principale innovazione è il "<strong>ragionamento ibrido</strong>", che permette al modello di alternare tra risposte immediate e processi di pensiero più elaborati, adattandosi alle esigenze specifiche dell'utente. Questa capacità di adattamento rende Claude 3.7 Sonnet particolarmente versatile e efficiente in una vasta gamma di applicazioni, dalla programmazione all'analisi di dati complessi.
+      </p>
+      
+      <h2 class="text-3xl font-bold mt-8 mb-4">Confronto tra Claude 3.7 Sonnet e Claude 3.5 Sonnet</h2>
+      
+      <p>Il nuovo modello di <strong>Anthropic</strong> mostra miglioramenti significativi rispetto al suo predecessore in diverse aree chiave:</p>
+      
+      <p class="font-bold mt-6 mb-2">1. Prestazioni nella programmazione</p>
+      <p>Claude 3.7 Sonnet ha mostrato un notevole miglioramento nelle attività di <strong>programmazione</strong> rispetto al suo predecessore. Nei test <strong>SWE-bench Verified</strong>, ha raggiunto un'accuratezza del <strong>62,3%</strong>, superando il 49,0% di Claude 3.5 Sonnet. Utilizzando scaffold personalizzati, l'accuratezza è salita al <strong>70,3%</strong>, rendendolo uno dei modelli più performanti in questo ambito.</p>
+      
+      <p class="font-bold mt-6 mb-2">2. Utilizzo di strumenti agentici</p>
+      <p>Nell'uso di <strong>strumenti agentici</strong>, Claude 3.7 Sonnet ha ottenuto un'accuratezza dell'<strong>81,2%</strong> in compiti legati al retail, rispetto al 71,5% della versione 3.5. In ambito aeronautico, ha raggiunto il <strong>58,4%</strong>, migliorando di quasi dieci punti percentuali rispetto al predecessore.</p>
+      
+      <p class="font-bold mt-6 mb-2">3. Costi</p>
+      <p>Entrambe le versioni hanno mantenuto gli stessi costi operativi: <strong>$3 per milione di token</strong> di input e <strong>$15 per milione di token</strong> di output, rendendo Claude 3.7 Sonnet un'opzione competitiva nel mercato dei modelli AI avanzati.</p>
+      
+      
+      <h2 class="text-3xl font-bold mt-8 mb-4">Funzionalità Principali di Claude 3.7 Sonnet</h2>
+      
+      <p>Claude 3.7 Sonnet introduce diverse funzionalità innovative che lo distinguono nel panorama dell'intelligenza artificiale:</p>
+      
+      <p class="font-bold mt-6 mb-2">1. Modalità di pensiero estesa</p>
+      <p>Una delle caratteristiche distintive di Claude 3.7 Sonnet è la "<strong>modalità di pensiero estesa</strong>", che consente al modello di affrontare problemi complessi con un'analisi dettagliata. Questa funzionalità permette a Claude di elaborare ragionamenti complessi passo dopo passo, migliorando significativamente la qualità delle risposte per problemi che richiedono un'analisi approfondita. Tuttavia, in alcuni casi, questa modalità può portare a un eccesso di analisi, rendendo il processo più lungo del necessario.</p>
+      
+      <p class="font-bold mt-6 mb-2">2. Claude Code</p>
+      <p><strong>Claude Code</strong> è uno strumento di codifica agentico che funge da collaboratore attivo, in grado di cercare e leggere codice, modificare file, scrivere e eseguire test, e interagire con strumenti da riga di comando. Questa funzionalità trasforma Claude 3.7 Sonnet in un assistente di programmazione completo, capace di supportare gli sviluppatori in tutte le fasi del processo di sviluppo software.</p>
+      
+      <h2 class="text-3xl font-bold mt-8 mb-4">Esempi Pratici di Utilizzo</h2>
+      
+      <h3 class="text-2xl font-bold mt-6 mb-3">Sviluppo Software</h3>
+      <p>Claude 3.7 Sonnet è stato utilizzato per progettare <strong>front-end di siti web</strong>, sviluppare <strong>giochi interattivi</strong> e gestire compiti di <strong>codifica complessi</strong>, dimostrando la sua versatilità nel campo dello sviluppo software. La sua capacità di comprendere e generare codice in diversi linguaggi di programmazione lo rende uno strumento prezioso per sviluppatori di tutti i livelli.</p>
+      
+      <h3 class="text-2xl font-bold mt-6 mb-3">Risoluzione di Problemi Complessi</h3>
+      <p>Grazie alla sua capacità di <strong>ragionamento esteso</strong>, Claude 3.7 Sonnet è particolarmente efficace nell'affrontare problemi complessi che richiedono un'analisi approfondita e una pianificazione dettagliata. Questa caratteristica lo rende ideale per applicazioni in settori come la <strong>finanza</strong>, la <strong>medicina</strong> e la <strong>ricerca scientifica</strong>, dove la precisione e la profondità dell'analisi sono fondamentali.</p>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Casi d'Uso Consigliati</h2>
+      <p>Claude 3.7 Sonnet è ideale per:</p>
+      <ul class="list-disc pl-6 mt-4 mb-4">
+          <li>Compiti di <strong>programmazione avanzata</strong> e sviluppo software.</li>
+          <li>Analisi e risoluzione di <strong>problemi complessi</strong> in vari settori.</li>
+          <li><strong>Automazione di processi aziendali</strong> che richiedono un alto livello di ragionamento e adattabilità.</li>
+          <li>Assistenza nella <strong>ricerca scientifica</strong> e nell'analisi di dati complessi.</li>
+          <li>Creazione di <strong>contenuti</strong> che richiedono precisione e profondità di analisi.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Conclusione</h2>
+      <p>Claude 3.7 Sonnet rappresenta un'evoluzione significativa rispetto alla versione 3.5, offrendo miglioramenti in termini di prestazioni, funzionalità e versatilità. La sua capacità di adattarsi alle esigenze degli utenti e di gestire compiti complessi lo rende una scelta eccellente per sviluppatori e aziende che cercano soluzioni avanzate di intelligenza artificiale.</p>
+      
+      <p>Con il suo approccio di "<strong>ragionamento ibrido</strong>", Claude 3.7 Sonnet stabilisce un nuovo standard nel campo dell'intelligenza artificiale, combinando la velocità di risposta con la profondità di analisi in un unico modello potente e versatile. Mentre il settore continua a evolversi, Claude 3.7 Sonnet si posiziona come un leader nell'innovazione AI, offrendo soluzioni che possono trasformare il modo in cui interagiamo con la tecnologia e risolviamo problemi complessi.</p>
+    `,
+  },
   'deepseek-alternativa-open-source-a-chatgpt-e-gemini': {
     title: "DeepSeek: L'Alternativa Open Source a ChatGPT e Gemini",
     date: '1 Febbraio 2025',

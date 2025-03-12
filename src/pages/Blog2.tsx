@@ -7,6 +7,14 @@ import { Helmet } from 'react-helmet-async';
 // Definizione dei post del blog con immagini statiche e leggere
 const blogPosts = [
   {
+    id: 'claude-37-sonnet-intelligenza-artificiale-ibrida-rivoluzionaria',
+    title: "Claude 3.7 Sonnet: L'Intelligenza Artificiale Ibrida Rivoluzionaria",
+    excerpt: 'Anthropic ha lanciato Claude 3.7 Sonnet, un modello di intelligenza artificiale che introduce il "ragionamento ibrido", combinando risposte rapide con analisi approfondite. Scopri funzionalità, confronti e casi d\'uso ideali.',
+    date: '2025-03-15',
+    readTime: '4 min',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Claude+3.7',
+  },
+  {
     id: 'deepseek-alternativa-open-source-a-chatgpt-e-gemini',
     title: "DeepSeek: L'Alternativa Open Source a ChatGPT e Gemini",
     excerpt: 'Analisi approfondita di DeepSeek, la sua natura open source, i costi delle API e le principali differenze rispetto ai concorrenti come ChatGPT e Gemini.',
