@@ -157,7 +157,7 @@ const cases = {
         <li>La diffidenza verso contatti non personali.</li>
     </ul>
     <p>Noi abbiamo deciso di accettare la sfida, implementando un metodo completamente automatizzato per la lead generation su LinkedIn.</p>
-    <img src="/src/images/dripify1.pmg.png" alt="Automazione con Dripify" width="350">
+    <img src="https://i.ibb.co/xqsdHwr1/dripify1-pmg.png" alt="Automazione con Dripify" width="350">
     
     <h2>Il Progetto: Personal Branding, Automazione e Lead Generation</h2>
     
@@ -175,7 +175,7 @@ const cases = {
         <li>Vengono riassunti e formattati utilizzando GPT.</li>
         <li>I post vengono approvati dal cliente e pubblicati ogni 10 giorni, mantenendo il profilo sempre aggiornato e professionale.</li>
     </ul>
-    <img src="/src/images/make1.png" alt="Scenario Make per Automazione" className="mx-auto w-48">
+    <img src="https://i.ibb.co/cKyNWcLd/make1.png" alt="Scenario Make per Automazione" className="mx-auto w-48">
     
     <h2>Fase 3: Lead Generation Automatizzata</h2>
     <p>Per la fase di lead generation, abbiamo utilizzato Dripify, uno strumento per automatizzare:</p>
@@ -186,7 +186,7 @@ const cases = {
     </ul>
     <p>Un lead magnet personalizzato – un video – è stato inviato ai contatti che accettavano la connessione.</p>
     <p>Per ogni cliente interessato che rispondeva, lo si è registrato in un Google Sheet, con notifiche via email per aggiornare il team in tempo reale.</p>
-    <img src="/src/images/make2.png" alt="Scenario Make per Lead Generation" width="380">
+    <img src="https://i.ibb.co/gFjzydxW/make2.png" alt="Scenario Make per Lead Generation" width="380">
     
     <h2>I Risultati: Successo Misurabile in Pochi Giorni</h2>
     <ul>
@@ -209,7 +209,7 @@ const cases = {
     `
   },
   'custom-gpt-email': {
-    title: "Agente GPT che risponde automaticamente alle mail e che riassume le ultime news sull'AI",
+    title: "Agente GPT per rispondere alle mail e riassumere AI-news",
     date: "13 febbraio 2025",
     content: `
       <div class="aspect-w-16 aspect-h-9 mb-8">

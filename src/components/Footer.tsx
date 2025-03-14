@@ -24,8 +24,8 @@ function Footer() {
           
           <div>
             <h4 className="text-lg font-bold mb-4 text-white">Contatti</h4>
-            <a href="mailto:andrea@martes-ai.com" className="text-gray-400 hover:text-white block transition-colors duration-200">
-              info@martes-ai.com
+            <a href="mailto:contact@martes-ai.com" className="text-gray-400 hover:text-white block transition-colors duration-200">
+              contact@martes-ai.com
             </a>
           </div>
 
@@ -93,7 +93,7 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>© 2024 Martes AI. Tutti i diritti riservati.</p>
+          <p>© 2025 Martes AI. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>
