@@ -3,9 +3,137 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
 
 const posts = {
+  '6-tool-ai-che-hanno-accelerato-il-nostro-business': {
+    title: "6 Tool AI Che Hanno Accelerato Il Nostro Business",
+    date: '15 marzo 2025',
+    description:
+      "Scopri i sei strumenti di intelligenza artificiale che hanno permesso a Martes AI di generare 20.000€ in soli tre mesi. Dalla creazione di chatbot con Voiceflow alla generazione di contenuti con Claude, ecco le soluzioni AI che stanno trasformando il nostro business e possono rivoluzionare anche il tuo.",
+    content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/U3KOUeGBVI0" 
+          title="6 Tool AI Che Hanno Accelerato Il Nostro Business"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+        L'intelligenza artificiale sta rivoluzionando il mondo del business, e noi di <strong>Martes AI</strong> lo sappiamo bene. Nei primi tre mesi del 2025 abbiamo generato <strong>20.000€</strong> grazie all'implementazione di soluzioni AI per aziende e imprenditori. In questo articolo vogliamo condividere i sei strumenti che hanno avuto il maggiore impatto sul nostro lavoro.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Il Potere delle Soluzioni AI</h2>
+
+      <p>
+        Molte aziende vogliono integrare l'AI nei loro processi, ma si trovano di fronte a un mare di opzioni e tool, spesso senza sapere quali siano davvero efficaci. La nostra esperienza ci ha insegnato che <strong>non è il numero di strumenti che fa la differenza, ma come vengono utilizzati per risolvere problemi concreti</strong>.
+      </p>
+
+      <p>
+        Grazie all'uso strategico di AI, abbiamo ottenuto risultati tangibili per i nostri clienti: da un agente AI che ha generato <strong>80.000€</strong> in un solo mese per un'agenzia di viaggi, a un sistema di customer support automatizzato ha <strong>risparmiato circa 20 ore settimanali</strong> a un e-commerce, e molto altro, che descriviamo nella nostra pagina <a href="https://martes-ai.com/casi-studio" class="text-[#274f36] hover:text-[#1a3524] underline">Casi Studio</a>.
+      </p>
+
+      <p>
+        Vediamo ora quali sono i tool AI che ci hanno permesso di ottenere questi risultati.
+      </p>
+
+      <hr class="my-8 border-t border-gray-700" />
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Gli Strumenti AI per Servire i Clienti</h2>
+
+      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Voiceflow</a> e <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Make</a>: La Combinazione Vincente</h3>
+
+      <p>
+        Questa coppia di strumenti è responsabile dell'80% dei progetti AI che realizziamo:
+      </p>
+
+      <ul class="list-disc pl-6 mt-4 mb-4">
+        <li><strong>Voiceflow</strong> permette di creare chatbot e agenti AI personalizzabili, gestendo flussi di conversazione complessi.</li>
+        <li><strong>Make</strong> facilita l'integrazione di questi chatbot con altri software, gestendo workflow, chiamate API e database in tempo reale.</li>
+      </ul>
+
+      <p>
+        Ad esempio, per i clienti che vogliono un chatbot per la lead generation su WhatsApp, utilizziamo <strong>Voiceflow</strong> per la logica conversazionale e <strong>Make</strong> per inviare migliaia di messaggi e aggiornare automaticamente il database con le risposte ricevute.
+      </p>
+
+      <div class="bg-black/20 p-4 rounded-lg my-6">
+        <p class="italic text-gray-300">
+          <strong>Bonus:</strong> Un altro strumento che abbiamo iniziato a utilizzare recentemente è <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">n8n</a>, particolarmente efficace per la costruzione di agenti AI personalizzati.
+        </p>
+      </div>
+
+      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Claude</a>: Prompt di Alta Qualità</h3>
+
+      <p>
+        Claude è uno strumento essenziale per migliorare la qualità dei prompt AI. Nei nostri progetti, abbiamo notato che i prompt generati da Claude sono superiori a quelli di ChatGPT, rendendolo un alleato indispensabile per ottimizzare i risultati.
+      </p>
+
+      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.cursor.sh" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Cursor</a>: AI per il Coding</h3>
+
+      <p>
+        Per progetti più complessi che richiedono codice personalizzato, utilizziamo <strong>Cursor</strong>. Questo strumento accelera lo sviluppo, aiuta a scrivere codice più pulito e semplifica il debugging, rendendo il lavoro di programmazione molto più efficiente.<br>
+        Il nostro stesso sito web è stato costruito con esso, permettendoci di far scrivere all'AI oltre il 70% del codice!
+      </p>
+
+      <hr class="my-8 border-t border-gray-700" />
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Gli Strumenti AI per la Creazione di Contenuti su YouTube</h2>
+
+      <p>
+        YouTube è il principale canale attraverso cui otteniamo nuovi clienti. Ecco i tre tool AI che utilizziamo per creare contenuti di alto impatto.
+      </p>
+
+      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Claude</a> per la Creazione di Script</h3>
+
+      <p>
+        Claude non è utile solo per i progetti dei clienti, ma anche per ottimizzare i contenuti video. Lo utilizziamo per:
+      </p>
+
+      <ul class="list-disc pl-6 mt-4 mb-4">
+        <li>Strutturare i nostri script.</li>
+        <li>Migliorare i "copy".</li>
+        <li>Ottimizzare titoli e idee per le copertine dei video.</li>
+      </ul>
+
+      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://replicate.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Replicate</a> per le Copertine AI</h3>
+
+      <p>
+        Le copertine dei video sono responsabili di almeno il 50% del loro successo. In passato, dovevamo allestire un intero setup fotografico per ottenere immagini di alta qualità. Ora, grazie a <strong>Replicate</strong>, possiamo generare automaticamente copertine di grande impatto semplicemente scrivendo un prompt AI.
+      </p>
+
+      <div class="bg-black/20 p-4 rounded-lg my-6">
+        <p class="italic text-gray-300">
+          <strong>Hint:</strong> Abbiamo caricato circa 20 screenshot dei nostri video per addestrare il modello a riconoscere i nostri volti e generare immagini personalizzate.
+        </p>
+      </div>
+
+      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Perplexity</a>: Il Motore di Ricerca AI</h3>
+
+      <p>
+        Per creare contenuti di valore, è fondamentale basarsi su dati aggiornati e verificati. <strong>Perplexity</strong> è il miglior motore di ricerca AI per:
+      </p>
+
+      <ul class="list-disc pl-6 mt-4 mb-4">
+        <li>Trovare statistiche e trend in tempo reale.</li>
+        <li>Incrociare le fonti e verificare l'attendibilità delle informazioni.</li>
+        <li>Approfondire rapidamente qualsiasi argomento, risparmiando ore di ricerca manuale.</li>
+      </ul>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Conclusione</h2>
+
+      <p>
+        Questi sei strumenti AI sono stati fondamentali per aiutarci a generare <strong>20.000€ nei primi tre mesi del 2025</strong>, vendendo soluzioni AI a imprenditori e aziende. Tuttavia, gli strumenti da soli non bastano: il vero valore sta in <strong>come vengono utilizzati</strong> per risolvere problemi reali.
+      </p>
+
+      <p class="mt-4">
+        Se vuoi scoprire come questi strumenti possono essere applicati alla tua attività, <a href="https://calendly.com/riccardobcontarini/30min" class="text-[#274f36] hover:text-[#1a3524] underline">contattaci</a> per una consulenza personalizzata o visita la nostra pagina <a href="/casi-studio" class="text-[#274f36] hover:text-[#1a3524] underline">Casi Studio</a> per vedere esempi concreti di implementazioni di successo.
+      </p>
+    `,
+  },
   'claude-37-sonnet-intelligenza-artificiale-ibrida-rivoluzionaria': {
     title: "Claude 3.7 Sonnet: L'Intelligenza Artificiale Ibrida Rivoluzionaria",
-    date: '15 Marzo 2025',
+    date: '10 Marzo 2025',
     description:
       "Anthropic ha lanciato Claude 3.7 Sonnet, un modello di intelligenza artificiale che introduce il \"ragionamento ibrido\", combinando risposte rapide con analisi approfondite. Questo articolo confronta Claude 3.7 Sonnet con la versione precedente, Claude 3.5 Sonnet, evidenziando funzionalità, esempi pratici, costi e casi d'uso ideali.",
     content: `

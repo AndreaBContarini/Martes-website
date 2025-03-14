@@ -42,7 +42,7 @@ function ServicesSection() {
                   <span>GPT personalizzati</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <span>Automazione email</span>
+                  <span>Automazione email e newsletter</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
                   <span>Lead generation</span>

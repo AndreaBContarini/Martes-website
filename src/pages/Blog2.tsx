@@ -7,10 +7,18 @@ import { Helmet } from 'react-helmet-async';
 // Definizione dei post del blog con immagini statiche e leggere
 const blogPosts = [
   {
+    id: '6-tool-ai-che-hanno-accelerato-il-nostro-business',
+    title: "6 Tool AI Che Hanno Accelerato Il Nostro Business",
+    excerpt: 'Scopri i sei strumenti di intelligenza artificiale che hanno permesso a Martes AI di generare 20.000€ in soli tre mesi. Dalla creazione di chatbot alla generazione di contenuti, ecco le soluzioni AI che stanno trasformando il nostro business.',
+    date: '2025-03-15',
+    readTime: '5 min',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=6+Tool+AI',
+  },
+  {
     id: 'claude-37-sonnet-intelligenza-artificiale-ibrida-rivoluzionaria',
     title: "Claude 3.7 Sonnet: L'Intelligenza Artificiale Ibrida Rivoluzionaria",
     excerpt: 'Anthropic ha lanciato Claude 3.7 Sonnet, un modello di intelligenza artificiale che introduce il "ragionamento ibrido", combinando risposte rapide con analisi approfondite. Scopri funzionalità, confronti e casi d\'uso ideali.',
-    date: '2025-03-15',
+    date: '2025-03-10',
     readTime: '4 min',
     image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Claude+3.7',
   },
