@@ -189,6 +189,15 @@ function CasiStudio() {
     return sortedCases.slice(startIndex, startIndex + casesPerPage);
   };
 
+  // Gestisce il cambio pagina
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    // Assicuriamoci che lo scroll to top avvenga sempre
+    setTimeout(() => {
+      scrollToTop();
+    }, 10);
+  };
+
   return (
     <div className="pt-32 pb-20">
       <Helmet>
@@ -250,8 +259,9 @@ function CasiStudio() {
           <div className="flex justify-center mt-12 gap-2">
             <button
               onClick={() => {
-                setCurrentPage(prev => Math.max(prev - 1, 1));
-                scrollToTop();
+                if (currentPage > 1) {
+                  handlePageChange(currentPage - 1);
+                }
               }}
               disabled={currentPage === 1}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
@@ -261,10 +271,7 @@ function CasiStudio() {
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
               <button
                 key={page}
-                onClick={() => {
-                  setCurrentPage(page);
-                  scrollToTop();
-                }}
+                onClick={() => handlePageChange(page)}
                 className={`px-4 py-2 rounded-lg ${
                   currentPage === page 
                     ? 'bg-[#274f36]' 
@@ -276,8 +283,9 @@ function CasiStudio() {
             ))}
             <button
               onClick={() => {
-                setCurrentPage(prev => Math.min(prev + 1, totalPages));
-                scrollToTop();
+                if (currentPage < totalPages) {
+                  handlePageChange(currentPage + 1);
+                }
               }}
               disabled={currentPage === totalPages}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"

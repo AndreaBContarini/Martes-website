@@ -111,14 +111,20 @@ const Blog2 = () => {
   // Gestisce il cambio pagina
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    scrollToTop();
+    // Assicuriamoci che lo scroll to top avvenga sempre
+    setTimeout(() => {
+      scrollToTop();
+    }, 10);
   };
 
   // Gestisce il pulsante precedente
   const handlePrevious = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
-      scrollToTop();
+      // Assicuriamoci che lo scroll to top avvenga sempre
+      setTimeout(() => {
+        scrollToTop();
+      }, 10);
     }
   };
 
@@ -126,7 +132,10 @@ const Blog2 = () => {
   const handleNext = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
-      scrollToTop();
+      // Assicuriamoci che lo scroll to top avvenga sempre
+      setTimeout(() => {
+        scrollToTop();
+      }, 10);
     }
   };
 

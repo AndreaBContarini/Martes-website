@@ -53,7 +53,7 @@ function Terms() {
     <p>Le presenti Condizioni Generali sono regolate dalla <strong>legge italiana</strong>. Per eventuali controversie, il foro competente è <strong>Roma</strong>.</p>
 
     <h2>12. Contatti</h2>
-    <p>Per informazioni o assistenza, contattaci via email all’indirizzo <a href="mailto:info@martes-ai.com">info@martes-ai.com</a>.</p>
+    <p>Per informazioni o assistenza, contattaci via email all’indirizzo <a href="mailto:contact@martes-ai.com">contact@martes-ai.com</a>.</p>
 
         </div>
       </div>
