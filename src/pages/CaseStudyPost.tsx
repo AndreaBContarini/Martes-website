@@ -413,6 +413,21 @@ function CaseStudyPost() {
         <meta name="twitter:description" content={`Caso studio: automazione AI per la Clinica Oculistica Santa Lucia di Cosenza. Risultati: -60% tempi di risposta, -50% carico amministrativo.`} />
         <meta name="twitter:image" content="https://i.ibb.co/N4fp4Lf/make-clinica.jpg" />
         <link rel="canonical" href={`https://www.martes-ai.com/casi-studio/${id}`} />
+        
+        {/* Schema.org markup in JSON-LD format */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Martes AI",
+            "url": "https://www.martes-ai.com",
+            "logo": "https://www.martes-ai.com/favicon.ico", // Sostituisci con l'URL effettivo del tuo logo
+            "sameAs": [
+              "https://www.instagram.com/martes_ai",
+              "https://www.linkedin.com/company/martes-ai"
+            ]
+          })}
+        </script>
       </Helmet>
       <div className="container mx-auto px-8 max-w-4xl">
         <h1 className="text-5xl font-bold mb-4 text-center">{case_.title}</h1>
