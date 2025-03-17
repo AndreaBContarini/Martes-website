@@ -3,6 +3,84 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
 
 const posts = {
+  'manus-ai-agente-autonomo-rivoluzionario': {
+    title: "Manus AI: L'agente Autonomo che Sta Rivoluzionando l'AI",
+    date: '20 marzo 2025',
+    description:
+      "Scopri Manus AI, l'agente autonomo cinese che esegue compiti complessi senza supervisione umana, segnando un passo verso l'intelligenza artificiale generale. Analisi delle caratteristiche, impatto sul settore e collaborazioni strategiche.",
+    content: `
+      <div class="flex justify-center mb-10">
+        <img 
+          src="https://files.manuscdn.com/webapp/media/ogBanner.png" 
+          alt="Logo Manus AI" 
+          class="max-w-full rounded-lg shadow-md"
+        />
+      </div>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Introduzione</h2>
+      <p>
+        L'intelligenza artificiale (IA) sta rapidamente evolvendo, e la recente introduzione di <strong>Manus AI</strong> rappresenta un significativo balzo in avanti. Sviluppato dalla startup cinese Monica, Manus è un agente autonomo progettato per eseguire compiti complessi senza la necessità di istruzioni dettagliate da parte dell'utente. Questo articolo esplora le caratteristiche distintive di Manus, il suo impatto sul panorama tecnologico globale e le implicazioni future.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Caratteristiche Principali di Manus AI</h2>
+      <p>
+        Manus si distingue per la sua capacità di operare autonomamente, affrontando una vasta gamma di compiti. A differenza dei tradizionali chatbot che richiedono istruzioni passo-passo, Manus può:
+      </p>
+      <ul class="list-disc pl-6 mt-4 mb-4">
+        <li><strong>Eseguire analisi finanziarie dettagliate</strong>: ad esempio, può analizzare le tendenze del mercato azionario e fornire approfondimenti su specifiche aziende.</li>
+        <li><strong>Gestire processi di selezione del personale</strong>: è in grado di esaminare curriculum, valutare competenze e classificare i candidati in base a criteri predefiniti.</li>
+        <li><strong>Pianificare itinerari di viaggio personalizzati</strong>: integrando informazioni su voli, alloggi e attrazioni turistiche per creare piani di viaggio su misura.</li>
+      </ul>
+      <p>
+        Queste funzionalità sono rese possibili da un'architettura multi-agente che consente a Manus di suddividere compiti complessi in sotto-attività gestibili, collaborando con vari modelli di intelligenza artificiale per raggiungere risultati ottimali.
+      </p>
+
+      <figure class="my-8 text-center">
+        <img 
+          src="https://i0.wp.com/gradientflow.com/wp-content/uploads/2025/03/Manus-Workflow-and-Architecture.png" 
+          alt="Diagramma del flusso di lavoro e dell'architettura di Manus AI" 
+          class="mx-auto rounded-lg shadow-lg max-w-full"
+        />
+        <figcaption class="text-sm text-gray-400 mt-2">
+          Figura 1: Diagramma del flusso di lavoro e dell'architettura di Manus AI. L'immagine mostra come il sistema suddivide e gestisce le attività attraverso una struttura multi-agente.
+        </figcaption>
+      </figure>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Impatto sul Settore Tecnologico Globale</h2>
+      <p>
+        L'emergere di Manus ha suscitato discussioni significative nella comunità tecnologica internazionale. Alcuni esperti vedono in Manus un potenziale passo verso l'<strong>intelligenza artificiale generale</strong>, una forma di IA in grado di comprendere, apprendere e applicare conoscenze in modo simile agli esseri umani.
+      </p>
+      <p>
+        Tuttavia, non mancano le critiche. Alcuni analisti sottolineano che, nonostante le promesse, Manus potrebbe non offrire prestazioni superiori rispetto ad altri prodotti esistenti sul mercato.
+      </p>
+
+      <figure class="my-8 text-center">
+        <img 
+          src="https://it.marketscreener.com/zbcache/charts/ObjectChart.aspx?Name=17916677&Type=Custom&Intraday=1&Width=392&Height=294&Cycle=DAY1&Duration=5&Render=Candle&ShowCopyright=2&ShowName=0&Locale=it&ShowVolume=1&Company=Skin:ZonebourseLight&externload=" 
+          alt="Andamento del mercato di riferimento di Manus AI" 
+          class="mx-auto rounded-lg shadow-lg max-w-full"
+        />
+        <figcaption class="text-sm text-gray-400 mt-2">
+          Figura 2: Andamento del mercato di riferimento di Manus AI. Il grafico mostra la variazione del valore delle azioni e delle tendenze finanziarie legate all'innovazione AI.
+        </figcaption>
+      </figure>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Collaborazioni Strategiche e Sviluppi Futuri</h2>
+      <p>
+        Recentemente, Manus AI ha annunciato una partnership strategica con il team dietro i modelli AI di Alibaba, <strong>Qwen</strong>. Questa collaborazione mira a integrare le funzionalità di Manus con i modelli open-source di Qwen, ampliando le sue capacità e potenzialmente migliorando le sue prestazioni su piattaforme di calcolo domestiche in Cina.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Sfide e Considerazioni Etiche</h2>
+      <p>
+        L'introduzione di agenti autonomi come Manus solleva importanti questioni etiche e di privacy. La capacità di tali sistemi di operare senza supervisione umana diretta potrebbe portare a preoccupazioni riguardo alla sicurezza dei dati e all'uso responsabile dell'IA. È essenziale che sviluppatori e legislatori collaborino per garantire che l'adozione di queste tecnologie avvenga in modo etico e trasparente.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Conclusione</h2>
+      <p>
+        Manus AI rappresenta un passo significativo nell'evoluzione dell'intelligenza artificiale, offrendo un assaggio di ciò che potrebbe essere l'AI. Sebbene permangano sfide e interrogativi, l'innovazione portata da Manus stimola la discussione su come l'IA possa essere integrata nella società in modo sicuro ed efficace.
+      </p>
+    `,
+  },
   '6-tool-ai-che-hanno-accelerato-il-nostro-business': {
     title: "6 Tool AI Che Hanno Accelerato Il Nostro Business",
     date: '15 marzo 2025',
@@ -31,7 +109,7 @@ const posts = {
       </p>
 
       <p>
-        Grazie all'uso strategico di AI, abbiamo ottenuto risultati tangibili per i nostri clienti: da un agente AI che ha generato <strong>80.000€</strong> in un solo mese per un'agenzia di viaggi, a un sistema di customer support automatizzato ha <strong>risparmiato circa 20 ore settimanali</strong> a un e-commerce, e molto altro, che descriviamo nella nostra pagina <a href="https://martes-ai.com/casi-studio" class="text-[#274f36] hover:text-[#1a3524] underline">Casi Studio</a>.
+        Grazie all'uso strategico di AI, abbiamo ottenuto risultati tangibili per i nostri clienti: da un agente AI che ha generato <strong>80.000€</strong> in un solo mese per un'agenzia di viaggi, a un sistema di customer support automatizzato ha <strong>risparmiato circa 20 ore settimanali</strong> a un e-commerce, e molto altro, che descriviamo nella nostra pagina <a href="https://martes-ai.com/casi-studio" class="text-[#4CAF50] hover:text-[#388E3C] underline">Casi Studio</a>.
       </p>
 
       <p>
@@ -42,7 +120,7 @@ const posts = {
 
       <h2 class="text-3xl font-bold mt-8 mb-4">Gli Strumenti AI per Servire i Clienti</h2>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Voiceflow</a> e <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Make</a>: La Combinazione Vincente</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Voiceflow</a> e <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Make</a>: La Combinazione Vincente</h3>
 
       <p>
         Questa coppia di strumenti è responsabile dell'80% dei progetti AI che realizziamo:
@@ -59,17 +137,17 @@ const posts = {
 
       <div class="bg-black/20 p-4 rounded-lg my-6">
         <p class="italic text-gray-300">
-          <strong>Bonus:</strong> Un altro strumento che abbiamo iniziato a utilizzare recentemente è <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">n8n</a>, particolarmente efficace per la costruzione di agenti AI personalizzati.
+          <strong>Bonus:</strong> Un altro strumento che abbiamo iniziato a utilizzare recentemente è <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">n8n</a>, particolarmente efficace per la costruzione di agenti AI personalizzati.
         </p>
       </div>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Claude</a>: Prompt di Alta Qualità</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Claude</a>: Prompt di Alta Qualità</h3>
 
       <p>
         Claude è uno strumento essenziale per migliorare la qualità dei prompt AI. Nei nostri progetti, abbiamo notato che i prompt generati da Claude sono superiori a quelli di ChatGPT, rendendolo un alleato indispensabile per ottimizzare i risultati.
       </p>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.cursor.sh" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Cursor</a>: AI per il Coding</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.cursor.sh" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Cursor</a>: AI per il Coding</h3>
 
       <p>
         Per progetti più complessi che richiedono codice personalizzato, utilizziamo <strong>Cursor</strong>. Questo strumento accelera lo sviluppo, aiuta a scrivere codice più pulito e semplifica il debugging, rendendo il lavoro di programmazione molto più efficiente.<br>
@@ -84,7 +162,7 @@ const posts = {
         YouTube è il principale canale attraverso cui otteniamo nuovi clienti. Ecco i tre tool AI che utilizziamo per creare contenuti di alto impatto.
       </p>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Claude</a> per la Creazione di Script</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Claude</a> per la Creazione di Script</h3>
 
       <p>
         Claude non è utile solo per i progetti dei clienti, ma anche per ottimizzare i contenuti video. Lo utilizziamo per:
@@ -96,7 +174,7 @@ const posts = {
         <li>Ottimizzare titoli e idee per le copertine dei video.</li>
       </ul>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://replicate.com" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Replicate</a> per le Copertine AI</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://replicate.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Replicate</a> per le Copertine AI</h3>
 
       <p>
         Le copertine dei video sono responsabili di almeno il 50% del loro successo. In passato, dovevamo allestire un intero setup fotografico per ottenere immagini di alta qualità. Ora, grazie a <strong>Replicate</strong>, possiamo generare automaticamente copertine di grande impatto semplicemente scrivendo un prompt AI.
@@ -108,7 +186,7 @@ const posts = {
         </p>
       </div>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" class="text-[#274f36] hover:text-[#1a3524]">Perplexity</a>: Il Motore di Ricerca AI</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Perplexity</a>: Il Motore di Ricerca AI</h3>
 
       <p>
         Per creare contenuti di valore, è fondamentale basarsi su dati aggiornati e verificati. <strong>Perplexity</strong> è il miglior motore di ricerca AI per:
@@ -127,7 +205,7 @@ const posts = {
       </p>
 
       <p class="mt-4">
-        Se vuoi scoprire come questi strumenti possono essere applicati alla tua attività, <a href="https://calendly.com/riccardobcontarini/30min" class="text-[#274f36] hover:text-[#1a3524] underline">contattaci</a> per una consulenza personalizzata o visita la nostra pagina <a href="/casi-studio" class="text-[#274f36] hover:text-[#1a3524] underline">Casi Studio</a> per vedere esempi concreti di implementazioni di successo.
+        Se vuoi scoprire come questi strumenti possono essere applicati alla tua attività, <a href="https://calendly.com/riccardobcontarini/30min" class="text-[#4CAF50] hover:text-[#388E3C] underline">contattaci</a> per una consulenza personalizzata o visita la nostra pagina <a href="/casi-studio" class="text-[#4CAF50] hover:text-[#388E3C] underline">Casi Studio</a> per vedere esempi concreti di implementazioni di successo.
       </p>
     `,
   },
@@ -283,7 +361,7 @@ const posts = {
       <p>Nel panorama tecnologico attuale, i modelli linguistici di grandi dimensioni (Large Language Models, o LLM), come i Generative Pre-trained Transformers (GPT), stanno emergendo come strumenti innovativi e potenti per una vasta gamma di applicazioni. Dai professionisti del settore giuridico, alle agenzie di viaggio, agli e-commerce, questi modelli si dimostrano un alleato versatile ed efficace per migliorare produttività, efficienza e personalizzazione.</p>
 
       <h3 class="text-3xl font-bold mt-8 mb-4">Ma cos'è esattamente un GPT e come può essere utilizzato a favore del proprio business?</h3>
-      <p>I GPT sono modelli di intelligenza artificiale sviluppati per comprendere, generare e interagire con il linguaggio umano. Creati attraverso processi di apprendimento automatico, i GPT sono "pre-addestrati" su grandi quantità di dati testuali, che permettono di acquisire una conoscenza vasta e diversificata del linguaggio. Ciò li rende capaci di:</p>
+      <p>I GPT sono modelli di intelligenza artificiale sviluppati per comprendere, generare e interagire con il linguaggio umano. Creati attraverso processi di apprendimento automatico, i GPT sono "pre-addestrati" su grandi quantità di dati testuali, che permettono di acquisire una conoscenza vasta e diversificata del linguaggio. Ciò li rendono capaci di:</p>
 
       <ul class="list-disc pl-6 mt-4 mb-4">
         <li>Comprendere il contesto: riescono a cogliere il significato di frasi complesse e a rispondere in modo pertinente.</li>

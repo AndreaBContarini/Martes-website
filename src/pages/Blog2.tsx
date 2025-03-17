@@ -7,6 +7,14 @@ import { Helmet } from 'react-helmet-async';
 // Definizione dei post del blog con immagini statiche e leggere
 const blogPosts = [
   {
+    id: 'manus-ai-agente-autonomo-rivoluzionario',
+    title: "Manus AI: L'agente Autonomo che Sta Rivoluzionando l'AI",
+    excerpt: "Scopri Manus AI, l'agente autonomo cinese che esegue compiti complessi senza supervisione umana, segnando un passo verso l'intelligenza artificiale generale (AGI). Analisi delle caratteristiche, impatto sul settore e collaborazioni strategiche.",
+    date: '2025-03-20',
+    readTime: '6 min',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Manus+AI',
+  },
+  {
     id: '6-tool-ai-che-hanno-accelerato-il-nostro-business',
     title: "6 Tool AI Che Hanno Accelerato Il Nostro Business",
     excerpt: 'Scopri i sei strumenti di intelligenza artificiale che hanno permesso a Martes AI di generare 20.000€ in soli tre mesi. Dalla creazione di chatbot alla generazione di contenuti, ecco le soluzioni AI che stanno trasformando il nostro business.',

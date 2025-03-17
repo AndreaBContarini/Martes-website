@@ -6,6 +6,22 @@ import { Helmet } from 'react-helmet-async';
 
 const cases = [
   {
+    id: 'automazione-ai-clinica-oculistica-santa-lucia',
+    title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
+    description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di Marts AI, migliorando efficienza e servizio ai pazienti. Scopri i dettagli nell'articolo al caso studio.",
+    date: new Date('2025-03-20'),
+    image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
+    testimonial: {
+      quote: "La Clinica Oculistica Santa Lucia unisce competenza medica e innovazione per offrire un servizio efficiente e di qualità. Grazie all'automazione e all'AI, ha ridotto i tempi di attesa e migliorato la gestione degli appuntamenti, garantendo risposte rapide e un'esperienza più fluida per i pazienti.",
+      author: 'Reparto Amministrazione',
+      role: 'Clinica Oculistica Santa Lucia',
+    },
+    content: `
+      <h2>Introduzione</h2>
+      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Marts AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
+    `,
+  },
+  {
     id: '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group',
     title: '50 clienti in più al mese - agenzia di viaggio WeTravel Group',
     description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",
@@ -79,7 +95,7 @@ const cases = [
       <p class="mt-4">Grazie a questo flusso ottimizzato, il team può contattare direttamente i clienti interessati per finalizzare l'acquisto del pacchetto viaggi, garantendo un passaggio agevole e senza interruzioni tra il chatbot e il servizio clienti umano.</p>
 
       <div class="bg-black/20 p-6 rounded-lg mt-8">
-        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare circa €75.000, di seguito uno screenshot di alcuni contratti:</p>
+        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare €82.170, di seguito uno screenshot di alcuni contratti:</p>
         <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=549,fit=crop/mk39w0PZ1DIe7Dp6/whatsapp-image-2024-11-01-at-23.22.10-A3Qw77Ok5PfMMzGy.jpeg" alt="Contratti" class="w-full mt-4 rounded-lg shadow-lg" />
       </div>
     `,

@@ -1,7 +1,105 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const cases = {
+  'automazione-ai-clinica-oculistica-santa-lucia': {
+    title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
+    date: '20 marzo 2025',
+    content: `
+      <h2>Introduzione</h2>
+      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Marts AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
+
+      <h2>La Sfida</h2>
+      <p>La clinica necessitava di:</p>
+      <ul>
+          <li>Un sistema automatizzato per gestire le richieste di appuntamenti e fornire risposte rapide alle domande frequenti.</li>
+          <li>Un metodo efficace per classificare e smistare le email ricevute, riducendo il carico sul personale amministrativo.</li>
+      </ul>
+      <p>Queste problematiche causavano ritardi nelle risposte e influivano negativamente sulla soddisfazione dei pazienti.</p>
+
+      <h2>La Soluzione</h2>
+      <p>Per affrontare queste criticità, Marts AI ha sviluppato due soluzioni principali:</p>
+
+      <h2>1. Chatbot per la gestione delle richieste sul sito web</h2>
+      <p>Grazie a <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Voiceflow</a>, è stato creato un chatbot intelligente in grado di:</p>
+      <ul>
+          <li><strong>Memorizzare il contesto della conversazione</strong> attraverso una funzione JavaScript, migliorando l'interazione con l'utente.</li>
+          <li><strong>Classificare le richieste</strong> distinguendo tra appuntamenti e domande generali sulla clinica.</li>
+          <li><strong>Fornire risposte fluide e naturali</strong>, adattando il numero di messaggi per una comunicazione efficace.</li>
+          <li><strong>Guidare l'utente nella prenotazione di un appuntamento</strong>, raccogliendo informazioni essenziali come nome, motivo della visita, data e orario.</li>
+          <li><strong>Trasmettere automaticamente i dettagli delle richieste a <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Make</a></strong>, assicurando un'integrazione efficiente con il sistema gestionale della clinica.</li>
+      </ul>
+
+      <h2>2. Automazione della gestione email</h2>
+      <p>Per migliorare l'organizzazione delle email ricevute, è stato implementato uno scenario di automazione su Make, basato su un avanzato sistema di classificazione.</p>
+
+      <div class="aspect-w-16 aspect-h-9 my-8">
+        <iframe 
+          src="https://www.youtube.com/embed/nQenVuDQRvI" 
+          title="Come automatizzare la gestione delle email con l'AI - Tutorial Make.com"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+        <p class="text-center text-sm text-gray-400 mt-2">
+          In questo video, Riccardo (co-founder di Martes AI) spiega come creare un'automazione simile a quella implementata per la Clinica Oculistica Santa Lucia, mostrando un esempio di gestione email e appuntamenti per un e-commerce.
+        </p>
+      </div>
+
+      <h2>Funzionamento del sistema di classificazione email</h2>
+      <ul>
+          <li>Alla ricezione di una nuova email, un <strong>modello AI avanzato</strong> analizza il soggetto e il contenuto del messaggio.</li>
+          <li>In base a un <strong>prompt di classificazione</strong> ben strutturato, l'email viene automaticamente categorizzata in una delle seguenti classi:</li>
+          <ol class="list-decimal pl-6 mt-2 mb-4">
+              <li><strong>Domande generali sulla clinica</strong> (orari, servizi, indirizzo).</li>
+              <li><strong>Prenotazioni, conferme o cancellazioni di appuntamenti.</strong></li>
+              <li><strong>Spam o pubblicità.</strong></li>
+              <li><strong>Candidature lavorative e invio di curriculum.</strong></li>
+              <li><strong>Reclami, richieste amministrative o feedback post-visita.</strong></li>
+              <li><strong>Bollette ed estratti conto</strong> da fornitori di servizi.</li>
+          </ol>
+          <li>Una volta classificata, l'email viene automaticamente <strong>inoltrata al reparto competente o archiviata</strong>, alleggerendo il carico di lavoro dello staff amministrativo.</li>
+      </ul>
+
+      <div class="bg-black/20 p-6 rounded-lg my-6">
+        <h3 class="text-xl font-semibold mb-3">Il prompt di classificazione AI</h3>
+        <p>Per garantire risultati accurati, è stato sviluppato un prompt specializzato che assegna un "ruolo" al modello AI come "esperto classificatore di mail". Il prompt include:</p>
+        <ul class="list-disc pl-6 mt-2">
+          <li>Regole chiare per la classificazione di ogni tipo di email</li>
+          <li>Esempi concreti per ogni categoria, con soggetti e contenuti tipici</li>
+          <li>Istruzioni specifiche per l'analisi del contesto della comunicazione</li>
+          <li>Sistema di risposta numerico (da 1 a 6) per facilitare l'automazione successiva</li>
+        </ul>
+        <p class="mt-2">Questa metodologia garantisce un'accuratezza di classificazione superiore al 95%, essenziale per il corretto funzionamento dell'intero sistema di automazione.</p>
+      </div>
+
+      <figure style="text-align: center;">
+          <img src="https://i.ibb.co/Tqd7bpfg/Screenshot-2025-03-17-alle-23-50-08.png" alt="Schema automazione email Clinica Oculistica Santa Lucia" width="70%" class="mx-auto my-8 rounded-lg shadow-lg" />
+          <figcaption class="text-center text-sm text-gray-400 mt-2">Schema dell'automazione email implementata per la Clinica Oculistica Santa Lucia di Cosenza</figcaption>
+      </figure>
+
+      <h2>I Risultati</h2>
+      <p>L'implementazione delle soluzioni di Marts AI ha generato benefici concreti:</p>
+      <ul>
+          <li><strong>Riduzione di circa 60% nei tempi di risposta</strong> alle richieste generali grazie al chatbot.</li>
+          <li><strong>Diminuzione di oltre il 50% del carico di lavoro amministrativo</strong>, grazie all'automazione delle email.</li>
+          <li><strong>Miglioramento della soddisfazione dei pazienti</strong>, grazie a risposte più rapide e a un servizio più organizzato.</li>
+      </ul>
+
+      <h2>Riflessioni</h2>
+      <p>L'integrazione dell'intelligenza artificiale nel settore sanitario offre <strong>vantaggi significativi in termini di efficienza e qualità del servizio</strong>. Tuttavia, per ottenere risultati ottimali, è fondamentale:</p>
+      <ul>
+          <li>Personalizzare le soluzioni in base alle esigenze specifiche della struttura.</li>
+          <li>Monitorare e ottimizzare costantemente le performance.</li>
+          <li>Assicurarsi che l'automazione migliori, senza sostituire, l'interazione umana, soprattutto in ambiti sensibili come quello sanitario.</li>
+      </ul>
+
+      <h2>Conclusione</h2>
+      <p>Grazie all'intervento di Marts AI, la Clinica Oculistica Santa Lucia di Cosenza ha trasformato la gestione delle comunicazioni e degli appuntamenti, migliorando l'efficienza operativa e l'esperienza dei pazienti. L'uso strategico dell'intelligenza artificiale e dell'automazione si conferma una soluzione vincente per le strutture sanitarie che desiderano innovare mantenendo alti standard di assistenza.</p>
+    `,
+  },
   '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group': {
     title: '50 clienti in più al mese - agenzia di viaggio WeTravel Group',
     date: '9 settembre 2024',
@@ -66,7 +164,7 @@ const cases = {
       <p class="mt-4">Grazie a questo flusso ottimizzato, il team può contattare direttamente i clienti interessati per finalizzare l'acquisto del pacchetto viaggi, garantendo un passaggio agevole e senza interruzioni tra il chatbot e il servizio clienti umano.</p>
 
       <div class="bg-black/20 p-6 rounded-lg mt-8">
-        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare circa €75.000, di seguito uno screenshot di alcuni contratti:</p>
+        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare €82.170, di seguito uno screenshot di alcuni contratti:</p>
         <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=549,fit=crop/mk39w0PZ1DIe7Dp6/whatsapp-image-2024-11-01-at-23.22.10-A3Qw77Ok5PfMMzGy.jpeg" alt="Contratti" class="w-full mt-4 rounded-lg shadow-lg" />
       </div>
     `,
@@ -195,7 +293,7 @@ const cases = {
     </ul>
     <p>Ogni interazione è stata registrata in modo chiaro, distinguendo tra lead non interessati, lead da ricontattare e lead chiusi. Dopo soli otto giorni siamo stati in grado di organizzare 3 chiamate, confermando l'efficacia del metodo. Un lead di questi tre si è effettivamente trasformato in cliente.</p>
     
-    <h2>Lezioni Apprese: Come Replicare il Processo</h2>
+    <h2>Riflessioni: Come Replicare il Processo</h2>
     <ul>
         <li><strong>Automazione intelligente:</strong> Ridurre al minimo il tempo necessario per creare e pubblicare contenuti.</li>
         <li><strong>Personalizzazione:</strong> Offrire lead magnet mirati e curare ogni messaggio per aumentare le possibilità di risposta.</li>
@@ -301,8 +399,24 @@ function CaseStudyPost() {
 
   return (
     <div className="pt-32 pb-20">
+      <Helmet>
+        <title>{case_.title} | Martes AI - Casi Studio</title>
+        <meta name="description" content={`Scopri come Martes AI ha implementato soluzioni di automazione e intelligenza artificiale per la ${case_.title}, migliorando l'efficienza operativa e l'esperienza dei pazienti.`} />
+        <meta name="keywords" content="automazione AI, intelligenza artificiale sanità, chatbot clinica, gestione appuntamenti AI, smistamento email AI, Clinica Oculistica Santa Lucia, Cosenza, Martes AI" />
+        <meta property="og:title" content={`${case_.title} | Martes AI - Casi Studio`} />
+        <meta property="og:description" content={`Caso studio: come l'automazione AI ha migliorato l'efficienza della Clinica Oculistica Santa Lucia di Cosenza, riducendo i tempi di risposta del 60% e il carico amministrativo del 50%.`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://www.martes-ai.com/casi-studio/${id}`} />
+        <meta property="og:image" content="https://i.ibb.co/N4fp4Lf/make-clinica.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${case_.title} | Martes AI`} />
+        <meta name="twitter:description" content={`Caso studio: automazione AI per la Clinica Oculistica Santa Lucia di Cosenza. Risultati: -60% tempi di risposta, -50% carico amministrativo.`} />
+        <meta name="twitter:image" content="https://i.ibb.co/N4fp4Lf/make-clinica.jpg" />
+        <link rel="canonical" href={`https://www.martes-ai.com/casi-studio/${id}`} />
+      </Helmet>
       <div className="container mx-auto px-8 max-w-4xl">
         <h1 className="text-5xl font-bold mb-4 text-center">{case_.title}</h1>
+        <p className="text-center text-gray-400 mb-8">Pubblicato il {case_.date}</p>
         <div
           className="prose prose-invert prose-green max-w-none"
           dangerouslySetInnerHTML={{ __html: case_.content }}
