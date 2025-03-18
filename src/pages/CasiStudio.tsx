@@ -284,19 +284,179 @@ function CasiStudio() {
             >
               Precedente
             </button>
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-              <button
-                key={page}
-                onClick={() => handlePageChange(page)}
-                className={`px-4 py-2 rounded-lg ${
-                  currentPage === page 
-                    ? 'bg-[#274f36]' 
-                    : 'bg-black/30 hover:bg-[#274f36]/70'
-                }`}
-              >
-                {page}
-              </button>
-            ))}
+            
+            {/* Logica di paginazione secondo le regole specificate */}
+            {totalPages <= 3 ? (
+              // Se ci sono 3 o meno pagine totali, mostra tutte le pagine
+              Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                <button
+                  key={page}
+                  onClick={() => handlePageChange(page)}
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                    currentPage === page 
+                      ? 'bg-[#274f36]' 
+                      : 'bg-black/30 hover:bg-[#274f36]/70'
+                  }`}
+                  aria-current={currentPage === page ? 'page' : undefined}
+                >
+                  {page}
+                </button>
+              ))
+            ) : (
+              // Se ci sono più di 3 pagine totali
+              <>
+                {/* CASO 1: Prima pagina */}
+                {currentPage === 1 && (
+                  <>
+                    {/* Prima pagina (corrente) */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      aria-current="page"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Seconda pagina */}
+                    <button
+                      key={2}
+                      onClick={() => handlePageChange(2)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      2
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Ultima pagina */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 2: Ultima pagina */}
+                {currentPage === totalPages && (
+                  <>
+                    {/* Prima pagina */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Penultima pagina */}
+                    <button
+                      key={totalPages - 1}
+                      onClick={() => handlePageChange(totalPages - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {totalPages - 1}
+                    </button>
+                    
+                    {/* Ultima pagina (corrente) */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      aria-current="page"
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 3: Pagina intermedia */}
+                {currentPage > 1 && currentPage < totalPages && (
+                  <>
+                    {/* Prima pagina (se non siamo vicini all'inizio) */}
+                    {currentPage > 2 && (
+                      <>
+                        <button
+                          key={1}
+                          onClick={() => handlePageChange(1)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                        >
+                          1
+                        </button>
+                        
+                        {/* Puntini di sospensione a sinistra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                      </>
+                    )}
+                    
+                    {/* Pagina precedente */}
+                    <button
+                      key={currentPage - 1}
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {currentPage - 1}
+                    </button>
+                    
+                    {/* Pagina corrente */}
+                    <button
+                      key={currentPage}
+                      onClick={() => handlePageChange(currentPage)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      aria-current="page"
+                    >
+                      {currentPage}
+                    </button>
+                    
+                    {/* Pagina successiva */}
+                    <button
+                      key={currentPage + 1}
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {currentPage + 1}
+                    </button>
+                    
+                    {/* Puntini di sospensione a destra e ultima pagina (se non siamo vicini alla fine) */}
+                    {currentPage < totalPages - 1 && (
+                      <>
+                        {/* Puntini di sospensione a destra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                        
+                        {/* Ultima pagina */}
+                        <button
+                          key={totalPages}
+                          onClick={() => handlePageChange(totalPages)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                        >
+                          {totalPages}
+                        </button>
+                      </>
+                    )}
+                  </>
+                )}
+              </>
+            )}
+            
             <button
               onClick={() => {
                 if (currentPage < totalPages) {

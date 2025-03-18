@@ -87,18 +87,40 @@ function Home() {
     <>
       <Helmet>
         <title>Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business</title>
-        <meta name="description" content="Trasforma il tuo business con soluzioni di intelligenza artificiale personalizzate: automazioni basate su AI, chatbot avanzati e agenti AI per lead generation. Ottimizza i processi aziendali e aumenta i risultati con Martes AI." />
-        <meta name="keywords" content="automazioni basate su AI, agenti AI e chatbot lead generation con AI, intelligenza artificiale per business, automazione processi aziendali, soluzioni AI personalizzate, AI per PMI, consulenza AI" />
+        <meta name="description" content="Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI della tua impresa." />
+        <meta name="keywords" content="automazioni basate su AI, agenti AI, chatbot intelligenti, lead generation con AI, intelligenza artificiale per business, automazione processi aziendali, soluzioni AI personalizzate, AI per PMI, consulenza AI" />
         <meta property="og:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business" />
-        <meta property="og:description" content="Soluzioni di intelligenza artificiale personalizzate per il tuo business: automazioni AI, chatbot avanzati e lead generation con AI. Scopri come ottimizzare i tuoi processi con Martes AI." />
-        <meta property="og:image" content="/logo.png" />
+        <meta property="og:description" content="Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI." />
+        <meta property="og:image" content="https://i.ibb.co/43C5cwp/favicon.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.martes-ai.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot" />
-        <meta name="twitter:description" content="Soluzioni di intelligenza artificiale personalizzate: Automazioni AI, Agenti AI e Chatbot e lead generation per il tuo business." />
+        <meta name="twitter:description" content="Automazioni AI personalizzate, chatbot intelligenti e soluzioni di lead generation per ottimizzare i processi della tua azienda." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.martes-ai.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Martes AI",
+            "url": "https://www.martes-ai.com",
+            "logo": "https://i.ibb.co/43C5cwp/favicon.png",
+            "description": "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Via Aurelia 325",
+              "addressLocality": "Roma",
+              "addressCountry": "IT"
+            },
+            "vatID": "18026131005",
+            "sameAs": [
+              "https://www.linkedin.com/company/martes-ai",
+              "https://www.instagram.com/martes_ai",
+              "https://www.youtube.com/@riccardobellicontarini"
+            ]
+          })}
+        </script>
       </Helmet>
       <div className="flex flex-col items-center w-full">
         <Hero />

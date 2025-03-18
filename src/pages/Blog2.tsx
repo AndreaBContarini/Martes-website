@@ -7,6 +7,14 @@ import { Helmet } from 'react-helmet-async';
 // Definizione dei post del blog con immagini statiche e leggere
 const blogPosts = [
   {
+    id: 'mcp-ponte-tra-ai-e-dati-esterni',
+    title: "MCP: Il Ponte tra AI e Dati Esterni",
+    excerpt: "MCP (Model Context Protocol) è un nuovo standard aperto che rivoluziona il modo in cui gli agenti AI si connettono alle fonti di dati esterne, permettendo agli LLM di interagire facilmente con database, API e altri servizi esterni tramite un protocollo standardizzato.",
+    date: '2025-03-25',
+    readTime: '7 min',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=MCP',
+  },
+  {
     id: 'manus-ai-agente-autonomo-rivoluzionario',
     title: "Manus AI: L'agente Autonomo che Sta Rivoluzionando l'AI",
     excerpt: "Scopri Manus AI, l'agente autonomo cinese che esegue compiti complessi senza supervisione umana, segnando un passo verso l'intelligenza artificiale generale (AGI). Analisi delle caratteristiche, impatto sul settore e collaborazioni strategiche.",
@@ -243,21 +251,189 @@ const Blog2 = () => {
               Precedente
             </button>
             
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => (
-              <button
-                key={pageNum}
-                onClick={() => handlePageChange(pageNum)}
-                className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-                  currentPage === pageNum 
-                    ? 'bg-[#274f36] text-white' 
-                    : 'bg-black/30 text-white hover:bg-[#274f36]/50'
-                }`}
-                aria-label={`Pagina ${pageNum}`}
-                aria-current={currentPage === pageNum ? 'page' : undefined}
-              >
-                {pageNum}
-              </button>
-            ))}
+            {/* Logica di paginazione secondo le regole specificate */}
+            {totalPages <= 3 ? (
+              // Se ci sono 3 o meno pagine totali, mostra tutte le pagine
+              Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => (
+                <button
+                  key={pageNum}
+                  onClick={() => handlePageChange(pageNum)}
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
+                    currentPage === pageNum 
+                      ? 'bg-[#274f36] text-white' 
+                      : 'bg-black/30 text-white hover:bg-[#274f36]/50'
+                  }`}
+                  aria-label={`Pagina ${pageNum}`}
+                  aria-current={currentPage === pageNum ? 'page' : undefined}
+                >
+                  {pageNum}
+                </button>
+              ))
+            ) : (
+              // Se ci sono più di 3 pagine totali
+              <>
+                {/* CASO 1: Prima pagina */}
+                {currentPage === 1 && (
+                  <>
+                    {/* Prima pagina (corrente) */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-[#274f36] text-white"
+                      aria-label="Pagina 1"
+                      aria-current="page"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Seconda pagina */}
+                    <button
+                      key={2}
+                      onClick={() => handlePageChange(2)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                      aria-label="Pagina 2"
+                    >
+                      2
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Ultima pagina */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                      aria-label={`Pagina ${totalPages}`}
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 2: Ultima pagina */}
+                {currentPage === totalPages && (
+                  <>
+                    {/* Prima pagina */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                      aria-label="Pagina 1"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Penultima pagina */}
+                    <button
+                      key={totalPages - 1}
+                      onClick={() => handlePageChange(totalPages - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                      aria-label={`Pagina ${totalPages - 1}`}
+                    >
+                      {totalPages - 1}
+                    </button>
+                    
+                    {/* Ultima pagina (corrente) */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-[#274f36] text-white"
+                      aria-label={`Pagina ${totalPages}`}
+                      aria-current="page"
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 3: Pagina intermedia */}
+                {currentPage > 1 && currentPage < totalPages && (
+                  <>
+                    {/* Prima pagina (se non siamo alla pagina 2) */}
+                    {currentPage > 2 && (
+                      <>
+                        <button
+                          key={1}
+                          onClick={() => handlePageChange(1)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                          aria-label="Pagina 1"
+                        >
+                          1
+                        </button>
+                        
+                        {/* Puntini di sospensione a sinistra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                      </>
+                    )}
+                    
+                    {/* Pagina precedente */}
+                    <button
+                      key={currentPage - 1}
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                      aria-label={`Pagina ${currentPage - 1}`}
+                    >
+                      {currentPage - 1}
+                    </button>
+                    
+                    {/* Pagina corrente */}
+                    <button
+                      key={currentPage}
+                      onClick={() => handlePageChange(currentPage)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-[#274f36] text-white"
+                      aria-label={`Pagina ${currentPage}`}
+                      aria-current="page"
+                    >
+                      {currentPage}
+                    </button>
+                    
+                    {/* Pagina successiva */}
+                    <button
+                      key={currentPage + 1}
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                      aria-label={`Pagina ${currentPage + 1}`}
+                    >
+                      {currentPage + 1}
+                    </button>
+                    
+                    {/* Puntini di sospensione a destra e ultima pagina (se non siamo vicini alla fine) */}
+                    {currentPage < totalPages - 1 && (
+                      <>
+                        {/* Puntini di sospensione a destra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                        
+                        {/* Ultima pagina */}
+                        <button
+                          key={totalPages}
+                          onClick={() => handlePageChange(totalPages)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
+                          aria-label={`Pagina ${totalPages}`}
+                        >
+                          {totalPages}
+                        </button>
+                      </>
+                    )}
+                  </>
+                )}
+              </>
+            )}
             
             <button
               onClick={handleNext}

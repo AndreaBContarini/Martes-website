@@ -8,7 +8,7 @@ const cases = {
     date: '20 marzo 2025',
     content: `
       <h2>Introduzione</h2>
-      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Marts AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
+      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Martes AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
 
       <h2>La Sfida</h2>
       <p>La clinica necessitava di:</p>
@@ -19,7 +19,7 @@ const cases = {
       <p>Queste problematiche causavano ritardi nelle risposte e influivano negativamente sulla soddisfazione dei pazienti.</p>
 
       <h2>La Soluzione</h2>
-      <p>Per affrontare queste criticità, Marts AI ha sviluppato due soluzioni principali:</p>
+      <p>Per affrontare queste criticità, Martes AI ha sviluppato due soluzioni principali:</p>
 
       <h2>1. Chatbot per la gestione delle richieste sul sito web</h2>
       <p>Grazie a <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Voiceflow</a>, è stato creato un chatbot intelligente in grado di:</p>
@@ -76,12 +76,12 @@ const cases = {
       </div>
 
       <figure style="text-align: center;">
-          <img src="https://i.ibb.co/Tqd7bpfg/Screenshot-2025-03-17-alle-23-50-08.png" alt="Schema automazione email Clinica Oculistica Santa Lucia" width="70%" class="mx-auto my-8 rounded-lg shadow-lg" />
+          <img src="https://i.ibb.co/0yvHGXZK/scenario-clinica.png" alt="Schema automazione email Clinica Oculistica Santa Lucia" width="70%" class="mx-auto my-8 rounded-lg shadow-lg" />
           <figcaption class="text-center text-sm text-gray-400 mt-2">Schema dell'automazione email implementata per la Clinica Oculistica Santa Lucia di Cosenza</figcaption>
       </figure>
 
       <h2>I Risultati</h2>
-      <p>L'implementazione delle soluzioni di Marts AI ha generato benefici concreti:</p>
+      <p>L'implementazione delle soluzioni di Martes AI ha generato benefici concreti:</p>
       <ul>
           <li><strong>Riduzione di circa 60% nei tempi di risposta</strong> alle richieste generali grazie al chatbot.</li>
           <li><strong>Diminuzione di oltre il 50% del carico di lavoro amministrativo</strong>, grazie all'automazione delle email.</li>
@@ -97,7 +97,7 @@ const cases = {
       </ul>
 
       <h2>Conclusione</h2>
-      <p>Grazie all'intervento di Marts AI, la Clinica Oculistica Santa Lucia di Cosenza ha trasformato la gestione delle comunicazioni e degli appuntamenti, migliorando l'efficienza operativa e l'esperienza dei pazienti. L'uso strategico dell'intelligenza artificiale e dell'automazione si conferma una soluzione vincente per le strutture sanitarie che desiderano innovare mantenendo alti standard di assistenza.</p>
+      <p>Grazie all'intervento di Martes AI, la Clinica Oculistica Santa Lucia di Cosenza ha trasformato la gestione delle comunicazioni e degli appuntamenti, migliorando l'efficienza operativa e l'esperienza dei pazienti. L'uso strategico dell'intelligenza artificiale e dell'automazione si conferma una soluzione vincente per le strutture sanitarie che desiderano innovare mantenendo alti standard di assistenza.</p>
     `,
   },
   '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group': {
