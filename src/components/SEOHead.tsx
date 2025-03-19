@@ -11,7 +11,7 @@ const SEOHead = ({
   title = "Martes AI | Automazioni AI per Aziende e Professionisti",
   description = "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI della tua impresa.",
   canonicalUrl = "https://martes-ai.com",
-  ogImage = "/logo.png"
+  ogImage = "/icon.png"
 }: SEOProps) => {
   return (
     <Helmet>
@@ -25,7 +25,7 @@ const SEOHead = ({
       {/* Meta tag per Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content="https://martes-ai.com/logo.png" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:type" content="website" />
       
@@ -45,7 +45,7 @@ const SEOHead = ({
           "@type": "Organization",
           "name": "Martes AI",
           "url": "https://www.martes-ai.com",
-          "logo": "/logo.png",
+          "logo": "/icon.png",
           "description": "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate.",
           "address": {
             "@type": "PostalAddress",
@@ -68,6 +68,8 @@ const SEOHead = ({
       
       {/* Preload delle immagini critiche */}
       <link rel="preload" as="image" href={ogImage} />
+      
+      <link rel="icon" href="https://martes-ai.com/logo.png" />
     </Helmet>
   );
 };
