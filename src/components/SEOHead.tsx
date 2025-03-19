@@ -11,7 +11,7 @@ const SEOHead = ({
   title = "Martes AI | Automazioni AI per Aziende e Professionisti",
   description = "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI della tua impresa.",
   canonicalUrl = "https://martes-ai.com",
-  ogImage = "https://i.ibb.co/43C5cwp/favicon.png"
+  ogImage = "/logo.png"
 }: SEOProps) => {
   return (
     <Helmet>
@@ -45,7 +45,7 @@ const SEOHead = ({
           "@type": "Organization",
           "name": "Martes AI",
           "url": "https://www.martes-ai.com",
-          "logo": "https://i.ibb.co/43C5cwp/favicon.png",
+          "logo": "/logo.png",
           "description": "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate.",
           "address": {
             "@type": "PostalAddress",
