@@ -17,9 +17,6 @@ function Footer() {
               <img src={logo} alt="Martes AI Logo" className="w-12" />
               <h3 className="text-2xl font-bold text-white">Martes AI</h3>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
-              Automatizza con l'AI i tuoi flussi di lavoro e risparmia tempo prezioso.
-            </p>
             <div className="text-gray-400 text-sm">
               <p className="mb-1">MARTES AI <span className="text-xs align-top">®️</span></p>
               <p className="mb-1">Via Aurelia 325 Roma</p>

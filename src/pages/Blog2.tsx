@@ -255,19 +255,19 @@ const Blog2 = () => {
             {totalPages <= 3 ? (
               // Se ci sono 3 o meno pagine totali, mostra tutte le pagine
               Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => (
-                <button
-                  key={pageNum}
-                  onClick={() => handlePageChange(pageNum)}
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-                    currentPage === pageNum 
-                      ? 'bg-[#274f36] text-white' 
-                      : 'bg-black/30 text-white hover:bg-[#274f36]/50'
-                  }`}
-                  aria-label={`Pagina ${pageNum}`}
-                  aria-current={currentPage === pageNum ? 'page' : undefined}
-                >
-                  {pageNum}
-                </button>
+              <button
+                key={pageNum}
+                onClick={() => handlePageChange(pageNum)}
+                className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
+                  currentPage === pageNum 
+                    ? 'bg-[#274f36] text-white' 
+                    : 'bg-black/30 text-white hover:bg-[#274f36]/50'
+                }`}
+                aria-label={`Pagina ${pageNum}`}
+                aria-current={currentPage === pageNum ? 'page' : undefined}
+              >
+                {pageNum}
+              </button>
               ))
             ) : (
               // Se ci sono più di 3 pagine totali

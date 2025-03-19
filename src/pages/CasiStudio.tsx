@@ -289,18 +289,18 @@ function CasiStudio() {
             {totalPages <= 3 ? (
               // Se ci sono 3 o meno pagine totali, mostra tutte le pagine
               Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                <button
-                  key={page}
-                  onClick={() => handlePageChange(page)}
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
                   className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                    currentPage === page 
-                      ? 'bg-[#274f36]' 
-                      : 'bg-black/30 hover:bg-[#274f36]/70'
-                  }`}
+                  currentPage === page 
+                    ? 'bg-[#274f36]' 
+                    : 'bg-black/30 hover:bg-[#274f36]/70'
+                }`}
                   aria-current={currentPage === page ? 'page' : undefined}
-                >
-                  {page}
-                </button>
+              >
+                {page}
+              </button>
               ))
             ) : (
               // Se ci sono più di 3 pagine totali
