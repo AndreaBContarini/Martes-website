@@ -86,13 +86,41 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Martes AI - Soluzioni di Intelligenza Artificiale per il Business</title>
-        <meta name="description" content="Martes AI offre soluzioni innovative di intelligenza artificiale per automatizzare e ottimizzare i processi aziendali. Scopri come l'AI può trasformare il tuo business." />
-        <meta name="keywords" content="intelligenza artificiale, AI, automazione, business, chatbot, machine learning, digital transformation" />
-        <meta property="og:title" content="Martes AI - Soluzioni AI per il Business" />
-        <meta property="og:description" content="Scopri come l'intelligenza artificiale può trasformare il tuo business con Martes AI." />
-        <meta property="og:image" content="../src/images/logo.png" />
+        <title>Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business</title>
+        <meta name="description" content="Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI della tua impresa." />
+        <meta name="keywords" content="automazioni basate su AI, agenti AI, chatbot intelligenti, lead generation con AI, intelligenza artificiale per business, automazione processi aziendali, soluzioni AI personalizzate, AI per PMI, consulenza AI" />
+        <meta property="og:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business" />
+        <meta property="og:description" content="Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI." />
+        <meta property="og:image" content="https://i.ibb.co/43C5cwp/favicon.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.martes-ai.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot" />
+        <meta name="twitter:description" content="Automazioni AI personalizzate, chatbot intelligenti e soluzioni di lead generation per ottimizzare i processi della tua azienda." />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.martes-ai.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Martes AI",
+            "url": "https://www.martes-ai.com",
+            "logo": "https://i.ibb.co/43C5cwp/favicon.png",
+            "description": "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Via Aurelia 325",
+              "addressLocality": "Roma",
+              "addressCountry": "IT"
+            },
+            "vatID": "18026131005",
+            "sameAs": [
+              "https://www.linkedin.com/company/martes-ai",
+              "https://www.instagram.com/martes_ai",
+              "https://www.youtube.com/@riccardobellicontarini"
+            ]
+          })}
+        </script>
       </Helmet>
       <div className="flex flex-col items-center w-full">
         <Hero />
@@ -190,7 +218,7 @@ function Home() {
                         value="1500-2500"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "1200-1800"}
+                        checked={formData.budget === "1500-2500"}
                       />
                       1.500€ - 2.500€
                     </label>
@@ -201,7 +229,7 @@ function Home() {
                         value="2500-3500"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "1800-2500"}
+                        checked={formData.budget === "2500-3500"}
                       />
                       2.500€ - 3.500€
                     </label>
@@ -212,7 +240,7 @@ function Home() {
                         value="3500-5000"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "2500-5000"}
+                        checked={formData.budget === "3500-5000"}
                       />
                       3.500€ - 5.000€
                     </label>
@@ -267,6 +295,19 @@ function Home() {
                     className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition"
                     onChange={handleChange}
                     value={formData.website}
+                    onFocus={(e) => {
+                      if (!e.target.value) {
+                        setFormData(prev => ({
+                          ...prev,
+                          website: 'https://'
+                        }));
+                      } else if (!e.target.value.startsWith('https://')) {
+                        setFormData(prev => ({
+                          ...prev,
+                          website: `https://${e.target.value}`
+                        }));
+                      }
+                    }}
                   />
                 </div>
 

@@ -1,9 +1,26 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const cases = [
+  {
+    id: 'automazione-ai-clinica-oculistica-santa-lucia',
+    title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
+    description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di Marts AI, migliorando efficienza e servizio ai pazienti. Scopri i dettagli nell'articolo al caso studio.",
+    date: new Date('2025-03-20'),
+    image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
+    testimonial: {
+      quote: "La Clinica Oculistica Santa Lucia unisce competenza medica e innovazione per offrire un servizio efficiente e di qualità. Grazie all'automazione e all'AI, ha ridotto i tempi di attesa e migliorato la gestione degli appuntamenti, garantendo risposte rapide e un'esperienza più fluida per i pazienti.",
+      author: 'Dott. Mario Cipolla, Direttore Amministrativo',
+      role: 'Clinica Oculistica Santa Lucia',
+    },
+    content: `
+      <h2>Introduzione</h2>
+      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Marts AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
+    `,
+  },
   {
     id: '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group',
     title: '50 clienti in più al mese - agenzia di viaggio WeTravel Group',
@@ -78,7 +95,7 @@ const cases = [
       <p class="mt-4">Grazie a questo flusso ottimizzato, il team può contattare direttamente i clienti interessati per finalizzare l'acquisto del pacchetto viaggi, garantendo un passaggio agevole e senza interruzioni tra il chatbot e il servizio clienti umano.</p>
 
       <div class="bg-black/20 p-6 rounded-lg mt-8">
-        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare circa €75.000, di seguito uno screenshot di alcuni contratti:</p>
+        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare €82.170, di seguito uno screenshot di alcuni contratti:</p>
         <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=549,fit=crop/mk39w0PZ1DIe7Dp6/whatsapp-image-2024-11-01-at-23.22.10-A3Qw77Ok5PfMMzGy.jpeg" alt="Contratti" class="w-full mt-4 rounded-lg shadow-lg" />
       </div>
     `,
@@ -135,7 +152,7 @@ const cases = [
   },
   {
     id: "custom-gpt-email",
-    title: "Agente GPT che risponde automaticamente alle mail e che riassume le ultime news sull'AI",
+    title: "Agente GPT per rispondere alle mail e riassumere AI-news",
     description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
     date: new Date('2025-02-13'),
     image: 'https://i.ibb.co/KzNTDF0D/loffredo.jpg',
@@ -164,7 +181,18 @@ const cases = [
 function CasiStudio() {
   const [currentPage, setCurrentPage] = useState(1);
   const casesPerPage = 3;
+  const location = useLocation();
   
+  // Effetto per scrollare all'inizio della pagina quando viene caricata o quando cambia l'URL
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  // Funzione per scrollare in cima alla pagina
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Ordina i casi studio per data (dal più recente)
   const sortedCases = cases.sort((a, b) => b.date.getTime() - a.date.getTime());
   
@@ -177,12 +205,31 @@ function CasiStudio() {
     return sortedCases.slice(startIndex, startIndex + casesPerPage);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Gestisce il cambio pagina
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    // Assicuriamoci che lo scroll to top avvenga sempre
+    setTimeout(() => {
+      scrollToTop();
+    }, 10);
   };
 
   return (
     <div className="pt-32 pb-20">
+      <Helmet>
+        <title>Casi Studio Martes AI | Successi con Automazioni AI, Chatbot e Lead Generation</title>
+        <meta name="description" content="Scopri i casi di successo di aziende che hanno implementato automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Risultati concreti e ROI misurabili." />
+        <meta name="keywords" content="casi studio AI, automazioni basate su AI, chatbot, agenti AI, lead generation con AI, successi AI, ROI intelligenza artificiale, implementazioni AI" />
+        <meta property="og:title" content="Casi Studio Martes AI | Successi con Automazioni AI e Chatbot" />
+        <meta property="og:description" content="Casi di successo di aziende che hanno implementato automazioni AI, chatbot e strategie di lead generation con risultati concreti." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.martes-ai.com/casi-studio" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Casi Studio Martes AI | Successi con AI" />
+        <meta name="twitter:description" content="Casi di successo con automazioni AI, chatbot e lead generation per il business." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.martes-ai.com/casi-studio" />
+      </Helmet>
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
           Casi Studio
@@ -227,31 +274,199 @@ function CasiStudio() {
         {totalPages > 1 && (
           <div className="flex justify-center mt-12 gap-2">
             <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              onClick={() => {
+                if (currentPage > 1) {
+                  handlePageChange(currentPage - 1);
+                }
+              }}
               disabled={currentPage === 1}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
             >
               Precedente
             </button>
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+            
+            {/* Logica di paginazione secondo le regole specificate */}
+            {totalPages <= 3 ? (
+              // Se ci sono 3 o meno pagine totali, mostra tutte le pagine
+              Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
               <button
                 key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`px-4 py-2 rounded-lg ${
+                onClick={() => handlePageChange(page)}
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center ${
                   currentPage === page 
                     ? 'bg-[#274f36]' 
                     : 'bg-black/30 hover:bg-[#274f36]/70'
                 }`}
+                  aria-current={currentPage === page ? 'page' : undefined}
               >
                 {page}
               </button>
-            ))}
+              ))
+            ) : (
+              // Se ci sono più di 3 pagine totali
+              <>
+                {/* CASO 1: Prima pagina */}
+                {currentPage === 1 && (
+                  <>
+                    {/* Prima pagina (corrente) */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      aria-current="page"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Seconda pagina */}
+                    <button
+                      key={2}
+                      onClick={() => handlePageChange(2)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      2
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Ultima pagina */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 2: Ultima pagina */}
+                {currentPage === totalPages && (
+                  <>
+                    {/* Prima pagina */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Penultima pagina */}
+                    <button
+                      key={totalPages - 1}
+                      onClick={() => handlePageChange(totalPages - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {totalPages - 1}
+                    </button>
+                    
+                    {/* Ultima pagina (corrente) */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      aria-current="page"
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 3: Pagina intermedia */}
+                {currentPage > 1 && currentPage < totalPages && (
+                  <>
+                    {/* Prima pagina (se non siamo vicini all'inizio) */}
+                    {currentPage > 2 && (
+                      <>
+                        <button
+                          key={1}
+                          onClick={() => handlePageChange(1)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                        >
+                          1
+                        </button>
+                        
+                        {/* Puntini di sospensione a sinistra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                      </>
+                    )}
+                    
+                    {/* Pagina precedente */}
+                    <button
+                      key={currentPage - 1}
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {currentPage - 1}
+                    </button>
+                    
+                    {/* Pagina corrente */}
+                    <button
+                      key={currentPage}
+                      onClick={() => handlePageChange(currentPage)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      aria-current="page"
+                    >
+                      {currentPage}
+                    </button>
+                    
+                    {/* Pagina successiva */}
+                    <button
+                      key={currentPage + 1}
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                    >
+                      {currentPage + 1}
+                    </button>
+                    
+                    {/* Puntini di sospensione a destra e ultima pagina (se non siamo vicini alla fine) */}
+                    {currentPage < totalPages - 1 && (
+                      <>
+                        {/* Puntini di sospensione a destra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                        
+                        {/* Ultima pagina */}
+                        <button
+                          key={totalPages}
+                          onClick={() => handlePageChange(totalPages)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                        >
+                          {totalPages}
+                        </button>
+                      </>
+                    )}
+                  </>
+                )}
+              </>
+            )}
+            
             <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              onClick={() => {
+                if (currentPage < totalPages) {
+                  handlePageChange(currentPage + 1);
+                }
+              }}
               disabled={currentPage === totalPages}
               className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
             >
-              Successiva
+              Successivo
             </button>
           </div>
         )}

@@ -16,6 +16,10 @@ const logos = [
     alt: "CityBeach Boardshop"
   },
   {
+    src: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
+    alt: "Clinica Oculistica Santa Lucia"
+  },
+  {
     src: "https://i.ibb.co/KzNTDF0D/loffredo.jpg",
     alt: "Federico Loffredo"
   },
