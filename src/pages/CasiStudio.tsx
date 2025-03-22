@@ -13,7 +13,7 @@ const cases = [
     image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
     testimonial: {
       quote: "La Clinica Oculistica Santa Lucia unisce competenza medica e innovazione per offrire un servizio efficiente e di qualità. Grazie all'automazione e all'AI, ha ridotto i tempi di attesa e migliorato la gestione degli appuntamenti, garantendo risposte rapide e un'esperienza più fluida per i pazienti.",
-      author: 'Reparto Amministrazione',
+      author: 'Dott. Mario Cipolla, Direttore Amministrativo',
       role: 'Clinica Oculistica Santa Lucia',
     },
     content: `
