@@ -607,7 +607,7 @@ const posts = {
 
       <h2 class="text-3xl font-bold mt-8 mb-4">Cos'è MCP: Il "Traduttore Universale" per gli Agenti AI</h2>
       <p>
-        MCP (Model Context Protocol) è essenzialmente un "traduttore universale" che permette agli agenti AI di connettersi facilmente a diversi strumenti e fonti di datI; MCP è composto da tre componenti principali: l'host, il client e il server.
+        MCP (Model Context Protocol) è essenzialmente un "traduttore universale" che permette agli agenti AI di connettersi facilmente a diversi strumenti e fonti di dati; MCP è composto da tre componenti principali: l'host, il client e il server.
       </p>
 
     <p>

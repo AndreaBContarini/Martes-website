@@ -1,35 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import AppRoutes from './AppRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import ChiSiamo from './pages/ChiSiamo';
-import Blog2 from './pages/Blog2';
-import CasiStudio from './pages/CasiStudio';
-import BlogPost from './pages/BlogPost';
-import CaseStudyPost from './pages/CaseStudyPost';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import Cookies from './pages/Cookies';
+import CustomTranslate from './components/CustomTranslate';
 import CookieBanner from './components/CookieBanner';
-import { HelmetProvider } from 'react-helmet-async';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 function App() {
   return (
     <HelmetProvider>
-      <Router basename="/">
-        <div className="min-h-screen bg-gradient-to-b from-black via-black to-[#274f36] text-white">
+      <Router>
+        <div className="flex flex-col min-h-screen overflow-hidden bg-black text-white">
+          <GoogleAnalytics />
           <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/chi-siamo" element={<ChiSiamo />} />
-            <Route path="/blog" element={<Blog2 />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
-            <Route path="/casi-studio" element={<CasiStudio />} />
-            <Route path="/casi-studio/:id" element={<CaseStudyPost />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/cookies" element={<Cookies />} />
-          </Routes>
+          <CustomTranslate />
+          <main className="flex-grow">
+            <AppRoutes />
+          </main>
           <Footer />
           <CookieBanner />
         </div>

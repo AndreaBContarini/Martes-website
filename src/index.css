@@ -307,3 +307,159 @@
     filter: grayscale(0);
   }
 }
+
+/* Google Translate Custom Styles */
+.goog-te-gadget {
+  font-family: inherit !important;
+}
+
+.goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 8px !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.goog-te-gadget-simple .goog-te-menu-value {
+  color: #374151 !important;
+}
+
+@media (max-width: 640px) {
+  #google_translate_element {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Animazioni per il menu del traduttore */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Nascondi il widget originale di Google Translate */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-family: inherit !important;
+  color: transparent !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  display: none !important;
+}
+
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+
+/* Stili migliorati per il selettore del prefisso telefonico */
+.react-tel-input {
+  font-family: inherit !important;
+}
+
+.react-tel-input .form-control {
+  width: 100% !important;
+  height: 48px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: white !important;
+  font-size: 16px !important;
+}
+
+.react-tel-input .form-control:focus {
+  border-color: #274f36 !important;
+  box-shadow: 0 0 0 1px #274f36 !important;
+}
+
+.react-tel-input .selected-flag {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px 0 0 8px !important;
+}
+
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag.open {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.react-tel-input .country-list {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  margin-top: 8px !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+.react-tel-input .country-list::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.react-tel-input .country-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.react-tel-input .country-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+}
+
+.react-tel-input .country-list .search-box {
+  margin: 8px !important;
+  padding: 8px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 6px !important;
+}
+
+.react-tel-input .country-list .search-box input {
+  background-color: white !important;
+  color: black !important;
+  width: 100% !important;
+  padding: 4px 8px !important;
+  border: none !important;
+}
+
+.react-tel-input .country-list .search-box input::placeholder {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.react-tel-input .country-list .country {
+  padding: 8px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  color: white !important;
+}
+
+.react-tel-input .country-list .country:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.react-tel-input .country-list .country.highlight {
+  background-color: rgba(39, 79, 54, 0.5) !important;
+}
+
+.react-tel-input .country-list .country-name {
+  color: white !important;
+  margin-left: 8px !important;
+}
+
+.react-tel-input .country-list .dial-code {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

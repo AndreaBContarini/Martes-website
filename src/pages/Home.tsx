@@ -3,11 +3,14 @@ import ComparisonSection from '../components/ComparisonSection';
 import ServicesSection from '../components/ServicesSection';
 import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 function Home() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     project: '',
     revenue: '',
     budget: '',
@@ -23,12 +26,9 @@ function Home() {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    let normalizedWebsite = formData.website.trim();
-
-    if (normalizedWebsite) {
-      normalizedWebsite = normalizedWebsite.replace(/^https?:\/\//, '');
-      normalizedWebsite = normalizedWebsite.replace(/^www\./, '');
-      normalizedWebsite = `https://www.${normalizedWebsite}`;
+    let normalizedWebsite = formData.website;
+    if (normalizedWebsite && !normalizedWebsite.startsWith('http')) {
+      normalizedWebsite = `https://${normalizedWebsite}`;
     }
 
     try {
@@ -40,6 +40,7 @@ function Home() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           project: formData.project,
           revenue: formData.revenue,
           budget: formData.budget,
@@ -54,6 +55,7 @@ function Home() {
       setFormData({
         name: '',
         email: '',
+        phone: '',
         project: '',
         revenue: '',
         budget: '',
@@ -177,8 +179,32 @@ function Home() {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Parlaci del tuo progetto: dove vorresti applicare l'intelligenza
-                    artificiale per migliorare il tuo lavoro?*
+                    Numero di telefono:
+                  </label>
+                  <PhoneInput
+                    country={'it'}
+                    value={formData.phone}
+                    onChange={phone => setFormData(prev => ({ ...prev, phone }))}
+                    containerClass="w-full"
+                    inputClass="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition text-white"
+                    buttonClass="border border-white/20 rounded-l-lg bg-white/10"
+                    dropdownClass="bg-black/90 text-white"
+                    searchClass="bg-white/10 text-white"
+                    enableSearch={true}
+                    searchPlaceholder="Cerca paese..."
+                    placeholder="Inserisci il tuo numero"
+                    inputStyle={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      border: 'none',
+                      color: 'white',
+                      width: '100%'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">
+                    Parlaci del tuo progetto: dove vorresti applicare l'AI per migliorare la performance della tua attività?*
                   </label>
                   <textarea
                     name="project"
@@ -193,12 +219,11 @@ function Home() {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Quanto fattura la tua azienda?*
+                    Fatturato aziendale?
                   </label>
                   <input
                     type="text"
                     name="revenue"
-                    required
                     placeholder="Inserisci un numero indicativo"
                     className="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition"
                     onChange={handleChange}
@@ -208,7 +233,7 @@ function Home() {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Budget per il progetto*
+                    Investimento per il progetto:*
                   </label>
                   <div className="space-y-2">
                     <label className="flex items-center">
@@ -286,7 +311,7 @@ function Home() {
 
                 <div>
                   <label className="block text-sm font-medium mb-2">
-                    Sito internet della tua azienda
+                    Sito web aziendale:
                   </label>
                   <input
                     type="url"

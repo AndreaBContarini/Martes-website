@@ -8,17 +8,17 @@ const cases = [
   {
     id: 'automazione-ai-clinica-oculistica-santa-lucia',
     title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
-    description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di Marts AI, migliorando efficienza e servizio ai pazienti. Scopri i dettagli nell'articolo al caso studio.",
+    description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di e AI, migliorando efficienza e servizio ai pazienti.",
     date: new Date('2025-03-20'),
     image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
     testimonial: {
-      quote: "La Clinica Oculistica Santa Lucia unisce competenza medica e innovazione per offrire un servizio efficiente e di qualità. Grazie all'automazione e all'AI, ha ridotto i tempi di attesa e migliorato la gestione degli appuntamenti, garantendo risposte rapide e un'esperienza più fluida per i pazienti.",
-      author: 'Dott. Mario Cipolla, Direttore Amministrativo',
-      role: 'Clinica Oculistica Santa Lucia',
+      quote: "Grazie alle soluzioni Martes AI, la Clinica Oculistica Santa Lucia ha ridotto i tempi d’attesa, ottimizzato la gestione degli appuntamenti e automatizzato le email, risparmiando tempo prezioso e offrendo ai pazienti un’esperienza più fluida ed efficiente.",
+      author: 'Dott. Mario Cipolla',
+      role: 'Direttore Amministrativo',
     },
     content: `
       <h2>Introduzione</h2>
-      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Marts AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
+      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Martws AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
     `,
   },
   {
@@ -103,7 +103,7 @@ const cases = [
   {
       id: 'supporto-clienti-ai-e-tracciamento-ordini-dinamico-per-un-ecommerce',
       title: 'Supporto Clienti AI e Tracciamento Ordini Dinamico per Ecommerce',
-      description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
+      description: "AI su misura per eCommerce: una soluzione pensata per automatizzare la gestione delle richieste ripetitive e migliorare l’efficienza operativa.",
       date: new Date('2024-07-18'),
       image:
         'https://i.ibb.co/BtPCmvC/ecommerceparts-removebg-preview.png',
@@ -129,7 +129,7 @@ const cases = [
 {
       id: "generazione-di-lead-qualificati-via-linkedin",
       title: "Generazione di Lead Qualificati via LinkedIn",
-      description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
+      description: "Con Martes AI e Dripify ho generato lead qualificati, automatizzato i contenuti e ottenuto risultati concreti in pochi giorni.",
       date: new Date('2025-01-31'),
       image: 'https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png',
       testimonial: {
@@ -153,7 +153,7 @@ const cases = [
   {
     id: "custom-gpt-email",
     title: "Agente GPT per rispondere alle mail e riassumere AI-news",
-    description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
+    description: "Martes AI ha sviluppato un sistema GPT per automatizzare le risposte email e fornire nes su tema AI,  migliorando l’efficienza comunicativa, integrando Make e Zapier",
     date: new Date('2025-02-13'),
     image: 'https://i.ibb.co/KzNTDF0D/loffredo.jpg',
     testimonial: {
