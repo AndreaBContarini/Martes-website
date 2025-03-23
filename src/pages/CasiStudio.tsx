@@ -3,16 +3,17 @@ import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import SEOHead from '../components/SEOHead';
 
 const cases = [
   {
     id: 'automazione-ai-clinica-oculistica-santa-lucia',
     title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
-    description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di e AI, migliorando efficienza e servizio ai pazienti.",
+    //description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di e AI, migliorando efficienza e servizio ai pazienti.",
     date: new Date('2025-03-20'),
     image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
     testimonial: {
-      quote: "Grazie alle soluzioni Martes AI, la Clinica Oculistica Santa Lucia ha ridotto i tempi d’attesa, ottimizzato la gestione degli appuntamenti e automatizzato le email, risparmiando tempo prezioso e offrendo ai pazienti un’esperienza più fluida ed efficiente.",
+      quote: "Grazie alle soluzioni Martes AI, la Clinica Oculistica Santa Lucia ha ridotto i tempi d'attesa, ottimizzato la gestione degli appuntamenti e automatizzato le email, risparmiando tempo prezioso e offrendo ai pazienti un'esperienza più fluida ed efficiente.",
       author: 'Dott. Mario Cipolla',
       role: 'Direttore Amministrativo',
     },
@@ -24,7 +25,7 @@ const cases = [
   {
     id: '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group',
     title: "50 clienti in più al mese per un'agenzia di viaggio",
-    description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",
+    //description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",
     date: new Date('2024-09-09'),
     image:
       'https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png',
@@ -103,13 +104,12 @@ const cases = [
   {
       id: 'supporto-clienti-ai-e-tracciamento-ordini-dinamico-per-un-ecommerce',
       title: 'Supporto Clienti AI e Tracciamento Ordini Dinamico per Ecommerce',
-      description: "AI su misura per eCommerce: una soluzione pensata per automatizzare la gestione delle richieste ripetitive e migliorare l’efficienza operativa.",
+      //description: "AI su misura per eCommerce: una soluzione pensata per automatizzare la gestione delle richieste ripetitive e migliorare l'efficienza operativa.",
       date: new Date('2024-07-18'),
       image:
         'https://i.ibb.co/BtPCmvC/ecommerceparts-removebg-preview.png',
       testimonial: {
-        quote:
-          "Grazie al chatbot AI e alle automazioni integrate, riusciamo a gestire con efficacia 3000 contatti mensili su WhatsApp per attività di acquisizione e gestione clienti, generando un significativo incremento delle prenotazioni e un profitto mensile aggiuntivo di € 27.500 per l'agenzia.",
+        quote: "Grazie a Martes AI, abbiamo rivoluzionato il nostro servizio clienti. Il loro chatbot AI su WhatsApp ha ridotto drasticamente il numero di email giornaliere, permettendoci di rispondere ai clienti in tempo reale e di concentrarci su attività strategiche. Un'implementazione efficace che ha migliorato efficienza e soddisfazione del cliente.",
         author: 'Giuseppe Romano',
         role: 'CEO Ecommerceparts',
       },
@@ -129,7 +129,7 @@ const cases = [
 {
       id: "generazione-di-lead-qualificati-via-linkedin",
       title: "Generazione di Lead Qualificati via LinkedIn",
-      description: "Con Martes AI e Dripify ho generato lead qualificati, automatizzato i contenuti e ottenuto risultati concreti in pochi giorni.",
+      //: "Con Martes AI e Dripify ho generato lead qualificati, automatizzato i contenuti e ottenuto risultati concreti in pochi giorni.",
       date: new Date('2025-01-31'),
       image: 'https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png',
       testimonial: {
@@ -153,7 +153,7 @@ const cases = [
   {
     id: "custom-gpt-email",
     title: "Agente GPT per rispondere alle mail e riassumere AI-news",
-    description: "Martes AI ha sviluppato un sistema GPT per automatizzare le risposte email e fornire nes su tema AI,  migliorando l’efficienza comunicativa, integrando Make e Zapier",
+    //: "Martes AI ha sviluppato un sistema GPT per automatizzare le risposte email e fornire nes su tema AI,  migliorando l'efficienza comunicativa, integrando Make e Zapier",
     date: new Date('2025-02-13'),
     image: 'https://i.ibb.co/KzNTDF0D/loffredo.jpg',
     testimonial: {
@@ -216,20 +216,24 @@ function CasiStudio() {
 
   return (
     <div className="pt-32 pb-20">
-      <Helmet>
-        <title>Casi Studio Martes AI | Successi con Automazioni AI, Chatbot e Lead Generation</title>
-        <meta name="description" content="Scopri i casi di successo di aziende che hanno implementato automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Risultati concreti e ROI misurabili." />
-        <meta name="keywords" content="casi studio AI, automazioni basate su AI, chatbot, agenti AI, lead generation con AI, successi AI, ROI intelligenza artificiale, implementazioni AI" />
-        <meta property="og:title" content="Casi Studio Martes AI | Successi con Automazioni AI e Chatbot" />
-        <meta property="og:description" content="Casi di successo di aziende che hanno implementato automazioni AI, chatbot e strategie di lead generation con risultati concreti." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.martes-ai.com/casi-studio" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Casi Studio Martes AI | Successi con AI" />
-        <meta name="twitter:description" content="Casi di successo con automazioni AI, chatbot e lead generation per il business." />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.martes-ai.com/casi-studio" />
-      </Helmet>
+      <SEOHead 
+        title="Casi Studio Martes AI | Successi con Automazioni AI, Chatbot e Lead Generation"
+        description="Scopri i casi di successo di aziende che hanno implementato automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Risultati concreti e ROI misurabili."
+        canonicalUrl="https://www.martes-ai.com/casi-studio"
+        ogImage="/og-casi-studio.png"
+        pageType="article"
+        schemaType="WebPage"
+        structuredData={{
+          "mainEntityOfPage": {
+            "@type": "CollectionPage",
+            "@id": "https://www.martes-ai.com/casi-studio"
+          },
+          "about": {
+            "@type": "Thing",
+            "name": "Casi studio di automazioni AI di successo"
+          }
+        }}
+      />
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
           Casi Studio
