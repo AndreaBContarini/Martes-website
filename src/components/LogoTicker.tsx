@@ -3,6 +3,9 @@ const logos = [
     src: "https://i.ibb.co/nPq0dkr/PHOTO-2024-08-17-13-31-51-removebg-preview.png",
     alt: "We Travel Group"
   },
+  {src: "https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png",
+    alt: "Bluvacanze"
+  },
   {
     src: "https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png",
     alt: "Fantozzi & Associati"

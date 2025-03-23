@@ -23,11 +23,11 @@ const cases = [
   },
   {
     id: '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group',
-    title: '50 clienti in più al mese - agenzia di viaggio WeTravel Group',
+    title: "50 clienti in più al mese per un'agenzia di viaggio",
     description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",
     date: new Date('2024-09-09'),
     image:
-      'https://i.ibb.co/nPq0dkr/PHOTO-2024-08-17-13-31-51-removebg-preview.png',
+      'https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png',
     testimonial: {
       quote:
         "Grazie al chatbot AI e alle automazioni integrate, riusciamo a gestire con efficacia 3000 contatti mensili su WhatsApp per attività di acquisizione e gestione clienti, generando un significativo incremento delle prenotazioni e un profitto mensile aggiuntivo di € 27.500 per l'agenzia.",

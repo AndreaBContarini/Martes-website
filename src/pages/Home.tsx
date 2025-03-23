@@ -189,7 +189,7 @@ function Home() {
                     inputClass="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition text-white"
                     buttonClass="border border-white/20 rounded-l-lg bg-white/10"
                     dropdownClass="bg-black/90 text-white"
-                    searchClass="bg-white/10 text-white"
+                    searchClass="bg-white text-black"
                     enableSearch={true}
                     searchPlaceholder="Cerca paese..."
                     placeholder="Inserisci il tuo numero"

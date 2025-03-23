@@ -101,7 +101,7 @@ const cases = {
     `,
   },
   '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group': {
-    title: '50 clienti in più al mese - agenzia di viaggio WeTravel Group',
+    title: "50 clienti in più al mese per un'agenzia di viaggio",
     date: '9 settembre 2024',
     content: `
       <div class="aspect-w-16 aspect-h-9 mb-8">
