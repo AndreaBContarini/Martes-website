@@ -36,16 +36,34 @@ function ChiSiamo() {
   return (
     <div className="pt-32 pb-20">
       <SEOHead 
-        title="Chi Siamo | Martes AI - Esperti in Automazioni AI, Chatbot e Lead Generation"
-        description="Il team di Martes AI: esperti in automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Scopri la nostra missione e competenze."
-        canonicalUrl="https://www.martes-ai.com/chi-siamo"
-        ogImage="/og-chi-siamo.png"
+        title="Chi Siamo | Martes AI - Esperti in Sviluppo Soluzioni di Intelligenza Artificiale"
+        description="Scopri il team di Martes AI: professionisti specializzati nello sviluppo di soluzioni di intelligenza artificiale personalizzate. Competenza, innovazione e risultati concreti per il tuo business."
+        canonicalUrl="https://martes-ai.com/chi-siamo"
+        ogImage="/dist/assets/favicon-D1fAACaT.png"
         pageType="website"
         schemaType="AboutPage"
         structuredData={{
           "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://www.martes-ai.com/chi-siamo"
+            "@type": "AboutPage",
+            "@id": "https://martes-ai.com/chi-siamo"
+          },
+          "about": {
+            "@type": "Organization",
+            "name": "Martes AI",
+            "description": "Società specializzata nello sviluppo di soluzioni di intelligenza artificiale personalizzate",
+            "foundingDate": "2023",
+            "founders": [
+              {
+                "@type": "Person",
+                "name": "Riccardo",
+                "jobTitle": "Founder & CEO"
+              },
+              {
+                "@type": "Person",
+                "name": "Andrea",
+                "jobTitle": "Co-Founder & CTO"
+              }
+            ]
           }
         }}
       />

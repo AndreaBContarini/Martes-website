@@ -217,21 +217,33 @@ function CasiStudio() {
   return (
     <div className="pt-32 pb-20">
       <SEOHead 
-        title="Casi Studio Martes AI | Successi con Automazioni AI, Chatbot e Lead Generation"
-        description="Scopri i casi di successo di aziende che hanno implementato automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Risultati concreti e ROI misurabili."
-        canonicalUrl="https://www.martes-ai.com/casi-studio"
-        ogImage="/og-casi-studio.png"
+        title="Casi Studio | Martes AI - Storie di Successo nell'Implementazione di Soluzioni AI"
+        description="Esplora i nostri casi studio: esempi concreti di come l'intelligenza artificiale ha trasformato il business dei nostri clienti. ROI misurabile, automazione efficiente e crescita aziendale."
+        canonicalUrl="https://martes-ai.com/casi-studio"
+        ogImage="/dist/assets/favicon-D1fAACaT.png"
         pageType="article"
-        schemaType="WebPage"
+        schemaType="CollectionPage"
         structuredData={{
           "mainEntityOfPage": {
             "@type": "CollectionPage",
-            "@id": "https://www.martes-ai.com/casi-studio"
+            "@id": "https://martes-ai.com/casi-studio"
           },
           "about": {
             "@type": "Thing",
-            "name": "Casi studio di automazioni AI di successo"
-          }
+            "name": "Casi studio di successo nell'implementazione AI"
+          },
+          "itemListElement": cases.map((caseStudy, index) => ({
+            "@type": "Article",
+            "position": index + 1,
+            "url": `https://martes-ai.com/casi-studio/${caseStudy.id}`,
+            "name": caseStudy.title,
+            "author": {
+              "@type": "Organization",
+              "name": "Martes AI"
+            },
+            "datePublished": caseStudy.date.toISOString(),
+            "image": caseStudy.image
+          }))
         }}
       />
       <div className="container mx-auto px-4">

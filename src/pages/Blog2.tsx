@@ -176,20 +176,32 @@ const Blog2 = () => {
   return (
     <div className="min-h-screen bg-black pt-24 pb-16">
       <SEOHead 
-        title="Blog Martes AI | Automazioni AI, Chatbot e Lead Generation con Intelligenza Artificiale"
-        description="Scopri le ultime novità su automazioni basate su AI, chatbot avanzati e strategie di lead generation con intelligenza artificiale. Articoli, guide e casi studio per ottimizzare il tuo business con l'AI."
-        canonicalUrl="https://www.martes-ai.com/blog"
-        ogImage="/og-blog.png"
+        title="Blog Martes AI | News e Guide su Automazione AI, Chatbot e Intelligenza Artificiale"
+        description="Esplora il nostro blog dedicato alle ultime novità nel campo dell'intelligenza artificiale. Articoli approfonditi su automazione AI, chatbot, GPT e strategie di implementazione per il business."
+        canonicalUrl="https://martes-ai.com/blog"
+        ogImage="/dist/assets/favicon-D1fAACaT.png"
         pageType="article"
-        schemaType="WebPage"
+        schemaType="BlogPosting"
         structuredData={{
           "mainEntityOfPage": {
             "@type": "CollectionPage",
-            "@id": "https://www.martes-ai.com/blog"
+            "@id": "https://martes-ai.com/blog"
           },
           "about": {
             "@type": "Thing",
-            "name": "Articoli su automazioni AI"
+            "name": "Articoli su Intelligenza Artificiale e Automazione"
+          },
+          "author": {
+            "@type": "Organization",
+            "name": "Martes AI"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Martes AI",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://martes-ai.com/dist/assets/favicon-D1fAACaT.png"
+            }
           }
         }}
       />
