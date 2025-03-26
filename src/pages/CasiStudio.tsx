@@ -222,10 +222,10 @@ function CasiStudio() {
         canonicalUrl="https://martes-ai.com/casi-studio"
         ogImage="/dist/assets/favicon-D1fAACaT.png"
         pageType="article"
-        schemaType="CollectionPage"
+        schemaType="WebPage"
         structuredData={{
           "mainEntityOfPage": {
-            "@type": "CollectionPage",
+            "@type": "WebPage",
             "@id": "https://martes-ai.com/casi-studio"
           },
           "about": {
@@ -272,7 +272,7 @@ function CasiStudio() {
                   </span>
                 </div>
                 <h2 className="text-xl font-bold mb-4">{caseStudy.title}</h2>
-                <p className="text-gray-300">{caseStudy.description}</p>
+                <p className="text-gray-300">{caseStudy.content}</p>
                 <div className="mt-6 p-4 bg-black/20 rounded-lg">
                   <p className="text-sm italic text-gray-300">
                     {caseStudy.testimonial.quote}
