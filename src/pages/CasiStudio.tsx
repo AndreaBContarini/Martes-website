@@ -107,7 +107,7 @@ const cases = [
       //description: "AI su misura per eCommerce: una soluzione pensata per automatizzare la gestione delle richieste ripetitive e migliorare l'efficienza operativa.",
       date: new Date('2024-07-18'),
       image:
-        'https://i.ibb.co/BtPCmvC/ecommerceparts-removebg-preview.png',
+        '/assets/logos/ecommerceparts.png',
       testimonial: {
         quote: "Grazie a Martes AI, abbiamo rivoluzionato il nostro servizio clienti. Il loro chatbot AI su WhatsApp ha ridotto drasticamente il numero di email giornaliere, permettendoci di rispondere ai clienti in tempo reale e di concentrarci su attività strategiche. Un'implementazione efficace che ha migliorato efficienza e soddisfazione del cliente.",
         author: 'Giuseppe Romano',
@@ -131,7 +131,7 @@ const cases = [
       title: "Generazione di Lead Qualificati via LinkedIn",
       //: "Con Martes AI e Dripify ho generato lead qualificati, automatizzato i contenuti e ottenuto risultati concreti in pochi giorni.",
       date: new Date('2025-01-31'),
-      image: 'https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png',
+      image: '/assets/logos/fantozzi.png',
       testimonial: {
         quote: "Grazie a Martes AI, ho trasformato LinkedIn in una fonte di nuovi clienti senza perdere tempo. In pochi giorni ho ottenuto contatti qualificati e già acquisito un cliente. Strategia efficace e zero sforzo!",
         author: 'Edoardo Belli Contarini',

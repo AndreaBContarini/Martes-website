@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 
 const logos = [
   {
-    src: "https://i.ibb.co/nPq0dkr/PHOTO-2024-08-17-13-31-51-removebg-preview.png",
+    src: "/assets/logos/wetravel.png",
     alt: "We Travel Group"
   },
   {
@@ -10,15 +10,15 @@ const logos = [
     alt: "Bluvacanze"
   },
   {
-    src: "https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png",
+    src: "/assets/logos/fantozzi.png",
     alt: "Fantozzi & Associati"
   },
   {
-    src: "https://i.ibb.co/BtPCmvC/ecommerceparts-removebg-preview.png",
+    src: "/assets/logos/ecommerceparts.png",
     alt: "Ecommerceparts"
   },
   {
-    src: "https://i.ibb.co/LpScFQN/citybeach.png",
+    src: "/assets/logos/citybeach.png",
     alt: "CityBeach Boardshop"
   },
   {
