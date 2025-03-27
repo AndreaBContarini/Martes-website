@@ -155,7 +155,7 @@ const cases = [
     title: "Agente GPT per rispondere alle mail e riassumere AI-news",
     //: "Martes AI ha sviluppato un sistema GPT per automatizzare le risposte email e fornire nes su tema AI,  migliorando l'efficienza comunicativa, integrando Make e Zapier",
     date: new Date('2025-02-13'),
-    image: 'https://i.ibb.co/KzNTDF0D/loffredo.jpg',
+    image: '/assets/logos/federico-loffredo.png',
     testimonial: {
       quote: "Ho chiesto due GPT personalizzati: uno per la gestione automatica delle email e uno per riassumere le ultime news sull'AI. Hanno fatto un lavoro eccellente e professionale. Consigliatissimi!",
       author: 'Federico Loffredo',
@@ -272,7 +272,6 @@ function CasiStudio() {
                   </span>
                 </div>
                 <h2 className="text-xl font-bold mb-4">{caseStudy.title}</h2>
-                <p className="text-gray-300">{caseStudy.content}</p>
                 <div className="mt-6 p-4 bg-black/20 rounded-lg">
                   <p className="text-sm italic text-gray-300">
                     {caseStudy.testimonial.quote}

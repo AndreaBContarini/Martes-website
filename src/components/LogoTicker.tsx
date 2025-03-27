@@ -26,7 +26,7 @@ const logos = [
     alt: "Clinica Oculistica Santa Lucia"
   },
   {
-    src: "https://i.ibb.co/KzNTDF0D/loffredo.jpg",
+    src: "/assets/logos/federico-loffredo.png",
     alt: "Federico Loffredo"
   },
   {
