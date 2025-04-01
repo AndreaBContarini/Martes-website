@@ -7,6 +7,12 @@ const cases = {
     title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
     date: '20 marzo 2025',
     content: `
+      <div class="mb-8 text-center">
+        <a href="https://andreabcontarini.netlify.app/automation-projects/santa-lucia-eye-clinic" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#274f36] hover:bg-[#1a3a25] text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
+          Read this case study in English
+        </a>
+      </div>
+
       <h2>Introduzione</h2>
       <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Martes AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
 
@@ -104,6 +110,12 @@ const cases = {
     title: "50 clienti in più al mese per un'agenzia di viaggio",
     date: '9 settembre 2024',
     content: `
+      <div class="mb-8 text-center">
+        <a href="https://andreabcontarini.netlify.app/automation-projects/whatsapp-agent-travel-agency" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#274f36] hover:bg-[#1a3a25] text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
+          Read this case study in English
+        </a>
+      </div>
+
       <div class="aspect-w-16 aspect-h-9 mb-8">
         <iframe 
           src="https://www.youtube.com/embed/avrP3wm11KM" 
