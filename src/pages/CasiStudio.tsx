@@ -23,6 +23,30 @@ const cases = [
     `,
   },
   {
+    id: 'agente-ai-newsletter-scientifica-shape-up',
+    title: 'Agente AI Per una Newsletter Scientifica',
+    //description: "Come un Agente AI ha automatizzato la produzione di newsletter scientifiche per Shape-UP, riducendo tempi di produzione e migliorando qualità dei contenuti.",
+    date: new Date('2025-04-04'),
+    image: "/assets/logos/shapeup.png",
+    testimonial: {
+      quote: "L'Agente AI di Martes AI ha rivoluzionato la nostra newsletter: contenuti scientifici affidabili e ben scritti, immagini professionali... il tutto a portata di un click",
+      author: 'Davide Beccetti',
+      role: 'CEO @ Shape-UP',
+    },
+    content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/qarwJCCqTmA" 
+          title="Shape-UP Newsletter Automation Case Study"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    `,
+  },
+  {
     id: '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group',
     title: "50 clienti in più al mese per un'agenzia di viaggio",
     //description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",

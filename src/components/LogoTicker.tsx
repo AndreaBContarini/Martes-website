@@ -14,6 +14,10 @@ const logos = [
     alt: "Fantozzi & Associati"
   },
   {
+    src: "/assets/logos/shapeup.png",
+    alt: "Shape-Up"
+  },
+  {
     src: "/assets/logos/ecommerceparts.png",
     alt: "Ecommerceparts"
   },

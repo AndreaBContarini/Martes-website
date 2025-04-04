@@ -395,6 +395,73 @@ const cases = {
     <p>L'implementazione di un GPT per la gestione della casella email ha permesso al cliente di ottimizzare il proprio tempo e migliorare l'efficienza delle comunicazioni. Questo caso studio dimostra come l'uso strategico dell'intelligenza artificiale possa trasformare un'attività quotidiana in un processo automatizzato e altamente efficiente.</p>
     <p>Grazie alla combinazione di GPT, <em>Make</em> e <em>Zapier</em>, è possibile replicare questo modello per altre attività aziendali, aumentando la produttività e riducendo il carico di lavoro manuale.</p>  `
   },
+  'agente-ai-newsletter-scientifica-shape-up': {
+    title: "Agente AI Per una Newsletter Scientifica",
+    date: "4 aprile 2025",
+    content: `
+      <div class="mb-8 text-center">
+        <a href="https://andreabcontarini.netlify.app/automation-projects/scientific-newsletter-agent" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#274f36] hover:bg-[#1a3a25] text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
+          Read this case study in English
+        </a>
+      </div>
+      
+      <h2>Introduzione</h2>
+      <p>In un contesto in cui l'affidabilità delle fonti e l'efficienza operativa sono fondamentali, <a href="https://shape-up.it/en/home-en/" target="_blank" rel="noopener noreferrer"><strong>Shape-UP</strong></a>, azienda attiva nel settore medico e del benessere, si è rivolta a <strong>Martes AI</strong> con l'obiettivo di ottimizzare la creazione e la diffusione della propria newsletter scientifica. L'obiettivo? Automatizzare l'intero processo editoriale mantenendo l'autorevolezza delle fonti e la qualità grafica, senza rinunciare al controllo umano dove necessario.</p>
+
+      <div class="aspect-w-16 aspect-h-9 my-8">
+        <iframe 
+          src="https://www.youtube.com/embed/qarwJCCqTmA" 
+          title="Shape-UP Newsletter Automation Case Study"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <h2>Il Problema</h2>
+      <p>Prima dell'intervento, Shape-UP si trovava a fronteggiare <strong>tempi lunghi di produzione</strong> per ogni singola newsletter. La redazione manuale degli articoli scientifici, la ricerca delle fonti accreditate e la generazione di immagini coerenti con i contenuti richiedevano <strong>diverse ore di lavoro settimanali</strong>, senza considerare la necessità di formattare e inviare le campagne via Mailchimp. Questo rallentava la comunicazione con il pubblico e limitava la frequenza degli invii.</p>
+
+      <h2>La Soluzione: Un Agente AI su Misura</h2>
+      <p>Martes AI ha progettato e sviluppato un <strong>Agente AI personalizzato</strong>, integrato con <strong>Google Sheets, Make (Integromat)</strong> e <strong><a href="https://mailchimp.com/it/" target="_blank" rel="noopener noreferrer">Mailchimp</a></strong>, capace di automatizzare l'intero ciclo di vita della newsletter scientifica. Ecco le funzionalità principali:</p>
+
+      <figure class="my-8 text-center">
+        <img src="/assets/scenario_make_shapeup.png" alt="Scenario Make per l'automazione della newsletter scientifica Shape-UP" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
+        <figcaption class="mt-3 text-sm text-gray-400">Scenario Make che orchestra l'intero flusso: dall'interrogazione di PubMed alla generazione dell'articolo con AI, fino all'invio automatico via Mailchimp. Ogni passaggio è ottimizzato per garantire contenuti scientifici accurati con minimo intervento umano.</figcaption>
+      </figure>
+
+      <h3>1. <strong>Input Semplificato tramite Google Sheets</strong></h3>
+      <p>L'interfaccia principale dell'agente è un semplice foglio Google Sheet. Inserendo una <strong>parola chiave</strong> (es. "low carb diet"), il flusso si attiva automaticamente tramite un webhook.</p>
+
+      <h3>2. <strong>Ricerca Scientifica Automatica</strong></h3>
+      <p>L'agente si connette in tempo reale al <strong>database PubMed Central</strong>, recuperando <strong>articoli scientifici peer-reviewed</strong> in linea con la parola chiave. I contenuti estratti sono <strong>verificati, aggiornati e garantiti da fonti ufficiali</strong>.</p>
+
+      <h3>3. <strong>Sintesi e Semplificazione del Contenuto</strong></h3>
+      <p>Una volta ottenuti i dati, l'Agente AI sintetizza i risultati in un <strong>articolo leggibile e divulgativo</strong>, mantenendo la precisione scientifica ma semplificando la comprensione per un pubblico non accademico.</p>
+
+      <h3>4. <strong>Generazione di Immagini Mediche</strong></h3>
+      <p>Tramite un prompt ottimizzato e collegamento a <strong>modelli AI di generazione immagini</strong>, viene creata un'immagine coerente con il contenuto. L'immagine è poi trasformata in un <strong>URL pubblico</strong> grazie al servizio Claudinary, così da poter essere facilmente visualizzata nelle newsletter.</p>
+
+      <h3>5. <strong>Modifica Articoli e Immagini con "Human in the Loop"</strong></h3>
+      <p>Shape-UP può <strong>personalizzare o modificare in qualsiasi momento</strong> l'articolo o l'immagine. L'agente integra perfettamente il feedback umano nel ciclo AI, generando nuovi output in pochi secondi.</p>
+
+      <h3>6. <strong>Formattazione Automatica e Invio con Mailchimp</strong></h3>
+      <p>L'articolo, una volta validato, viene <strong>convertito automaticamente in HTML</strong> e inviato a <a href="https://mailchimp.com/it/" target="_blank" rel="noopener noreferrer">Mailchimp</a> per la distribuzione. Tutto il processo – dalla ricerca all'invio – può essere completato in pochi minuti.</p>
+
+      <h2>I Risultati</h2>
+      <p>Grazie all'implementazione dell'agente AI:</p>
+      <ul>
+        <li><strong>Tempo di produzione ridotto del 90%</strong>, da ore a pochi minuti per ogni newsletter.</li>
+        <li><strong>Aumento della frequenza di invio</strong>.</li>
+        <li><strong>Zero interventi manuali</strong> nella fase di formattazione, ricerca e invio.</li>
+        <li><strong>Qualità visiva e scientifica</strong> degli articoli, con contenuti supportati da referenze accademiche.</li>
+      </ul>
+
+      <h2>Conclusioni</h2>
+      <p>L'automazione non significa eliminare il controllo umano, ma <strong>potenziarlo con strumenti intelligenti</strong>. L'Agente AI sviluppato per Shape-UP dimostra come sia possibile coniugare <strong>efficienza, qualità e scalabilità</strong>, anche in ambiti delicati come la comunicazione medico-scientifica.</p>
+      <p>Questa soluzione rappresenta un <strong>modello replicabile</strong> per tutte le aziende che desiderano trasformare la propria comunicazione, affidandosi a tecnologie AI strutturate ma accessibili. In Martes AI, crediamo che l'innovazione debba semplificare, non complicare.</p>
+    `
+  },
 };
 
 function CaseStudyPost() {
