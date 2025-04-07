@@ -122,7 +122,7 @@ function ChiSiamo() {
           <div className="text-center bg-black/20 p-8 rounded-lg border border-gray-800 hover:border-[#274f36] transition-all duration-300 fade-in">
             <div className="mb-8 relative">
               <img
-                src="https://i.ibb.co/vCqSnZ9M/riccardo.jpg"
+                src="/assets/riccardo.jpg"
                 alt="Riccardo"
                 className="w-64 h-64 rounded-full mx-auto object-cover border-4 border-[#274f36]/30"
               />
@@ -144,7 +144,7 @@ function ChiSiamo() {
           <div className="text-center bg-black/20 p-8 rounded-lg border border-gray-800 hover:border-[#274f36] transition-all duration-300 fade-in">
             <div className="mb-8">
               <img
-                src="https://i.ibb.co/LXzJRgsw/andrea.jpg"
+                src="/assets/andrea-min.jpg"
                 alt="Andrea"
                 className="w-64 h-64 rounded-full mx-auto object-cover border-4 border-[#274f36]/30"
               />

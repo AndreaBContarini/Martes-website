@@ -446,7 +446,7 @@ const cases = {
       <p>Shape-UP può <strong>personalizzare o modificare in qualsiasi momento</strong> l'articolo o l'immagine. L'agente integra perfettamente il feedback umano nel ciclo AI, generando nuovi output in pochi secondi.</p>
 
       <h3>6. <strong>Formattazione Automatica e Invio con Mailchimp</strong></h3>
-      <p>L'articolo, una volta validato, viene <strong>convertito automaticamente in HTML</strong> e inviato a <a href="https://mailchimp.com/it/" target="_blank" rel="noopener noreferrer">Mailchimp</a> per la distribuzione. Tutto il processo – dalla ricerca all'invio – può essere completato in pochi minuti.</p>
+      <p>L'articolo, una volta validato, viene <strong>convertito automaticamente in HTML</strong> e inviato a <a href="https://mailchimp.com" target="_blank" rel="noopener noreferrer">Mailchimp</a> per la distribuzione. Tutto il processo – dalla ricerca all'invio – può essere completato in pochi minuti.</p>
 
       <h2>I Risultati</h2>
       <p>Grazie all'implementazione dell'agente AI:</p>

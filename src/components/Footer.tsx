@@ -18,7 +18,7 @@ function Footer() {
               <h3 className="text-2xl font-bold text-white">Martes AI</h3>
             </div>
             <div className="text-gray-400 text-sm">
-              <p className="mb-1">MARTES AI <span className="text-xs align-top">®️</span></p>
+              <p className="mb-1">Martes AI</p>
               <p className="mb-1">Via Aurelia 325 Roma</p>
               <p>P.IVA 18026131005</p>
             </div>
