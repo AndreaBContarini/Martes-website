@@ -597,12 +597,18 @@ const posts = {
             L'intelligenza artificiale ha fatto progressi straordinari negli ultimi anni, ma finora è rimasta limitata nella sua capacità di interagire con il mondo esterno. I Large Language Models (LLM) eccellono nella generazione di testo, ma da soli non possono inviare email, consultare database o interagire con API esterne. <strong>Anthropic ha creato una soluzione rivoluzionaria</strong> a questo problema: il <strong>Model Context Protocol (MCP)</strong>.
       </p>
 
-<div class="flex justify-center mb-10">
-        <img 
-          src="https://i.ibb.co/Hp4SSbFB/architetture-mcp.png" 
-          alt="Architettura di Model Context Protocol (MCP) che mostra le connessioni tra host, client e server" 
-          class="max-w-full rounded-lg shadow-md w-4/5 md:w-3/5"
-        />
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/JHDAqk3_lWY" 
+          title="Model Context Protocol (MCP) Overview"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+        <figcaption class="text-sm text-gray-400 mt-2 text-center">
+          Video dimostrativo del Model Context Protocol (MCP) e del suo funzionamento nell'interazione tra agenti AI e servizi esterni
+        </figcaption>
       </div>
 
       <h2 class="text-3xl font-bold mt-8 mb-4">Cos'è MCP: Il "Traduttore Universale" per gli Agenti AI</h2>

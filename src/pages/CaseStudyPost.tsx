@@ -427,7 +427,9 @@ const cases = {
 
       <figure class="my-8 text-center">
         <img src="/assets/scenario_make_shapeup.png" alt="Scenario Make per l'automazione della newsletter scientifica Shape-UP" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
-        <figcaption class="mt-3 text-sm text-gray-400">Scenario Make che orchestra l'intero flusso: dall'interrogazione di PubMed alla generazione dell'articolo con AI, fino all'invio automatico via Mailchimp. Ogni passaggio è ottimizzato per garantire contenuti scientifici accurati con minimo intervento umano.</figcaption>
+        <figcaption class="text-sm text-gray-400 mt-2 text-center">
+          Lo scenario Make che automatizza la creazione e l'invio della newsletter scientifica in multiple lingue: svedese, finlandese, danese, inglese ed italiano, adattandosi alla lingua del pubblico di destinazione.
+        </figcaption>
       </figure>
 
       <h3>1. <strong>Input Semplificato tramite Google Sheets</strong></h3>
