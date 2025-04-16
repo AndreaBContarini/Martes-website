@@ -23,6 +23,13 @@ function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Verifica che il budget sia stato selezionato
+    if (!formData.budget) {
+      alert("Per favore, seleziona un budget per il progetto");
+      return;
+    }
+    
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -235,7 +242,7 @@ function Home() {
                   <label className="block text-sm font-medium mb-2">
                     Investimento per il progetto:*
                   </label>
-                  <div className="space-y-2">
+                  <div className="space-y-2" role="radiogroup" aria-required="true">
                     <label className="flex items-center">
                       <input
                         type="radio"
@@ -244,6 +251,7 @@ function Home() {
                         className="mr-2"
                         onChange={handleChange}
                         checked={formData.budget === "1500-2500"}
+                        required
                       />
                       1.500€ - 2.500€
                     </label>
