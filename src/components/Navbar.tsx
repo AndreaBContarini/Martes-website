@@ -138,6 +138,18 @@ function Navbar() {
               >
                 Chi siamo
               </Link>
+              <Link
+                to="/newsletter"
+                onClick={() => {
+                  scrollToTop();
+                  setIsOpen(false);
+                }}
+                className={`block px-4 py-2 hover:text-[#274f36] ${
+                  location.pathname === '/newsletter' ? 'text-[#274f36]' : ''
+                }`}
+              >
+                Newsletter
+              </Link>
               <button
                 onClick={() => {
                   scrollToForm();

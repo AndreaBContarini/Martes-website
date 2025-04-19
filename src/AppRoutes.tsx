@@ -8,6 +8,7 @@ import CaseStudyPost from './pages/CaseStudyPost';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
+import Newsletter from './pages/Newsletter';
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
       <Route path="/blog/:id" element={<BlogPost />} />
       <Route path="/casi-studio" element={<CasiStudio />} />
       <Route path="/casi-studio/:id" element={<CaseStudyPost />} />
+      <Route path="/newsletter" element={<Newsletter />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/cookies" element={<Cookies />} />
