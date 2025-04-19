@@ -23,7 +23,7 @@ const SEOHead = ({
   const baseUrl = "https://martes-ai.com";
   
   // Keywords espanse
-  const keywordsString = "martes ai, automazione ai, intelligenza artificiale, chatbot ai, lead generation ai, automazione processi aziendali, consulenza ai, gpt personalizzato, assistenti virtuali ai, agenti AI, software AI, SaaS AI, automazione CRM, AI per aziende, AI per professionisti";
+  const keywordsString = "martes ai, automazione ai, chatbot ai, lead generation ai, automazione processi aziendali, consulenza ai pmi, gpt personalizzato, assistenti virtuali ai, agenti AI, software AI, SaaS AI, automazione CRM, AI per aziende, AI per professionisti";
   
   // Schema.org JSON-LD di base
   const baseSchema: any = {
