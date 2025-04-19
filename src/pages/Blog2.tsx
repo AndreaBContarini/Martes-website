@@ -8,6 +8,14 @@ import SEOHead from '../components/SEOHead';
 // Definizione dei post del blog con immagini statiche e leggere
 const blogPosts = [
   {
+    id: 'gpt-41-nuovo-standard-agenti-ai',
+    title: "GPT-4.1: Il Nuovo Standard per gli Agenti AI",
+    excerpt: "Scopri come GPT-4.1 rivoluziona la creazione di agenti AI grazie al contesto da 1 milione di token, prestazioni superiori e costi ridotti. Un vero game changer per sviluppatori e aziende.",
+    date: '2025-04-01',
+    readTime: '8 min',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT-4.1',
+  },
+  {
     id: 'mcp-ponte-tra-ai-e-dati-esterni',
     title: "MCP: Il Ponte tra AI e Dati Esterni",
     excerpt: "MCP (Model Context Protocol) è un nuovo standard aperto che rivoluziona il modo in cui gli agenti AI si connettono alle fonti di dati esterne, permettendo agli LLM di interagire facilmente con database, API e altri servizi esterni tramite un protocollo standardizzato.",
