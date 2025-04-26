@@ -73,4 +73,26 @@ button:not(:disabled):hover {
 input, button, a {
   position: relative;
   z-index: 10;
+}
+
+/* Stili specifici per il selettore di telefono */
+.react-tel-input .flag-dropdown {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 100 !important;
+}
+
+.react-tel-input .selected-flag {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.react-tel-input .selected-flag:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.react-tel-input .country-list {
+  z-index: 101 !important;
 } 

@@ -296,10 +296,10 @@ function Home() {
                     country={'it'}
                     value={formData.phone}
                     onChange={phone => setFormData(prev => ({ ...prev, phone }))}
-                    containerClass="w-full"
+                    containerClass="w-full relative z-50"
                     inputClass="w-full p-3 rounded-lg bg-white/10 border border-white/20 focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition text-white"
-                    buttonClass="border border-white/20 rounded-l-lg bg-white/10"
-                    dropdownClass="bg-black/90 text-white"
+                    buttonClass="border border-white/20 rounded-l-lg bg-white/10 hover:bg-white/20"
+                    dropdownClass="bg-black/90 text-white absolute z-[100]"
                     searchClass="bg-white text-black"
                     enableSearch={true}
                     searchPlaceholder="Cerca paese..."
@@ -307,12 +307,22 @@ function Home() {
                     disableSearchIcon={false}
                     enableAreaCodes={true}
                     countryCodeEditable={true}
+                    autoFormat={true}
                     disableDropdown={false}
                     inputStyle={{
                       backgroundColor: 'rgba(255, 255, 255, 0.1)',
                       border: 'none',
                       color: 'white',
                       width: '100%'
+                    }}
+                    buttonStyle={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      border: 'none',
+                      borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderTopLeftRadius: '8px',
+                      borderBottomLeftRadius: '8px',
+                      cursor: 'pointer',
+                      pointerEvents: 'auto'
                     }}
                   />
                 </div>
