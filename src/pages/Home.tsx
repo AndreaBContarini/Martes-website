@@ -2,9 +2,10 @@ import Hero from '../components/Hero';
 import ComparisonSection from '../components/ComparisonSection';
 import ServicesSection from '../components/ServicesSection';
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import './animations.css';
 
 function Home() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,52 @@ function Home() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Stato per il form della newsletter
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [isNewsletterSubmitting, setIsNewsletterSubmitting] = useState(false);
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [newsletterError, setNewsletterError] = useState('');
+  const [isNewsletterEmailValid, setIsNewsletterEmailValid] = useState(false);
+
+  // Validazione dell'email per la newsletter
+  useEffect(() => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsNewsletterEmailValid(emailRegex.test(newsletterEmail));
+  }, [newsletterEmail]);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!isNewsletterEmailValid) {
+      setNewsletterError('Per favore, inserisci un indirizzo email valido.');
+      return;
+    }
+
+    setIsNewsletterSubmitting(true);
+    setNewsletterError('');
+
+    try {
+      const response = await fetch('https://hook.eu2.make.com/9jesbl0qp9wvi332ixouhgqs59suu58h', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Errore durante l'invio. Riprova più tardi.");
+      }
+
+      setNewsletterSubmitted(true);
+      setNewsletterEmail('');
+    } catch (err) {
+      setNewsletterError(err instanceof Error ? err.message : "Si è verificato un errore. Riprova più tardi.");
+    } finally {
+      setIsNewsletterSubmitting(false);
+    }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,6 +182,63 @@ function Home() {
         <Hero />
         <ComparisonSection />
         <ServicesSection />
+        
+        {/* Sezione Newsletter */}
+        <section className="py-20 w-full bg-black/20">
+          <div className="container mx-auto px-4 max-w-md">
+            <div className="bg-black/30 p-8 rounded-lg border border-gray-800 shadow-lg hover:shadow-[#274f36]/20 transition-all duration-300 animate-fadeIn">
+              <div className="text-center mb-10">
+                <h2 className="text-4xl font-bold mb-4 text-white animate-slideDown">Iscriviti alla nostra Newsletter</h2>
+                <div className="w-24 h-1 bg-[#274f36] mx-auto mb-6 animate-scaleIn"></div>
+                <p className="text-gray-300 animate-fadeIn">
+                  Ricevi aggiornamenti e insight esclusivi direttamente nella tua casella di posta.
+                </p>
+              </div>
+              
+              {newsletterSubmitted ? (
+                <div className="bg-[#274f36]/20 border border-[#274f36] rounded-lg p-6 text-center animate-fadeIn">
+                  <h2 className="text-xl font-semibold mb-2">Grazie per esserti iscritto!</h2>
+                  <p className="text-gray-300">Ti terremo aggiornato con le ultime novità dal mondo dell'AI.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleNewsletterSubmit} className="space-y-6 relative">
+                  <div className="relative z-10">
+                    <label htmlFor="newsletter-email" className="block text-sm font-medium mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="newsletter-email"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      placeholder="Il tuo indirizzo email"
+                      className={`w-full p-3 rounded-lg bg-white/10 border ${newsletterError ? 'border-red-500' : 'border-white/20'} focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition-all duration-300 ease-in-out hover:bg-white/15 focus:scale-[1.01]`}
+                      style={{ pointerEvents: 'auto', opacity: 1 }}
+                      required
+                    />
+                    {newsletterError && <p className="mt-2 text-sm text-red-500 animate-pulse">{newsletterError}</p>}
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isNewsletterSubmitting || !isNewsletterEmailValid}
+                    className={`w-full bg-[#274f36] hover:bg-[#1a3524] text-white py-3 px-6 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${
+                      (isNewsletterSubmitting || !isNewsletterEmailValid) ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
+                  >
+                    {isNewsletterSubmitting ? 'Iscrizione in corso...' : 'Iscriviti'}
+                  </button>
+
+                  <p className="text-xs text-gray-400 text-center mt-4">
+                    Iscrivendoti, accetti la nostra <a href="/privacy" className="text-[#274f36] hover:underline hover:text-[#3a6c4a] transition-colors duration-300">Privacy Policy</a>. 
+                    Non invieremo mai spam e potrai annullare l'iscrizione in qualsiasi momento.
+                  </p>
+                </form>
+              )}
+            </div>
+          </div>
+        </section>
+        
         <section id="contact-form" className="py-20 w-full">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto bg-black/40 rounded-3xl p-8">
@@ -200,6 +304,10 @@ function Home() {
                     enableSearch={true}
                     searchPlaceholder="Cerca paese..."
                     placeholder="Inserisci il tuo numero"
+                    disableSearchIcon={false}
+                    enableAreaCodes={true}
+                    countryCodeEditable={true}
+                    disableDropdown={false}
                     inputStyle={{
                       backgroundColor: 'rgba(255, 255, 255, 0.1)',
                       border: 'none',
@@ -247,13 +355,13 @@ function Home() {
                       <input
                         type="radio"
                         name="budget"
-                        value="1500-2500"
+                        value="2000-2500"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "1500-2500"}
+                        checked={formData.budget === "2000-2500"}
                         required
                       />
-                      1.500€ - 2.500€
+                      2.000€ - 2.500€
                     </label>
                     <label className="flex items-center">
                       <input

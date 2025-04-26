@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import SEOHead from '../components/SEOHead';
+import './animations.css'; // Import delle animazioni (creeremo questo file dopo)
 
 function Newsletter() {
   const [email, setEmail] = useState('');
@@ -71,23 +72,23 @@ function Newsletter() {
       />
       
       <div className="container mx-auto px-4 max-w-md">
-        <div className="bg-black/30 p-8 rounded-lg border border-gray-800 shadow-lg">
+        <div className="bg-black/30 p-8 rounded-lg border border-gray-800 shadow-lg hover:shadow-[#274f36]/20 transition-all duration-300 animate-fadeIn">
           <div className="text-center mb-10">
-            <h1 className="text-4xl font-bold mb-4 text-white">Iscriviti alla nostra Newsletter</h1>
-            <div className="w-24 h-1 bg-[#274f36] mx-auto mb-6"></div>
-            <p className="text-gray-300">
+            <h1 className="text-4xl font-bold mb-4 text-white animate-slideDown">Iscriviti alla nostra Newsletter</h1>
+            <div className="w-24 h-1 bg-[#274f36] mx-auto mb-6 animate-scaleIn"></div>
+            <p className="text-gray-300 animate-fadeIn">
               Ricevi aggiornamenti e insight esclusivi direttamente nella tua casella di posta.
             </p>
           </div>
           
           {submitted ? (
-            <div className="bg-[#274f36]/20 border border-[#274f36] rounded-lg p-6 text-center">
+            <div className="bg-[#274f36]/20 border border-[#274f36] rounded-lg p-6 text-center animate-fadeIn">
               <h2 className="text-xl font-semibold mb-2">Grazie per esserti iscritto!</h2>
               <p className="text-gray-300">Ti terremo aggiornato con le ultime novità dal mondo dell'AI.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+            <form onSubmit={handleSubmit} className="space-y-6 relative">
+              <div className="relative z-10">
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
                   Email *
                 </label>
@@ -97,16 +98,17 @@ function Newsletter() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Il tuo indirizzo email"
-                  className={`w-full p-3 rounded-lg bg-white/10 border ${error ? 'border-red-500' : 'border-white/20'} focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition`}
+                  className={`w-full p-3 rounded-lg bg-white/10 border ${error ? 'border-red-500' : 'border-white/20'} focus:border-[#274f36] focus:ring-1 focus:ring-[#274f36] transition-all duration-300 ease-in-out hover:bg-white/15 focus:scale-[1.01]`}
+                  style={{ pointerEvents: 'auto', opacity: 1 }}
                   required
                 />
-                {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+                {error && <p className="mt-2 text-sm text-red-500 animate-pulse">{error}</p>}
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting || !isEmailValid}
-                className={`w-full bg-[#274f36] hover:bg-[#1a3524] text-white py-3 px-6 rounded-lg text-lg font-semibold transition duration-300 ${
+                className={`w-full bg-[#274f36] hover:bg-[#1a3524] text-white py-3 px-6 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${
                   (isSubmitting || !isEmailValid) ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
@@ -114,7 +116,7 @@ function Newsletter() {
               </button>
 
               <p className="text-xs text-gray-400 text-center mt-4">
-                Iscrivendoti, accetti la nostra <a href="/privacy" className="text-[#274f36] hover:underline">Privacy Policy</a>. 
+                Iscrivendoti, accetti la nostra <a href="/privacy" className="text-[#274f36] hover:underline hover:text-[#3a6c4a] transition-colors duration-300">Privacy Policy</a>. 
                 Non invieremo mai spam e potrai annullare l'iscrizione in qualsiasi momento.
               </p>
             </form>
