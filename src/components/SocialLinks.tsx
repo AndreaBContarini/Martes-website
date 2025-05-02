@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Twitter, Youtube, Github } from 'lucide-react';
+import { Linkedin, Twitter, Youtube, Github, Globe } from 'lucide-react';
 
 interface SocialLinksProps {
   person: 'riccardo' | 'andrea';
@@ -15,6 +15,7 @@ function SocialLinks({ person }: SocialLinksProps) {
       linkedin: 'https://www.linkedin.com/in/andreabellicontarini/',
       twitter: 'https://x.com/andreabelli',
       github: 'https://github.com/andreabcontarini',
+      website: 'https://andreabcontarini.netlify.app/',
     },
   };
 
@@ -66,6 +67,15 @@ function SocialLinks({ person }: SocialLinksProps) {
             className="text-gray-400 hover:text-white transition-colors"
           >
             <Github className="w-6 h-6" />
+          </a>
+          <a
+            href={links.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors"
+            title="Sito Web Personale"
+          >
+            <Globe className="w-6 h-6" />
           </a>
         </>
       )}
