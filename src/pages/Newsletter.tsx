@@ -33,7 +33,7 @@ function Newsletter() {
     setError('');
 
     try {
-      const response = await fetch('https://hook.eu2.make.com/9jesbl0qp9wvi332ixouhgqs59suu58h', {
+      const response = await fetch('https://hook.eu2.make.com/c0349kubb7j3jo4y6ou242ca1faorjfv', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
