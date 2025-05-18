@@ -30,8 +30,8 @@ const logos = [
     alt: "Clinica Oculistica Santa Lucia"
   },
   {
-    src: "/assets/logos/federico-loffredo.png",
-    alt: "Federico Loffredo"
+    src: "/assets/logos/flyip.png",
+    alt: "Flyip"
   },
   {
     src: "https://www.viaggicarmen.com/wpunitravel/wp-content/uploads/2023/11/agenzia-viaggi-aprilia.png",

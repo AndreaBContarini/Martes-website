@@ -118,8 +118,8 @@ const cases = {
 
       <div class="aspect-w-16 aspect-h-9 mb-8">
         <iframe 
-          src="https://www.youtube.com/embed/avrP3wm11KM" 
-          title="WeTravel Group Case Study"
+          src="https://www.youtube.com/embed/RofZP_PwVgk" 
+          title="Bluvacanze Case Study"
           class="w-full h-[400px]"
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -127,7 +127,7 @@ const cases = {
         </iframe>
       </div>
 
-      <h2 class="text-3xl font-bold mt-8 mb-4">Aumento dei ricavi mensili: +27.500€ con un Chatbot AI</h2>
+      <h2 class="text-3xl font-bold mt-8 mb-4">Aumento vertiginoso dei ricavi mensili con un Agente AI</h2>
 
       <h3 class="text-2xl font-bold mt-8 mb-4">Introduzione: Il Potere dell'Automazione AI</h3>
       <p>L'adozione delle nostre tecnologie basate sull'intelligenza artificiale ha portato un impatto significativo per una delle agenzie di viaggi. Grazie a questa automazione - che ora vedremo in dettaglio - l'agenzia ha visto un aumento dei ricavi mensili di circa 27.500€, ottimizzando l'utilizzo del proprio database di clienti e contatti per promuovere offerte di viaggio in modo efficace e personalizzato.</p>
