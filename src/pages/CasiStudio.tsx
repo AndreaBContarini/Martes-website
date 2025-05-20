@@ -7,6 +7,21 @@ import SEOHead from '../components/SEOHead';
 
 const cases = [
   {
+    id: 'automazione-rendicontazione-monni-srl',
+    title: 'Automazione Rendicontazione Operativa con Agente WhatsApp',
+    date: new Date('2025-05-15'),
+    image: '/assets/logos/monni_SRL.png',
+    testimonial: {
+      quote: "Con l'agente conversazionale WhatsApp, abbiamo digitalizzato completamente il processo di rendicontazione, riducendo notevolmente il tempo necessario e garantendo una raccolta dati strutturata e puntuale.",
+      author: 'Monni SRL',
+      role: 'Azienda di Edilizia e Lavori Stradali',
+    },
+    content: `
+      <h2>Introduzione</h2>
+      <p>Monni SRL, leader nel settore dell'edilizia e dei lavori stradali, si è trovata ad affrontare una sfida comune a molte imprese del comparto: la gestione efficiente della rendicontazione giornaliera degli operai. La necessità di raccogliere informazioni dettagliate sulle attività svolte, l'utilizzo dei mezzi e la documentazione correlata, ha portato allo sviluppo di una soluzione innovativa basata su intelligenza artificiale e automazione.</p>
+    `,
+  },
+  {
     id: 'automazione-ai-clinica-oculistica-santa-lucia',
     title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
     //description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di e AI, migliorando efficienza e servizio ai pazienti.",

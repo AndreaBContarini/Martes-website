@@ -150,15 +150,6 @@ function Navbar() {
               >
                 Newsletter
               </Link>
-              <button
-                onClick={() => {
-                  scrollToForm();
-                  setIsOpen(false);
-                }}
-                className="block w-full text-left px-4 py-2 bg-[#274f36] hover:bg-[#1f3f2b] mt-1 rounded-md"
-              >
-                Contattaci
-              </button>
             </div>
           )}
         </div>

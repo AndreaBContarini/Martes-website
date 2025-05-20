@@ -36,6 +36,10 @@ const logos = [
   {
     src: "https://www.viaggicarmen.com/wpunitravel/wp-content/uploads/2023/11/agenzia-viaggi-aprilia.png",
     alt: "Viaggi Carmen"
+  },
+  {
+    src: "/assets/logos/monni_SRL.png",
+    alt: "Monni SRL"
   }
 ];
 

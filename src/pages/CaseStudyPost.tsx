@@ -464,6 +464,117 @@ const cases = {
       <p>Questa soluzione rappresenta un <strong>modello replicabile</strong> per tutte le aziende che desiderano trasformare la propria comunicazione, affidandosi a tecnologie AI strutturate ma accessibili. In Martes AI, crediamo che l'innovazione debba semplificare, non complicare.</p>
     `
   },
+  'automazione-rendicontazione-monni-srl': {
+    title: "Automazione Rendicontazione Operativa con Agente WhatsApp",
+    date: "15 maggio 2025",
+    content: `
+      <h2>Introduzione</h2>
+      <p><a href="https://gesuinomonnisrl.it/" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Monni SRL</a>, leader nel settore dell'edilizia e dei lavori stradali, si è trovata ad affrontare una sfida comune a molte imprese del comparto: la gestione efficiente della rendicontazione giornaliera degli operai. La necessità di raccogliere informazioni dettagliate sulle attività svolte, l'utilizzo dei mezzi e la documentazione correlata, ha portato allo sviluppo di una soluzione innovativa basata su intelligenza artificiale e automazione.</p>
+
+      <h2>La Sfida</h2>
+      <p>Prima dell'implementazione della soluzione, Monni SRL affrontava diverse criticità:</p>
+      <ul>
+        <li>Rendicontazione disomogenea e spesso incompleta</li>
+        <li>Bassa puntualità nella raccolta dei dati giornalieri</li>
+        <li>Difficoltà nella gestione di diversi formati (vocali, immagini, testi)</li>
+        <li>Assenza di follow-up automatizzati</li>
+        <li>Impossibilità di analisi strutturata dei dati raccolti</li>
+      </ul>
+
+      <h2>La Soluzione</h2>
+      <p>È stato sviluppato un sistema integrato che combina:</p>
+      <ul>
+        <li>Un agente conversazionale su <a href="https://partners.voiceflow.com/bt9ka4787d8z" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Voiceflow</a></li>
+        <li>Integrazione con WhatsApp per la comunicazione</li>
+        <li>Automazioni <a href="https://www.make.com/en/register?pc=martesai" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Make</a> per la gestione dei flussi</li>
+        <li>Whisper per la trascrizione dei messaggi vocali</li>
+      </ul>
+
+      <h3>1. Gestione Automatica dei Messaggi</h3>
+      <p>Il flusso orchestratore analizza il tipo di contenuto ricevuto:</p>
+      <ul>
+        <li>Testi: inviati direttamente al flusso principale</li>
+        <li>Immagini: elaborate e archiviate automaticamente</li>
+        <li>Vocali: trascritti tramite Whisper prima dell'elaborazione</li>
+      </ul>
+
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/scenario1.png" alt="Scenario di gestione automatizzata dei messaggi" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
+        <figcaption class="text-sm text-gray-400 mt-2">Scenario di gestione automatizzata dei messaggi in entrata da WhatsApp: testi, vocali e immagini instradati nei rispettivi flussi.</figcaption>
+      </figure>
+
+      <h3>2. Sistema di Follow-up Intelligente</h3>
+      <p>Ogni giorno alle ore 18, l'agente invia automaticamente un messaggio agli operai per la rendicontazione. Il sistema è progettato per essere flessibile:</p>
+      <ul>
+        <li>Possibilità di posticipare la rendicontazione di 30 minuti</li>
+        <li>Gestione automatica delle flag di stato</li>
+        <li>Follow-up programmati in base alle risposte</li>
+      </ul>
+
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/scenario2.png" alt="Scenario di invio programmato" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
+        <figcaption class="text-sm text-gray-400 mt-2">Scenario di invio programmato dei messaggi di rendicontazione con gestione dei follow-up e aggiornamento delle flag.</figcaption>
+      </figure>
+
+      <h3>3. Automazioni di Controllo</h3>
+      <p>Ulteriori scenari Make si occupano di:</p>
+      <ul>
+        <li>Monitoraggio automatico degli orari</li>
+        <li>Gestione dei follow-up</li>
+        <li>Segnalazione di assenze di risposta</li>
+      </ul>
+
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/scenario3.png" alt="Scenario di controllo risposte" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
+        <figcaption class="text-sm text-gray-400 mt-2">Scenario di controllo risposte e aggiornamento automatico dei follow-up in base al comportamento dell'operaio.</figcaption>
+      </figure>
+
+      <h3>4. Flusso Conversazionale</h3>
+      <p>È stato sviluppato un agente conversazionale all'interno di Voiceflow che guida l'operaio attraverso il processo di rendicontazione, raccogliendo:</p>
+      <ul>
+        <li>Dati sul cantiere</li>
+        <li>Informazioni sui mezzi utilizzati</li>
+        <li>Documentazione fotografica</li>
+        <li>Note aggiuntive</li>
+      </ul>
+
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/scenario4.png" alt="Mappa del flusso conversazionale" class="mx-auto rounded-lg shadow-lg w-1/2" />
+        <figcaption class="text-sm text-gray-400 mt-2">Mappa del flusso conversazionale in Voiceflow: raccolta dati, classificazione, epilogo e gestione dei mezzi utilizzati.</figcaption>
+      </figure>
+
+      <h2>Risultati Chiave</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div class="bg-black/20 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Efficienza Operativa</h3>
+          <ul class="space-y-2">
+            <li>100% degli operai raggiunti giornalmente</li>
+            <li>Riduzione significativa del tempo di rendicontazione, automatizzandone la maggior parte dei processi</li>
+            <li>Eliminazione totale della rendicontazione cartacea</li>
+          </ul>
+        </div>
+        <div class="bg-black/20 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Qualità dei Dati</h3>
+          <ul class="space-y-2">
+            <li>Struttura dati completamente digitalizzata</li>
+            <li>Accesso in tempo reale per il team gestionale</li>
+            <li>Maggiore reattività ai comportamenti degli operai</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Lezioni Apprese</h2>
+      <p>Il progetto ha evidenziato tre aspetti fondamentali per il successo dell'automazione:</p>
+      <ul>
+        <li><strong>Accessibilità tecnologica:</strong> L'utilizzo di WhatsApp ha garantito un'adozione immediata da parte del personale operativo.</li>
+        <li><strong>Strutturazione dei dati:</strong> La digitalizzazione ha permesso analisi e decisioni più rapide e informate.</li>
+        <li><strong>Flessibilità del sistema:</strong> L'adattamento ai comportamenti umani ha aumentato l'efficacia complessiva.</li>
+      </ul>
+
+      <h2>Conclusione</h2>
+      <p>Il caso Monni SRL dimostra come l'automazione conversazionale, se ben progettata e implementata, possa trasformare processi complessi in flussi efficienti e scalabili. La soluzione ha portato benefici misurabili sia in termini di efficienza operativa che di qualità dei dati, rappresentando un modello replicabile per altre aziende del settore.</p>
+    `,
+  },
 };
 
 function CaseStudyPost() {
