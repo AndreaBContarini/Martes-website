@@ -17,15 +17,17 @@ function Footer() {
               <img src={logo} alt="Martes AI Logo" className="w-12" />
               <h3 className="text-2xl font-bold text-white">Martes AI</h3>
             </div>
-            <p className="text-gray-400 text-sm">
-              Automatizza con l'AI i tuoi flussi di lavoro e risparmia tempo prezioso.
-            </p>
+            <div className="text-gray-400 text-sm">
+              <p className="mb-1">Martes AI</p>
+              <p className="mb-1">Via Aurelia 325 Roma</p>
+              <p>P.IVA 18026131005</p>
+            </div>
           </div>
           
           <div>
             <h4 className="text-lg font-bold mb-4 text-white">Contatti</h4>
-            <a href="mailto:andrea@martes-ai.com" className="text-gray-400 hover:text-white block transition-colors duration-200">
-              info@martes-ai.com
+            <a href="mailto:contact@martes-ai.com" className="text-gray-400 hover:text-white block transition-colors duration-200">
+              contact@martes-ai.com
             </a>
           </div>
 
@@ -93,7 +95,7 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>© 2024 Martes AI. Tutti i diritti riservati.</p>
+          <p>© 2025 Martes AI. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>
