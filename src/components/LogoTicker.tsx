@@ -2,10 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 
 const logos = [
   {
-    src: "/assets/logos/wetravel.png",
-    alt: "We Travel Group"
-  },
-  {
     src: "https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png",
     alt: "Bluvacanze"
   },

@@ -563,7 +563,7 @@ const cases = {
         </div>
       </div>
 
-      <h2>Lezioni Apprese</h2>
+      <h2>Riflessioni</h2>
       <p>Il progetto ha evidenziato tre aspetti fondamentali per il successo dell'automazione:</p>
       <ul>
         <li><strong>Accessibilità tecnologica:</strong> L'utilizzo di WhatsApp ha garantito un'adozione immediata da parte del personale operativo.</li>
@@ -590,7 +590,7 @@ function CaseStudyPost() {
   }
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-28 pb-10 px-2 sm:px-4 md:px-8 max-w-full">
       <Helmet>
         <title>{case_.title} | Martes AI - Casi Studio</title>
         <meta name="description" content={`Scopri come Martes AI ha implementato soluzioni di automazione e intelligenza artificiale per la ${case_.title}, migliorando l'efficienza operativa e l'esperienza dei pazienti.`} />
@@ -621,12 +621,15 @@ function CaseStudyPost() {
           })}
         </script>
       </Helmet>
-      <div className="container mx-auto px-8 max-w-4xl">
-        <h1 className="text-5xl font-bold mb-4 text-center">{case_.title}</h1>
-        <p className="text-center text-gray-400 mb-8">Pubblicato il {case_.date}</p>
+      <div className="container mx-auto px-2 sm:px-4 max-w-3xl md:max-w-4xl">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center leading-tight break-words">{case_.title}</h1>
+        <p className="text-center text-gray-400 mb-8 text-base sm:text-lg">Pubblicato il {case_.date}</p>
         <div
-          className="prose prose-invert prose-green max-w-none"
-          dangerouslySetInnerHTML={{ __html: case_.content }}
+          className="prose prose-invert prose-green max-w-none text-base sm:text-lg md:text-xl !leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: case_.content.replace(
+            /<img([^>]*src=["']\/assets\/immagini\/scenario4\.png[^>]*)class=["'][^"']*["']/,
+            '<img$1class="mx-auto rounded-lg shadow-lg w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl h-auto"'
+          ) }}
         />
       </div>
     </div>
