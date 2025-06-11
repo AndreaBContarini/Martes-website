@@ -2,14 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 
 const logos = [
   {
-    src: "https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png",
-    alt: "Bluvacanze"
-  },
-  {
-    src: "/assets/logos/fantozzi.png",
-    alt: "Fantozzi & Associati"
-  },
-  {
     src: "/assets/logos/shapeup.png",
     alt: "Shape-Up"
   },
@@ -18,16 +10,25 @@ const logos = [
     alt: "Ecommerceparts"
   },
   {
+    src: "https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png",
+    alt: "Bluvacanze"
+  },
+  {
+    src: "/assets/logos/arrow.png",
+    alt: "Arrow Electronics"
+  },
+  {
+    src: "/assets/logos/fantozzi.png",
+    alt: "Fantozzi & Associati"
+  },
+
+  {
     src: "/assets/logos/citybeach.png",
     alt: "CityBeach Boardshop"
   },
   {
     src: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
     alt: "Clinica Oculistica Santa Lucia"
-  },
-  {
-    src: "/assets/logos/flyip.png",
-    alt: "Flyip"
   },
   {
     src: "https://www.viaggicarmen.com/wpunitravel/wp-content/uploads/2023/11/agenzia-viaggi-aprilia.png",
