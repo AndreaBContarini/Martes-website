@@ -14,10 +14,6 @@ const logos = [
     alt: "Bluvacanze"
   },
   {
-    src: "/assets/logos/arrow.png",
-    alt: "Arrow Electronics"
-  },
-  {
     src: "/assets/logos/fantozzi.png",
     alt: "Fantozzi & Associati"
   },
