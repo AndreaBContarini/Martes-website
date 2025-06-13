@@ -96,8 +96,7 @@ function Cookies() {
 
           <h2>7. Contatti</h2>
           <p>
-            Per qualsiasi domanda relativa alla nostra cookie policy, puoi contattarci 
-            all'indirizzo email: info@martes-ai.com
+            Per qualsiasi domanda relativa alla nostra cookie policy, puoi contattarci all'indirizzo email: <a href="mailto:contact@martes-ai.com">contact@martes-ai.com</a>
           </p>
         </div>
       </div>
