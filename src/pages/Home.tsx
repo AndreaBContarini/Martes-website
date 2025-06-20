@@ -365,13 +365,13 @@ function Home() {
                       <input
                         type="radio"
                         name="budget"
-                        value="2000-2500"
+                        value="2500"
                         className="mr-2"
                         onChange={handleChange}
-                        checked={formData.budget === "2000-2500"}
+                        checked={formData.budget === "2500"}
                         required
                       />
-                      2.000€ - 2.500€
+                      2.500€
                     </label>
                     <label className="flex items-center">
                       <input
