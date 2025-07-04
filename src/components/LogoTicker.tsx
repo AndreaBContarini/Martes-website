@@ -1,47 +1,116 @@
+import { useState, useRef, useEffect } from 'react';
+
 const logos = [
   {
-    src: "https://i.ibb.co/nPq0dkr/PHOTO-2024-08-17-13-31-51-removebg-preview.png",
-    alt: "We Travel Group"
+    src: "/assets/logos/shapeup.png",
+    alt: "Shape-Up"
   },
   {
-    src: "https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png",
-    alt: "Fantozzi & Associati"
-  },
-  {
-    src: "https://i.ibb.co/BtPCmvC/ecommerceparts-removebg-preview.png",
+    src: "/assets/logos/ecommerceparts.png",
     alt: "Ecommerceparts"
   },
   {
-    src: "https://i.ibb.co/LpScFQN/citybeach.png",
+    src: "https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png",
+    alt: "Bluvacanze"
+  },
+  {
+    src: "/assets/logos/fantozzi.png",
+    alt: "Fantozzi & Associati"
+  },
+
+  {
+    src: "/assets/logos/citybeach.png",
     alt: "CityBeach Boardshop"
   },
   {
-    src: "https://i.ibb.co/KzNTDF0D/loffredo.jpg",
-    alt: "Federico Loffredo"
+    src: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
+    alt: "Clinica Oculistica Santa Lucia"
   },
   {
     src: "https://www.viaggicarmen.com/wpunitravel/wp-content/uploads/2023/11/agenzia-viaggi-aprilia.png",
     alt: "Viaggi Carmen"
+  },
+  {
+    src: "/assets/logos/monni_SRL.png",
+    alt: "Monni SRL"
   }
 ];
 
 function LogoTicker() {
+  const [isPaused, setIsPaused] = useState(false);
+  const tickerContentRef = useRef<HTMLDivElement>(null);
+  
+  // Quando l'utente preme su un logo, lo scorrimento si interrompe
+  const handleMouseDown = () => {
+    setIsPaused(true);
+  };
+
+  // Quando l'utente rilascia, lo scorrimento riprende
+  const handleMouseUp = () => {
+    setIsPaused(false);
+  };
+
+  // Gestisce l'uscita del mouse dall'area anche se il pulsante è ancora premuto
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+
+  // Per il touch su mobile
+  const handleTouchStart = () => {
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+  };
+
+  // Aggiungiamo effetto per gestire la pausa dell'animazione
+  useEffect(() => {
+    const tickerContent = tickerContentRef.current;
+    if (tickerContent) {
+      if (isPaused) {
+        // Salva la posizione attuale dello scorrimento
+        const computedStyle = window.getComputedStyle(tickerContent);
+        const matrix = new WebKitCSSMatrix(computedStyle.transform);
+        tickerContent.style.transform = `translateX(${matrix.m41}px)`;
+        tickerContent.style.animationPlayState = 'paused';
+      } else {
+        // Riprende l'animazione
+        tickerContent.style.animationPlayState = 'running';
+        // Dopo un breve delay, rimuovi lo style inline per ripristinare l'animazione CSS
+        setTimeout(() => {
+          if (tickerContent) {
+            tickerContent.style.transform = '';
+          }
+        }, 50);
+      }
+    }
+  }, [isPaused]);
+
   return (
     <section id="partners" className="py-12 w-full bg-black">
       <div className="section-container">
-        <div className="ticker-container flex overflow-hidden whitespace-nowrap">
+        <div 
+          className="ticker-container flex overflow-hidden whitespace-nowrap"
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
+            ref={tickerContentRef}
             className="ticker-content flex items-center"
             style={{
               display: "flex",
-              animation: "marquee 40s linear infinite", // Durata aumentata
+              animation: "marquee 45s linear infinite", // Durata leggermente ridotta (era 40s)
               width: "max-content"
             }}
           >
             {logos.concat(logos).map((logo, index) => (
               <div 
                 key={`logo-${index}`}
-                className="bg-white p-4 rounded-xl flex items-center justify-center shadow-lg transition-transform transform hover:scale-105"
+                className="logo-container bg-white p-4 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
                 style={{
                   width: '200px',
                   height: '100px',
@@ -59,12 +128,24 @@ function LogoTicker() {
         </div>
       </div>
 
-      {/* Stile per animazione più lenta */}
+      {/* Stile per animazione */}
       <style>
         {`
           @keyframes marquee {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
+          }
+          
+          .logo-container:hover img {
+            filter: grayscale(0);
+          }
+          
+          .ticker-container {
+            cursor: grab;
+          }
+          
+          .ticker-container:active {
+            cursor: grabbing;
           }
         `}
       </style>
