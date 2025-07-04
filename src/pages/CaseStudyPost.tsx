@@ -426,9 +426,9 @@ const cases = {
       <p>Martes AI ha progettato e sviluppato un <strong>Agente AI personalizzato</strong>, integrato con <strong>Google Sheets, Make (Integromat)</strong> e <strong><a href="https://mailchimp.com/it/" target="_blank" rel="noopener noreferrer">Mailchimp</a></strong>, capace di automatizzare l'intero ciclo di vita della newsletter scientifica. Ecco le funzionalità principali:</p>
 
       <figure class="my-8 text-center">
-        <img src="/assets/scenario_make_shapeup.png" alt="Scenario Make per l'automazione della newsletter scientifica Shape-UP" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
-        <figcaption class="text-sm text-gray-400 mt-2 text-center">
-          Lo scenario Make che automatizza la creazione e l'invio della newsletter scientifica in multiple lingue: svedese, finlandese, danese, inglese ed italiano, adattandosi alla lingua del pubblico di destinazione.
+        <img src="/assets/scenario_make_shapeup.png" alt="Scenario Make.com per automazione newsletter scientifica Shape-UP" class="mx-auto rounded-lg shadow-lg w-full max-w-2xl h-auto border-2 border-white" style="background: #f4f7fa;" />
+        <figcaption class="text-base text-gray-500 mt-3 text-center">
+          Scenario Make.com che automatizza la generazione, traduzione e invio multilingua delle newsletter Shape-UP, integrando AI, Google Sheets e Mailchimp.
         </figcaption>
       </figure>
 
@@ -460,6 +460,12 @@ const cases = {
       </ul>
 
       <h2>Conclusioni</h2>
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/esempio_newsletter.jpeg" alt="Esempio reale di newsletter Shape-UP inviata ai clienti" class="mx-auto rounded-xl shadow-2xl w-full max-w-[160px] sm:max-w-xs md:max-w-sm h-auto border-4 border-white" style="background: #f4f7fa;" />
+        <figcaption class="text-base text-gray-500 mt-3 text-center">
+          Esempio reale di una newsletter inviata ai clienti Shape-UP: il template è stato sviluppato su misura in HTML per rispondere alle esigenze di branding, impaginazione e leggibilità sia su mobile che su desktop.
+        </figcaption>
+      </figure>
       <p>L'automazione non significa eliminare il controllo umano, ma <strong>potenziarlo con strumenti intelligenti</strong>. L'Agente AI sviluppato per Shape-UP dimostra come sia possibile coniugare <strong>efficienza, qualità e scalabilità</strong>, anche in ambiti delicati come la comunicazione medico-scientifica.</p>
       <p>Questa soluzione rappresenta un <strong>modello replicabile</strong> per tutte le aziende che desiderano trasformare la propria comunicazione, affidandosi a tecnologie AI strutturate ma accessibili. In Martes AI, crediamo che l'innovazione debba semplificare, non complicare.</p>
     `
@@ -539,7 +545,7 @@ const cases = {
       </ul>
 
       <figure class="my-8 text-center">
-        <img src="/assets/immagini/scenario4.png" alt="Mappa del flusso conversazionale" class="mx-auto rounded-lg shadow-lg w-1/2" />
+        <img src=/assets/immagini/scenario4.png"" alt="Mappa del flusso conversazionale" class="mx-auto rounded-lg shadow-lg w-1/2" />
         <figcaption class="text-sm text-gray-400 mt-2">Mappa del flusso conversazionale in Voiceflow: raccolta dati, classificazione, epilogo e gestione dei mezzi utilizzati.</figcaption>
       </figure>
 
