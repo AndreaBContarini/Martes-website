@@ -142,17 +142,17 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business</title>
-        <meta name="description" content="Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI della tua impresa." />
+        <title>Martes AI | Agenti AI, Automazioni AI, e Chatbot per il Business</title>
+        <meta name="description" content="Sviluppiamo ageenti AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI della tua impresa." />
         <meta name="keywords" content="automazioni basate su AI, agenti AI, chatbot intelligenti, lead generation con AI, intelligenza artificiale per business, automazione processi aziendali, soluzioni AI personalizzate, AI per PMI, consulenza AI" />
-        <meta property="og:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot per il Business" />
-        <meta property="og:description" content="Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI." />
+        <meta property="og:title" content="Martes AI | Agenti AI, Agenti AI e Chatbot per il Business" />
+        <meta property="og:description" content="Sviluppiamo Agenti AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI." />
         <meta property="og:image" content="https://i.ibb.co/43C5cwp/favicon.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.martes-ai.com" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Martes AI | Automazioni AI, Agenti AI e Chatbot" />
-        <meta name="twitter:description" content="Automazioni AI personalizzate, chatbot intelligenti e soluzioni di lead generation per ottimizzare i processi della tua azienda." />
+        <meta name="twitter:title" content="Martes AI | Agenti AI, Automazioni AI e Chatbot" />
+        <meta name="twitter:description" content="Agenti AI personalizzati, chatbot intelligenti e soluzioni di lead generation per ottimizzare i processi della tua azienda." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.martes-ai.com" />
         <script type="application/ld+json">
@@ -162,7 +162,7 @@ function Home() {
             "name": "Martes AI",
             "url": "https://www.martes-ai.com",
             "logo": "https://i.ibb.co/43C5cwp/favicon.png",
-            "description": "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate.",
+            "description": "Sviluppiamo Agenti AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, Automazioni AI, Agenti AI e soluzioni personalizzate.",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Via Aurelia 325",

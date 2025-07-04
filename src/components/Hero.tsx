@@ -53,7 +53,7 @@ function Hero() {
         <div className="container mx-auto text-center relative z-10 px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-7xl font-bold mb-6 reveal-text">
-              Automazioni AI
+              Agenti AI
               <br />
               <span className="bg-gradient-to-r from-[#274f36] to-emerald-400 text-transparent bg-clip-text">
                 su misura per te

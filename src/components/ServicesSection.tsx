@@ -21,10 +21,10 @@ function ServicesSection() {
                   <span>Supporto clienti 24/7 multilingue</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <span>Gestione automatizzata appuntamenti</span>
+                  <span>Gestione autonoma delle task</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <span>Consigli personalizzati per utenti</span>
+                  <span>Consigli personalizzati per i tuoi clienti</span>
                 </li>
               </ul>
             </div>
@@ -39,10 +39,10 @@ function ServicesSection() {
               <h3 className="text-2xl font-semibold mb-6 text-white">Automazioni AI su Misura</h3>
               <ul className="space-y-4 text-gray-300">
                 <li className="flex items-center justify-center space-x-2">
-                  <span>GPT personalizzati</span>
+                  <span>Automazioni e GPT personalizzati</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
-                  <span>Automazione email e newsletter</span>
+                  <span>Generazione di contenuti AI-powered</span>
                 </li>
                 <li className="flex items-center justify-center space-x-2">
                   <span>Lead generation</span>
