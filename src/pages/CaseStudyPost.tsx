@@ -544,11 +544,6 @@ const cases = {
         <li>Note aggiuntive</li>
       </ul>
 
-      <figure class="my-8 text-center">
-        <img src=/assets/immagini/scenario4.png"" alt="Mappa del flusso conversazionale" class="mx-auto rounded-lg shadow-lg w-1/2" />
-        <figcaption class="text-sm text-gray-400 mt-2">Mappa del flusso conversazionale in Voiceflow: raccolta dati, classificazione, epilogo e gestione dei mezzi utilizzati.</figcaption>
-      </figure>
-
       <h2>Risultati Chiave</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
         <div class="bg-black/20 p-6 rounded-lg">
