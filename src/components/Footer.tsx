@@ -35,7 +35,7 @@ function Footer() {
             <h4 className="text-lg font-bold mb-4 text-white">Social</h4>
             <div className="flex space-x-6">
               <a 
-                href="https://www.instagram.com/martes_ai" 
+                href="https://www.instagram.com/riccardo_belli_contarini" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -51,7 +51,7 @@ function Footer() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a 
-                href="https://x.com/martes_ai" 
+                href="https://x.com/Riccardo_BC" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors duration-200"
