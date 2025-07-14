@@ -474,6 +474,17 @@ const cases = {
     title: "Automazione Rendicontazione Operativa con Agente WhatsApp",
     date: "15 maggio 2025",
     content: `
+      <div class="aspect-w-16 aspect-h-9 my-8">
+        <iframe 
+          src="https://www.youtube.com/embed/b0MY-e7UpCg" 
+          title="Monni SRL Case Study - Automazione Rendicontazione Operativa"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
       <h2>Introduzione</h2>
       <p><a href="https://gesuinomonnisrl.it/" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Monni SRL</a>, leader nel settore dell'edilizia e dei lavori stradali, si è trovata ad affrontare una sfida comune a molte imprese del comparto: la gestione efficiente della rendicontazione giornaliera degli operai. La necessità di raccogliere informazioni dettagliate sulle attività svolte, l'utilizzo dei mezzi e la documentazione correlata, ha portato allo sviluppo di una soluzione innovativa basata su intelligenza artificiale e automazione.</p>
 
