@@ -53,7 +53,7 @@ function Hero() {
         <div className="container mx-auto text-center relative z-10 px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-7xl font-bold mb-6 reveal-text">
-              Automazioni AI
+              Agenti AI
               <br />
               <span className="bg-gradient-to-r from-[#274f36] to-emerald-400 text-transparent bg-clip-text">
                 su misura per te
@@ -67,13 +67,11 @@ function Hero() {
                 <span className="absolute bottom-0 left-0 right-0 h-2 bg-[#274f36]/40 blur-sm"></span>
                 <span className="absolute bottom-0 left-0 right-0 h-1 bg-[#274f36]"></span>
               </span>
-              <br />
-              Martes AI è il tuo partner per l'innovazione digitale
             </h2>
 
             <div className="flex flex-col md:flex-row gap-4 justify-center mt-6 mb-12">
               <a 
-                href="https://calendly.com/riccardobcontarini/30min"
+                href="https://cal.com/martesai/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#274f36] hover:bg-[#1a3524] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#274f36]/20 transform hover:-translate-y-1"
