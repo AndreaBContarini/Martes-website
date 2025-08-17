@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SocialLinks from '../components/SocialLinks';
-import { Helmet } from 'react-helmet-async';
+
 import SEOHead from '../components/SEOHead';
 
 function ChiSiamo() {
@@ -77,7 +77,7 @@ function ChiSiamo() {
             Fondata da professionisti con competenze complementari in ingegneria informatica e fisica, 
             offriamo un approccio unico che combina solide basi scientifiche con applicazioni pratiche per il business.
           </p>
-          <div className="w-24 h-1 bg-[#274f36] mx-auto mb-12 animate-width"></div>
+          <div className="w-24 h-1 bg-emerald-500 mx-auto mb-12 animate-width"></div>
         </div>
         
         {/* Sezione Missione e Valori */}
@@ -96,19 +96,19 @@ function ChiSiamo() {
             <h2 className="text-3xl font-bold mb-6 text-white">I nostri valori</h2>
             <ul className="text-gray-300 space-y-3">
               <li className="flex items-start">
-                <span className="text-[#274f36] mr-2">▹</span>
+                <span className="text-emerald-500 mr-2">▹</span>
                 <span><strong>Innovazione responsabile:</strong> Sviluppiamo soluzioni AI etiche e sostenibili.</span>
               </li>
               <li className="flex items-start">
-                <span className="text-[#274f36] mr-2">▹</span>
+                <span className="text-emerald-500 mr-2">▹</span>
                 <span><strong>Trasparenza:</strong> Manteniamo un dialogo aperto con i nostri clienti in ogni fase del progetto.</span>
               </li>
               <li className="flex items-start">
-                <span className="text-[#274f36] mr-2">▹</span>
+                <span className="text-emerald-500 mr-2">▹</span>
                 <span><strong>Eccellenza:</strong> Ci impegniamo a fornire soluzioni di altissima qualità, basate su ricerca e sviluppo continui.</span>
               </li>
               <li className="flex items-start">
-                <span className="text-[#274f36] mr-2">▹</span>
+                <span className="text-emerald-500 mr-2">▹</span>
                 <span><strong>Personalizzazione:</strong> Ogni soluzione è progettata su misura per rispondere alle esigenze specifiche del cliente.</span>
               </li>
             </ul>
@@ -119,12 +119,12 @@ function ChiSiamo() {
 
         <div className="grid md:grid-cols-2 gap-16 max-w-5xl mx-auto mb-20">
           {/* Riccardo */}
-          <div className="text-center bg-black/20 p-8 rounded-lg border border-gray-800 hover:border-[#274f36] transition-all duration-300 fade-in">
+          <div className="text-center bg-black/20 p-8 rounded-lg border border-gray-800 hover:border-[emerald-500] transition-all duration-300 fade-in">
             <div className="mb-8 relative">
               <img
                 src="/assets/riccardo.jpg"
                 alt="Riccardo"
-                className="w-64 h-64 rounded-full mx-auto object-cover border-4 border-[#274f36]/30"
+                className="w-64 h-64 rounded-full mx-auto object-cover border-4 border-[emerald-500]/30"
               />
             </div>
             <h2 className="text-3xl font-bold mb-2">Riccardo</h2>
@@ -136,17 +136,17 @@ function ChiSiamo() {
               </p>
             </div>
             
-            <p className="text-[#274f36] mb-6 font-bold">riccardo@martes-ai.com</p>
+            <p className="text-emerald-500 mb-6 font-bold">riccardo@martes-ai.com</p>
             <SocialLinks person="riccardo" />
           </div>
 
           {/* Andrea */}
-          <div className="text-center bg-black/20 p-8 rounded-lg border border-gray-800 hover:border-[#274f36] transition-all duration-300 fade-in">
+          <div className="text-center bg-black/20 p-8 rounded-lg border border-gray-800 hover:border-[emerald-500] transition-all duration-300 fade-in">
             <div className="mb-8">
               <img
                 src="/assets/andrea-min.jpg"
                 alt="Andrea"
-                className="w-64 h-64 rounded-full mx-auto object-cover border-4 border-[#274f36]/30"
+                className="w-64 h-64 rounded-full mx-auto object-cover border-4 border-[emerald-500]/30"
               />
             </div>
             <h2 className="text-3xl font-bold mb-2">Andrea</h2>
@@ -158,7 +158,7 @@ function ChiSiamo() {
               </p>
             </div>
             
-            <p className="text-[#274f36] mb-6 font-bold">andrea@martes-ai.com</p>
+            <p className="text-emerald-500 mb-6 font-bold">andrea@martes-ai.com</p>
             <SocialLinks person="andrea" />
           </div>
         </div>
@@ -167,22 +167,15 @@ function ChiSiamo() {
         <div className="max-w-4xl mx-auto mt-24">
           <h2 className="text-4xl font-bold text-center mb-12 fade-in">Le nostre competenze</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-black/20 p-6 rounded-lg border border-gray-800 hover:border-[#274f36] transition-all duration-300 fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="bg-black/20 p-6 rounded-lg border border-gray-800 hover:border-emerald-500 transition-all duration-300 fade-in" style={{ animationDelay: '0.2s' }}>
               <h3 className="text-xl font-bold mb-4 text-white">Automazione dei processi</h3>
               <p className="text-gray-300">
                 Sviluppiamo soluzioni AI che automatizzano attività ripetitive, ottimizzano i flussi di lavoro e aumentano l'efficienza operativa.
               </p>
             </div>
             
-            <div className="bg-black/20 p-6 rounded-lg border border-gray-800 hover:border-[#274f36] transition-all duration-300 fade-in" style={{ animationDelay: '0.4s' }}>
-              <h3 className="text-xl font-bold mb-4 text-white">Analisi predittiva</h3>
-              <p className="text-gray-300">
-                Utilizziamo algoritmi avanzati per analizzare i dati storici e prevedere tendenze future, supportando decisioni strategiche informate.
-              </p>
-            </div>
-            
-            <div className="bg-black/20 p-6 rounded-lg border border-gray-800 hover:border-[#274f36] transition-all duration-300 fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="bg-black/20 p-6 rounded-lg border border-gray-800 hover:border-emerald-500 transition-all duration-300 fade-in" style={{ animationDelay: '0.4s' }}>
               <h3 className="text-xl font-bold mb-4 text-white">Agenti AI</h3>
               <p className="text-gray-300">
                 Creiamo chatbot e agenti virtuali personalizzati che migliorano l'esperienza cliente e ottimizzano le operazioni interne.

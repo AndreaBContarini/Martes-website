@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 interface CookiePreferences {
@@ -108,7 +108,7 @@ function CookieBanner() {
   if (!showBanner) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-md text-white p-6 z-50 border-t border-[#274f36]/30 shadow-lg">
+    <div className="fixed bottom-0 left-0 right-0 bg-black/95 backdrop-blur-md text-white p-6 z-50 border-t border-emerald-500/30 shadow-lg">
       <div className="container mx-auto max-w-4xl">
         {!showCustomize ? (
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -123,14 +123,14 @@ function CookieBanner() {
                 Puoi personalizzare le tue preferenze o trovare maggiori informazioni nella nostra{' '}
                 <Link 
                   to="/cookies" 
-                  className="text-[#274f36] hover:text-[#1a3524] font-medium underline"
+                  className="text-emerald-500 hover:text-emerald-600 font-medium underline"
                 >
                   Cookie Policy
                 </Link>{' '}
                 e{' '}
                 <Link 
                   to="/privacy" 
-                  className="text-[#274f36] hover:text-[#1a3524] font-medium underline"
+                  className="text-emerald-500 hover:text-emerald-600 font-medium underline"
                 >
                   Privacy Policy
                 </Link>.
@@ -139,19 +139,19 @@ function CookieBanner() {
             <div className="flex flex-wrap gap-2 justify-center md:justify-end">
               <button
                 onClick={handleRejectAll}
-                className="border border-gray-500 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition-colors"
+                className="border border-gray-500 px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition-colors"
               >
                 Rifiuta tutti
               </button>
               <button
                 onClick={() => setShowCustomize(true)}
-                className="border border-[#274f36] px-4 py-2 rounded-lg text-sm hover:bg-[#274f36]/30 transition-colors"
+                className="border border-emerald-500 px-4 py-2 rounded-lg text-sm hover:bg-emerald-500/30 transition-colors"
               >
                 Personalizza
               </button>
               <button
                 onClick={handleAcceptAll}
-                className="bg-[#274f36] px-4 py-2 rounded-lg text-sm hover:bg-[#1a3524] transition-colors"
+                className="bg-emerald-500 px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition-colors"
               >
                 Accetta tutti
               </button>
@@ -178,7 +178,7 @@ function CookieBanner() {
                       id="essential-cookies"
                       checked={preferences.essential}
                       disabled
-                      className="rounded text-[#274f36]"
+                      className="rounded text-emerald-500"
                     />
                     <label htmlFor="essential-cookies" className="font-medium">Cookie essenziali</label>
                   </div>
@@ -199,7 +199,7 @@ function CookieBanner() {
                       id="functional-cookies"
                       checked={preferences.functional}
                       onChange={(e) => setPreferences(prev => ({...prev, functional: e.target.checked}))}
-                      className="rounded text-[#274f36]"
+                      className="rounded text-emerald-500"
                     />
                     <label htmlFor="functional-cookies" className="font-medium">Cookie funzionali</label>
                   </div>
@@ -218,7 +218,7 @@ function CookieBanner() {
                       id="analytics-cookies"
                       checked={preferences.analytics}
                       onChange={(e) => setPreferences(prev => ({...prev, analytics: e.target.checked}))}
-                      className="rounded text-[#274f36]"
+                      className="rounded text-emerald-500"
                     />
                     <label htmlFor="analytics-cookies" className="font-medium">Cookie analitici</label>
                   </div>
@@ -237,7 +237,7 @@ function CookieBanner() {
                       id="marketing-cookies"
                       checked={preferences.marketing}
                       onChange={(e) => setPreferences(prev => ({...prev, marketing: e.target.checked}))}
-                      className="rounded text-[#274f36]"
+                      className="rounded text-emerald-500"
                     />
                     <label htmlFor="marketing-cookies" className="font-medium">Cookie di marketing</label>
                   </div>
@@ -252,13 +252,13 @@ function CookieBanner() {
             <div className="flex flex-wrap gap-2 justify-end pt-2 border-t border-gray-700">
               <button
                 onClick={handleRejectAll}
-                className="border border-gray-500 px-4 py-2 rounded-lg text-sm hover:bg-gray-800 transition-colors"
+                className="border border-gray-500 px-4 py-2 rounded-lg text-sm hover:bg-emerald-600 transition-colors"
               >
                 Rifiuta tutti
               </button>
               <button
                 onClick={handleSavePreferences}
-                className="bg-[#274f36] px-4 py-2 rounded-lg text-sm hover:bg-[#1a3524]"
+                className="bg-emerald-500 px-4 py-2 rounded-lg text-sm hover:bg-emerald-600"
               >
                 Salva preferenze
               </button>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../images/logo.png';
+
+const logo = '/logo.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ function Navbar() {
     }
   };
 
-  const scrollToTop = () => {
+const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -41,25 +42,28 @@ function Navbar() {
           className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
         >
           <img src={logo} alt="Martes AI Logo" className="h-10" />
-          <span className="text-xl font-semibold text-white">Martes AI</span>
+          <span className="text-xl font-black text-white">Martes AI</span>
         </Link>
 
         {/* Contenitore relativo per l'hamburger + dropdown */}
         <div className="relative">
-          {/* Pulsante hamburger */}
+          {/* Pulsante hamburger elegante */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none flex items-center justify-center w-10 h-10 
-                       border border-white/50 rounded-md hover:border-white hover:bg-black/30"
+            className="text-white focus:outline-none flex items-center justify-center w-12 h-12 
+                       bg-gradient-to-br from-emerald-400/20 to-emerald-600/20 
+                       border border-emerald-400/30 rounded-xl hover:border-emerald-400 
+                       hover:bg-gradient-to-br hover:from-emerald-400/30 hover:to-emerald-600/30
+                       transition-all duration-300 transform hover:scale-105"
           >
             {isOpen ? (
-              // Icona "X" se il menu è aperto
+              // Icona "X" elegante
               <svg 
-                className="w-5 h-5" 
+                className="w-6 h-6 text-emerald-400" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24" 
-                strokeWidth={2}
+                strokeWidth={2.5}
               >
                 <path 
                   strokeLinecap="round" 
@@ -68,13 +72,13 @@ function Navbar() {
                 />
               </svg>
             ) : (
-              // Icona hamburger se il menu è chiuso
+              // Icona hamburger elegante
               <svg 
-                className="w-5 h-5" 
+                className="w-6 h-6 text-emerald-400" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24" 
-                strokeWidth={2}
+                strokeWidth={2.5}
               >
                 <path 
                   strokeLinecap="round" 
@@ -85,71 +89,68 @@ function Navbar() {
             )}
           </button>
 
-          {/* Dropdown compatto (assoluto) */}
+          {/* Dropdown elegante con animazione */}
           {isOpen && (
             <div 
-              className="absolute top-full right-0 mt-2 w-48 bg-[#1a1a1a] text-white rounded-md shadow-lg py-2 z-50"
+              className="absolute top-16 right-0 min-w-72 
+                         bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-900/95 
+                         backdrop-blur-xl border border-emerald-400/20 rounded-2xl 
+                         shadow-2xl shadow-emerald-400/10 p-6
+                         animate-slideDown transform origin-top-right"
             >
-              <Link
-                to="/"
-                onClick={() => {
-                  scrollToTop();
-                  setIsOpen(false);
-                }}
-                className={`block px-4 py-2 hover:text-[#274f36] ${
-                  location.pathname === '/' ? 'text-[#274f36]' : ''
-                }`}
-              >
-                Home
-              </Link>
-              <Link
-                to="/casi-studio"
-                onClick={() => {
-                  scrollToTop();
-                  setIsOpen(false);
-                }}
-                className={`block px-4 py-2 hover:text-[#274f36] ${
-                  location.pathname === '/casi-studio' ? 'text-[#274f36]' : ''
-                }`}
-              >
-                Casi Studio
-              </Link>
-              <Link
-                to="/blog"
-                onClick={() => {
-                  scrollToTop();
-                  setIsOpen(false);
-                }}
-                className={`block px-4 py-2 hover:text-[#274f36] ${
-                  location.pathname === '/blog' ? 'text-[#274f36]' : ''
-                }`}
-              >
-                Blog
-              </Link>
-              <Link
-                to="/chi-siamo"
-                onClick={() => {
-                  scrollToTop();
-                  setIsOpen(false);
-                }}
-                className={`block px-4 py-2 hover:text-[#274f36] ${
-                  location.pathname === '/chi-siamo' ? 'text-[#274f36]' : ''
-                }`}
-              >
-                Chi siamo
-              </Link>
-              <Link
-                to="/newsletter"
-                onClick={() => {
-                  scrollToTop();
-                  setIsOpen(false);
-                }}
-                className={`block px-4 py-2 hover:text-[#274f36] ${
-                  location.pathname === '/newsletter' ? 'text-[#274f36]' : ''
-                }`}
-              >
-                Newsletter
-              </Link>
+              <div className="flex flex-col space-y-4">
+                <Link 
+                  to="/" 
+                  onClick={() => {setIsOpen(false); scrollToTop();}}
+                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                           hover:bg-emerald-400/10 transition-all duration-300 
+                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
+                           transform hover:scale-105"
+                >
+                  Home
+                </Link>
+                <Link 
+                  to="/casi-studio" 
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                           hover:bg-emerald-400/10 transition-all duration-300 
+                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
+                           transform hover:scale-105"
+                >
+                  Casi Studio
+                </Link>
+
+                <Link 
+                  to="/blog" 
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                           hover:bg-emerald-400/10 transition-all duration-300 
+                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
+                           transform hover:scale-105"
+                >
+                  Blog
+                </Link>
+                <Link 
+                  to="/chi-siamo" 
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                           hover:bg-emerald-400/10 transition-all duration-300 
+                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
+                           transform hover:scale-105"
+                >
+                  Chi siamo
+                </Link>
+                <button 
+                  onClick={() => {setIsOpen(false); scrollToForm();}}
+                  className="bg-gradient-to-r from-emerald-400 to-emerald-500 
+                           hover:from-emerald-500 hover:to-emerald-600 
+                           text-black py-4 px-6 rounded-xl font-semibold text-lg 
+                           transition-all duration-300 transform hover:scale-105 
+                           hover:shadow-lg hover:shadow-emerald-400/30 mt-2"
+                >
+                  Contattaci
+                </button>
+              </div>
             </div>
           )}
         </div>

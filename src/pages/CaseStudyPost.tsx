@@ -8,7 +8,7 @@ const cases = {
     date: '20 marzo 2025',
     content: `
       <div class="mb-8 text-center">
-        <a href="https://andreabcontarini.netlify.app/automation-projects/santa-lucia-eye-clinic" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#274f36] hover:bg-[#1a3a25] text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
+        <a href="https://andreabcontarini.netlify.app/automation-projects/santa-lucia-eye-clinic" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
           Read this case study in English
         </a>
       </div>
@@ -28,13 +28,13 @@ const cases = {
       <p>Per affrontare queste criticità, Martes AI ha sviluppato due soluzioni principali:</p>
 
       <h2>1. Chatbot per la gestione delle richieste sul sito web</h2>
-      <p>Grazie a <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Voiceflow</a>, è stato creato un chatbot intelligente in grado di:</p>
+      <p>Grazie a <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Voiceflow</a>, è stato creato un chatbot intelligente in grado di:</p>
       <ul>
           <li><strong>Memorizzare il contesto della conversazione</strong> attraverso una funzione JavaScript, migliorando l'interazione con l'utente.</li>
           <li><strong>Classificare le richieste</strong> distinguendo tra appuntamenti e domande generali sulla clinica.</li>
           <li><strong>Fornire risposte fluide e naturali</strong>, adattando il numero di messaggi per una comunicazione efficace.</li>
           <li><strong>Guidare l'utente nella prenotazione di un appuntamento</strong>, raccogliendo informazioni essenziali come nome, motivo della visita, data e orario.</li>
-          <li><strong>Trasmettere automaticamente i dettagli delle richieste a <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Make</a></strong>, assicurando un'integrazione efficiente con il sistema gestionale della clinica.</li>
+          <li><strong>Trasmettere automaticamente i dettagli delle richieste a <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Make</a></strong>, assicurando un'integrazione efficiente con il sistema gestionale della clinica.</li>
       </ul>
 
       <h2>2. Automazione della gestione email</h2>
@@ -111,7 +111,7 @@ const cases = {
     date: '9 settembre 2024',
     content: `
       <div class="mb-8 text-center">
-        <a href="https://andreabcontarini.netlify.app/automation-projects/whatsapp-agent-travel-agency" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#274f36] hover:bg-[#1a3a25] text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
+        <a href="https://andreabcontarini.netlify.app/automation-projects/whatsapp-agent-travel-agency" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
           Read this case study in English
         </a>
       </div>
@@ -400,7 +400,7 @@ const cases = {
     date: "4 aprile 2025",
     content: `
       <div class="mb-8 text-center">
-        <a href="https://andreabcontarini.netlify.app/automation-projects/scientific-newsletter-agent" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#274f36] hover:bg-[#1a3a25] text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
+        <a href="https://andreabcontarini.netlify.app/automation-projects/scientific-newsletter-agent" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-300">
           Read this case study in English
         </a>
       </div>
@@ -486,7 +486,7 @@ const cases = {
       </div>
 
       <h2>Introduzione</h2>
-      <p><a href="https://gesuinomonnisrl.it/" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Monni SRL</a>, leader nel settore dell'edilizia e dei lavori stradali, si è trovata ad affrontare una sfida comune a molte imprese del comparto: la gestione efficiente della rendicontazione giornaliera degli operai. La necessità di raccogliere informazioni dettagliate sulle attività svolte, l'utilizzo dei mezzi e la documentazione correlata, ha portato allo sviluppo di una soluzione innovativa basata su intelligenza artificiale e automazione.</p>
+      <p><a href="https://gesuinomonnisrl.it/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Monni SRL</a>, leader nel settore dell'edilizia e dei lavori stradali, si è trovata ad affrontare una sfida comune a molte imprese del comparto: la gestione efficiente della rendicontazione giornaliera degli operai. La necessità di raccogliere informazioni dettagliate sulle attività svolte, l'utilizzo dei mezzi e la documentazione correlata, ha portato allo sviluppo di una soluzione innovativa basata su intelligenza artificiale e automazione.</p>
 
       <h2>La Sfida</h2>
       <p>Prima dell'implementazione della soluzione, Monni SRL affrontava diverse criticità:</p>
@@ -501,9 +501,9 @@ const cases = {
       <h2>La Soluzione</h2>
       <p>È stato sviluppato un sistema integrato che combina:</p>
       <ul>
-        <li>Un agente conversazionale su <a href="https://partners.voiceflow.com/bt9ka4787d8z" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Voiceflow</a></li>
+        <li>Un agente conversazionale su <a href="https://partners.voiceflow.com/bt9ka4787d8z" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Voiceflow</a></li>
         <li>Integrazione con WhatsApp per la comunicazione</li>
-        <li>Automazioni <a href="https://www.make.com/en/register?pc=martesai" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Make</a> per la gestione dei flussi</li>
+        <li>Automazioni <a href="https://www.make.com/en/register?pc=martesai" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Make</a> per la gestione dei flussi</li>
         <li>Whisper per la trascrizione dei messaggi vocali</li>
       </ul>
 

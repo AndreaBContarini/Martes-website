@@ -295,7 +295,7 @@ function CasiStudio() {
               key={caseStudy.id}
               to={`/casi-studio/${caseStudy.id}`}
               onClick={scrollToTop}
-              className="bg-black/30 rounded-lg overflow-hidden hover:bg-black/40 transition-transform transform hover:scale-105 duration-300"
+              className="bg-black/30 rounded-lg overflow-hidden hover:bg-emerald-500/10 transition-transform transform hover:scale-105 duration-300"
             >
               <img
                 src={caseStudy.image}
@@ -315,7 +315,7 @@ function CasiStudio() {
                   <p className="text-sm italic text-gray-300">
                     {caseStudy.testimonial.quote}
                   </p>
-                  <p className="mt-2 text-sm text-[#274f36]">
+                  <p className="mt-2 text-sm text-emerald-500">
                     - {caseStudy.testimonial.author}, {caseStudy.testimonial.role}
                   </p>
                 </div>
@@ -334,7 +334,7 @@ function CasiStudio() {
                 }
               }}
               disabled={currentPage === 1}
-              className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
+              className="px-4 py-2 rounded-lg bg-emerald-500 disabled:opacity-50"
             >
               Precedente
             </button>
@@ -348,8 +348,8 @@ function CasiStudio() {
                 onClick={() => handlePageChange(page)}
                   className={`w-10 h-10 rounded-lg flex items-center justify-center ${
                   currentPage === page 
-                    ? 'bg-[#274f36]' 
-                    : 'bg-black/30 hover:bg-[#274f36]/70'
+                    ? 'bg-emerald-500' 
+                    : 'bg-black/30 hover:bg-emerald-500/70'
                 }`}
                   aria-current={currentPage === page ? 'page' : undefined}
               >
@@ -366,7 +366,7 @@ function CasiStudio() {
                     <button
                       key={1}
                       onClick={() => handlePageChange(1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-emerald-500"
                       aria-current="page"
                     >
                       1
@@ -376,7 +376,7 @@ function CasiStudio() {
                     <button
                       key={2}
                       onClick={() => handlePageChange(2)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                     >
                       2
                     </button>
@@ -392,7 +392,7 @@ function CasiStudio() {
                     <button
                       key={totalPages}
                       onClick={() => handlePageChange(totalPages)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                     >
                       {totalPages}
                     </button>
@@ -406,7 +406,7 @@ function CasiStudio() {
                     <button
                       key={1}
                       onClick={() => handlePageChange(1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                     >
                       1
                     </button>
@@ -422,7 +422,7 @@ function CasiStudio() {
                     <button
                       key={totalPages - 1}
                       onClick={() => handlePageChange(totalPages - 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                     >
                       {totalPages - 1}
                     </button>
@@ -431,7 +431,7 @@ function CasiStudio() {
                     <button
                       key={totalPages}
                       onClick={() => handlePageChange(totalPages)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-emerald-500"
                       aria-current="page"
                     >
                       {totalPages}
@@ -448,7 +448,7 @@ function CasiStudio() {
                         <button
                           key={1}
                           onClick={() => handlePageChange(1)}
-                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                         >
                           1
                         </button>
@@ -464,7 +464,7 @@ function CasiStudio() {
                     <button
                       key={currentPage - 1}
                       onClick={() => handlePageChange(currentPage - 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                     >
                       {currentPage - 1}
                     </button>
@@ -473,7 +473,7 @@ function CasiStudio() {
                     <button
                       key={currentPage}
                       onClick={() => handlePageChange(currentPage)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#274f36]"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-emerald-500"
                       aria-current="page"
                     >
                       {currentPage}
@@ -483,7 +483,7 @@ function CasiStudio() {
                     <button
                       key={currentPage + 1}
                       onClick={() => handlePageChange(currentPage + 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                     >
                       {currentPage + 1}
                     </button>
@@ -500,7 +500,7 @@ function CasiStudio() {
                         <button
                           key={totalPages}
                           onClick={() => handlePageChange(totalPages)}
-                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-[#274f36]/70"
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
                         >
                           {totalPages}
                         </button>
@@ -518,7 +518,7 @@ function CasiStudio() {
                 }
               }}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
+              className="px-4 py-2 rounded-lg bg-emerald-500 disabled:opacity-50"
             >
               Successivo
             </button>

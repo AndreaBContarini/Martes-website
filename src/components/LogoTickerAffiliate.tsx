@@ -1,41 +1,61 @@
 import { useState, useRef, useEffect } from 'react';
 
-const logos = [
+const affiliateLogos = [
   {
-    src: "/assets/logos/shapeup.png",
-    alt: "Shape-Up"
+    src: "/assets/affiliate_logos/n8n_logo.png",
+    alt: "n8n"
   },
   {
-    src: "/assets/logos/ecommerceparts.png",
-    alt: "Ecommerceparts"
+    src: "/assets/affiliate_logos/apify_logo.png",
+    alt: "Apify"
   },
   {
-    src: "/assets/logos/bluvacanze_logo.png",
-    alt: "Bluvacanze"
+    src: "/assets/affiliate_logos/Google_Cloud_logo.png",
+    alt: "Google-Cloud"
   },
   {
-    src: "/assets/logos/fantozzi.png",
-    alt: "Fantozzi & Associati"
+    src: "/assets/affiliate_logos/voiceflow_logo.png",
+    alt: "Voiceflow"
   },
   {
-    src: "/assets/logos/citybeach.png",
-    alt: "CityBeach Boardshop"
+    src: "/assets/affiliate_logos/retell_logo.png",
+    alt: "Retell"
   },
   {
-    src: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
-    alt: "Clinica Oculistica Santa Lucia"
+    src: "/assets/affiliate_logos/GoHighLevel_logo.png",
+    alt: "GoHighLevel"
   },
   {
-    src: "https://www.viaggicarmen.com/wpunitravel/wp-content/uploads/2023/11/agenzia-viaggi-aprilia.png",
-    alt: "Viaggi Carmen"
+    src: "/assets/affiliate_logos/manychat_logo.png",
+    alt: "Manychat"
   },
   {
-    src: "/assets/logos/monni_SRL.png",
-    alt: "Monni SRL"
+    src: "/assets/affiliate_logos/airtable_logo.png",
+    alt: "Airtable"
+  },
+  {
+    src: "/assets/affiliate_logos/meta_logo.png",
+    alt: "Meta"
+  },
+  {
+    src: "/assets/affiliate_logos/dripify_logo.png",
+    alt: "Dripify"
+  },
+  {
+    src: "/assets/affiliate_logos/cursor_logo.png",
+    alt: "Cursor"
+  },
+  {
+    src: "/assets/affiliate_logos/instantly_logo.png",
+    alt: "Instantly"
+  },
+  {
+    src: "/assets/affiliate_logos/apollo_logo.png",
+    alt: "Apollo"
   }
 ];
 
-function LogoTicker() {
+function LogoTickerAffiliate() {
   const [isPaused, setIsPaused] = useState(false);
   const tickerContentRef = useRef<HTMLDivElement>(null);
 
@@ -71,10 +91,10 @@ function LogoTicker() {
   }, [isPaused]);
 
   return (
-    <section id="partners" className="py-6 sm:py-8 md:py-10 lg:py-12 w-full bg-black">
+    <section id="affiliate-partners" className="py-12 w-full bg-black/20">
       <div className="section-container">
-        <div className="text-center mb-4 sm:mb-6 md:mb-8">
-          <h3 className="text-2xl md:text-3xl font-semibold text-white">Sei in ottima compagnia</h3>
+        <div className="text-center mb-8">
+                          <h3 className="text-3xl md:text-4xl font-bold text-white">I Nostri Strumenti</h3>
         </div>
         
         <div 
@@ -90,18 +110,18 @@ function LogoTicker() {
             className="ticker-content flex items-center"
             style={{
               display: "flex",
-              animation: "marquee 45s linear infinite",
+              animation: "marquee-affiliate 35s linear infinite",
               width: "max-content"
             }}
           >
-            {logos.concat(logos).map((logo, index) => (
+            {affiliateLogos.concat(affiliateLogos).map((logo, index) => (
               <div 
-                key={`logo-${index}`}
+                key={`affiliate-logo-${index}`}
                 className="logo-container bg-white p-4 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
                 style={{
-                  width: '200px',
-                  height: '100px',
-                  margin: '0 15px'
+                  width: '180px',
+                  height: '90px',
+                  margin: '0 12px'
                 }}
               >
                 <img
@@ -118,7 +138,7 @@ function LogoTicker() {
       {/* Stile per animazione */}
       <style>
         {`
-          @keyframes marquee {
+          @keyframes marquee-affiliate {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
           }
@@ -136,4 +156,4 @@ function LogoTicker() {
   );
 }
 
-export default LogoTicker;
+export default LogoTickerAffiliate; 

@@ -1,102 +1,144 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronDown } from 'lucide-react';
-import LogoTicker from './LogoTicker';
 
 function Hero() {
-  const scrollToForm = () => {
-    const formSection = document.getElementById('contact-form');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <>
-      <header className="min-h-screen w-full flex items-center justify-center relative overflow-hidden">
-        {/* Background layers */}
+      <header className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] w-full flex items-center justify-center relative overflow-hidden">
+        {/* Elegant Modern Background */}
         <div className="absolute inset-0 w-screen z-0">
-          {/* Gradient base layer */}
-          <div className="absolute inset-0 w-full bg-gradient-to-br from-black via-[#1a3524] to-black animate-gradient-xy"></div>
+          {/* Primary gradient base */}
+          <div className="absolute inset-0 w-full bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
           
-          {/* Animated overlay */}
-          <div className="absolute inset-0 w-full opacity-30">
-            <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_50%_50%,_#274f36_0%,_transparent_50%)] animate-pulse-slow"></div>
-            <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_80%_20%,_#1a3524_0%,_transparent_40%)] animate-pulse-slow-2"></div>
-            <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_20%_80%,_#274f36_0%,_transparent_40%)] animate-pulse-slow-3"></div>
+          {/* Emerald geometric patterns */}
+          <div className="absolute inset-0 w-full opacity-20">
+            <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_30%_20%,_rgba(16,185,129,0.4)_0%,_transparent_50%)] animate-pulse-slow"></div>
+            <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_80%_60%,_rgba(52,211,153,0.3)_0%,_transparent_40%)] animate-pulse-slow-2"></div>
+            <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_20%_80%,_rgba(110,231,183,0.2)_0%,_transparent_45%)] animate-pulse-slow-3"></div>
           </div>
           
-          {/* Particle effect */}
-          <div className="particles-container">
-            {[...Array(30)].map((_, i) => (
+          {/* Animated mesh gradient overlay */}
+          <div className="absolute inset-0 w-full opacity-30">
+            <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-emerald-500/20 to-transparent animate-mesh-1"></div>
+            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-emerald-400/15 to-transparent animate-mesh-2"></div>
+            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-emerald-600/10 to-transparent animate-mesh-3"></div>
+            <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-emerald-300/20 to-transparent animate-mesh-4"></div>
+          </div>
+          
+          {/* Floating geometric shapes with dynamic movement */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(12)].map((_, i) => {
+              const size = 80 + Math.random() * 120; // Dimensioni variabili da 80px a 200px
+              const animationType = ['animate-drift', 'animate-orbit', 'animate-spiral', 'animate-wave'][i % 4];
+              
+              return (
+                <div
+                  key={i}
+                  className={`absolute ${animationType} opacity-15`}
+                  style={{
+                    left: `${Math.random() * 120 - 10}%`, // Da -10% a 110% per uscire dai bordi
+                    top: `${Math.random() * 120 - 10}%`,
+                    animationDelay: `${Math.random() * 15}s`,
+                    animationDuration: `${25 + Math.random() * 20}s`,
+                  } as React.CSSProperties}
+                >
+                  <div 
+                    className="bg-gradient-to-br from-emerald-400 via-emerald-500 to-emerald-600 rounded-3xl blur-sm shadow-2xl shadow-emerald-500/20"
+                    style={{
+                      width: `${size}px`,
+                      height: `${size}px`,
+                      transform: `rotate(${Math.random() * 360}deg)`,
+                      borderRadius: i % 3 === 0 ? '50%' : i % 3 === 1 ? '30%' : '15%',
+                    }}
+                  ></div>
+                </div>
+              );
+            })}
+          </div>
+          
+          {/* Additional micro particles */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="particle"
+                className="absolute animate-float-micro opacity-5"
                 style={{
-                  '--x': `${Math.random() * 100}%`,
-                  '--y': `${Math.random() * 100}%`,
-                  '--duration': `${15 + Math.random() * 30}s`,
-                  '--delay': `${-Math.random() * 20}s`,
-                  '--x-offset': `${-200 + Math.random() * 400}px`,
-                  '--y-offset': `${-200 + Math.random() * 400}px`,
-                  '--x-offset-alt': `${-200 + Math.random() * 400}px`,
-                  '--y-offset-alt': `${-200 + Math.random() * 400}px`,
-                  '--x-offset-final': `${-100 + Math.random() * 200}px`,
-                  '--y-offset-final': `${-100 + Math.random() * 200}px`,
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 20}s`,
+                  animationDuration: `${30 + Math.random() * 15}s`,
                 } as React.CSSProperties}
-              />
+              >
+                <div 
+                  className="w-4 h-4 bg-emerald-400 rounded-full blur-[1px]"
+                  style={{
+                    transform: `scale(${0.5 + Math.random() * 1})`,
+                  }}
+                ></div>
+              </div>
             ))}
           </div>
+          
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 opacity-5" style={{
+            backgroundImage: `
+              linear-gradient(rgba(16,185,129,0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(16,185,129,0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: '100px 100px',
+          }}></div>
         </div>
 
         {/* Main content */}
-        <div className="container mx-auto text-center relative z-10 px-4">
+        <div className="container mx-auto text-center relative z-10 px-4 pt-4 sm:pt-8 md:pt-12 lg:pt-16">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-7xl font-bold mb-6 reveal-text">
-              Agenti AI
-              <br />
-              <span className="bg-gradient-to-r from-[#274f36] to-emerald-400 text-transparent bg-clip-text">
-                su misura per te
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 sm:mb-4 md:mb-6 lg:mb-8 reveal-text">
+              Il tuo{' '}
+              <span className="inline-block mx-2" style={{
+                background: 'linear-gradient(90deg, #10b981 0%, #34d399 50%, #6ee7b7 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+                partner AI
               </span>
+              <br className="block sm:hidden" />
+              <span className="hidden sm:inline"> </span>
+              a 360°
             </h1>
 
-            <h2 className="text-lg md:text-xl mb-8 opacity-90">
-              Trasforma il tuo business con
+            <h2 className="text-lg md:text-xl mb-8 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-12 opacity-90">
+              Progettiamo 
               <span className="relative mx-2 inline-block">
-                <span className="relative z-10">soluzioni AI personalizzate</span>
-                <span className="absolute bottom-0 left-0 right-0 h-2 bg-[#274f36]/40 blur-sm"></span>
-                <span className="absolute bottom-0 left-0 right-0 h-1 bg-[#274f36]"></span>
+                <span className="relative z-10">soluzioni su misura</span>
+                <span className="absolute bottom-0 left-0 right-0 h-2 bg-emerald-400/40 blur-sm"></span>
+                <span className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-400"></span>
               </span>
+              e 
+              <span className="relative mx-2 inline-block">
+                <span className="relative z-10">formiamo il tuo team</span>
+                <span className="absolute bottom-0 left-0 right-0 h-2 bg-emerald-400/40 blur-sm"></span>
+                <span className="absolute bottom-0 left-0 right-0 h-1 bg-emerald-400"></span>
+              </span>
+              sull'AI
             </h2>
 
-            <div className="flex flex-col md:flex-row gap-4 justify-center mt-6 mb-12">
-              <a 
-                href="https://cal.com/martesai/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#274f36] hover:bg-[#1a3524] text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#274f36]/20 transform hover:-translate-y-1"
-              >
-                Prenota una chiamata
-              </a>
+            <div className="flex justify-center mb-6 sm:mb-4 md:mb-6">
               <button 
-                onClick={scrollToForm}
-                className="border-2 border-[#274f36] text-white hover:bg-[#274f36] px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#274f36]/20 transform hover:-translate-y-1"
+                onClick={() => {
+                  const servicesSection = document.querySelector('[data-section="services"]');
+                  if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="bg-emerald-400 hover:bg-emerald-500 text-black px-6 sm:px-6 md:px-8 py-3 sm:py-3 md:py-4 rounded-full text-base sm:text-base md:text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-emerald-400/20 transform hover:-translate-y-1"
               >
-                Parlaci della tua idea
+                Le nostre soluzioni
               </button>
             </div>
-
-            <button 
-              onClick={scrollToForm}
-              className="animate-bounce mt-4 text-[#274f36] hover:text-white transition-colors duration-300"
-              aria-label="Scroll to form"
-            >
-              <ChevronDown size={32} />
-            </button>
           </div>
         </div>
       </header>
-      <LogoTicker />
     </>
   );
 }

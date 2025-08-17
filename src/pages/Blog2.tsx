@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
-import { Helmet } from 'react-helmet-async';
+
 import SEOHead from '../components/SEOHead';
 
 // Definizione dei post del blog con immagini statiche e leggere
 const blogPosts = [
+  {
+    id: 'ai-italia-framework-eid',
+    title: "L'AI in Italia: Dal \"Se\" al \"Come\" con il Framework EID",
+    excerpt: "L'intelligenza artificiale nelle aziende italiane non è più una questione di se implementarla, ma di come farlo nel modo giusto. Scopri il Framework EID per implementazioni AI di successo.",
+    date: '2025-08-18',
+    readTime: '9 min',
+    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Framework+EID',
+  },
   {
     id: 'gpt-41-nuovo-standard-agenti-ai',
     title: "GPT-4.1: Il Nuovo Standard per gli Agenti AI",
@@ -222,10 +230,10 @@ const Blog2 = () => {
             <Link
               key={post.id}
               to={`/blog/${post.id}`}
-              className="bg-black/30 rounded-lg overflow-hidden border border-gray-800 hover:border-[#274f36] transition-all duration-300 flex flex-col h-full"
+              className="bg-black/30 rounded-lg overflow-hidden border border-gray-800 hover:border-emerald-500 hover:bg-emerald-500/10 transition-all duration-300 flex flex-col h-full"
             >
               {/* Contenitore dell'immagine */}
-              <div className="relative w-full h-48 bg-[#274f36]/10">
+              <div className="relative w-full h-48 bg-emerald-500/10">
                 <img
                   src={post.image}
                   alt={post.title}
@@ -251,7 +259,7 @@ const Blog2 = () => {
                 <p className="text-gray-300 mb-4 flex-grow">{post.excerpt}</p>
                 
                 <div className="mt-auto">
-                  <span className="text-[#274f36] font-medium hover:underline">
+                  <span className="text-emerald-500 font-medium hover:underline">
                     Leggi l'articolo →
                   </span>
                 </div>
@@ -262,211 +270,90 @@ const Blog2 = () => {
         
         {/* Paginazione */}
         {totalPages > 1 && (
-          <div className="flex justify-center items-center mt-12 gap-2">
+          <div className="flex justify-center items-center mt-12 gap-1 sm:gap-2 px-4">
             <button
               onClick={handlePrevious}
               disabled={currentPage === 1}
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-2 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
                 currentPage === 1 
                   ? 'bg-gray-700 cursor-not-allowed opacity-50' 
-                  : 'bg-[#274f36] hover:bg-[#1a3524]'
+                  : 'bg-emerald-500 hover:bg-emerald-600'
               } text-white transition-colors`}
               aria-label="Pagina precedente"
             >
               Precedente
             </button>
             
-            {/* Logica di paginazione secondo le regole specificate */}
-            {totalPages <= 3 ? (
-              // Se ci sono 3 o meno pagine totali, mostra tutte le pagine
-              Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => (
-              <button
-                key={pageNum}
-                onClick={() => handlePageChange(pageNum)}
-                className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
-                  currentPage === pageNum 
-                    ? 'bg-[#274f36] text-white' 
-                    : 'bg-black/30 text-white hover:bg-[#274f36]/50'
-                }`}
-                aria-label={`Pagina ${pageNum}`}
-                aria-current={currentPage === pageNum ? 'page' : undefined}
-              >
-                {pageNum}
-              </button>
-              ))
-            ) : (
-              // Se ci sono più di 3 pagine totali
-              <>
-                {/* CASO 1: Prima pagina */}
-                {currentPage === 1 && (
-                  <>
-                    {/* Prima pagina (corrente) */}
-                    <button
-                      key={1}
-                      onClick={() => handlePageChange(1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-[#274f36] text-white"
-                      aria-label="Pagina 1"
-                      aria-current="page"
-                    >
-                      1
-                    </button>
-                    
-                    {/* Seconda pagina */}
-                    <button
-                      key={2}
-                      onClick={() => handlePageChange(2)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                      aria-label="Pagina 2"
-                    >
-                      2
-                    </button>
-                    
-                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
-                    {totalPages > 3 && (
-                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
-                        ...
-                      </span>
-                    )}
-                    
-                    {/* Ultima pagina */}
-                    <button
-                      key={totalPages}
-                      onClick={() => handlePageChange(totalPages)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                      aria-label={`Pagina ${totalPages}`}
-                    >
-                      {totalPages}
-                    </button>
-                  </>
-                )}
+            {/* Logica di paginazione ottimizzata: massimo 4 numeri visibili */}
+            {(() => {
+              const maxVisible = 4;
+              let startPage, endPage;
+              
+              if (totalPages <= maxVisible) {
+                // Se ci sono 4 o meno pagine totali, mostra tutte
+                startPage = 1;
+                endPage = totalPages;
+              } else {
+                // Calcola la finestra di 4 pagine centrata sulla pagina corrente
+                const halfWindow = Math.floor(maxVisible / 2);
+                startPage = Math.max(1, currentPage - halfWindow);
+                endPage = Math.min(totalPages, startPage + maxVisible - 1);
                 
-                {/* CASO 2: Ultima pagina */}
-                {currentPage === totalPages && (
-                  <>
-                    {/* Prima pagina */}
-                    <button
-                      key={1}
-                      onClick={() => handlePageChange(1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                      aria-label="Pagina 1"
-                    >
-                      1
-                    </button>
-                    
-                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
-                    {totalPages > 3 && (
-                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
-                        ...
-                      </span>
-                    )}
-                    
-                    {/* Penultima pagina */}
-                    <button
-                      key={totalPages - 1}
-                      onClick={() => handlePageChange(totalPages - 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                      aria-label={`Pagina ${totalPages - 1}`}
-                    >
-                      {totalPages - 1}
-                    </button>
-                    
-                    {/* Ultima pagina (corrente) */}
-                    <button
-                      key={totalPages}
-                      onClick={() => handlePageChange(totalPages)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-[#274f36] text-white"
-                      aria-label={`Pagina ${totalPages}`}
-                      aria-current="page"
-                    >
-                      {totalPages}
-                    </button>
-                  </>
-                )}
-                
-                {/* CASO 3: Pagina intermedia */}
-                {currentPage > 1 && currentPage < totalPages && (
-                  <>
-                    {/* Prima pagina (se non siamo alla pagina 2) */}
-                    {currentPage > 2 && (
-                      <>
-                        <button
-                          key={1}
-                          onClick={() => handlePageChange(1)}
-                          className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                          aria-label="Pagina 1"
-                        >
-                          1
-                        </button>
-                        
-                        {/* Puntini di sospensione a sinistra */}
-                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                // Aggiusta se siamo vicini alla fine
+                if (endPage - startPage + 1 < maxVisible) {
+                  startPage = Math.max(1, endPage - maxVisible + 1);
+                }
+              }
+              
+              const pages = [];
+              
+              // Puntini iniziali se necessario
+              if (startPage > 1) {
+                pages.push(
+                                    <span key="start-ellipsis" className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 text-sm sm:text-base">
                           ...
                         </span>
-                      </>
-                    )}
+                );
+              }
                     
-                    {/* Pagina precedente */}
+              // Pagine numeriche
+              for (let i = startPage; i <= endPage; i++) {
+                pages.push(
                     <button
-                      key={currentPage - 1}
-                      onClick={() => handlePageChange(currentPage - 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                      aria-label={`Pagina ${currentPage - 1}`}
-                    >
-                      {currentPage - 1}
+                    key={i}
+                    onClick={() => handlePageChange(i)}
+                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-colors text-sm sm:text-base ${
+                      currentPage === i 
+                        ? 'bg-emerald-500 text-white' 
+                        : 'bg-black/30 text-white hover:bg-emerald-500/50'
+                    }`}
+                    aria-label={`Pagina ${i}`}
+                    aria-current={currentPage === i ? 'page' : undefined}
+                  >
+                    {i}
                     </button>
-                    
-                    {/* Pagina corrente */}
-                    <button
-                      key={currentPage}
-                      onClick={() => handlePageChange(currentPage)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-[#274f36] text-white"
-                      aria-label={`Pagina ${currentPage}`}
-                      aria-current="page"
-                    >
-                      {currentPage}
-                    </button>
-                    
-                    {/* Pagina successiva */}
-                    <button
-                      key={currentPage + 1}
-                      onClick={() => handlePageChange(currentPage + 1)}
-                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                      aria-label={`Pagina ${currentPage + 1}`}
-                    >
-                      {currentPage + 1}
-                    </button>
-                    
-                    {/* Puntini di sospensione a destra e ultima pagina (se non siamo vicini alla fine) */}
-                    {currentPage < totalPages - 1 && (
-                      <>
-                        {/* Puntini di sospensione a destra */}
-                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                );
+              }
+              
+              // Puntini finali se necessario
+              if (endPage < totalPages) {
+                pages.push(
+                                    <span key="end-ellipsis" className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-gray-400 text-sm sm:text-base">
                           ...
                         </span>
-                        
-                        {/* Ultima pagina */}
-                        <button
-                          key={totalPages}
-                          onClick={() => handlePageChange(totalPages)}
-                          className="w-10 h-10 rounded-lg flex items-center justify-center transition-colors bg-black/30 text-white hover:bg-[#274f36]/50"
-                          aria-label={`Pagina ${totalPages}`}
-                        >
-                          {totalPages}
-                        </button>
-                      </>
-                    )}
-                  </>
-                )}
-              </>
-            )}
+                );
+              }
+              
+              return pages;
+            })()}
             
             <button
               onClick={handleNext}
               disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-2 sm:px-4 py-2 rounded-lg text-sm sm:text-base ${
                 currentPage === totalPages 
                   ? 'bg-gray-700 cursor-not-allowed opacity-50' 
-                  : 'bg-[#274f36] hover:bg-[#1a3524]'
+                  : 'bg-emerald-500 hover:bg-emerald-600'
               } text-white transition-colors`}
               aria-label="Pagina successiva"
             >

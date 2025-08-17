@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, Youtube } from 'lucide-react';
 import logo from '../images/logo.png';
@@ -11,7 +10,7 @@ function Footer() {
   return (
     <footer className="bg-black py-12 relative z-10">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           <div className="flex flex-col items-start">
             <div className="flex items-center gap-4 mb-4">
               <img src={logo} alt="Martes AI Logo" className="w-12" />
@@ -29,6 +28,48 @@ function Footer() {
             <a href="mailto:contact@martes-ai.com" className="text-gray-400 hover:text-white block transition-colors duration-200">
               contact@martes-ai.com
             </a>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-bold mb-4 text-white">Servizi</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link 
+                  to="/soluzioni-custom" 
+                  onClick={scrollToTop}
+                  className="text-gray-400 hover:text-white transition-colors duration-200 block"
+                >
+                  Soluzioni Custom
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/formazione-aziendale" 
+                  onClick={scrollToTop}
+                  className="text-gray-400 hover:text-white transition-colors duration-200 block"
+                >
+                  Formazione Aziendale
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/agente-reportistica" 
+                  onClick={scrollToTop}
+                  className="text-gray-400 hover:text-white transition-colors duration-200 block"
+                >
+                  Prisma – Agente di Rendicontazione
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/casi-studio" 
+                  onClick={scrollToTop}
+                  className="text-gray-400 hover:text-white transition-colors duration-200 block"
+                >
+                  Casi Studio
+                </Link>
+              </li>
+            </ul>
           </div>
 
           <div>

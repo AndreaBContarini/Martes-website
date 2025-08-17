@@ -4,6 +4,203 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const posts = {
+  'ai-italia-framework-eid': {
+    title: "L'AI in Italia: Dal \"Se\" al \"Come\" con il Framework EID",
+    date: '18 agosto 2025',
+    description: "L'intelligenza artificiale nelle aziende italiane non è più una questione di se implementarla, ma di come farlo nel modo giusto. Scopri il Framework EID per implementazioni AI di successo.",
+    content: `
+      <h2 class="text-3xl font-bold mt-8 mb-4">Il momento della svolta</h2>
+      <p>
+        Secondo una recente analisi di CapGemini riportata da <em>Il Sole 24 Ore</em>:
+      </p>
+      
+      <blockquote class="border-l-4 border-emerald-500 pl-6 my-6 italic text-gray-300 bg-black/20 p-4 rounded-r-lg">
+        "Le imprese italiane sono già uscite dalla fase sperimentale e stanno implementando agenti AI a ritmo accelerato per ridurre i costi e aumentare l'efficienza operativa."
+      </blockquote>
+      
+      <p>
+        Questo dato segna un punto di svolta fondamentale: l'AI è passata dall'essere una curiosità tecnologica a diventare una <strong>necessità strategica</strong>. Ma c'è un problema che emerge con crescente evidenza.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">Il pattern che si ripete</h2>
+      <p>
+        Lavorando quotidianamente con decine di aziende, osservo sempre lo stesso comportamento ricorrente. L'80% dei clienti arriva con grande entusiasmo e aspettative elevate, desiderando immediatamente soluzioni complesse come agenti AI sofisticati, automazioni avanzate e workflow rivoluzionari. Il problema? Saltano completamente la fase di preparazione e analisi preliminare.
+      </p>
+      
+      <p>
+        È come tentare di correre una maratona senza aver mai fatto una passeggiata. I progetti si incagliano, le inefficienze si moltiplicano e spesso si genera più confusione che valore. Questa fretta di implementare senza strategia porta inevitabilmente al fallimento, mentre un approccio metodico garantisce risultati duraturi.
+      </p>
+
+      <div class="text-center">
+        <h2 class="text-3xl font-bold mt-4 sm:mt-8 mb-1">La soluzione: Framework EID</h2>
+        <p class="mb-0">
+          Per garantire implementazioni AI di successo, ho sviluppato un approccio strutturato chiamato <strong>Framework EID</strong>: Education, Implementation, Development.
+        </p>
+
+        <!-- Diagramma Framework EID -->
+        <div class="my-0 w-full">
+          <!-- SVG Unico per Mobile e Desktop - Layout Orizzontale Ottimizzato -->
+          <svg viewBox="0 0 1000 300" class="w-full h-[380px] sm:h-auto" style="min-height: 300px;">
+            <!-- Sfondo -->
+            <rect width="1000" height="300" fill="#1a1a1a" rx="20"/>
+            
+            <!-- Education -->
+            <g transform="translate(170, 150)">
+              <circle cx="0" cy="0" r="80" fill="#3b82f6" opacity="0.9"/>
+              <circle cx="0" cy="0" r="70" fill="#1e40af" opacity="0.7"/>
+              <text x="0" y="-10" fill="white" font-size="28" text-anchor="middle">📚</text>
+              <text x="0" y="15" fill="white" font-size="16" text-anchor="middle" font-weight="bold">EDUCATION</text>
+              <text x="0" y="120" fill="#d1d5db" font-size="18" text-anchor="middle">Formazione Team</text>
+            </g>
+            
+            <!-- Freccia 1 -->
+            <path d="M 270 150 L 330 150 L 325 140 L 345 150 L 325 160 Z" fill="#6b7280"/>
+            
+            <!-- Implementation -->
+            <g transform="translate(500, 150)">
+              <circle cx="0" cy="0" r="80" fill="#10b981" opacity="0.9"/>
+              <circle cx="0" cy="0" r="70" fill="#059669" opacity="0.7"/>
+              <text x="0" y="-10" fill="white" font-size="28" text-anchor="middle">🚀</text>
+              <text x="0" y="15" fill="white" font-size="16" text-anchor="middle" font-weight="bold">IMPLEMENTATION</text>
+              <text x="0" y="120" fill="#d1d5db" font-size="18" text-anchor="middle">Attuazione Pratica</text>
+            </g>
+            
+            <!-- Freccia 2 -->
+            <path d="M 600 150 L 660 150 L 655 140 L 675 150 L 655 160 Z" fill="#6b7280"/>
+            
+            <!-- Development -->
+            <g transform="translate(830, 150)">
+              <circle cx="0" cy="0" r="80" fill="#f59e0b" opacity="0.9"/>
+              <circle cx="0" cy="0" r="70" fill="#d97706" opacity="0.7"/>
+              <text x="0" y="-10" fill="white" font-size="28" text-anchor="middle">⚙️</text>
+              <text x="0" y="15" fill="white" font-size="16" text-anchor="middle" font-weight="bold">DEVELOPMENT</text>
+              <text x="0" y="120" fill="#d1d5db" font-size="18" text-anchor="middle">Sviluppo Avanzato</text>
+            </g>
+          </svg>
+
+        </svg>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mt-0 mb-4">1. Education - La Base Fondamentale</h3>
+      <p>
+        Il primo pilastro è sempre la <strong>formazione del team</strong>:
+      </p>
+      
+      <ul class="list-disc pl-6 mt-4 mb-4 space-y-2">
+        <li>Comprendere realmente cos'è l'AI e cosa non è</li>
+        <li>Imparare a utilizzarla efficacemente nel lavoro quotidiano</li>
+        <li>Eliminare confusione, aspettative irrealistiche e FOMO</li>
+      </ul>
+      
+      <div class="bg-emerald-500/20 border-l-4 border-emerald-500 p-6 my-6 rounded-r-lg">
+        <p class="font-semibold text-emerald-400 mb-2">Risultato concreto:</p>
+        <p>quando il team padroneggia gli strumenti AI di base, la produttività può <strong>triplicare</strong> ancora prima di sviluppare qualsiasi automazione personalizzata.</p>
+      </div>
+
+      <h3 class="text-2xl font-bold mt-8 mb-4">2. Implementation - Attuazione Pratica</h3>
+      <p>
+        Il secondo step prevede l'<strong>attuazione pratica delle prime soluzioni AI</strong>:
+      </p>
+      
+      <ul class="list-disc pl-6 mt-4 mb-4 space-y-2">
+        <li>Implementazione di tool AI di base nel workflow quotidiano</li>
+        <li>Automazione di processi semplici ma ad alto impatto</li>
+        <li>Test e validazione delle prime integrazioni</li>
+        <li>Raccolta di feedback e dati di performance</li>
+      </ul>
+      
+      <p>
+        Questa fase è <strong>cruciale</strong>: permette di consolidare l'apprendimento con l'esperienza pratica, creando le basi solide per sviluppi più complessi.
+      </p>
+
+      <!-- Timeline Produttività -->
+      <div class="text-center">
+        <div class="my-12 flex justify-center items-center w-full">
+          <svg viewBox="0 0 700 200" class="w-full max-w-5xl h-auto mx-auto">
+            <!-- Sfondo -->
+            <rect width="700" height="200" fill="#1a1a1a" rx="15"/>
+            
+            <!-- Assi -->
+            <line x1="70" y1="150" x2="630" y2="150" stroke="#6b7280" stroke-width="2"/>
+            <line x1="70" y1="150" x2="70" y2="50" stroke="#6b7280" stroke-width="2"/>
+            
+            <!-- Punti timeline (4 punti: Start + 3 fasi EID) -->
+            <circle cx="120" cy="140" r="6" fill="#6b7280"/>
+            <circle cx="280" cy="110" r="6" fill="#3b82f6"/>
+            <circle cx="440" cy="85" r="6" fill="#10b981"/>
+            <circle cx="600" cy="60" r="6" fill="#f59e0b"/>
+            
+            <!-- Linea crescita -->
+            <path d="M 120 140 Q 200 125 280 110 Q 360 97 440 85 Q 520 72 600 60" stroke="url(#productivityGradient)" stroke-width="4" fill="none"/>
+            
+            <!-- Gradiente -->
+            <defs>
+              <linearGradient id="productivityGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#6b7280;stop-opacity:1" />
+                <stop offset="33%" style="stop-color:#3b82f6;stop-opacity:1" />
+                <stop offset="66%" style="stop-color:#10b981;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            
+            <!-- Etichette -->
+            <text x="120" y="170" fill="#d1d5db" font-size="11" text-anchor="middle" class="sm:hidden">Start</text>
+            <text x="280" y="170" fill="#d1d5db" font-size="10" text-anchor="middle" class="sm:hidden">Edu</text>
+            <text x="440" y="170" fill="#d1d5db" font-size="10" text-anchor="middle" class="sm:hidden">Impl</text>
+            <text x="600" y="170" fill="#d1d5db" font-size="11" text-anchor="middle" class="sm:hidden">Dev</text>
+            
+            <text x="120" y="170" fill="#d1d5db" font-size="12" text-anchor="middle" class="hidden sm:inline">Start</text>
+            <text x="280" y="170" fill="#d1d5db" font-size="12" text-anchor="middle" class="hidden sm:inline">Education</text>
+            <text x="440" y="170" fill="#d1d5db" font-size="12" text-anchor="middle" class="hidden sm:inline">Implementation</text>
+            <text x="600" y="170" fill="#d1d5db" font-size="12" text-anchor="middle" class="hidden sm:inline">Development</text>
+            
+            <!-- Titolo -->
+            <text x="350" y="30" fill="white" font-size="16" text-anchor="middle" font-weight="bold" class="sm:hidden">Produttività</text>
+            <text x="350" y="30" fill="white" font-size="18" text-anchor="middle" font-weight="bold" class="hidden sm:inline">Crescita della produttività</text>
+          </svg>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-bold mt-8 mb-4">3. Development - Sviluppo Avanzato</h3>
+      <p>
+        Solo dopo aver completato Education e Implementation si passa allo <strong>sviluppo di soluzioni AI avanzate e personalizzate</strong>.
+      </p>
+      
+      <p>
+        In questa fase finale si realizzano:
+      </p>
+      <ul class="list-disc pl-6 mt-4 mb-4 space-y-2">
+        <li>Agenti AI complessi e multi-funzionali</li>
+        <li>Automazioni avanzate e workflow personalizzati</li>
+        <li>Integrazioni profonde con sistemi aziendali esistenti</li>
+        <li>Soluzioni su misura per esigenze specifiche</li>
+      </ul>
+      
+      <p>
+        Senza le basi solide dei primi due step, tentare di implementare soluzioni complesse è come costruire un grattacielo su fondamenta traballanti.
+      </p>
+      
+      <p>
+        Con Education e Implementation completate, invece, lo sviluppo diventa <strong>naturale e strategico</strong>: un'evoluzione organica che massimizza il ROI e minimizza i rischi.
+      </p>
+
+      <h2 class="text-3xl font-bold mt-8 mb-4">L'AI come Asset Strategico</h2>
+      <p>
+        Le aziende che investiranno seriamente nell'AI seguendo l'approccio EID avranno un <strong>vantaggio competitivo decisivo</strong>.
+      </p>
+      
+      <p>
+        Chi continuerà a improvvisare, rincorrendo ogni novità del momento senza una strategia, rischia di sprecare tempo e budget prezioso.
+      </p>
+      
+      <div class="bg-black/20 border border-emerald-500/30 p-6 my-8 rounded-lg">
+        <p class="text-center text-lg">
+          L'AI non è più un esperimento da laboratorio: è un <strong class="text-emerald-400">asset strategico</strong>. E chi saprà implementarla seguendo un metodo rigoroso e strutturato – a nostro avviso – <strong class="text-emerald-400">avrà un enorme vantaggio</strong>.
+        </p>
+      </div>
+    `,
+  },
   'manus-ai-agente-autonomo-rivoluzionario': {
     title: "Manus AI: L'agente Autonomo che Sta Rivoluzionando l'AI",
     date: '20 marzo 2025',
@@ -110,7 +307,7 @@ const posts = {
       </p>
 
       <p>
-        Grazie all'uso strategico di AI, abbiamo ottenuto risultati tangibili per i nostri clienti: da un agente AI che ha generato <strong>80.000€</strong> in un solo mese per un'agenzia di viaggi, a un sistema di customer support automatizzato ha <strong>risparmiato circa 20 ore settimanali</strong> a un e-commerce, e molto altro, che descriviamo nella nostra pagina <a href="https://martes-ai.com/casi-studio" class="text-[#4CAF50] hover:text-[#388E3C] underline">Casi Studio</a>.
+        Grazie all'uso strategico di AI, abbiamo ottenuto risultati tangibili per i nostri clienti: da un agente AI che ha generato <strong>80.000€</strong> in un solo mese per un'agenzia di viaggi, a un sistema di customer support automatizzato ha <strong>risparmiato circa 20 ore settimanali</strong> a un e-commerce, e molto altro, che descriviamo nella nostra pagina <a href="https://martes-ai.com/casi-studio" class="text-emerald-400 hover:text-emerald-500 underline">Casi Studio</a>.
       </p>
 
       <p>
@@ -121,7 +318,7 @@ const posts = {
 
       <h2 class="text-3xl font-bold mt-8 mb-4">Gli Strumenti AI per Servire i Clienti</h2>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Voiceflow</a> e <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Make</a>: La Combinazione Vincente</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.voiceflow.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Voiceflow</a> e <a href="https://www.make.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Make</a>: La Combinazione Vincente</h3>
 
       <p>
         Questa coppia di strumenti è responsabile dell'80% dei progetti AI che realizziamo:
@@ -138,17 +335,17 @@ const posts = {
 
       <div class="bg-black/20 p-4 rounded-lg my-6">
         <p class="italic text-gray-300">
-          <strong>Bonus:</strong> Un altro strumento che abbiamo iniziato a utilizzare recentemente è <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">n8n</a>, particolarmente efficace per la costruzione di agenti AI personalizzati.
+          <strong>Bonus:</strong> Un altro strumento che abbiamo iniziato a utilizzare recentemente è <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">n8n</a>, particolarmente efficace per la costruzione di agenti AI personalizzati.
         </p>
       </div>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Claude</a>: Prompt di Alta Qualità</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Claude</a>: Prompt di Alta Qualità</h3>
 
       <p>
         Claude è uno strumento essenziale per migliorare la qualità dei prompt AI. Nei nostri progetti, abbiamo notato che i prompt generati da Claude sono superiori a quelli di ChatGPT, rendendolo un alleato indispensabile per ottimizzare i risultati.
       </p>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.cursor.sh" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Cursor</a>: AI per il Coding</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.cursor.sh" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Cursor</a>: AI per il Coding</h3>
 
       <p>
         Per progetti più complessi che richiedono codice personalizzato, utilizziamo <strong>Cursor</strong>. Questo strumento accelera lo sviluppo, aiuta a scrivere codice più pulito e semplifica il debugging, rendendo il lavoro di programmazione molto più efficiente.<br>
@@ -163,7 +360,7 @@ const posts = {
         YouTube è il principale canale attraverso cui otteniamo nuovi clienti. Ecco i tre tool AI che utilizziamo per creare contenuti di alto impatto.
       </p>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Claude</a> per la Creazione di Script</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">1. <a href="https://www.anthropic.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Claude</a> per la Creazione di Script</h3>
 
       <p>
         Claude non è utile solo per i progetti dei clienti, ma anche per ottimizzare i contenuti video. Lo utilizziamo per:
@@ -175,7 +372,7 @@ const posts = {
         <li>Ottimizzare titoli e idee per le copertine dei video.</li>
       </ul>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://replicate.com" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Replicate</a> per le Copertine AI</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">2. <a href="https://replicate.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Replicate</a> per le Copertine AI</h3>
 
       <p>
         Le copertine dei video sono responsabili di almeno il 50% del loro successo. In passato, dovevamo allestire un intero setup fotografico per ottenere immagini di alta qualità. Ora, grazie a <strong>Replicate</strong>, possiamo generare automaticamente copertine di grande impatto semplicemente scrivendo un prompt AI.
@@ -187,7 +384,7 @@ const posts = {
         </p>
       </div>
 
-      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">Perplexity</a>: Il Motore di Ricerca AI</h3>
+      <h3 class="text-2xl font-bold mt-6 mb-3">3. <a href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">Perplexity</a>: Il Motore di Ricerca AI</h3>
 
       <p>
         Per creare contenuti di valore, è fondamentale basarsi su dati aggiornati e verificati. <strong>Perplexity</strong> è il miglior motore di ricerca AI per:
@@ -206,7 +403,7 @@ const posts = {
       </p>
 
       <p class="mt-4">
-        Se vuoi scoprire come questi strumenti possono essere applicati alla tua attività, <a href="https://calendly.com/riccardobcontarini/30min" class="text-[#4CAF50] hover:text-[#388E3C] underline">contattaci</a> per una consulenza personalizzata o visita la nostra pagina <a href="/casi-studio" class="text-[#4CAF50] hover:text-[#388E3C] underline">Casi Studio</a> per vedere esempi concreti di implementazioni di successo.
+        Se vuoi scoprire come questi strumenti possono essere applicati alla tua attività, <a href="https://calendly.com/riccardobcontarini/30min" class="text-emerald-400 hover:text-emerald-500 underline">contattaci</a> per una consulenza personalizzata o visita la nostra pagina <a href="/casi-studio" class="text-emerald-400 hover:text-emerald-500 underline">Casi Studio</a> per vedere esempi concreti di implementazioni di successo.
       </p>
     `,
   },
@@ -727,7 +924,7 @@ const posts = {
 
       <div class="bg-black/20 p-6 rounded-lg my-6">
         <p class="italic">
-          Secondo OpenAI, il nuovo contesto esteso è disponibile per tutti e tre i modelli GPT-4.1: Flagship, Mini e Nano (<a href="https://openai.com/blog/gpt-4-api-general-availability" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">fonte</a>).
+          Secondo OpenAI, il nuovo contesto esteso è disponibile per tutti e tre i modelli GPT-4.1: Flagship, Mini e Nano (<a href="https://openai.com/blog/gpt-4-api-general-availability" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">fonte</a>).
         </p>
       </div>
 
@@ -787,7 +984,7 @@ const posts = {
 
       <div class="bg-black/20 p-6 rounded-lg my-6">
         <p>
-          Per la configurazione Dropbox in N8N, consulta la <a href="https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dropbox/" target="_blank" rel="noopener noreferrer" class="text-[#4CAF50] hover:text-[#388E3C]">documentazione ufficiale</a>.
+          Per la configurazione Dropbox in N8N, consulta la <a href="https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.dropbox/" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-500">documentazione ufficiale</a>.
         </p>
       </div>
 
@@ -877,7 +1074,7 @@ function BlogPost() {
             </script>
           </Helmet>
         )}
-        <h1 className="text-5xl font-bold mb-4 text-center">{post.title}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center leading-tight">{post.title}</h1>
         <p className="text-center text-gray-500 mb-6">{post.description}</p>
         <div
           className="prose prose-invert prose-green max-w-none"
