@@ -5,9 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Configurazione per Netlify Forms
-[[plugins]]
-  package = "@netlify/plugin-forms"
+# Netlify Forms supportate nativamente
 
 # Redirect delle form submissions
 [[redirects]]
