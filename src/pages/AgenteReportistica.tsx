@@ -125,15 +125,17 @@ function AgenteReportistica() {
         <meta property="og:title" content="Prisma: L'Agente di Rendicontazione | Martes AI" />
         <meta property="og:description" content="Automatizza la rendicontazione del tuo team con Prisma, il nostro agente AI pronto all'uso." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://martes.ai/agente-reportistica" />
+        <meta property="og:url" content="https://www.martes-ai.com/agente-reportistica" />
+        <meta property="og:image" content="https://www.martes-ai.com/logo-martes.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Prisma: L'Agente di Rendicontazione | Martes AI" />
         <meta name="twitter:description" content="Automatizza la rendicontazione del tuo team con Prisma, il nostro agente AI." />
+        <meta name="twitter:image" content="https://www.martes-ai.com/logo-martes.png" />
         
         {/* Canonical */}
-        <link rel="canonical" href="https://martes.ai/agente-reportistica" />
+        <link rel="canonical" href="https://www.martes-ai.com/agente-reportistica" />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">

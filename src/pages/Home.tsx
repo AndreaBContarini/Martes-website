@@ -233,14 +233,14 @@ function Home() {
         <meta property="og:title" content="Martes AI | Partner AI a 360° per la tua Azienda" />
         <meta property="og:description" content="Il tuo partner AI a 360°. Progettiamo soluzioni su misura e formiamo il tuo team sull'AI per scalare le vendite e moltiplicare la produttività." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.martesai.com" />
-        <meta property="og:image" content="https://www.martesai.com/assets/og-image.jpg" />
+        <meta property="og:url" content="https://www.martes-ai.com" />
+        <meta property="og:image" content="https://www.martes-ai.com/logo-martes.png" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Martes AI | Partner AI a 360° per la tua Azienda" />
         <meta name="twitter:description" content="Il tuo partner AI a 360°. Progettiamo soluzioni su misura e formiamo il tuo team sull'AI." />
-        <meta name="twitter:image" content="https://www.martesai.com/assets/og-image.jpg" />
+        <meta name="twitter:image" content="https://www.martes-ai.com/logo-martes.png" />
         
         {/* Structured Data */}
         <script type="application/ld+json">

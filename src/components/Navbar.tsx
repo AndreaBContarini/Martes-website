@@ -100,14 +100,14 @@ const scrollToTop = () => {
             >
               <div className="flex flex-col space-y-4">
                 <Link 
-                  to="/" 
-                  onClick={() => {setIsOpen(false); scrollToTop();}}
+                  to="/blog" 
+                  onClick={() => setIsOpen(false)}
                   className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
                            hover:bg-emerald-400/10 transition-all duration-300 
                            font-medium text-lg border-b border-gray-700/50 last:border-b-0
                            transform hover:scale-105"
                 >
-                  Home
+                  Blog
                 </Link>
                 <Link 
                   to="/casi-studio" 
@@ -119,17 +119,6 @@ const scrollToTop = () => {
                 >
                   Casi Studio
                 </Link>
-
-                <Link 
-                  to="/blog" 
-                  onClick={() => setIsOpen(false)}
-                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
-                           hover:bg-emerald-400/10 transition-all duration-300 
-                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
-                           transform hover:scale-105"
-                >
-                  Blog
-                </Link>
                 <Link 
                   to="/chi-siamo" 
                   onClick={() => setIsOpen(false)}
@@ -138,18 +127,18 @@ const scrollToTop = () => {
                            font-medium text-lg border-b border-gray-700/50 last:border-b-0
                            transform hover:scale-105"
                 >
-                  Chi siamo
+                  Chi Siamo
                 </Link>
-                <button 
-                  onClick={() => {setIsOpen(false); scrollToForm();}}
-                  className="bg-gradient-to-r from-emerald-400 to-emerald-500 
-                           hover:from-emerald-500 hover:to-emerald-600 
-                           text-black py-4 px-6 rounded-xl font-semibold text-lg 
-                           transition-all duration-300 transform hover:scale-105 
-                           hover:shadow-lg hover:shadow-emerald-400/30 mt-2"
+                <Link 
+                  to="/newsletter" 
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                           hover:bg-emerald-400/10 transition-all duration-300 
+                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
+                           transform hover:scale-105"
                 >
-                  Contattaci
-                </button>
+                  Newsletter
+                </Link>
               </div>
             </div>
           )}
