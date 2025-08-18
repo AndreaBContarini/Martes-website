@@ -7,12 +7,6 @@
 
 # Netlify Forms supportate nativamente
 
-# Redirect semplificato per evitare loop
-[[redirects]]
-  from = "https://martes-ai.com/*"
-  to = "https://www.martes-ai.com/:splat"
-  status = 301
-
 # SPA fallback redirect - tutto deve andare a index.html per React Router
 [[redirects]]
   from = "/*"

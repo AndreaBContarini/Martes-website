@@ -14,15 +14,21 @@ function SoluzioniCustom() {
         <meta property="og:title" content="Soluzioni Custom AI | Martes AI" />
         <meta property="og:description" content="Progetta Sistemi Agentici su misura, Workflow Intelligenti e Soluzioni Enterprise. Crea l'AI del Domani, Oggi." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://martes.ai/soluzioni-custom" />
+        <meta property="og:url" content="https://www.martes-ai.com/soluzioni-custom" />
+        <meta property="og:image" content="https://www.martes-ai.com/logo-martes.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Soluzioni Custom AI | Martes AI" />
         <meta name="twitter:description" content="Progetta Sistemi Agentici Custom, Workflow Intelligenti e Soluzioni Enterprise." />
+        <meta name="twitter:image" content="https://www.martes-ai.com/logo-martes.png" />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo-martes.png" />
         
         {/* Canonical */}
-        <link rel="canonical" href="https://martes.ai/soluzioni-custom" />
+        <link rel="canonical" href="https://www.martes-ai.com/soluzioni-custom" />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">

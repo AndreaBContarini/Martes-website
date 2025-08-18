@@ -14,15 +14,21 @@ function FormazioneAziendale() {
         <meta property="og:title" content="Formazione Aziendale AI | Martes AI" />
         <meta property="og:description" content="Formazione AI pratica per restare competitivi e triplicare la produttività. Workshop dal vivo e online." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://martes.ai/formazione-aziendale" />
+        <meta property="og:url" content="https://www.martes-ai.com/formazione-aziendale" />
+        <meta property="og:image" content="https://www.martes-ai.com/logo-martes.png" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Formazione Aziendale AI | Martes AI" />
         <meta name="twitter:description" content="Formazione AI pratica per aziende. Workshop dal vivo e online." />
+        <meta name="twitter:image" content="https://www.martes-ai.com/logo-martes.png" />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo-martes.png" />
         
         {/* Canonical */}
-        <link rel="canonical" href="https://martes.ai/formazione-aziendale" />
+        <link rel="canonical" href="https://www.martes-ai.com/formazione-aziendale" />
         
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
