@@ -59,13 +59,13 @@ function Newsletter() {
       <SEOHead 
         title="Newsletter | Martes AI - Iscriviti per aggiornamenti sull'automazione AI"
         description="Iscriviti alla newsletter di Martes AI per ricevere aggiornamenti, insight esclusivi e consigli pratici sull'automazione con l'AI, direttamente nella tua casella di posta."
-        canonicalUrl="https://martes-ai.com/newsletter"
-        ogImage="/dist/assets/favicon-D1fAACaT.png"
+        canonicalUrl="https://www.martes-ai.com/newsletter"
+        ogImage="/logo-martes.png"
         pageType="website"
         schemaType="WebPage"
         structuredData={{
           "@type": "WebPage",
-          "@id": "https://martes-ai.com/newsletter",
+          "@id": "https://www.martes-ai.com/newsletter",
           "name": "Newsletter | Martes AI",
           "description": "Iscriviti alla newsletter di Martes AI per ricevere aggiornamenti, insight esclusivi e consigli pratici sull'automazione con l'AI."
         }}

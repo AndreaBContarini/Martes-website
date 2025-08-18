@@ -194,8 +194,8 @@ const Blog2 = () => {
       <SEOHead 
         title="Blog Martes AI | News e Guide su Automazione AI, Chatbot e Intelligenza Artificiale"
         description="Esplora il nostro blog dedicato alle ultime novità nel campo dell'intelligenza artificiale. Articoli approfonditi su automazione AI, chatbot, GPT e strategie di implementazione per il business."
-        canonicalUrl="https://martes-ai.com/blog"
-        ogImage="/dist/assets/favicon-D1fAACaT.png"
+        canonicalUrl="https://www.martes-ai.com/blog"
+        ogImage="/logo-martes.png"
         pageType="article"
         schemaType="BlogPosting"
         structuredData={{
@@ -216,7 +216,7 @@ const Blog2 = () => {
             "name": "Martes AI",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://martes-ai.com/dist/assets/favicon-D1fAACaT.png"
+              "url": "https://www.martes-ai.com/logo-martes.png"
             }
           }
         }}

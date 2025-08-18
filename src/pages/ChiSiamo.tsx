@@ -38,8 +38,8 @@ function ChiSiamo() {
       <SEOHead 
         title="Chi Siamo | Martes AI - Esperti in Sviluppo Soluzioni di Intelligenza Artificiale"
         description="Scopri il team di Martes AI: professionisti specializzati nello sviluppo di soluzioni di intelligenza artificiale personalizzate. Competenza, innovazione e risultati concreti per il tuo business."
-        canonicalUrl="https://martes-ai.com/chi-siamo"
-        ogImage="/dist/assets/favicon-D1fAACaT.png"
+        canonicalUrl="https://www.martes-ai.com/chi-siamo"
+        ogImage="/logo-martes.png"
         pageType="website"
         schemaType="AboutPage"
         structuredData={{

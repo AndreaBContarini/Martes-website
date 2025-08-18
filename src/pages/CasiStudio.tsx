@@ -258,8 +258,8 @@ function CasiStudio() {
       <SEOHead 
         title="Casi Studio | Martes AI - Storie di Successo nell'Implementazione di Soluzioni AI"
         description="Esplora i nostri casi studio: esempi concreti di come l'intelligenza artificiale ha trasformato il business dei nostri clienti. ROI misurabile, automazione efficiente e crescita aziendale."
-        canonicalUrl="https://martes-ai.com/casi-studio"
-        ogImage="/dist/assets/favicon-D1fAACaT.png"
+        canonicalUrl="https://www.martes-ai.com/casi-studio"
+        ogImage="/logo-martes.png"
         pageType="article"
         schemaType="WebPage"
         structuredData={{
