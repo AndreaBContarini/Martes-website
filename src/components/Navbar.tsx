@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-const logo = '/logo.png';
+const logo = '/logo-martes.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

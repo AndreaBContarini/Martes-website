@@ -13,14 +13,14 @@ interface SEOProps {
 const SEOHead = ({ 
   title = "Martes AI | Automazioni AI per Aziende e Professionisti",
   description = "Sviluppiamo Agenti AI ed Automazioni su misura per ottimizzare i processi aziendali, per incrementare l'efficienza nel tuo business.",
-  canonicalUrl = "https://martes-ai.com",
-  ogImage = "/dist/assets/favicon-D1fAACaT.png",
+  canonicalUrl = "https://www.martes-ai.com",
+  ogImage = "/logo-martes.png",
   pageType = "website",
   schemaType = "Organization",
   structuredData = {}
 }: SEOProps) => {
   // Base URL del sito
-  const baseUrl = "https://martes-ai.com";
+  const baseUrl = "https://www.martes-ai.com";
   
   // Keywords espanse
   const keywordsString = "martes ai, automazione ai, chatbot ai, lead generation ai, automazione processi aziendali, consulenza ai pmi, gpt personalizzato, assistenti virtuali ai, agenti AI, software AI, SaaS AI, automazione CRM, AI per aziende, AI per professionisti";
@@ -31,8 +31,8 @@ const SEOHead = ({
     "@type": schemaType,
     "name": "Martes AI",
     "url": baseUrl,
-    "logo": `${baseUrl}/dist/assets/favicon-D1fAACaT.png`,
-    "image": `${baseUrl}/dist/assets/favicon-D1fAACaT.png`,
+    "logo": `${baseUrl}/logo-martes.png`,
+    "image": `${baseUrl}/logo-martes.png`,
     "description": description,
     "address": {
       "@type": "PostalAddress",
@@ -84,7 +84,7 @@ const SEOHead = ({
       {/* Meta tag per Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${baseUrl}/dist/assets/favicon-D1fAACaT.png`} />
+      <meta property="og:image" content={`${baseUrl}/logo-martes.png`} />
       <meta property="og:image:width" content="512" />
       <meta property="og:image:height" content="512" />
       <meta property="og:url" content={canonicalUrl} />
@@ -96,13 +96,13 @@ const SEOHead = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${baseUrl}/dist/assets/favicon-D1fAACaT.png`} />
+      <meta name="twitter:image" content={`${baseUrl}/logo-martes.png`} />
       <meta name="twitter:site" content="@martes_ai" />
       
       {/* Favicon e icone per vari dispositivi */}
-      <link rel="icon" type="image/png" href={`${baseUrl}/dist/assets/favicon-D1fAACaT.png`} />
-      <link rel="apple-touch-icon" href={`${baseUrl}/dist/assets/favicon-D1fAACaT.png`} />
-      <meta name="msapplication-TileImage" content={`${baseUrl}/dist/assets/favicon-D1fAACaT.png`} />
+      <link rel="icon" type="image/x-icon" href={`${baseUrl}/favicon.ico`} />
+      <link rel="apple-touch-icon" href={`${baseUrl}/logo-martes.png`} />
+      <meta name="msapplication-TileImage" content={`${baseUrl}/logo-martes.png`} />
       
       {/* Meta tag per mobile */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -123,7 +123,7 @@ const SEOHead = ({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       
       {/* Preload delle immagini critiche */}
-      <link rel="preload" as="image" href={`${baseUrl}/dist/assets/favicon-D1fAACaT.png`} />
+      <link rel="preload" as="image" href={`${baseUrl}/logo-martes.png`} />
     </Helmet>
   );
 };

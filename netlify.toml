@@ -7,6 +7,26 @@
 
 # Netlify Forms supportate nativamente
 
+# Redirect da domini senza www a www (per SEO consistency)
+[[redirects]]
+  from = "https://martes-ai.com/*"
+  to = "https://www.martes-ai.com/:splat"
+  status = 301
+  force = true
+
+# Redirect HTTP a HTTPS per tutti i domini
+[[redirects]]
+  from = "http://www.martes-ai.com/*"
+  to = "https://www.martes-ai.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://martes-ai.com/*"
+  to = "https://www.martes-ai.com/:splat"
+  status = 301
+  force = true
+
 # SPA fallback redirect - tutto deve andare a index.html per React Router
 [[redirects]]
   from = "/*"
