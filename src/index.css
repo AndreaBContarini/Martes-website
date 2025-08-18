@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Set black background for body to prevent green background on mobile pull-to-refresh */
+html, body {
+  background-color: #000000;
+}
+
 /* Animated gradient background */
 @keyframes gradient-xy {
   0%, 100% {

@@ -71,7 +71,7 @@ function LogoTicker() {
   }, [isPaused]);
 
   return (
-    <section id="partners" className="py-6 sm:py-8 md:py-10 lg:py-12 w-full bg-black">
+    <section id="partners" className="py-8 pb-12 sm:py-8 md:py-10 lg:py-12 w-full bg-black">
       <div className="section-container">
         <div className="text-center mb-4 sm:mb-6 md:mb-8">
           <h3 className="text-2xl md:text-3xl font-semibold text-white">Sei in ottima compagnia</h3>

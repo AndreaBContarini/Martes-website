@@ -12,7 +12,7 @@ interface SEOProps {
 
 const SEOHead = ({ 
   title = "Martes AI | Automazioni AI per Aziende e Professionisti",
-  description = "Sviluppiamo automazioni AI su misura per ottimizzare i processi aziendali. Chatbot avanzati, agenti AI e soluzioni personalizzate per incrementare l'efficienza e il ROI della tua impresa.",
+  description = "Sviluppiamo Agenti AI ed Automazioni su misura per ottimizzare i processi aziendali, per incrementare l'efficienza nel tuo business.",
   canonicalUrl = "https://martes-ai.com",
   ogImage = "/dist/assets/favicon-D1fAACaT.png",
   pageType = "website",

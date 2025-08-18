@@ -4,7 +4,7 @@ function Hero() {
 
   return (
     <>
-      <header className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] w-full flex items-center justify-center relative overflow-hidden">
+      <header className="min-h-[75vh] sm:min-h-[70vh] md:min-h-[65vh] lg:min-h-[68vh] w-full flex items-center justify-center relative overflow-hidden">
         {/* Elegant Modern Background */}
         <div className="absolute inset-0 w-screen z-0">
           {/* Primary gradient base */}

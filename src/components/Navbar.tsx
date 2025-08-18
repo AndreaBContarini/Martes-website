@@ -5,6 +5,7 @@ const logo = '/logo.png';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   
@@ -109,6 +110,70 @@ const scrollToTop = () => {
                 >
                   Blog
                 </Link>
+                
+                {/* Menu Servizi con sottomenu */}
+                <div className="relative">
+                  <button
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className="w-full text-left text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                             hover:bg-emerald-400/10 transition-all duration-300 
+                             font-medium text-lg border-b border-gray-700/50
+                             transform hover:scale-105 flex items-center justify-between"
+                  >
+                    Servizi
+                    <svg 
+                      className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  
+                  {/* Sottomenu Servizi */}
+                  {isServicesOpen && (
+                    <div className="ml-4 mt-2 space-y-2 border-l-2 border-emerald-400/30 pl-4">
+                      <Link 
+                        to="/soluzioni-custom" 
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsServicesOpen(false);
+                        }}
+                        className="block text-gray-300 hover:text-emerald-400 py-2 px-3 rounded-lg 
+                                 hover:bg-emerald-400/10 transition-all duration-300 
+                                 font-medium text-base transform hover:scale-105"
+                      >
+                        Soluzioni Custom
+                      </Link>
+                      <Link 
+                        to="/formazione-aziendale" 
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsServicesOpen(false);
+                        }}
+                        className="block text-gray-300 hover:text-emerald-400 py-2 px-3 rounded-lg 
+                                 hover:bg-emerald-400/10 transition-all duration-300 
+                                 font-medium text-base transform hover:scale-105"
+                      >
+                        Formazione Aziendale
+                      </Link>
+                      <Link 
+                        to="/agente-reportistica" 
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsServicesOpen(false);
+                        }}
+                        className="block text-gray-300 hover:text-emerald-400 py-2 px-3 rounded-lg 
+                                 hover:bg-emerald-400/10 transition-all duration-300 
+                                 font-medium text-base transform hover:scale-105"
+                      >
+                        Agente <em>Prisma</em>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                
                 <Link 
                   to="/casi-studio" 
                   onClick={() => setIsOpen(false)}

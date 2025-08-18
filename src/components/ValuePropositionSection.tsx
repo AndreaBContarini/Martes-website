@@ -12,20 +12,12 @@ function ValuePropositionSection() {
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Value Proposition */}
-          <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-2 sm:mb-3 text-white">
-            L'<span className="text-emerald-400">AI</span> è qui
-          </h2>
-          <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16 text-white whitespace-nowrap px-2 sm:px-0">
-            Ti aiutiamo a rimanere competitivo
-          </h2>
-
           {/* Core Competencies - Due cerchi uniti */}
-          <div className="flex justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-12">
+          <div className="flex justify-center mb-6 sm:mb-8 md:mb-10 lg:mb-16">
             <img
               src="/assets/home_images/DoubleCircles.png"
               alt="Development e Formazione - Le nostre competenze core"
-              className="max-w-2xl md:max-w-4xl lg:max-w-5xl h-auto w-full"
+              className="max-w-xl sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl h-auto w-full px-2 sm:px-6 md:px-8"
             />
           </div>
 

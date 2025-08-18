@@ -226,7 +226,7 @@ function Home() {
     <>
       <Helmet>
         <title>Martes AI | Partner AI a 360° per la tua Azienda</title>
-        <meta name="description" content="Il tuo partner AI a 360°. Progettiamo soluzioni su misura e formiamo il tuo team sull'AI. Agenti AI custom, automazioni personalizzate e formazione aziendale per scalare le vendite e moltiplicare la produttività." />
+        <meta name="description" content="Sviluppiamo Agenti AI ed Automazioni su misura per ottimizzare i processi aziendali, per incrementare l'efficienza nel tuo business." />
         <meta name="keywords" content="AI, intelligenza artificiale, agenti AI, automazioni, formazione aziendale, soluzioni custom, chatbot, machine learning, business automation, digital transformation" />
         
         {/* Open Graph */}
