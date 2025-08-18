@@ -128,6 +128,7 @@ const scrollToTop = () => {
                         onClick={() => {
                           setIsOpen(false);
                           setIsServicesOpen(false);
+                          scrollToTop();
                         }}
                         className="block text-gray-300 hover:text-emerald-400 py-2 px-3 rounded-lg 
                                  hover:bg-emerald-400/10 transition-all duration-300 
@@ -140,6 +141,7 @@ const scrollToTop = () => {
                         onClick={() => {
                           setIsOpen(false);
                           setIsServicesOpen(false);
+                          scrollToTop();
                         }}
                         className="block text-gray-300 hover:text-emerald-400 py-2 px-3 rounded-lg 
                                  hover:bg-emerald-400/10 transition-all duration-300 
@@ -152,6 +154,7 @@ const scrollToTop = () => {
                         onClick={() => {
                           setIsOpen(false);
                           setIsServicesOpen(false);
+                          scrollToTop();
                         }}
                         className="block text-gray-300 hover:text-emerald-400 py-2 px-3 rounded-lg 
                                  hover:bg-emerald-400/10 transition-all duration-300 
@@ -165,7 +168,10 @@ const scrollToTop = () => {
                 
                 <Link 
                   to="/casi-studio" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    scrollToTop();
+                  }}
                   className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
                            hover:bg-emerald-400/10 transition-all duration-300 
                            font-medium text-lg border-b border-gray-700/50 last:border-b-0
@@ -175,7 +181,10 @@ const scrollToTop = () => {
                 </Link>
                 <Link 
                   to="/newsletter" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    scrollToTop();
+                  }}
                   className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
                            hover:bg-emerald-400/10 transition-all duration-300 
                            font-medium text-lg border-b border-gray-700/50 last:border-b-0
@@ -185,7 +194,10 @@ const scrollToTop = () => {
                 </Link>
                 <Link 
                   to="/blog" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    scrollToTop();
+                  }}
                   className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
                            hover:bg-emerald-400/10 transition-all duration-300 
                            font-medium text-lg border-b border-gray-700/50 last:border-b-0
@@ -195,7 +207,10 @@ const scrollToTop = () => {
                 </Link>
                 <Link 
                   to="/chi-siamo" 
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    scrollToTop();
+                  }}
                   className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
                            hover:bg-emerald-400/10 transition-all duration-300 
                            font-medium text-lg border-b border-gray-700/50 last:border-b-0
