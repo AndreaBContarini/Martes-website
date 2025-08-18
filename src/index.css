@@ -7,6 +7,34 @@ html, body {
   background-color: #000000;
 }
 
+/* Additional mobile overscroll and status bar styling */
+html {
+  background-color: #000000;
+  /* Prevent overscroll background on mobile */
+  overscroll-behavior: none;
+  -webkit-overscroll-behavior: none;
+}
+
+body {
+  background-color: #000000;
+  /* Ensure consistent background on mobile browsers */
+  background-attachment: fixed;
+}
+
+/* WebKit specific overscroll styling for iOS */
+@supports (-webkit-appearance: none) {
+  html {
+    background: #000000;
+  }
+  
+  body {
+    background: #000000;
+    /* Prevent rubber band effect background */
+    overscroll-behavior-y: none;
+    -webkit-overscroll-behavior-y: none;
+  }
+}
+
 /* Animated gradient background */
 @keyframes gradient-xy {
   0%, 100% {
