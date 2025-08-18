@@ -100,18 +100,7 @@ const scrollToTop = () => {
                          animate-slideDown transform origin-top-right"
             >
               <div className="flex flex-col space-y-4">
-                <Link 
-                  to="/blog" 
-                  onClick={() => setIsOpen(false)}
-                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
-                           hover:bg-emerald-400/10 transition-all duration-300 
-                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
-                           transform hover:scale-105"
-                >
-                  Blog
-                </Link>
-                
-                {/* Menu Servizi con sottomenu */}
+                {/* Menu Servizi con sottomenu - PRIMO */}
                 <div className="relative">
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -185,16 +174,6 @@ const scrollToTop = () => {
                   Casi Studio
                 </Link>
                 <Link 
-                  to="/chi-siamo" 
-                  onClick={() => setIsOpen(false)}
-                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
-                           hover:bg-emerald-400/10 transition-all duration-300 
-                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
-                           transform hover:scale-105"
-                >
-                  Chi Siamo
-                </Link>
-                <Link 
                   to="/newsletter" 
                   onClick={() => setIsOpen(false)}
                   className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
@@ -203,6 +182,26 @@ const scrollToTop = () => {
                            transform hover:scale-105"
                 >
                   Newsletter
+                </Link>
+                <Link 
+                  to="/blog" 
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                           hover:bg-emerald-400/10 transition-all duration-300 
+                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
+                           transform hover:scale-105"
+                >
+                  Blog
+                </Link>
+                <Link 
+                  to="/chi-siamo" 
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-emerald-400 py-3 px-4 rounded-lg 
+                           hover:bg-emerald-400/10 transition-all duration-300 
+                           font-medium text-lg border-b border-gray-700/50 last:border-b-0
+                           transform hover:scale-105"
+                >
+                  Chi Siamo
                 </Link>
               </div>
             </div>

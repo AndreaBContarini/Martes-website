@@ -13,7 +13,7 @@ const blogPosts = [
     excerpt: "L'intelligenza artificiale nelle aziende italiane non è più una questione di se implementarla, ma di come farlo nel modo giusto. Scopri il Framework EID per implementazioni AI di successo.",
     date: '2025-08-18',
     readTime: '9 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Framework+EID',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=Framework+EID',
   },
   {
     id: 'gpt-41-nuovo-standard-agenti-ai',
@@ -21,7 +21,7 @@ const blogPosts = [
     excerpt: "Scopri come GPT-4.1 rivoluziona la creazione di agenti AI grazie al contesto da 1 milione di token, prestazioni superiori e costi ridotti. Un vero game changer per sviluppatori e aziende.",
     date: '2025-04-01',
     readTime: '8 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT-4.1',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=GPT-4.1',
   },
   {
     id: 'mcp-ponte-tra-ai-e-dati-esterni',
@@ -29,7 +29,7 @@ const blogPosts = [
     excerpt: "MCP (Model Context Protocol) è un nuovo standard aperto che rivoluziona il modo in cui gli agenti AI si connettono alle fonti di dati esterne, permettendo agli LLM di interagire facilmente con database, API e altri servizi esterni tramite un protocollo standardizzato.",
     date: '2025-03-25',
     readTime: '7 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=MCP',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=MCP',
   },
   {
     id: 'manus-ai-agente-autonomo-rivoluzionario',
@@ -37,7 +37,7 @@ const blogPosts = [
     excerpt: "Scopri Manus AI, l'agente autonomo cinese che esegue compiti complessi senza supervisione umana, segnando un passo verso l'intelligenza artificiale generale (AGI). Analisi delle caratteristiche, impatto sul settore e collaborazioni strategiche.",
     date: '2025-03-20',
     readTime: '6 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Manus+AI',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=Manus+AI',
   },
   {
     id: '6-tool-ai-che-hanno-accelerato-il-nostro-business',
@@ -45,7 +45,7 @@ const blogPosts = [
     excerpt: 'Scopri i sei strumenti di intelligenza artificiale che hanno permesso a Martes AI di generare 20.000€ in soli tre mesi. Dalla creazione di chatbot alla generazione di contenuti, ecco le soluzioni AI che stanno trasformando il nostro business.',
     date: '2025-03-15',
     readTime: '5 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=6+Tool+AI',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=6+Tool+AI',
   },
   {
     id: 'claude-37-sonnet-intelligenza-artificiale-ibrida-rivoluzionaria',
@@ -53,7 +53,7 @@ const blogPosts = [
     excerpt: 'Anthropic ha lanciato Claude 3.7 Sonnet, un modello di intelligenza artificiale che introduce il "ragionamento ibrido", combinando risposte rapide con analisi approfondite. Scopri funzionalità, confronti e casi d\'uso ideali.',
     date: '2025-03-10',
     readTime: '4 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Claude+3.7',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=Claude+3.7',
   },
   {
     id: 'deepseek-alternativa-open-source-a-chatgpt-e-gemini',
@@ -61,7 +61,7 @@ const blogPosts = [
     excerpt: 'Analisi approfondita di DeepSeek, la sua natura open source, i costi delle API e le principali differenze rispetto ai concorrenti come ChatGPT e Gemini.',
     date: '2025-02-01',
     readTime: '2 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=DeepSeek',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=DeepSeek',
   },
   {
     id: 'gpt-la-rivoluzione-dellintelligenza-artificiale-nel-business',
@@ -69,7 +69,7 @@ const blogPosts = [
     excerpt: 'Scopri come i modelli GPT stanno trasformando il business, ottimizzando processi e creando nuove opportunità nel mondo digitale.',
     date: '2024-12-09',
     readTime: '3 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=GPT',
   },
   {
     id: 'cold-emailing-nuovi-clienti',
@@ -77,7 +77,7 @@ const blogPosts = [
     excerpt: 'In questo breve articolo parliamo di come ottimizzare le cosiddette "cold email" per ottenere ottimi risultati e feedback da potenziali nuovi clienti.',
     date: '2024-10-09',
     readTime: '5 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Cold+Email',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=Cold+Email',
   },
   {
     id: 'chatbot-ai-e-assistenti-vocali-la-nuova-frontiera-del-customer-service',
@@ -85,7 +85,7 @@ const blogPosts = [
     excerpt: "Grazie all'intelligenza artificiale e ai modelli linguistici avanzati (LLM) come GPT-4, i chatbot moderni offrono assistenza personalizzata, migliorano il servizio clienti e ottimizzano l'efficienza aziendale",
     date: '2024-11-29',
     readTime: '4 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Chatbot',
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=Chatbot',
   },
   {
     id: 'prompt-engineering-come-sfruttare-al-110percent-lai',
@@ -93,7 +93,7 @@ const blogPosts = [
     excerpt: "Il prompt engineering è essenziale per sfruttare al meglio l'AI. Scopri come migliorare la precisione di ChatGPT, automazioni e altri strumenti con prompt efficaci.",
     date: '2024-09-10',
     readTime: '2 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=Prompt+Engineering',  
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=Prompt+Engineering',  
   },
   {
     id: 'gpt-4o-openai-lancia-il-nuovo-modello',
@@ -101,7 +101,7 @@ const blogPosts = [
     excerpt: "OpenAI ha lanciato GPT-o1, un modello AI più veloce, economico e avanzato. Ideale per sviluppatori e aziende, ottimizza i progetti AI con prestazioni migliorate.",
     date: '2024-07-04',
     readTime: '2 min',
-    image: 'https://placehold.co/600x400/274f36/FFFFFF?text=GPT-o1',  
+    image: 'https://placehold.co/600x400/10b981/FFFFFF?text=GPT-o1',  
   }
 ];
 
@@ -240,7 +240,7 @@ const Blog2 = () => {
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
                   loading="lazy"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://placehold.co/600x400/274f36/FFFFFF?text=Martes+AI';
+                    e.currentTarget.src = 'https://placehold.co/600x400/10b981/FFFFFF?text=Martes+AI';
                   }}
                 />
               </div>

@@ -415,8 +415,8 @@ body {
 }
 
 .react-tel-input .form-control:focus {
-  border: 1px solid #274f36;
-  box-shadow: 0 0 0 1px #274f36;
+  border: 1px solid #10b981;
+  box-shadow: 0 0 0 1px #10b981;
 }
 
 .react-tel-input .selected-flag {
