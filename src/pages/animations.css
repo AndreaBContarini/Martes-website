@@ -1,0 +1,98 @@
+/* Animazioni per i componenti della newsletter */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Effetti di hover e focus migliorati */
+input:focus, 
+textarea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(39, 79, 54, 0.3) !important;
+}
+
+/* Effetto di brillantezza sul pulsante */
+button:not(:disabled):hover {
+  box-shadow: 0 0 15px rgba(39, 79, 54, 0.5);
+}
+
+/* Miglioramento per l'accessibilità */
+input, button, a {
+  position: relative;
+  z-index: 10;
+}
+
+/* Stili specifici per il selettore di telefono */
+.react-tel-input .flag-dropdown {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 100 !important;
+}
+
+.react-tel-input .selected-flag {
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+.react-tel-input .selected-flag:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.react-tel-input .country-list {
+  z-index: 101 !important;
+} 

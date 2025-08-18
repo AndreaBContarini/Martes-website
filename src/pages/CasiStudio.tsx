@@ -1,16 +1,73 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import SEOHead from '../components/SEOHead';
 
 const cases = [
   {
+    id: 'automazione-rendicontazione-monni-srl',
+    title: 'Automazione Rendicontazione Operativa con Agente WhatsApp',
+    date: new Date('2025-05-15'),
+    image: '/assets/logos/monni_SRL.png',
+    testimonial: {
+      quote: "Con l'agente conversazionale WhatsApp, abbiamo digitalizzato completamente il processo di rendicontazione, riducendo notevolmente il tempo necessario e garantendo una raccolta dati strutturata e puntuale.",
+      author: 'Monni SRL',
+      role: 'Azienda di Edilizia e Lavori Stradali',
+    },
+    content: `
+      <h2>Introduzione</h2>
+      <p>Monni SRL, leader nel settore dell'edilizia e dei lavori stradali, si è trovata ad affrontare una sfida comune a molte imprese del comparto: la gestione efficiente della rendicontazione giornaliera degli operai. La necessità di raccogliere informazioni dettagliate sulle attività svolte, l'utilizzo dei mezzi e la documentazione correlata, ha portato allo sviluppo di una soluzione innovativa basata su intelligenza artificiale e automazione.</p>
+    `,
+  },
+  {
+    id: 'automazione-ai-clinica-oculistica-santa-lucia',
+    title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
+    //description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di e AI, migliorando efficienza e servizio ai pazienti.",
+    date: new Date('2025-03-20'),
+    image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
+    testimonial: {
+      quote: "Grazie alle soluzioni Martes AI, la Clinica Oculistica Santa Lucia ha ridotto i tempi d'attesa, ottimizzato la gestione degli appuntamenti e automatizzato le email, risparmiando tempo prezioso e offrendo ai pazienti un'esperienza più fluida ed efficiente.",
+      author: 'Dott. Mario Cipolla',
+      role: 'Direttore Amministrativo',
+    },
+    content: `
+      <h2>Introduzione</h2>
+      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Martws AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
+    `,
+  },
+  {
+    id: 'agente-ai-newsletter-scientifica-shape-up',
+    title: 'Agente AI Per una Newsletter Scientifica',
+    //description: "Come un Agente AI ha automatizzato la produzione di newsletter scientifiche per Shape-UP, riducendo tempi di produzione e migliorando qualità dei contenuti.",
+    date: new Date('2025-04-04'),
+    image: "/assets/logos/shapeup.png",
+    testimonial: {
+      quote: "L'Agente AI di Martes AI ha rivoluzionato la nostra newsletter: contenuti scientifici affidabili e ben scritti, immagini professionali... il tutto a portata di un click",
+      author: 'Davide Beccetti',
+      role: 'CEO @ Shape-UP',
+    },
+    content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/qarwJCCqTmA" 
+          title="Shape-UP Newsletter Automation Case Study"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    `,
+  },
+  {
     id: '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group',
-    title: '50 clienti in più al mese - agenzia di viaggio WeTravel Group',
-    description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",
+    title: "50 clienti in più al mese per un'agenzia di viaggio",
+    //description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",
     date: new Date('2024-09-09'),
     image:
-      'https://i.ibb.co/nPq0dkr/PHOTO-2024-08-17-13-31-51-removebg-preview.png',
+      'https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png',
     testimonial: {
       quote:
         "Grazie al chatbot AI e alle automazioni integrate, riusciamo a gestire con efficacia 3000 contatti mensili su WhatsApp per attività di acquisizione e gestione clienti, generando un significativo incremento delle prenotazioni e un profitto mensile aggiuntivo di € 27.500 per l'agenzia.",
@@ -78,7 +135,7 @@ const cases = [
       <p class="mt-4">Grazie a questo flusso ottimizzato, il team può contattare direttamente i clienti interessati per finalizzare l'acquisto del pacchetto viaggi, garantendo un passaggio agevole e senza interruzioni tra il chatbot e il servizio clienti umano.</p>
 
       <div class="bg-black/20 p-6 rounded-lg mt-8">
-        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare circa €75.000, di seguito uno screenshot di alcuni contratti:</p>
+        <p class="font-semibold">Nota: Nel mese di ottobre 2024 il sistema è stato in grado di generare €82.170, di seguito uno screenshot di alcuni contratti:</p>
         <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=549,fit=crop/mk39w0PZ1DIe7Dp6/whatsapp-image-2024-11-01-at-23.22.10-A3Qw77Ok5PfMMzGy.jpeg" alt="Contratti" class="w-full mt-4 rounded-lg shadow-lg" />
       </div>
     `,
@@ -86,13 +143,12 @@ const cases = [
   {
       id: 'supporto-clienti-ai-e-tracciamento-ordini-dinamico-per-un-ecommerce',
       title: 'Supporto Clienti AI e Tracciamento Ordini Dinamico per Ecommerce',
-      description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
+      //description: "AI su misura per eCommerce: una soluzione pensata per automatizzare la gestione delle richieste ripetitive e migliorare l'efficienza operativa.",
       date: new Date('2024-07-18'),
       image:
-        'https://i.ibb.co/BtPCmvC/ecommerceparts-removebg-preview.png',
+        '/assets/logos/ecommerceparts.png',
       testimonial: {
-        quote:
-          "Grazie al chatbot AI e alle automazioni integrate, riusciamo a gestire con efficacia 3000 contatti mensili su WhatsApp per attività di acquisizione e gestione clienti, generando un significativo incremento delle prenotazioni e un profitto mensile aggiuntivo di € 27.500 per l'agenzia.",
+        quote: "Grazie a Martes AI, abbiamo rivoluzionato il nostro servizio clienti. Il loro chatbot AI su WhatsApp ha ridotto drasticamente il numero di email giornaliere, permettendoci di rispondere ai clienti in tempo reale e di concentrarci su attività strategiche. Un'implementazione efficace che ha migliorato efficienza e soddisfazione del cliente.",
         author: 'Giuseppe Romano',
         role: 'CEO Ecommerceparts',
       },
@@ -112,9 +168,9 @@ const cases = [
 {
       id: "generazione-di-lead-qualificati-via-linkedin",
       title: "Generazione di Lead Qualificati via LinkedIn",
-      description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
+      //: "Con Martes AI e Dripify ho generato lead qualificati, automatizzato i contenuti e ottenuto risultati concreti in pochi giorni.",
       date: new Date('2025-01-31'),
-      image: 'https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png',
+      image: '/assets/logos/fantozzi.png',
       testimonial: {
         quote: "Grazie a Martes AI, ho trasformato LinkedIn in una fonte di nuovi clienti senza perdere tempo. In pochi giorni ho ottenuto contatti qualificati e già acquisito un cliente. Strategia efficace e zero sforzo!",
         author: 'Edoardo Belli Contarini',
@@ -135,10 +191,10 @@ const cases = [
   },
   {
     id: "custom-gpt-email",
-    title: "Agente GPT che risponde automaticamente alle mail e che riassume le ultime news sull'AI",
-    description: "Un Sistema su Misura per l'Efficienza Operativa: scopri come abbiamo sviluppato una soluzione basata su intelligenza artificiale per un ecommerce che risolve uno dei problemi più comuni per questo tipo di attività: la gestione delle richieste ripetitive dei clienti",
+    title: "Agente GPT per rispondere alle mail e riassumere AI-news",
+    //: "Martes AI ha sviluppato un sistema GPT per automatizzare le risposte email e fornire nes su tema AI,  migliorando l'efficienza comunicativa, integrando Make e Zapier",
     date: new Date('2025-02-13'),
-    image: 'https://i.ibb.co/KzNTDF0D/loffredo.jpg',
+    image: '/assets/logos/federico-loffredo.png',
     testimonial: {
       quote: "Ho chiesto due GPT personalizzati: uno per la gestione automatica delle email e uno per riassumere le ultime news sull'AI. Hanno fatto un lavoro eccellente e professionale. Consigliatissimi!",
       author: 'Federico Loffredo',
@@ -164,7 +220,18 @@ const cases = [
 function CasiStudio() {
   const [currentPage, setCurrentPage] = useState(1);
   const casesPerPage = 3;
+  const location = useLocation();
   
+  // Effetto per scrollare all'inizio della pagina quando viene caricata o quando cambia l'URL
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  // Funzione per scrollare in cima alla pagina
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Ordina i casi studio per data (dal più recente)
   const sortedCases = cases.sort((a, b) => b.date.getTime() - a.date.getTime());
   
@@ -177,12 +244,47 @@ function CasiStudio() {
     return sortedCases.slice(startIndex, startIndex + casesPerPage);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Gestisce il cambio pagina
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    // Assicuriamoci che lo scroll to top avvenga sempre
+    setTimeout(() => {
+      scrollToTop();
+    }, 10);
   };
 
   return (
     <div className="pt-32 pb-20">
+      <SEOHead 
+        title="Casi Studio | Martes AI - Storie di Successo nell'Implementazione di Soluzioni AI"
+        description="Esplora i nostri casi studio: esempi concreti di come l'intelligenza artificiale ha trasformato il business dei nostri clienti. ROI misurabile, automazione efficiente e crescita aziendale."
+        canonicalUrl="https://www.martes-ai.com/casi-studio"
+        ogImage="/logo-martes.png"
+        pageType="article"
+        schemaType="WebPage"
+        structuredData={{
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://martes-ai.com/casi-studio"
+          },
+          "about": {
+            "@type": "Thing",
+            "name": "Casi studio di successo nell'implementazione AI"
+          },
+          "itemListElement": cases.map((caseStudy, index) => ({
+            "@type": "Article",
+            "position": index + 1,
+            "url": `https://martes-ai.com/casi-studio/${caseStudy.id}`,
+            "name": caseStudy.title,
+            "author": {
+              "@type": "Organization",
+              "name": "Martes AI"
+            },
+            "datePublished": caseStudy.date.toISOString(),
+            "image": caseStudy.image
+          }))
+        }}
+      />
       <div className="container mx-auto px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-12">
           Casi Studio
@@ -193,7 +295,7 @@ function CasiStudio() {
               key={caseStudy.id}
               to={`/casi-studio/${caseStudy.id}`}
               onClick={scrollToTop}
-              className="bg-black/30 rounded-lg overflow-hidden hover:bg-black/40 transition-transform transform hover:scale-105 duration-300"
+              className="bg-black/30 rounded-lg overflow-hidden hover:bg-emerald-500/10 transition-transform transform hover:scale-105 duration-300"
             >
               <img
                 src={caseStudy.image}
@@ -209,12 +311,11 @@ function CasiStudio() {
                   </span>
                 </div>
                 <h2 className="text-xl font-bold mb-4">{caseStudy.title}</h2>
-                <p className="text-gray-300">{caseStudy.description}</p>
                 <div className="mt-6 p-4 bg-black/20 rounded-lg">
                   <p className="text-sm italic text-gray-300">
                     {caseStudy.testimonial.quote}
                   </p>
-                  <p className="mt-2 text-sm text-[#274f36]">
+                  <p className="mt-2 text-sm text-emerald-500">
                     - {caseStudy.testimonial.author}, {caseStudy.testimonial.role}
                   </p>
                 </div>
@@ -227,31 +328,199 @@ function CasiStudio() {
         {totalPages > 1 && (
           <div className="flex justify-center mt-12 gap-2">
             <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              onClick={() => {
+                if (currentPage > 1) {
+                  handlePageChange(currentPage - 1);
+                }
+              }}
               disabled={currentPage === 1}
-              className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
+              className="px-4 py-2 rounded-lg bg-emerald-500 disabled:opacity-50"
             >
               Precedente
             </button>
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+            
+            {/* Logica di paginazione secondo le regole specificate */}
+            {totalPages <= 3 ? (
+              // Se ci sono 3 o meno pagine totali, mostra tutte le pagine
+              Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
               <button
                 key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`px-4 py-2 rounded-lg ${
+                onClick={() => handlePageChange(page)}
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center ${
                   currentPage === page 
-                    ? 'bg-[#274f36]' 
-                    : 'bg-black/30 hover:bg-[#274f36]/70'
+                    ? 'bg-emerald-500' 
+                    : 'bg-black/30 hover:bg-emerald-500/70'
                 }`}
+                  aria-current={currentPage === page ? 'page' : undefined}
               >
                 {page}
               </button>
-            ))}
+              ))
+            ) : (
+              // Se ci sono più di 3 pagine totali
+              <>
+                {/* CASO 1: Prima pagina */}
+                {currentPage === 1 && (
+                  <>
+                    {/* Prima pagina (corrente) */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-emerald-500"
+                      aria-current="page"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Seconda pagina */}
+                    <button
+                      key={2}
+                      onClick={() => handlePageChange(2)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                    >
+                      2
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Ultima pagina */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 2: Ultima pagina */}
+                {currentPage === totalPages && (
+                  <>
+                    {/* Prima pagina */}
+                    <button
+                      key={1}
+                      onClick={() => handlePageChange(1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                    >
+                      1
+                    </button>
+                    
+                    {/* Puntini di sospensione (se ci sono più di 3 pagine) */}
+                    {totalPages > 3 && (
+                      <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                        ...
+                      </span>
+                    )}
+                    
+                    {/* Penultima pagina */}
+                    <button
+                      key={totalPages - 1}
+                      onClick={() => handlePageChange(totalPages - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                    >
+                      {totalPages - 1}
+                    </button>
+                    
+                    {/* Ultima pagina (corrente) */}
+                    <button
+                      key={totalPages}
+                      onClick={() => handlePageChange(totalPages)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-emerald-500"
+                      aria-current="page"
+                    >
+                      {totalPages}
+                    </button>
+                  </>
+                )}
+                
+                {/* CASO 3: Pagina intermedia */}
+                {currentPage > 1 && currentPage < totalPages && (
+                  <>
+                    {/* Prima pagina (se non siamo vicini all'inizio) */}
+                    {currentPage > 2 && (
+                      <>
+                        <button
+                          key={1}
+                          onClick={() => handlePageChange(1)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                        >
+                          1
+                        </button>
+                        
+                        {/* Puntini di sospensione a sinistra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                      </>
+                    )}
+                    
+                    {/* Pagina precedente */}
+                    <button
+                      key={currentPage - 1}
+                      onClick={() => handlePageChange(currentPage - 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                    >
+                      {currentPage - 1}
+                    </button>
+                    
+                    {/* Pagina corrente */}
+                    <button
+                      key={currentPage}
+                      onClick={() => handlePageChange(currentPage)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-emerald-500"
+                      aria-current="page"
+                    >
+                      {currentPage}
+                    </button>
+                    
+                    {/* Pagina successiva */}
+                    <button
+                      key={currentPage + 1}
+                      onClick={() => handlePageChange(currentPage + 1)}
+                      className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                    >
+                      {currentPage + 1}
+                    </button>
+                    
+                    {/* Puntini di sospensione a destra e ultima pagina (se non siamo vicini alla fine) */}
+                    {currentPage < totalPages - 1 && (
+                      <>
+                        {/* Puntini di sospensione a destra */}
+                        <span className="w-10 h-10 flex items-center justify-center text-gray-400">
+                          ...
+                        </span>
+                        
+                        {/* Ultima pagina */}
+                        <button
+                          key={totalPages}
+                          onClick={() => handlePageChange(totalPages)}
+                          className="w-10 h-10 rounded-lg flex items-center justify-center bg-black/30 hover:bg-emerald-500/70"
+                        >
+                          {totalPages}
+                        </button>
+                      </>
+                    )}
+                  </>
+                )}
+              </>
+            )}
+            
             <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              onClick={() => {
+                if (currentPage < totalPages) {
+                  handlePageChange(currentPage + 1);
+                }
+              }}
               disabled={currentPage === totalPages}
-              className="px-4 py-2 rounded-lg bg-[#274f36] disabled:opacity-50"
+              className="px-4 py-2 rounded-lg bg-emerald-500 disabled:opacity-50"
             >
-              Successiva
+              Successivo
             </button>
           </div>
         )}
