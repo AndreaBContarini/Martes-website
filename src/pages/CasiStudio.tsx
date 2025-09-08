@@ -7,6 +7,21 @@ import SEOHead from '../components/SEOHead';
 
 const cases = [
   {
+    id: 'f24-whatsapp-studio-longhitano',
+    title: 'F24 su WhatsApp: promemoria intelligenti e pagamenti sotto controllo',
+    date: new Date('2025-05-30'),
+    image: '/assets/logos/longhitano.png',
+    testimonial: {
+      quote: "Una gestione controllata ed automatizzata dei processi, tempo risparmiato e zero dimenticanze.",
+      author: 'Studio Longhitano',
+      role: 'Amministrazioni condominiali',
+    },
+    content: `
+      <h2>Il Sistema</h2>
+      <p>Quando lo Studio Longhitano carica gli F24 in una cartella e-mail dedicata, il nostro agente AI si attiva, scarica ogni PDF e organizza tutto in modo impeccabile. Dal nome del file riconosce il cliente, crea la relativa cartella su Google Drive e vi archivia l'F24. Un secondo agente estrae i dati chiave: importo totale, eventuali importi parziali, data di scadenza, note.</p>
+    `,
+  },
+  {
     id: 'digital-turnover-automazione-content-intelligence',
     title: 'Digital Turnover – Generazione Automatica di Newsletter da Fonti Multiple',
     date: new Date('2025-05-23'),
@@ -244,7 +259,20 @@ function CasiStudio() {
   
   // Funzione per scrollare in cima alla pagina
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Forza lo scroll immediato per assicurare che funzioni con un solo clic su mobile e desktop
+    window.scrollTo(0, 0);
+    
+    // Usa requestAnimationFrame per assicurare che il DOM sia aggiornato
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Backup per dispositivi mobile che potrebbero avere problemi
+    setTimeout(() => {
+      if (window.pageYOffset > 0) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   // Ordina i casi studio per data (dal più recente)

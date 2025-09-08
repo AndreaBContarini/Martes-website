@@ -4,7 +4,20 @@ import logo from '../images/logo.png';
 
 function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Forza lo scroll immediato per assicurare che funzioni con un solo clic su mobile e desktop
+    window.scrollTo(0, 0);
+    
+    // Usa requestAnimationFrame per assicurare che il DOM sia aggiornato
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Backup per dispositivi mobile che potrebbero avere problemi
+    setTimeout(() => {
+      if (window.pageYOffset > 0) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   return (

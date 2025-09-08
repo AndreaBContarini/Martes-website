@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const cases = {
@@ -666,6 +666,81 @@ const cases = {
 
       <h2>Conclusione</h2>
       <p>Il caso Monni SRL dimostra come l'automazione conversazionale, se ben progettata e implementata, possa trasformare processi complessi in flussi efficienti e scalabili. La soluzione ha portato benefici misurabili sia in termini di efficienza operativa che di qualità dei dati, rappresentando un modello replicabile per altre aziende del settore.</p>
+    `,
+  },
+  'f24-whatsapp-studio-longhitano': {
+    title: "F24 su WhatsApp: promemoria intelligenti controllati da un AI Agent",
+    date: "30 maggio 2025",
+    content: `
+
+      <h2>Il Contesto</h2>
+      <p>Lo Studio Longhitano, specializzato in amministrazioni condominiali, gestisce quotidianamente decine di F24 per conto dei propri clienti. La sfida principale era mantenere sotto controllo tutte le scadenze fiscali, evitare dimenticanze e garantire un processo di pagamento fluido e tracciabile.</p>
+
+      <h2>La Soluzione: Automazione Intelligente</h2>
+      <p>Abbiamo sviluppato un sistema completamente automatizzato che trasforma la gestione degli F24 da processo manuale a flusso intelligente e controllato.</p>
+
+      <h3>1. Acquisizione e Archiviazione Automatica</h3>
+      <p>Il processo inizia quando lo Studio Longhitano carica gli <strong>F24</strong> in una cartella e-mail dedicata. Il nostro agente AI si attiva immediatamente, scarica ogni PDF e <strong>organizza tutto in modo impeccabile</strong>.</p>
+
+      <p>Dal nome del file, il sistema riconosce automaticamente il cliente, crea (se necessario) la relativa cartella su Google Drive e vi archivia l'F24 in modo ordinato e facilmente consultabile.</p>
+
+      <h3>2. Estrazione e Strutturazione dei Dati</h3>
+      <p>Subito dopo l'archiviazione, entra in gioco un secondo agente specializzato che <strong>estrae i dati chiave</strong> da ogni documento: importo totale, eventuali importi parziali, <strong>data di scadenza</strong> e note aggiuntive.</p>
+      
+      <figure class="my-6 text-center">
+        <img src="/assets/immagini/longhitano_make2.JPG" alt="Interpretazione documentale AI" class="mx-auto rounded-lg shadow-lg w-full max-w-2xl" />
+        <figcaption class="text-sm text-gray-400 mt-2"><em>Livello di interpretazione documentale: l'agente analizza i PDF con AI, normalizza i dati e li smista nei diversi rami per Drive e Google Sheets.</em></figcaption>
+      </figure>
+
+      <p>Tutti i valori vengono salvati su <strong>Google Sheets</strong> per creare un registro unico, filtrabile e sempre aggiornato che permette una visione completa di tutte le scadenze.</p>
+
+      <h3>3. Comunicazione Proattiva su WhatsApp</h3>
+      <p>Con le informazioni strutturate, l'agente <strong>apre una conversazione su WhatsApp</strong> con il contribuente <strong>una settimana prima della scadenza</strong>. La chat è completamente contestuale: calcola automaticamente quanti F24 risultano in scadenza, <strong>somma importi totali e parziali</strong>, e propone le azioni più rilevanti.</p>
+
+      <figure class="my-6 text-center">
+        <img src="/assets/immagini/longhitano_make1.JPG" alt="Flusso WhatsApp interattivo" class="mx-auto rounded-lg shadow-lg w-full max-w-2xl" />
+        <figcaption class="text-sm text-gray-400 mt-2"><em>Flusso di ingresso da WhatsApp: il cliente interagisce con l'agente AI che interpreta le risposte e aggiorna in tempo reale cartelle e fogli su Google.</em></figcaption>
+      </figure>
+
+      <h3>4. Gestione delle Risposte e Follow-up</h3>
+      <p>Il sistema gestisce intelligentemente le diverse risposte del cliente:</p>
+      <ul>
+        <li><strong>"Ho pagato"</strong>: parte un'<strong>e-mail automatica alla commercialista</strong> con la notifica di avvenuto pagamento</li>
+        <li><strong>"Non ancora"</strong>: il bot propone di <strong>salvare la scadenza pagando solo gli importi parziali</strong>, generando anche in questo caso un'email alla commercialista con l'indicazione "pagamento parziale"</li>
+        <li><strong>Nessuna risposta o rifiuto</strong>: la conversazione si chiude senza azioni ulteriori</li>
+      </ul>
+
+      <h2>Controlli di Qualità e Affidabilità</h2>
+      <p>L'affidabilità del sistema è garantita da <strong>controlli formali</strong> durante l'analisi: se mancano data, importi o il PDF risulta corrotto, l'F24 viene automaticamente spostato nella <strong>cartella "Errori"</strong> e la segreteria riceve immediatamente una mail con il dettaglio dell'anomalia.</p>
+
+      <figure class="my-6 text-center">
+        <img src="/assets/immagini/longhitano_make3.JPG" alt="Pipeline analisi avanzata F24" class="mx-auto rounded-lg shadow-lg w-full max-w-2xl" />
+        <figcaption class="text-sm text-gray-400 mt-2"><em>Pipeline di analisi avanzata: calcolo importi totali/parziali, verifica delle scadenze, gestione degli errori e notifiche automatiche alla commercialista.</em></figcaption>
+      </figure>
+
+      <p>Questo approccio assicura che nulla sfugga al controllo e che i tempi di gestione si riducano drasticamente, mantenendo sempre la massima precisione.</p>
+
+      <h2>Perché il Sistema Funziona</h2>
+      <ul>
+        <li><strong>Zero attività manuali ridondanti</strong>: caricamento massivo dei PDF → archiviazione e parsing automatici</li>
+        <li><strong>Conversazioni utili, non invasive</strong>: reminder mirati, conteggi chiari, azioni a un tap</li>
+        <li><strong>Tracciabilità totale</strong>: Drive ordinato per cliente, Google Sheets come fonte unica di verità, log e notifiche in tempo reale</li>
+      </ul>
+
+      <h2>Risultati Concreti</h2>
+      <div class="bg-black/20 p-6 rounded-lg my-6">
+        <ul class="space-y-2">
+          <li><strong>Oltre il 70% di tempo operativo risparmiato</strong> nella gestione delle scadenze</li>
+          <li><strong>Zero dimenticanze</strong>: reminder proattivi e dashboard sempre aggiornate</li>
+          <li><strong>Esperienza fluida per i clienti</strong>: pagamenti sotto controllo direttamente su WhatsApp</li>
+          <li><strong>Controllo totale dei processi</strong>: ogni azione è tracciata e documentata</li>
+        </ul>
+      </div>
+
+      <h2>Scalabilità e Sviluppi Futuri</h2>
+      <p>Il sistema è progettato per crescere insieme alle esigenze dello Studio. È possibile estendere il modello ad <strong>altri adempimenti fiscali</strong> come rateizzazioni, DURC, CU e invii Entratel. Inoltre, l'integrazione con <strong>dashboard avanzate su Airtable</strong> permetterebbe analisi ancora più sofisticate e reportistica dettagliata.</p>
+
+      <p>L'agente AI è già pronto per scalare e adattarsi a nuove necessità, garantendo sempre la massima efficienza e controllo.</p>
     `,
   },
 };
