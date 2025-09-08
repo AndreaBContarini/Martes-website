@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 const cases = {
   'digital-turnover-automazione-content-intelligence': {
-    title: 'E-commerce: Dati, Contenuti e Post AI-powered',
+    title: 'E-commerce: Dati, Contenuti e Post controllati da un AI Agent',
       date: '23 maggio 2025',
     content: `
       <h2>Contesto</h2>

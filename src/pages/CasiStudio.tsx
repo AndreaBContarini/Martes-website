@@ -23,7 +23,7 @@ const cases = [
   },
   {
     id: 'digital-turnover-automazione-content-intelligence',
-    title: 'Digital Turnover – Generazione Automatica di Newsletter da Fonti Multiple',
+    title: 'E-commerce: Dati, Contenuti e Post controllati da un AI Agent',
     date: new Date('2025-05-23'),
     image: '/assets/logos/digitalturnover.png',
     testimonial: {
