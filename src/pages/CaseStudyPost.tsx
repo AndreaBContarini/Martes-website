@@ -3,6 +3,87 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const cases = {
+  'digital-turnover-automazione-content-intelligence': {
+    title: 'E-commerce: Dati, Contenuti e Post AI-powered',
+      date: '23 maggio 2025',
+    content: `
+      <h2>Contesto</h2>
+      <p>Digital Turnover, un e-commerce in forte crescita, si trovava di fronte alla necessità di gestire un volume sempre maggiore di informazioni provenienti da diverse fonti del settore. La sfida non era solo raccoglierle, ma anche organizzarle e valorizzarle in modo coerente e automatizzato, così da trasformare un flusso eterogeneo di dati in contenuti strutturati e di immediata utilità.</p>
+      
+      <p>L'obiettivo era quello di creare un sistema continuo e affidabile capace di fornire, senza sforzi manuali aggiuntivi, materiali pronti per essere adattati e pubblicati sotto forma di newsletter, aggiornamenti social e altre iniziative di comunicazione.</p>
+
+      <h2>La Soluzione: Un Ecosistema Intelligente</h2>
+      <p>Per rispondere a queste esigenze specifiche, abbiamo progettato e implementato un <strong>agente AI personalizzato</strong> che opera come un vero e proprio assistente digitale. Il sistema lavora con cadenza bisettimanale, seguendo orari prestabiliti, ed è strutturato per gestire automaticamente l'intero ciclo di vita dell'informazione.</p>
+
+      <p>Quello che rende questa soluzione davvero efficace è la sua capacità di orchestrare diversi processi in sequenza, creando un flusso di lavoro completamente automatizzato che va dalla raccolta iniziale fino alla pubblicazione finale.</p>
+
+      <h3>1. Raccolta Intelligente delle Fonti</h3>
+      <p>Il primo pilastro del sistema è rappresentato dalla capacità di <strong>attingere da fonti diversificate</strong>, ciascuna con le proprie caratteristiche e modalità di accesso. L'agente AI è stato configurato per:</p>
+      <ul>
+        <li><strong>Monitorare le principali newsletter</strong> del settore e-commerce, estraendo automaticamente i contenuti più rilevanti attraverso tecniche di web scraping avanzate</li>
+        <li><strong>Analizzare post e reel</strong> di profili Instagram strategicamente selezionati dal cliente, identificando trend emergenti e contenuti di valore</li>
+        <li><strong>Raccogliere insights</strong> da podcast su Spotify e YouTube, oltre a post LinkedIn di thought leader del settore, garantendo una copertura completa del panorama informativo</li>
+      </ul>
+
+      <h3>2. Organizzazione Strutturale Intelligente</h3>
+      <p>Una volta raccolte, tutte le informazioni non vengono semplicemente accumulate, ma vengono sistematicamente organizzate seguendo una logica precisa e scalabile. Il sistema utilizza <strong>Google Drive</strong> come repository principale, strutturandolo secondo una gerarchia ben definita:</p>
+      
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/scenario1_digital.png" alt="Scenario di automazione Digital Turnover" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
+        <figcaption class="text-sm text-gray-400 mt-2">Il flusso completo di automazione: dalla raccolta delle fonti alla pubblicazione finale, passando per elaborazione AI e organizzazione strutturata.</figcaption>
+      </figure>
+
+      <ul>
+        <li><strong>Cartelle annuali</strong> che fungono da contenitori principali per mantenere una visione temporale chiara</li>
+        <li><strong>Suddivisioni mensili</strong> (12 cartelle per anno) per facilitare la ricerca e l'accesso cronologico</li>
+        <li><strong>Organizzazione settimanale</strong> all'interno di ogni mese (settimane 1, 2, 3, 4) per una granularità ancora maggiore</li>
+        <li><strong>Distinzione temporale</strong> tra prima e seconda metà di ogni settimana, permettendo un controllo preciso sui contenuti e la loro distribuzione temporale</li>
+      </ul>
+
+      <h3>3. Elaborazione e Sintesi Avanzata</h3>
+      <p>Il cuore pulsante del sistema è rappresentato dalla fase di elaborazione, dove l'intelligenza artificiale dimostra tutto il suo valore aggiunto. Ogni contenuto raccolto viene processato attraverso algoritmi sofisticati che:</p>
+      <ul>
+        <li><strong>Estraggono i punti chiave</strong> da ogni risorsa, creando riassunti concisi ma completi che mantengono l'essenza del messaggio originale</li>
+        <li><strong>Generano documenti strutturati</strong> su Google Docs, ciascuno con titoli coerenti e formattazione professionale</li>
+        <li><strong>Offrono flessibilità nella rigenerazione</strong> di contenuti, permettendo di creare nuovi articoli o estratti focalizzati su periodi specifici (ad esempio, concentrandosi solo sulla prima o seconda settimana di un determinato mese)</li>
+      </ul>
+
+      <h3>4. Generazione e Invio Automatico di Newsletter</h3>
+      <p>Il cuore del sistema è rappresentato dalla capacità di trasformare automaticamente le informazioni raccolte in <strong>newsletter complete e pronte per l'invio</strong>. L'agente AI è stato configurato per:</p>
+      <ul>
+        <li><strong>Produrre articoli completi</strong> per newsletter, con un tono e uno stile coerenti con l'identità del brand Digital Turnover</li>
+        <li><strong>Generare immagini di copertina</strong> attraverso prompt ottimizzati, assicurando che ogni contenuto sia visivamente accattivante e pertinente</li>
+        <li><strong>Preparare il contenuto per l'invio</strong> con un sistema di approvazione: il cliente può rivedere il testo, modificare le immagini e inviare la newsletter con un singolo click</li>
+      </ul>
+
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/db1_digital.png" alt="Database Digital Turnover - Vista iniziale" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
+        <figcaption class="text-sm text-gray-400 mt-2">Il sistema di gestione delle newsletter: tabelle con articoli, immagini e parametri di attivazione organizzati per la generazione automatica dei contenuti.</figcaption>
+      </figure>
+
+      <figure class="my-8 text-center">
+        <img src="/assets/immagini/db2_digital.png" alt="Database Digital Turnover - Gestione avanzata" class="mx-auto rounded-lg shadow-lg w-full max-w-4xl" />
+        <figcaption class="text-sm text-gray-400 mt-2">La dashboard di controllo avanzata: gestione degli articoli e delle immagini con campi di attivazione, collegamenti diretti a Google Drive e integrazione con Mailchimp per l'invio delle newsletter.</figcaption>
+      </figure>
+
+      <p>Sebbene fosse tecnicamente possibile implementare dashboard avanzate con Airtable per tracciare statistiche di apertura delle newsletter, engagement sui contenuti e metriche di performance dello scraping, il cliente ha scelto di mantenere il sistema più semplice e focalizzato sulla generazione dei contenuti.</p>
+
+      <h2>I Risultati Tangibili</h2>
+      <p>L'implementazione di questo sistema ha portato a Digital Turnover benefici immediati e misurabili:</p>
+      <ul>
+        <li><strong>Eliminazione completa del lavoro manuale</strong> di scraping e organizzazione, liberando risorse umane per attività a maggior valore aggiunto</li>
+        <li><strong>Struttura scalabile e sostenibile</strong> che cresce automaticamente con il volume di contenuti, senza richiedere interventi di manutenzione</li>
+        <li><strong>Flusso continuo di contenuti freschi</strong> per newsletter e social media, con la possibilità di mantenere una presenza costante e professionale online</li>
+        <li><strong>Massima flessibilità operativa</strong> nella scelta delle piattaforme di destinazione e nella personalizzazione dei contenuti per audience specifiche</li>
+        <li><strong>Evoluzione da fogli di calcolo semplici</strong> a dashboard interattive professionali, migliorando significativamente la capacità di analisi e decision-making</li>
+      </ul>
+
+      <h2>Considerazioni Finali</h2>
+      <p>Il progetto Digital Turnover rappresenta un esempio concreto di come l'intelligenza artificiale possa essere applicata non solo per automatizzare processi esistenti, ma per <strong>ripensare completamente l'approccio alla gestione dei contenuti</strong>. Non si tratta più di raccogliere informazioni in modo casuale, ma di creare un ecosistema intelligente che lavora costantemente per trasformare il rumore informativo del web in segnali utili e azionabili.</p>
+      
+      <p>Quello che prima richiedeva ore di lavoro settimanale da parte del team, ora avviene in background, permettendo a Digital Turnover di concentrarsi su ciò che conta davvero: <strong>la strategia, la creatività e l'innovazione</strong>. L'agente AI è diventato un membro silenzioso ma instancabile del team, che lavora 24/7 per garantire che l'azienda sia sempre un passo avanti rispetto alla concorrenza in termini di contenuti e comunicazione.</p>
+    `,
+  },
   'automazione-ai-clinica-oculistica-santa-lucia': {
     title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
     date: '20 marzo 2025',

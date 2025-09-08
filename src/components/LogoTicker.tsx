@@ -2,6 +2,10 @@ import { useState, useRef, useEffect } from 'react';
 
 const logos = [
   {
+    src: "/assets/logos/digitalturnover.png",
+    alt: "Digital Turnover"
+  },
+  {
     src: "/assets/logos/shapeup.png",
     alt: "Shape-Up"
   },

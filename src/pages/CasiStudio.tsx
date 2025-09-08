@@ -7,6 +7,21 @@ import SEOHead from '../components/SEOHead';
 
 const cases = [
   {
+    id: 'digital-turnover-automazione-content-intelligence',
+    title: 'Digital Turnover – Generazione Automatica di Newsletter da Fonti Multiple',
+    date: new Date('2025-05-23'),
+    image: '/assets/logos/digitalturnover.png',
+    testimonial: {
+      quote: "Con questo sistema abbiamo eliminato ore di lavoro manuale: oggi i contenuti da newsletter, social e podcast arrivano già organizzati e pronti all'uso. Un salto enorme in efficienza e strategia.",
+      author: 'Fabio Marin',
+      role: 'CEO di Digital Turnover',
+    },
+    content: `
+      <h2>Contesto</h2>
+      <p>Digital Turnover, un e-commerce in rapida e costante crescita, si trovava di fronte alla necessità di gestire un volume sempre maggiore di informazioni provenienti da diverse fonti del settore. La sfida non era solo raccoglierle, ma anche organizzarle e valorizzarle in modo coerente e automatizzato, così da trasformare un flusso eterogeneo di dati in contenuti strutturati e di immediata utilità. L'obiettivo era quello di creare un sistema continuo e affidabile capace di fornire, senza sforzi manuali aggiuntivi, materiali pronti per essere adattati e pubblicati sotto forma di newsletter, aggiornamenti social e altre iniziative di comunicazione.</p>
+    `,
+  },
+  {
     id: 'automazione-rendicontazione-monni-srl',
     title: 'Automazione Rendicontazione Operativa con Agente WhatsApp',
     date: new Date('2025-05-15'),
