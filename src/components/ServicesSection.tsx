@@ -102,7 +102,7 @@ function ServicesSection() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 w-full mt-auto">
                 <a 
-                  href="https://cal.com/martesai/30min"
+                  href="https://cal.com/andrea-belli-contarini"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-black px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 flex-1 text-center shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-0.5 transform hover:scale-105 border border-emerald-300/30"

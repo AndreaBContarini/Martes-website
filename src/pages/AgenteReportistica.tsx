@@ -185,7 +185,7 @@ function AgenteReportistica() {
                     Prisma analizza vocali e immagini, contatta su WhatsApp e genera report strutturati
                   </p>
                   <a 
-                    href="https://cal.com/martesai/30min"
+                    href="https://cal.com/andrea-belli-contarini"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold transition-all duration-300 inline-block shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-0.5 transform hover:scale-105 border border-emerald-300/30 group-hover:scale-110"
@@ -443,7 +443,7 @@ function AgenteReportistica() {
             {/* Call to Action centrale */}
             <div className="text-center mt-8 sm:mt-12">
               <a 
-                href="https://cal.com/martesai/30min"
+                href="https://cal.com/andrea-belli-contarini"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold transition-all duration-300 inline-block shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-0.5 transform hover:scale-105 border border-emerald-300/30"
