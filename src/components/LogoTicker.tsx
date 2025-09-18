@@ -26,11 +26,11 @@ const logos = [
     alt: "CityBeach Boardshop"
   },
   {
-    src: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
+    src: "/assets/logos/clinica_santa_lucia.png",
     alt: "Clinica Oculistica Santa Lucia"
   },
   {
-    src: "https://www.viaggicarmen.com/wpunitravel/wp-content/uploads/2023/11/agenzia-viaggi-aprilia.png",
+    src: "/assets/logos/viaggi_carmen.png",
     alt: "Viaggi Carmen"
   },
   {
