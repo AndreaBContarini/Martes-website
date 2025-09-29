@@ -666,6 +666,12 @@ const cases = {
 
       <h2>Conclusione</h2>
       <p>Il caso Monni SRL dimostra come l'automazione conversazionale, se ben progettata e implementata, possa trasformare processi complessi in flussi efficienti e scalabili. La soluzione ha portato benefici misurabili sia in termini di efficienza operativa che di qualità dei dati, rappresentando un modello replicabile per altre aziende del settore.</p>
+      
+      <div class="mb-8 text-center">
+        <a href="https://cal.com/andrea-belli-contarini" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-0.5 transform hover:scale-105">
+          Prenota una demo dell'agente
+        </a>
+      </div>
     `,
   },
   'f24-whatsapp-studio-longhitano': {
