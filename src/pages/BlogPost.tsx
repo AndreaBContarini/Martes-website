@@ -9,6 +9,17 @@ const posts = {
     date: '18 agosto 2025',
     description: "L'intelligenza artificiale nelle aziende italiane non è più una questione di se implementarla, ma di come farlo nel modo giusto. Scopri il Framework EID per implementazioni AI di successo.",
     content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/eyRKtE_CWrs" 
+          title="Framework EID: Education, Implementation, Development per l'AI in Italia"
+          class="w-full h-[300px] sm:h-[400px] md:h-[450px] rounded-lg shadow-lg"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+
       <h2 class="text-3xl font-bold mt-8 mb-4">Il momento della svolta</h2>
       <p>
         Secondo una recente analisi di CapGemini riportata da <em>Il Sole 24 Ore</em>:
