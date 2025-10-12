@@ -593,11 +593,11 @@ function Home() {
                         style={{ backgroundImage: "url('data:image/svg+xml;utf8,<svg fill=\"white\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M7 10l5 5 5-5z\"/></svg>')", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0 center' }}
                       >
                         <option value="" disabled className="bg-gray-900">Seleziona budget</option>
-                        <option value="minore-2000" className="bg-gray-900">&lt; 2.000€</option>
-                        <option value="2000-5000" className="bg-gray-900">2.000€ - 5.000€</option>
+                        <option value="minore-5000" className="bg-gray-900">&lt; 5.000€</option>
                         <option value="5000-10000" className="bg-gray-900">5.000€ - 10.000€</option>
                         <option value="10000-20000" className="bg-gray-900">10.000€ - 20.000€</option>
-                        <option value="maggiore-20000" className="bg-gray-900">&gt; 20.000€</option>
+                        <option value="20000-40000" className="bg-gray-900">20.000€ - 40.000€</option>
+                        <option value="maggiore-40000" className="bg-gray-900">&gt; 40.000€</option>
                       </select>
                     </div>
                 </div>

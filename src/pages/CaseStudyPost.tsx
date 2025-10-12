@@ -749,6 +749,132 @@ const cases = {
       <p>L'agente AI è già pronto per scalare e adattarsi a nuove necessità, garantendo sempre la massima efficienza e controllo.</p>
     `,
   },
+  'ruggiada-agente-ai-restworld': {
+    title: "Rugiada: l'agente AI che qualifica i lead per Restworld",
+    date: "29 settembre 2025",
+    content: `
+      <h2>Cliente: Restworld</h2>
+      <p><strong>Settore:</strong> HORECA (Ho.Re.Ca.) – Recruiting e selezione del personale per ristoranti, bar e hotel</p>
+      <p><strong>Obiettivo:</strong> Automatizzare la qualificazione dei lead per aumentare le conversioni e ridurre il carico operativo sul team interno</p>
+
+      <h2>Il contesto</h2>
+      <p>Restworld è una realtà italiana innovativa nel settore HORECA, nata per risolvere un problema concreto: mettere in contatto chi cerca lavoro nel mondo della ristorazione (chef, camerieri, bartender, receptionist, ecc.) con le aziende che hanno bisogno di personale qualificato.</p>
+
+      <p>Ogni mese l'azienda riceve migliaia di richieste tramite form online: ristoranti, hotel e bar compilano un Typeform indicando chi sono, di cosa hanno bisogno e che tipo di personale cercano.</p>
+
+      <p><strong>Il problema?</strong><br>
+      Il team interno era troppo piccolo per gestire manualmente l'enorme volume di lead, con il rischio di perdere opportunità e di sprecare tempo prezioso su contatti non realmente interessati o non qualificati.</p>
+
+      <p>Restworld aveva bisogno di un sistema intelligente che:</p>
+      <ul>
+        <li>Qualificasse automaticamente i lead in arrivo</li>
+        <li>Filtrasse le richieste non adatte</li>
+        <li>Aumentasse il tasso di conversione in chiamata</li>
+        <li>Riducesse drasticamente il tempo operativo del team</li>
+      </ul>
+
+      <h2>La soluzione: Rugiada, l'agente AI su WhatsApp</h2>
+      <p>Abbiamo sviluppato <strong>Rugiada</strong>, un agente AI conversazionale che automatizza l'intero processo di qualificazione dei lead direttamente su WhatsApp, senza che l'utente percepisca di parlare con un bot.</p>
+
+      <p>Il flusso inizia subito dopo la compilazione del Typeform.<br>
+      Esempio: Marco, proprietario di un ristorante a Roma, compila il form indicando nome, attività, dimensioni dello staff e necessità di personale.</p>
+
+      <p>Dopo circa due minuti, Rugiada lo contatta automaticamente su WhatsApp:</p>
+
+      <div class="bg-black/20 p-4 rounded-lg my-6 border-l-4 border-emerald-400">
+        <p class="italic">"Ciao Marco, grazie per aver compilato il nostro form! Prima della chiamata, posso farti alcune domande per capire meglio le tue esigenze?"</p>
+      </div>
+
+      <p>Da qui parte una conversazione naturale, durante la quale l'agente AI pone fino a <strong>4 domande strategiche</strong> per valutare la qualità del lead.</p>
+
+      <h2>Intelligenza conversazionale human-like</h2>
+      <p>Uno dei punti di forza di Rugiada è la sua capacità di conversare come un essere umano, al punto che oltre il 90% degli utenti non si accorge di parlare con un'intelligenza artificiale.</p>
+
+      <p>Questo è possibile grazie a tre meccanismi chiave:</p>
+
+      <h3>Raggruppamento dei messaggi</h3>
+      <p>Se l'utente invia più messaggi consecutivi ("Ciao", "Sì", "Fammi pure le domande"), Rugiada li unisce e li interpreta come un unico input, mantenendo sempre il contesto della conversazione.</p>
+
+      <h3>Analisi dei messaggi vocali</h3>
+      <p>Anche i vocali vengono trascritti, analizzati e combinati con eventuali messaggi testuali. Che l'utente mandi due vocali e un messaggio scritto, Rugiada comprende e risponde in modo coerente.</p>
+
+      <h3>Gestione del contesto temporale</h3>
+      <p>L'agente attende alcuni secondi prima di rispondere, così da "ascoltare" eventuali altri messaggi e comprendere l'intero discorso prima di reagire.</p>
+
+      <p><strong>Risultato:</strong> conversazioni fluide, naturali e credibili, con un livello di engagement molto superiore rispetto a un chatbot tradizionale.</p>
+
+      <h2>Qualificazione automatica con scoring dinamico</h2>
+      <p>Ogni conversazione è progettata per raccogliere informazioni chiave tramite <strong>5 parametri principali</strong>, ciascuno con un peso specifico:</p>
+
+      <ol>
+        <li>Se il lead è decision maker</li>
+        <li>Dimensioni dell'azienda (numero di dipendenti, sedi)</li>
+        <li>Tipologia di personale richiesto</li>
+        <li>Urgenza della richiesta (subito o entro 5 mesi)</li>
+        <li>Esperienze pregresse con servizi simili</li>
+      </ol>
+
+      <p>Da queste risposte, Rugiada calcola uno <strong>score medio ponderato</strong>:</p>
+
+      <ul>
+        <li>Se <strong>> 6</strong>, il lead è qualificato: la chiamata viene confermata, tutte le informazioni sono riassunte e inviate a HubSpot, e salvate nella dashboard interna.</li>
+        <li>Se <strong>≤ 6</strong>, la chiamata viene annullata automaticamente su Calendly, il lead viene notificato e i dati vengono comunque registrati per analisi future.</li>
+      </ul>
+
+      <p>In caso di obiezioni forti (ad esempio "il servizio è troppo costoso"), la qualificazione viene interrotta immediatamente, bypassando la logica dello score.</p>
+
+      <h2>Dashboard centralizzata e AI analytics</h2>
+      <p>Tutte le conversazioni e i dati raccolti sono gestiti da una dashboard personalizzata che permette al team Restworld di:</p>
+
+      <ul>
+        <li>Monitorare in tempo reale conversazioni iniziate, lead qualificati, non qualificati e abbandonati</li>
+        <li>Intervenire manualmente in qualsiasi momento su conversazioni attive</li>
+        <li>Fare domande direttamente ai dati con un mini agente RAG interno ("Mostrami i lead con score > 8 a Milano")</li>
+      </ul>
+
+      <p>In questo modo il team ha il pieno controllo sull'agente AI e può utilizzare i dati raccolti per migliorare costantemente il funnel di vendita.</p>
+
+      <h2>Follow-up automatici e personalizzati</h2>
+      <p>Per massimizzare il tasso di risposta, Rugiada gestisce anche sequenze automatiche di follow-up:</p>
+
+      <ul>
+        <li>Quattro messaggi diversi, inviati a distanza di tempo, con tono e contenuto variabili</li>
+        <li>Alternanza tra testo e GIF per riattivare conversazioni ferme</li>
+      </ul>
+
+      <p>Questa strategia ha aumentato sensibilmente il numero di conversazioni riprese dopo un primo silenzio.</p>
+
+      <h2>I risultati</h2>
+      <p>L'introduzione di Rugiada ha trasformato radicalmente il processo di gestione dei lead di Restworld:</p>
+
+      <ul>
+        <li>Riduzione drastica del tempo speso dal team umano nel qualificare i lead</li>
+        <li>Qualificazione automatica del <strong>20-30% dei lead</strong> mensili (da migliaia ogni mese)</li>
+        <li>Aumento significativo del tasso di chiusura in chiamata</li>
+        <li>Conversazioni più naturali e meno abbandoni grazie all'approccio human-like</li>
+      </ul>
+
+      <p>Oggi, il 98% delle interazioni avviene direttamente su WhatsApp, in modo fluido e personalizzato, con risultati misurabili e un impatto diretto sul fatturato.</p>
+
+      <h2>Perché funziona</h2>
+      <p>Quando un agente AI viene usato a scopo commerciale, l'utente non vuole parlare con un bot.<br>
+      Rugiada riesce a far percepire la conversazione come umana e naturale, mentre svolge attività estremamente complesse: qualificazione, scoring, salvataggio dati, gestione del calendario e follow-up.</p>
+
+      <p>Il risultato è un sistema che lavora 24/7, scalabile e affidabile, che libera tempo al team umano e trasforma lead grezzi in opportunità concrete di vendita.</p>
+
+      <div class="mb-8 text-center">
+        <blockquote class="bg-black/20 p-6 rounded-lg border-l-4 border-emerald-400">
+          <p class="text-lg italic mb-4">"Un team giovane e competente. Ci hanno aiutato a sviluppare un agente che altrimenti ci avremmo messo mesi internamente in poche settimane. Feedback loop continui e supporto costante, anche durante l'estate abbiamo tirato fuori un bel prodotto. Sicuramente lavoreremo nuovamente insieme."</p>
+          <cite class="text-emerald-400 font-semibold">— Luca Lotterio, CEO di Restworld</cite>
+        </blockquote>
+      </div>
+
+      <h2>Conclusione</h2>
+      <p>Grazie a Rugiada, Restworld ha automatizzato la parte più onerosa e delicata del proprio funnel di vendita, trasformando WhatsApp in un canale di qualificazione lead ad altissima conversione.</p>
+
+      <p>Questo progetto dimostra come un agente AI ben progettato possa diventare un membro invisibile ma essenziale del team commerciale, capace di gestire migliaia di conversazioni al mese e migliorare sensibilmente le performance aziendali.</p>
+    `,
+  },
 };
 
 function CaseStudyPost() {

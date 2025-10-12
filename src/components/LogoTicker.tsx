@@ -2,40 +2,44 @@ import { useState, useRef, useEffect } from 'react';
 
 const logos = [
   {
-    src: "/assets/logos/digitalturnover.png",
-    alt: "Digital Turnover"
-  },
-  {
     src: "/assets/logos/shapeup.png",
     alt: "Shape-Up"
-  },
-  {
-    src: "/assets/logos/ecommerceparts.png",
-    alt: "Ecommerceparts"
-  },
-  {
-    src: "/assets/logos/bluvacanze_logo.png",
-    alt: "Bluvacanze"
   },
   {
     src: "/assets/logos/fantozzi.png",
     alt: "Fantozzi & Associati"
   },
   {
-    src: "/assets/logos/citybeach.png",
-    alt: "CityBeach Boardshop"
+    src: "/assets/logos/rest.png",
+    alt: "Restworld"
+  },
+  {
+    src: "/assets/logos/monni_SRL.png",
+    alt: "Monni SRL"
+  },
+  {
+    src: "/assets/logos/bluvacanze_logo.png",
+    alt: "Bluvacanze"
   },
   {
     src: "/assets/logos/clinica_santa_lucia.png",
     alt: "Clinica Oculistica Santa Lucia"
   },
   {
-    src: "/assets/logos/viaggi_carmen.png",
-    alt: "Viaggi Carmen"
+    src: "/assets/logos/digitalturnover.png",
+    alt: "Digital Turnover"
   },
   {
-    src: "/assets/logos/monni_SRL.png",
-    alt: "Monni SRL"
+    src: "/assets/logos/ecommerceparts.png",
+    alt: "Ecommerceparts"
+  },
+  {
+    src: "/assets/logos/citybeach.png",
+    alt: "CityBeach Boardshop"
+  },
+  {
+    src: "/assets/logos/viaggi_carmen.png",
+    alt: "Viaggi Carmen"
   }
 ];
 

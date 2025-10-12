@@ -2,38 +2,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import SEOHead from '../components/SEOHead';
 
-const cases = [
+// Array con tutti i casi studio (senza duplicati)
+const allCases = [
   {
-    id: 'f24-whatsapp-studio-longhitano',
-    title: 'F24 su WhatsApp: promemoria intelligenti e pagamenti sotto controllo',
-    date: new Date('2025-05-30'),
-    image: '/assets/logos/longhitano.png',
+    id: 'ruggiada-agente-ai-restworld',
+    title: 'Rugiada: l\'agente AI che qualifica i lead per Restworld',
+    date: new Date('2025-09-29'),
+    image: '/assets/logos/rest.png',
     testimonial: {
-      quote: "Una gestione controllata ed automatizzata dei processi, tempo risparmiato e zero dimenticanze.",
-      author: 'Studio Longhitano',
-      role: 'Amministrazioni condominiali',
+      quote: "Un team giovane e competente. Ci hanno aiutato a sviluppare un agente che altrimenti ci avremmo messo mesi internamente in poche settimane. Feedback loop continui e supporto costante, anche durante l'estate abbiamo tirato fuori un bel prodotto. Sicuramente lavoreremo nuovamente insieme.",
+      author: 'Luca Lotterio',
+      role: 'CEO di Restworld',
     },
     content: `
       <h2>Il Sistema</h2>
-      <p>Quando lo Studio Longhitano carica gli F24 in una cartella e-mail dedicata, il nostro agente AI si attiva, scarica ogni PDF e organizza tutto in modo impeccabile. Dal nome del file riconosce il cliente, crea la relativa cartella su Google Drive e vi archivia l'F24. Un secondo agente estrae i dati chiave: importo totale, eventuali importi parziali, data di scadenza, note.</p>
-    `,
-  },
-  {
-    id: 'digital-turnover-automazione-content-intelligence',
-    title: 'E-commerce: Dati, Contenuti e Post controllati da un AI Agent',
-    date: new Date('2025-05-23'),
-    image: '/assets/logos/digitalturnover.png',
-    testimonial: {
-      quote: "Con questo sistema abbiamo eliminato ore di lavoro manuale: oggi i contenuti da newsletter, social e podcast arrivano già organizzati e pronti all'uso. Un salto enorme in efficienza e strategia.",
-      author: 'Fabio Marin',
-      role: 'CEO di Digital Turnover',
-    },
-    content: `
-      <h2>Contesto</h2>
-      <p>Digital Turnover, un e-commerce in rapida e costante crescita, si trovava di fronte alla necessità di gestire un volume sempre maggiore di informazioni provenienti da diverse fonti del settore. La sfida non era solo raccoglierle, ma anche organizzarle e valorizzarle in modo coerente e automatizzato, così da trasformare un flusso eterogeneo di dati in contenuti strutturati e di immediata utilità. L'obiettivo era quello di creare un sistema continuo e affidabile capace di fornire, senza sforzi manuali aggiuntivi, materiali pronti per essere adattati e pubblicati sotto forma di newsletter, aggiornamenti social e altre iniziative di comunicazione.</p>
+      <p>Rugiada è un agente AI conversazionale che automatizza l'intero processo di qualificazione dei lead direttamente su WhatsApp. Il sistema qualifica automaticamente il 20-30% dei lead mensili attraverso conversazioni naturali e human-like, con scoring dinamico e follow-up personalizzati.</p>
     `,
   },
   {
@@ -52,55 +37,12 @@ const cases = [
     `,
   },
   {
-    id: 'automazione-ai-clinica-oculistica-santa-lucia',
-    title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
-    //description: "La Clinica Oculistica Santa Lucia ha ottimizzato la gestione di appuntamenti ed email grazie all'AI e all'automazione di e AI, migliorando efficienza e servizio ai pazienti.",
-    date: new Date('2025-03-20'),
-    image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
-    testimonial: {
-      quote: "Grazie alle soluzioni Martes AI, la Clinica Oculistica Santa Lucia ha ridotto i tempi d'attesa, ottimizzato la gestione degli appuntamenti e automatizzato le email, risparmiando tempo prezioso e offrendo ai pazienti un'esperienza più fluida ed efficiente.",
-      author: 'Dott. Mario Cipolla',
-      role: 'Direttore Amministrativo',
-    },
-    content: `
-      <h2>Introduzione</h2>
-      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Martws AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
-    `,
-  },
-  {
-    id: 'agente-ai-newsletter-scientifica-shape-up',
-    title: 'Agente AI Per una Newsletter Scientifica',
-    //description: "Come un Agente AI ha automatizzato la produzione di newsletter scientifiche per Shape-UP, riducendo tempi di produzione e migliorando qualità dei contenuti.",
-    date: new Date('2025-04-04'),
-    image: "/assets/logos/shapeup.png",
-    testimonial: {
-      quote: "L'Agente AI di Martes AI ha rivoluzionato la nostra newsletter: contenuti scientifici affidabili e ben scritti, immagini professionali... il tutto a portata di un click",
-      author: 'Davide Beccetti',
-      role: 'CEO @ Shape-UP',
-    },
-    content: `
-      <div class="aspect-w-16 aspect-h-9 mb-8">
-        <iframe 
-          src="https://www.youtube.com/embed/qarwJCCqTmA" 
-          title="Shape-UP Newsletter Automation Case Study"
-          class="w-full h-[400px]"
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    `,
-  },
-  {
     id: '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group',
     title: "50 clienti in più al mese per un'agenzia di viaggio",
-    //description: "Scopri come abbiamo fatto lead generation, aumentando notevolmente i guadagni di un'agenzia, con un sistema di automazione basato sull'AI",
     date: new Date('2024-09-09'),
-    image:
-      'https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png',
+    image: 'https://viaggi.bluvacanze.it/wp-content/uploads/2021/03/Bluvacanze.png',
     testimonial: {
-      quote:
-        "Grazie al chatbot AI e alle automazioni integrate, riusciamo a gestire con efficacia 3000 contatti mensili su WhatsApp per attività di acquisizione e gestione clienti, generando un significativo incremento delle prenotazioni e un profitto mensile aggiuntivo di € 27.500 per l'agenzia.",
+      quote: "Grazie al chatbot AI e alle automazioni integrate, riusciamo a gestire con efficacia 3000 contatti mensili su WhatsApp per attività di acquisizione e gestione clienti, generando un significativo incremento delle prenotazioni e un profitto mensile aggiuntivo di € 27.500 per l'agenzia.",
       author: 'Diego Vassalli',
       role: 'CEO We Travel Group',
     },
@@ -171,58 +113,99 @@ const cases = [
     `,
   },
   {
-      id: 'supporto-clienti-ai-e-tracciamento-ordini-dinamico-per-un-ecommerce',
-      title: 'Supporto Clienti AI e Tracciamento Ordini Dinamico per Ecommerce',
-      //description: "AI su misura per eCommerce: una soluzione pensata per automatizzare la gestione delle richieste ripetitive e migliorare l'efficienza operativa.",
-      date: new Date('2024-07-18'),
-      image:
-        '/assets/logos/ecommerceparts.png',
-      testimonial: {
-        quote: "Grazie a Martes AI, abbiamo rivoluzionato il nostro servizio clienti. Il loro chatbot AI su WhatsApp ha ridotto drasticamente il numero di email giornaliere, permettendoci di rispondere ai clienti in tempo reale e di concentrarci su attività strategiche. Un'implementazione efficace che ha migliorato efficienza e soddisfazione del cliente.",
-        author: 'Giuseppe Romano',
-        role: 'CEO Ecommerceparts',
-      },
-      content: `
-        <div class="aspect-w-16 aspect-h-9 mb-8">
-          <iframe 
-            src="https://www.youtube.com/watch?v=e-wBAxcebsE" 
-            title="Ecommerceparts Case Study"
-            class="w-full h-[400px]"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      `,
+    id: "generazione-di-lead-qualificati-via-linkedin",
+    title: "Generazione di Lead Qualificati via LinkedIn",
+    date: new Date('2025-01-31'),
+    image: '/assets/logos/fantozzi.png',
+    testimonial: {
+      quote: "Grazie a Martes AI, ho trasformato LinkedIn in una fonte di nuovi clienti senza perdere tempo. In pochi giorni ho ottenuto contatti qualificati e già acquisito un cliente. Strategia efficace e zero sforzo!",
+      author: 'Edoardo Belli Contarini',
+      role: 'Partner presso Studio Legale Fantozzi & Associati',
+    },
+    content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/30iApbt6wMo" 
+          title="Fantozzi Case Study"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    `,
   },
-{
-      id: "generazione-di-lead-qualificati-via-linkedin",
-      title: "Generazione di Lead Qualificati via LinkedIn",
-      //: "Con Martes AI e Dripify ho generato lead qualificati, automatizzato i contenuti e ottenuto risultati concreti in pochi giorni.",
-      date: new Date('2025-01-31'),
-      image: '/assets/logos/fantozzi.png',
-      testimonial: {
-        quote: "Grazie a Martes AI, ho trasformato LinkedIn in una fonte di nuovi clienti senza perdere tempo. In pochi giorni ho ottenuto contatti qualificati e già acquisito un cliente. Strategia efficace e zero sforzo!",
-        author: 'Edoardo Belli Contarini',
-        role: 'Partner presso Studio Legale Fantozzi & Associati',
-      },
-      content: `
-        <div class="aspect-w-16 aspect-h-9 mb-8">
-          <iframe 
-            src="https://www.youtube.com/embed/30iApbt6wMo" 
-            title="Fantozzi Case Study"
-            class="w-full h-[400px]"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
-        </div>
-      `,
+  {
+    id: 'f24-whatsapp-studio-longhitano',
+    title: 'F24 su WhatsApp: promemoria intelligenti e pagamenti sotto controllo',
+    date: new Date('2025-05-30'),
+    image: '/assets/logos/longhitano.png',
+    testimonial: {
+      quote: "Una gestione controllata ed automatizzata dei processi, tempo risparmiato e zero dimenticanze.",
+      author: 'Studio Longhitano',
+      role: 'Amministrazioni condominiali',
+    },
+    content: `
+      <h2>Il Sistema</h2>
+      <p>Quando lo Studio Longhitano carica gli F24 in una cartella e-mail dedicata, il nostro agente AI si attiva, scarica ogni PDF e organizza tutto in modo impeccabile. Dal nome del file riconosce il cliente, crea la relativa cartella su Google Drive e vi archivia l'F24. Un secondo agente estrae i dati chiave: importo totale, eventuali importi parziali, data di scadenza, note.</p>
+    `,
+  },
+  {
+    id: 'digital-turnover-automazione-content-intelligence',
+    title: 'E-commerce: Dati, Contenuti e Post controllati da un AI Agent',
+    date: new Date('2025-05-23'),
+    image: '/assets/logos/digitalturnover.png',
+    testimonial: {
+      quote: "Con questo sistema abbiamo eliminato ore di lavoro manuale: oggi i contenuti da newsletter, social e podcast arrivano già organizzati e pronti all'uso. Un salto enorme in efficienza e strategia.",
+      author: 'Fabio Marin',
+      role: 'CEO di Digital Turnover',
+    },
+    content: `
+      <h2>Contesto</h2>
+      <p>Digital Turnover, un e-commerce in rapida e costante crescita, si trovava di fronte alla necessità di gestire un volume sempre maggiore di informazioni provenienti da diverse fonti del settore. La sfida non era solo raccoglierle, ma anche organizzarle e valorizzarle in modo coerente e automatizzato, così da trasformare un flusso eterogeneo di dati in contenuti strutturati e di immediata utilità. L'obiettivo era quello di creare un sistema continuo e affidabile capace di fornire, senza sforzi manuali aggiuntivi, materiali pronti per essere adattati e pubblicati sotto forma di newsletter, aggiornamenti social e altre iniziative di comunicazione.</p>
+    `,
+  },
+  {
+    id: 'agente-ai-newsletter-scientifica-shape-up',
+    title: 'Agente AI Per una Newsletter Scientifica',
+    date: new Date('2025-04-04'),
+    image: "/assets/logos/shapeup.png",
+    testimonial: {
+      quote: "L'Agente AI di Martes AI ha rivoluzionato la nostra newsletter: contenuti scientifici affidabili e ben scritti, immagini professionali... il tutto a portata di un click",
+      author: 'Davide Beccetti',
+      role: 'CEO @ Shape-UP',
+    },
+    content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/embed/qarwJCCqTmA" 
+          title="Shape-UP Newsletter Automation Case Study"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    `,
+  },
+  {
+    id: 'automazione-ai-clinica-oculistica-santa-lucia',
+    title: 'Automazione AI per la Clinica Oculistica Santa Lucia',
+    date: new Date('2025-03-20'),
+    image: "https://www.clinicaoculisticasantalucia.it/images/logo-mobile.png",
+    testimonial: {
+      quote: "Grazie alle soluzioni Martes AI, la Clinica Oculistica Santa Lucia ha ridotto i tempi d'attesa, ottimizzato la gestione degli appuntamenti e automatizzato le email, risparmiando tempo prezioso e offrendo ai pazienti un'esperienza più fluida ed efficiente.",
+      author: 'Dott. Mario Cipolla',
+      role: 'Direttore Amministrativo',
+    },
+    content: `
+      <h2>Introduzione</h2>
+      <p>La Clinica Oculistica Santa Lucia di Cosenza si distingue per l'eccellenza nei servizi di assistenza oculistica. Tuttavia, come molte strutture sanitarie, affrontava problemi nella gestione degli appuntamenti, nello smistamento delle email e nell'ottimizzazione delle comunicazioni con i pazienti. Per risolvere queste sfide, Martes AI ha implementato soluzioni basate su intelligenza artificiale e automazione, migliorando l'efficienza operativa e l'esperienza utente.</p>
+    `,
   },
   {
     id: "custom-gpt-email",
     title: "Agente GPT per rispondere alle mail e riassumere AI-news",
-    //: "Martes AI ha sviluppato un sistema GPT per automatizzare le risposte email e fornire nes su tema AI,  migliorando l'efficienza comunicativa, integrando Make e Zapier",
     date: new Date('2025-02-13'),
     image: '/assets/logos/federico-loffredo.png',
     testimonial: {
@@ -241,15 +224,61 @@ const cases = [
           allowfullscreen>
         </iframe>
       </div>
-
     `,
-}
-
+  },
+  {
+    id: 'supporto-clienti-ai-e-tracciamento-ordini-dinamico-per-un-ecommerce',
+    title: 'Supporto Clienti AI e Tracciamento Ordini Dinamico per Ecommerce',
+    date: new Date('2024-07-18'),
+    image: '/assets/logos/ecommerceparts.png',
+    testimonial: {
+      quote: "Grazie a Martes AI, abbiamo rivoluzionato il nostro servizio clienti. Il loro chatbot AI su WhatsApp ha ridotto drasticamente il numero di email giornaliere, permettendoci di rispondere ai clienti in tempo reale e di concentrarci su attività strategiche. Un'implementazione efficace che ha migliorato efficienza e soddisfazione del cliente.",
+      author: 'Giuseppe Romano',
+      role: 'CEO Ecommerceparts',
+    },
+    content: `
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          src="https://www.youtube.com/watch?v=e-wBAxcebsE" 
+          title="Ecommerceparts Case Study"
+          class="w-full h-[400px]"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    `,
+  }
 ];
+
+// Funzione per ordinare i casi studio secondo le regole richieste
+const getOrderedCases = () => {
+  // I primi tre casi studio sono FISSI nell'ordine specifico
+  const restworld = allCases.find(case_ => case_.id === 'ruggiada-agente-ai-restworld');
+  const monni = allCases.find(case_ => case_.id === 'automazione-rendicontazione-monni-srl');
+  const bluvacanze = allCases.find(case_ => case_.id === '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group');
+  
+  // I primi tre sono SEMPRE questi nell'ordine specifico
+  const fixedFirstThree = [restworld, monni, bluvacanze].filter(Boolean);
+  
+  // Tutti gli altri casi studio ordinati per data (dal più recente al più vecchio)
+  const otherCases = allCases
+    .filter(case_ => 
+      case_.id !== 'ruggiada-agente-ai-restworld' && 
+      case_.id !== 'automazione-rendicontazione-monni-srl' && 
+      case_.id !== '50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group'
+    )
+    .sort((a, b) => b.date.getTime() - a.date.getTime());
+  
+  // Restituisce i primi tre FISSI seguiti da tutti gli altri in ordine cronologico
+  return [...fixedFirstThree, ...otherCases];
+};
+
+const cases = getOrderedCases();
 
 function CasiStudio() {
   const [currentPage, setCurrentPage] = useState(1);
-  const casesPerPage = 3;
+  const casesPerPage = 6;
   const location = useLocation();
   
   // Effetto per scrollare all'inizio della pagina quando viene caricata o quando cambia l'URL
@@ -275,8 +304,8 @@ function CasiStudio() {
     }, 100);
   };
 
-  // Ordina i casi studio per data (dal più recente)
-  const sortedCases = cases.sort((a, b) => b.date.getTime() - a.date.getTime());
+  // I casi studio sono già ordinati correttamente dalla funzione getOrderedCases()
+  const sortedCases = cases;
   
   // Calcola il numero totale di pagine
   const totalPages = Math.ceil(sortedCases.length / casesPerPage);
@@ -317,14 +346,14 @@ function CasiStudio() {
           "itemListElement": cases.map((caseStudy, index) => ({
             "@type": "Article",
             "position": index + 1,
-            "url": `https://martes-ai.com/casi-studio/${caseStudy.id}`,
-            "name": caseStudy.title,
+            "url": `https://martes-ai.com/casi-studio/${caseStudy?.id}`,
+            "name": caseStudy?.title,
             "author": {
               "@type": "Organization",
               "name": "Martes AI"
             },
-            "datePublished": caseStudy.date.toISOString(),
-            "image": caseStudy.image
+            "datePublished": caseStudy?.date?.toISOString(),
+            "image": caseStudy?.image
           }))
         }}
       />
@@ -335,31 +364,31 @@ function CasiStudio() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {getCurrentCases().map((caseStudy) => (
             <Link
-              key={caseStudy.id}
-              to={`/casi-studio/${caseStudy.id}`}
+              key={caseStudy?.id}
+              to={`/casi-studio/${caseStudy?.id}`}
               onClick={scrollToTop}
               className="bg-black/30 rounded-lg overflow-hidden hover:bg-emerald-500/10 transition-transform transform hover:scale-105 duration-300"
             >
               <img
-                src={caseStudy.image}
-                alt={caseStudy.title}
+                src={caseStudy?.image}
+                alt={caseStudy?.title}
                 className="w-full h-48 object-contain article-cover grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer bg-white p-4 rounded-t-lg mx-auto"
               />
               <div className="p-6">
                 <div className="flex items-center text-sm text-gray-400 mb-4">
                   <span>
-                    {format(caseStudy.date, 'd MMMM yyyy', {
+                    {caseStudy?.date && format(caseStudy.date, 'd MMMM yyyy', {
                       locale: it,
                     })}
                   </span>
                 </div>
-                <h2 className="text-xl font-bold mb-4">{caseStudy.title}</h2>
+                <h2 className="text-xl font-bold mb-4">{caseStudy?.title}</h2>
                 <div className="mt-6 p-4 bg-black/20 rounded-lg">
                   <p className="text-sm italic text-gray-300">
-                    {caseStudy.testimonial.quote}
+                    {caseStudy?.testimonial?.quote}
                   </p>
                   <p className="mt-2 text-sm text-emerald-500">
-                    - {caseStudy.testimonial.author}, {caseStudy.testimonial.role}
+                    - {caseStudy?.testimonial?.author}, {caseStudy?.testimonial?.role}
                   </p>
                 </div>
               </div>
