@@ -753,17 +753,17 @@ const cases = {
     title: "Rugiada: l'agente AI che qualifica i lead per Restworld",
     date: "29 settembre 2025",
     content: `
-      <div class="aspect-w-16 aspect-h-9 mb-8">
-        <iframe 
-          width="100%" height="420" 
-          src="https://www.youtube.com/embed/wujo3X74ggE?si=9Bi9tLooavamJyPE" 
-          title="Rugiada - l'agente WhatsApp per la qualificazione lead" 
-          class="w-full h-[420px]" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
+     <div class="relative w-full pb-[56.25%] mb-8">
+      <iframe
+        class="absolute top-0 left-0 w-full h-full"
+        src="https://www.youtube.com/embed/wujo3X74ggE?si=9Bi9tLooavamJyPE"
+        title="Rugiada - l'agente WhatsApp per la qualificazione lead"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+    </div>
+
 
       <h2>In sintesi: dal problema alla soluzione</h2>
       <ul>
