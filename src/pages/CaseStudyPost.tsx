@@ -753,114 +753,94 @@ const cases = {
     title: "Rugiada: l'agente AI che qualifica i lead per Restworld",
     date: "29 settembre 2025",
     content: `
-      <h2>Cliente: Restworld</h2>
-      <p><strong>Settore:</strong> HORECA (Ho.Re.Ca.) – Recruiting e selezione del personale per ristoranti, bar e hotel</p>
-      <p><strong>Obiettivo:</strong> Automatizzare la qualificazione dei lead per aumentare le conversioni e ridurre il carico operativo sul team interno</p>
-
-      <h2>Il contesto</h2>
-      <p>Restworld è una realtà italiana innovativa nel settore HORECA, nata per risolvere un problema concreto: mettere in contatto chi cerca lavoro nel mondo della ristorazione (chef, camerieri, bartender, receptionist, ecc.) con le aziende che hanno bisogno di personale qualificato.</p>
-
-      <p>Ogni mese l'azienda riceve migliaia di richieste tramite form online: ristoranti, hotel e bar compilano un Typeform indicando chi sono, di cosa hanno bisogno e che tipo di personale cercano.</p>
-
-      <p><strong>Il problema?</strong><br>
-      Il team interno era troppo piccolo per gestire manualmente l'enorme volume di lead, con il rischio di perdere opportunità e di sprecare tempo prezioso su contatti non realmente interessati o non qualificati.</p>
-
-      <p>Restworld aveva bisogno di un sistema intelligente che:</p>
-      <ul>
-        <li>Qualificasse automaticamente i lead in arrivo</li>
-        <li>Filtrasse le richieste non adatte</li>
-        <li>Aumentasse il tasso di conversione in chiamata</li>
-        <li>Riducesse drasticamente il tempo operativo del team</li>
-      </ul>
-
-      <h2>La soluzione: Rugiada, l'agente AI su WhatsApp</h2>
-      <p>Abbiamo sviluppato <strong>Rugiada</strong>, un agente AI conversazionale che automatizza l'intero processo di qualificazione dei lead direttamente su WhatsApp, senza che l'utente percepisca di parlare con un bot.</p>
-
-      <p>Il flusso inizia subito dopo la compilazione del Typeform.<br>
-      Esempio: Marco, proprietario di un ristorante a Roma, compila il form indicando nome, attività, dimensioni dello staff e necessità di personale.</p>
-
-      <p>Dopo circa due minuti, Rugiada lo contatta automaticamente su WhatsApp:</p>
-
-      <div class="bg-black/20 p-4 rounded-lg my-6 border-l-4 border-emerald-400">
-        <p class="italic">"Ciao Marco, grazie per aver compilato il nostro form! Prima della chiamata, posso farti alcune domande per capire meglio le tue esigenze?"</p>
+      <div class="aspect-w-16 aspect-h-9 mb-8">
+        <iframe 
+          width="100%" height="420" 
+          src="https://www.youtube.com/embed/wujo3X74ggE?si=9Bi9tLooavamJyPE" 
+          title="Rugiada - l'agente WhatsApp per la qualificazione lead" 
+          class="w-full h-[420px]" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
       </div>
 
-      <p>Da qui parte una conversazione naturale, durante la quale l'agente AI pone fino a <strong>4 domande strategiche</strong> per valutare la qualità del lead.</p>
+      <h2>In sintesi: dal problema alla soluzione</h2>
+      <ul>
+        <li><strong>Il problema:</strong> migliaia di richieste/mese da Typeform, team snello, rischio opportunità perse e tempo speso su lead non in target.</li>
+        <li><strong>La soluzione:</strong> <strong>Rugiada</strong>, un <strong>agente AI su WhatsApp</strong> che avvia la chat pochi minuti dopo il form, fa domande strategiche, calcola uno score, aggiorna <strong>HubSpot</strong>, gestisce <strong>Calendly</strong> e invia follow‑up.</li>
+        <li><strong>L'impatto:</strong> <strong>20–30%</strong> dei lead qualificati in automatico, <strong>98%</strong> delle interazioni su WhatsApp e forte riduzione del carico operativo.</li>
+      </ul>
 
-      <h2>Intelligenza conversazionale human-like</h2>
-      <p>Uno dei punti di forza di Rugiada è la sua capacità di conversare come un essere umano, al punto che oltre il 90% degli utenti non si accorge di parlare con un'intelligenza artificiale.</p>
+      <h2>Il contesto e il perché</h2>
+      <p>Restworld opera nel settore HORECA aiutando aziende a trovare personale qualificato. Con volumi elevati di lead in arrivo, la qualificazione manuale compromette priorità e conversioni.</p>
 
-      <p>Questo è possibile grazie a tre meccanismi chiave:</p>
+      <h2>Rugiada: l'agente AI che qualifica su WhatsApp</h2>
+      <p>Subito dopo la compilazione del form, Rugiada scrive su WhatsApp e guida una breve conversazione di pre‑call. In base alle risposte, aggiorna il CRM, prenota/annulla la call e notifica l'utente.</p>
 
-      <h3>Raggruppamento dei messaggi</h3>
-      <p>Se l'utente invia più messaggi consecutivi ("Ciao", "Sì", "Fammi pure le domande"), Rugiada li unisce e li interpreta come un unico input, mantenendo sempre il contesto della conversazione.</p>
+      <figure class="my-6 text-center">
+        <a href="/assets/immagini/esempio_chat1.png" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/immagini/esempio_chat1.png" alt="Rimando prezzi e riprogrammazione della call" class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in mix-blend-multiply bg-transparent" />
+        </a>
+        <figcaption class="text-sm text-gray-400 mt-2">Gestione obiezioni e link Calendly senza frizioni.</figcaption>
+      </figure>
 
-      <h3>Analisi dei messaggi vocali</h3>
-      <p>Anche i vocali vengono trascritti, analizzati e combinati con eventuali messaggi testuali. Che l'utente mandi due vocali e un messaggio scritto, Rugiada comprende e risponde in modo coerente.</p>
+      <figure class="my-6 text-center">
+        <a href="/assets/immagini/esempio_chat2.png" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/immagini/esempio_chat2.png" alt="Comprensione di vocali + testo nella stessa conversazione" class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in mix-blend-multiply bg-transparent" />
+        </a>
+        <figcaption class="text-sm text-gray-400 mt-2">I vocali vengono trascritti e uniti al testo per risposte coerenti.</figcaption>
+      </figure>
 
-      <h3>Gestione del contesto temporale</h3>
-      <p>L'agente attende alcuni secondi prima di rispondere, così da "ascoltare" eventuali altri messaggi e comprendere l'intero discorso prima di reagire.</p>
+      <figure class="my-6 text-center">
+        <a href="/assets/immagini/esempio_chat3.png" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/immagini/esempio_chat3.png" alt="Nudge human-like per sbloccare chat ferme" class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in mix-blend-multiply bg-transparent" />
+        </a>
+        <figcaption class="text-sm text-gray-400 mt-2">Follow‑up gentili, in tono brand, per recuperare l'attenzione.</figcaption>
+      </figure>
 
-      <p><strong>Risultato:</strong> conversazioni fluide, naturali e credibili, con un livello di engagement molto superiore rispetto a un chatbot tradizionale.</p>
-
-      <h2>Qualificazione automatica con scoring dinamico</h2>
-      <p>Ogni conversazione è progettata per raccogliere informazioni chiave tramite <strong>5 parametri principali</strong>, ciascuno con un peso specifico:</p>
-
+      <h2>Conversazioni human‑like, non bot‑like</h2>
       <ol>
-        <li>Se il lead è decision maker</li>
-        <li>Dimensioni dell'azienda (numero di dipendenti, sedi)</li>
-        <li>Tipologia di personale richiesto</li>
-        <li>Urgenza della richiesta (subito o entro 5 mesi)</li>
-        <li>Esperienze pregresse con servizi simili</li>
+        <li><strong>Raggruppa i messaggi</strong> dell'utente e risponde al senso complessivo.</li>
+        <li><strong>Trascrive e capisce i vocali</strong>, integrandoli con il testo.</li>
+        <li><strong>Attende alcuni secondi</strong> per ascoltare eventuali aggiunte e dare risposte complete.</li>
       </ol>
 
-      <p>Da queste risposte, Rugiada calcola uno <strong>score medio ponderato</strong>:</p>
-
+      <h2>Qualificazione con scoring dinamico</h2>
+      <p>Raccoglie 5 segnali chiave: decision maker, dimensioni azienda, profilo richiesto, urgenza, esperienze pregresse. Da qui calcola uno score ponderato e decide:</p>
       <ul>
-        <li>Se <strong>> 6</strong>, il lead è qualificato: la chiamata viene confermata, tutte le informazioni sono riassunte e inviate a HubSpot, e salvate nella dashboard interna.</li>
-        <li>Se <strong>≤ 6</strong>, la chiamata viene annullata automaticamente su Calendly, il lead viene notificato e i dati vengono comunque registrati per analisi future.</li>
+        <li><strong>Score > 6</strong>: qualificato → conferma call, aggiorna HubSpot e dashboard.</li>
+        <li><strong>Score ≤ 6</strong>: non qualificato → annulla Calendly, notifica e archivia per analisi.</li>
+        <li><strong>Obiezioni forti</strong> (es. prezzo) → stop immediato, bypass dello score.</li>
       </ul>
 
-      <p>In caso di obiezioni forti (ad esempio "il servizio è troppo costoso"), la qualificazione viene interrotta immediatamente, bypassando la logica dello score.</p>
+      <figure class="my-6 text-center">
+        <img src="/assets/immagini/integrazione_hubspot.png" alt="Scenario Make con integrazione HubSpot/Calendly e branching" class="mx-auto rounded-lg shadow-lg w-full max-w-3xl" />
+        <figcaption class="text-sm text-gray-400 mt-2">Parsing, scoring, aggiornamento CRM e routing: tutto automatizzato.</figcaption>
+      </figure>
 
-      <h2>Dashboard centralizzata e AI analytics</h2>
-      <p>Tutte le conversazioni e i dati raccolti sono gestiti da una dashboard personalizzata che permette al team Restworld di:</p>
+      <h2>Dashboard e AI analytics</h2>
+      <p>Per garantire al team il massimo controllo sul funnel di qualificazione, è stata integrata una <strong>dashboard avanzata di performance</strong> che monitora in tempo reale tutti i principali <strong>KPI conversazionali e commerciali</strong>: numero totale di lead acquisiti, percentuali di qualificati e non qualificati, score medio, conversazioni avviate, completate e abbandonate. Questo consente a Restworld di valutare l'efficacia dell'agente AI, ottimizzare le strategie di follow‑up e intervenire tempestivamente sulle aree critiche.</p>
 
+      <figure class="my-6 text-center">
+        <a href="/assets/immagini/dashboard_rest.png" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/immagini/dashboard_rest.png" alt="Dashboard KPI e performance conversazioni Rugiada" class="mx-auto rounded-lg shadow-2xl w-full max-w-4xl transition-transform duration-200 hover:scale-105 cursor-zoom-in" />
+        </a>
+        <figcaption class="text-sm text-gray-400 mt-2"><em>Esempio di dashboard integrata: overview delle conversazioni gestite da Rugiada e distribuzione della qualità dei lead su base mensile.</em></figcaption>
+      </figure>
+
+      <h2>Follow‑up che riattivano davvero</h2>
+      <p>Sequenza di 4 follow‑up distanziati con messaggi brevi e GIF/immagini leggere: più risposte e meno no‑show.</p>
+
+      <h2>Risultati</h2>
       <ul>
-        <li>Monitorare in tempo reale conversazioni iniziate, lead qualificati, non qualificati e abbandonati</li>
-        <li>Intervenire manualmente in qualsiasi momento su conversazioni attive</li>
-        <li>Fare domande direttamente ai dati con un mini agente RAG interno ("Mostrami i lead con score > 8 a Milano")</li>
+        <li><strong>20–30%</strong> dei lead mensili qualificati automaticamente.</li>
+        <li><strong>98%</strong> delle interazioni gestite su WhatsApp.</li>
+        <li>Riduzione netta del tempo operativo del team e più chiusure in call.</li>
       </ul>
-
-      <p>In questo modo il team ha il pieno controllo sull'agente AI e può utilizzare i dati raccolti per migliorare costantemente il funnel di vendita.</p>
-
-      <h2>Follow-up automatici e personalizzati</h2>
-      <p>Per massimizzare il tasso di risposta, Rugiada gestisce anche sequenze automatiche di follow-up:</p>
-
-      <ul>
-        <li>Quattro messaggi diversi, inviati a distanza di tempo, con tono e contenuto variabili</li>
-        <li>Alternanza tra testo e GIF per riattivare conversazioni ferme</li>
-      </ul>
-
-      <p>Questa strategia ha aumentato sensibilmente il numero di conversazioni riprese dopo un primo silenzio.</p>
-
-      <h2>I risultati</h2>
-      <p>L'introduzione di Rugiada ha trasformato radicalmente il processo di gestione dei lead di Restworld:</p>
-
-      <ul>
-        <li>Riduzione drastica del tempo speso dal team umano nel qualificare i lead</li>
-        <li>Qualificazione automatica del <strong>20-30% dei lead</strong> mensili (da migliaia ogni mese)</li>
-        <li>Aumento significativo del tasso di chiusura in chiamata</li>
-        <li>Conversazioni più naturali e meno abbandoni grazie all'approccio human-like</li>
-      </ul>
-
-      <p>Oggi, il 98% delle interazioni avviene direttamente su WhatsApp, in modo fluido e personalizzato, con risultati misurabili e un impatto diretto sul fatturato.</p>
 
       <h2>Perché funziona</h2>
-      <p>Quando un agente AI viene usato a scopo commerciale, l'utente non vuole parlare con un bot.<br>
-      Rugiada riesce a far percepire la conversazione come umana e naturale, mentre svolge attività estremamente complesse: qualificazione, scoring, salvataggio dati, gestione del calendario e follow-up.</p>
-
-      <p>Il risultato è un sistema che lavora 24/7, scalabile e affidabile, che libera tempo al team umano e trasforma lead grezzi in opportunità concrete di vendita.</p>
+      <p>Nessuno vuole parlare con un "bot" quando l'obiettivo è vendere. Rugiada sembra umana ma svolge compiti complessi H24: qualifica, calcola lo score, aggiorna il CRM, gestisce calendario e follow‑up.</p>
 
       <div class="mb-8 text-center">
         <blockquote class="bg-black/20 p-6 rounded-lg border-l-4 border-emerald-400">
@@ -870,9 +850,14 @@ const cases = {
       </div>
 
       <h2>Conclusione</h2>
-      <p>Grazie a Rugiada, Restworld ha automatizzato la parte più onerosa e delicata del proprio funnel di vendita, trasformando WhatsApp in un canale di qualificazione lead ad altissima conversione.</p>
+      <p>Con Rugiada, Restworld ha trasformato WhatsApp in un canale di qualificazione ad alta conversione, liberando il team per trattative ad alto valore.</p>
 
-      <p>Questo progetto dimostra come un agente AI ben progettato possa diventare un membro invisibile ma essenziale del team commerciale, capace di gestire migliaia di conversazioni al mese e migliorare sensibilmente le performance aziendali.</p>
+      <div class="mb-8 text-center">
+        <a href="https://cal.com/martesai/30min" target="_blank" rel="noopener noreferrer" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-0.5 transform hover:scale-105">
+          Prenota una demo dell'agente
+        </a>
+        <p class="text-sm text-gray-400 mt-2">In 30 minuti capiamo se un agente come Rugiada è adatto ai tuoi processi.</p>
+      </div>
     `,
   },
 };
