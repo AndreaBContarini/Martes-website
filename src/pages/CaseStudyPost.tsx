@@ -779,24 +779,30 @@ const cases = {
       <p>Subito dopo la compilazione del form, Rugiada scrive su WhatsApp e guida una breve conversazione di pre‑call. In base alle risposte, aggiorna il CRM, prenota/annulla la call e notifica l'utente.</p>
 
       <figure class="my-6 text-center">
-        <a href="/assets/immagini/esempio_chat1.png" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/immagini/esempio_chat1.png" alt="Rimando prezzi e riprogrammazione della call" class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in mix-blend-multiply bg-transparent" />
-        </a>
-        <figcaption class="text-sm text-gray-400 mt-2">Gestione obiezioni e link Calendly senza frizioni.</figcaption>
+      <img 
+        src="/assets/immagini/esempio_chat1.png" 
+        alt="Rimando prezzi e riprogrammazione della call" 
+        class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in bg-transparent" 
+      />  
+        <figcaption class="text-sm text-gray-400 mt-2">📱 Gestione obiezioni e link Calendly: l’agente risponde alle domande sui prezzi e propone subito la riprogrammazione della call.</figcaption>
       </figure>
 
       <figure class="my-6 text-center">
-        <a href="/assets/immagini/esempio_chat2.png" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/immagini/esempio_chat2.png" alt="Comprensione di vocali + testo nella stessa conversazione" class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in mix-blend-multiply bg-transparent" />
-        </a>
-        <figcaption class="text-sm text-gray-400 mt-2">I vocali vengono trascritti e uniti al testo per risposte coerenti.</figcaption>
+      <img 
+        src="/assets/immagini/esempio_chat2.png" 
+        alt="Rimando prezzi e riprogrammazione della call" 
+        class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in bg-transparent" 
+      />  
+        <figcaption class="text-sm text-gray-400 mt-2">🎙️ Comprensione dei vocali: Rugiada trascrive e interpreta messaggi audio e testuali per risposte coerenti e naturali.</figcaption>
       </figure>
 
       <figure class="my-6 text-center">
-        <a href="/assets/immagini/esempio_chat3.png" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/immagini/esempio_chat3.png" alt="Nudge human-like per sbloccare chat ferme" class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in mix-blend-multiply bg-transparent" />
-        </a>
-        <figcaption class="text-sm text-gray-400 mt-2">Follow‑up gentili, in tono brand, per recuperare l'attenzione.</figcaption>
+      <img 
+        src="/assets/immagini/esempio_chat3.png" 
+        alt="Rimando prezzi e riprogrammazione della call" 
+        class="mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in bg-transparent" 
+      />  
+        <figcaption class="text-sm text-gray-400 mt-2">🔄 Follow-up automatici: messaggi “human-like” per riattivare conversazioni ferme e aumentare il tasso di risposta.</figcaption>
       </figure>
 
       <h2>Conversazioni human‑like, non bot‑like</h2>
