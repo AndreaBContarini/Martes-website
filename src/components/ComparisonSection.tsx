@@ -35,7 +35,7 @@ function ComparisonSection() {
           </div>
 
           {/* Box Metodo Martes AI */}
-          <div className="flex-1 bg-[#274f36]/30 p-8 rounded-xl border border-emerald-500/30 hover:border-emerald-500/50 transition-all duration-500 hover:transform hover:-translate-y-1 group">
+          <div className="flex-1 bg-emerald-500/30 p-8 rounded-xl border border-emerald-500/30 hover:border-emerald-500/50 transition-all duration-500 hover:transform hover:-translate-y-1 group">
             <h3 className="text-xl font-semibold text-emerald-400 mb-6 group-hover:scale-105 transition-transform">
               Metodo Martes AI
             </h3>

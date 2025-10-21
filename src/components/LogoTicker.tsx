@@ -1,47 +1,111 @@
+import { useState, useRef, useEffect } from 'react';
+
 const logos = [
   {
-    src: "https://i.ibb.co/nPq0dkr/PHOTO-2024-08-17-13-31-51-removebg-preview.png",
-    alt: "We Travel Group"
+    src: "/assets/logos/shapeup.png",
+    alt: "Shape-Up"
   },
   {
-    src: "https://i.ibb.co/7J3hBFy/fantozzi2-removebg-preview.png",
+    src: "/assets/logos/fantozzi.png",
     alt: "Fantozzi & Associati"
   },
   {
-    src: "https://i.ibb.co/BtPCmvC/ecommerceparts-removebg-preview.png",
+    src: "/assets/logos/rest.png",
+    alt: "Restworld"
+  },
+  {
+    src: "/assets/logos/monni_SRL.png",
+    alt: "Monni SRL"
+  },
+  {
+    src: "/assets/logos/bluvacanze_logo.png",
+    alt: "Bluvacanze"
+  },
+  {
+    src: "/assets/logos/clinica_santa_lucia.png",
+    alt: "Clinica Oculistica Santa Lucia"
+  },
+  {
+    src: "/assets/logos/digitalturnover.png",
+    alt: "Digital Turnover"
+  },
+  {
+    src: "/assets/logos/ecommerceparts.png",
     alt: "Ecommerceparts"
   },
   {
-    src: "https://i.ibb.co/LpScFQN/citybeach.png",
+    src: "/assets/logos/citybeach.png",
     alt: "CityBeach Boardshop"
   },
   {
-    src: "https://i.ibb.co/KzNTDF0D/loffredo.jpg",
-    alt: "Federico Loffredo"
-  },
-  {
-    src: "https://www.viaggicarmen.com/wpunitravel/wp-content/uploads/2023/11/agenzia-viaggi-aprilia.png",
+    src: "/assets/logos/viaggi_carmen.png",
     alt: "Viaggi Carmen"
   }
 ];
 
 function LogoTicker() {
+  const [isPaused, setIsPaused] = useState(false);
+  const tickerContentRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseDown = () => {
+    setIsPaused(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsPaused(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPaused(false);
+  };
+
+  const handleTouchStart = () => {
+    setIsPaused(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+  };
+
+  useEffect(() => {
+    const tickerElement = tickerContentRef.current;
+    if (tickerElement) {
+      if (isPaused) {
+        tickerElement.style.animationPlayState = 'paused';
+      } else {
+        tickerElement.style.animationPlayState = 'running';
+      }
+    }
+  }, [isPaused]);
+
   return (
-    <section id="partners" className="py-12 w-full bg-black">
+    <section id="partners" className="py-8 pb-12 sm:py-8 md:py-10 lg:py-12 w-full bg-black">
       <div className="section-container">
-        <div className="ticker-container flex overflow-hidden whitespace-nowrap">
+        <div className="text-center mb-4 sm:mb-6 md:mb-8">
+          <h3 className="text-2xl md:text-3xl font-semibold text-white">Sei in ottima compagnia</h3>
+        </div>
+        
+        <div 
+          className="ticker-container flex overflow-hidden whitespace-nowrap"
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
+            ref={tickerContentRef}
             className="ticker-content flex items-center"
             style={{
               display: "flex",
-              animation: "marquee 40s linear infinite", // Durata aumentata
+              animation: "marquee 45s linear infinite",
               width: "max-content"
             }}
           >
             {logos.concat(logos).map((logo, index) => (
               <div 
                 key={`logo-${index}`}
-                className="bg-white p-4 rounded-xl flex items-center justify-center shadow-lg transition-transform transform hover:scale-105"
+                className="logo-container bg-white p-4 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
                 style={{
                   width: '200px',
                   height: '100px',
@@ -51,7 +115,7 @@ function LogoTicker() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="max-w-full max-h-full object-contain transition-all duration-300"
                 />
               </div>
             ))}
@@ -59,12 +123,20 @@ function LogoTicker() {
         </div>
       </div>
 
-      {/* Stile per animazione più lenta */}
+      {/* Stile per animazione */}
       <style>
         {`
           @keyframes marquee {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
+          }
+          
+          .ticker-container {
+            cursor: grab;
+          }
+          
+          .ticker-container:active {
+            cursor: grabbing;
           }
         `}
       </style>

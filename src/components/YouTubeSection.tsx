@@ -59,7 +59,7 @@ function YouTubeSection() {
                   alt={video.title}
                   className="w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-[#274f36]/0 group-hover:bg-[#274f36]/20 transition-all duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-emerald-500/0 group-hover:bg-emerald-500/20 transition-all duration-300 flex items-center justify-center">
                   <svg
                     className="w-16 h-16 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     viewBox="0 0 24 24"
@@ -70,7 +70,7 @@ function YouTubeSection() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold line-clamp-2 group-hover:text-[#274f36] transition-colors">
+                <h3 className="text-lg font-semibold line-clamp-2 group-hover:text-emerald-500 transition-colors">
                   {video.title}
                 </h3>
               </div>
@@ -83,7 +83,7 @@ function YouTubeSection() {
             href="https://www.youtube.com/@riccardobellicontarini"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#274f36] hover:bg-[#1a3524] text-white px-6 py-3 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-full transition-colors"
           >
             Visita il nostro canale
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
