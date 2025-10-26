@@ -20,15 +20,15 @@ function Privacy() {
   <h3>Definizioni</h3>
   <p>Ai fini della presente Privacy Policy:</p>
   <ul>
-    <li><strong>Account</strong> indica un account unico creato per consentirLe l’accesso al nostro Servizio o a parti di esso.</li>
-    <li><strong>Affiliate</strong> indica un’entità che controlla, è controllata da o è sotto il controllo comune di una parte, dove per "controllo" si intende il possesso del 50% o più delle azioni, interessi patrimoniali o altri titoli aventi diritto al voto per l'elezione degli amministratori o di altra autorità di gestione.</li>
+    <li><strong>Account</strong> indica un account unico creato per consentirLe l'accesso al nostro Servizio o a parti di esso.</li>
+    <li><strong>Affiliate</strong> indica un'entità che controlla, è controllata da o è sotto il controllo comune di una parte, dove per "controllo" si intende il possesso del 50% o più delle azioni, interessi patrimoniali o altri titoli aventi diritto al voto per l'elezione degli amministratori o di altra autorità di gestione.</li>
     <li><strong>Company</strong> (indicata come "la Società", "Noi", "Ci" o "Nostro" nel presente Accordo) si riferisce a Martes AI.</li>
     <li><strong>Cookies</strong> sono piccoli file che vengono collocati sul Suo computer, dispositivo mobile o altro dispositivo da un sito web, contenenti dettagli della cronologia di navigazione su quel sito, tra i loro molteplici usi.</li>
     <li><strong>Country</strong> si riferisce a: Italia.</li>
     <li><strong>Device</strong> indica qualsiasi dispositivo che può accedere al Servizio, come un computer, un cellulare o un tablet digitale.</li>
     <li><strong>Personal Data</strong> (Dati Personali) indica qualsiasi informazione che riguarda un individuo identificato o identificabile.</li>
     <li><strong>Service</strong> si riferisce al Sito Web.</li>
-    <li><strong>Service Provider</strong> indica qualsiasi persona fisica o giuridica che tratta i dati per conto della Società. Tale termine si riferisce a società o individui terzi impiegati dalla Società per facilitare il Servizio, fornire il Servizio per conto della Società, eseguire servizi correlati al Servizio o assistere la Società nell’analisi dell’uso del Servizio.</li>
+    <li><strong>Service Provider</strong> indica qualsiasi persona fisica o giuridica che tratta i dati per conto della Società. Tale termine si riferisce a società o individui terzi impiegati dalla Società per facilitare il Servizio, fornire il Servizio per conto della Società, eseguire servizi correlati al Servizio o assistere la Società nell'analisi dell'uso del Servizio.</li>
     <li><strong>Usage Data</strong> indica i dati raccolti automaticamente, generati dall'uso del Servizio o dall'infrastruttura del Servizio stesso (ad esempio, la durata di una visita a una pagina).</li>
     <li><strong>Website</strong> si riferisce a Martes AI, accessibile da <a href="https://www.martes-ai.com/">https://www.martes-ai.com/</a></li>
     <li><strong>You</strong> indica l'individuo che accede o utilizza il Servizio, oppure l'azienda o altra entità legale per conto della quale tale individuo accede o utilizza il Servizio, a seconda dei casi.</li>
@@ -79,21 +79,21 @@ function Privacy() {
   <ul>
     <li><strong>Tipo:</strong> Cookies Persistenti</li>
     <li><strong>Gestiti da:</strong> Noi</li>
-    <li><strong>Scopo:</strong> Questi Cookies ci permettono di ricordare le scelte che effettua quando utilizza il Sito Web, come ad esempio i dettagli del login o la preferenza di lingua. L’obiettivo di questi Cookies è offrirLe un’esperienza più personalizzata ed evitare che debba reinserire le preferenze ad ogni visita.</li>
+    <li><strong>Scopo:</strong> Questi Cookies ci permettono di ricordare le scelte che effettua quando utilizza il Sito Web, come ad esempio i dettagli del login o la preferenza di lingua. L'obiettivo di questi Cookies è offrirLe un'esperienza più personalizzata ed evitare che debba reinserire le preferenze ad ogni visita.</li>
   </ul>
 
-  <p>Per ulteriori informazioni sui cookies che utilizziamo e sulle sue scelte in merito, visiti la nostra <a href="https://www.martes-ai.com/cookies">Cookies Policy</a> o la sezione Cookies della nostra Privacy Policy.</p>
+  <p>Per ulteriori informazioni sui cookies che utilizziamo e sulle sue scelte in merito, visiti la nostra <a href="https://www.martes-ai.com/cookies">Cookie Policy</a> o la sezione Cookies della nostra Privacy Policy.</p>
 
   <h2>Utilizzo dei Suoi Dati Personali</h2>
   <p>La Società può utilizzare i Dati Personali per i seguenti scopi:</p>
   <ul>
     <li><strong>Fornire e mantenere il nostro Servizio</strong>, inclusa la possibilità di monitorare l'utilizzo del nostro Servizio.</li>
-    <li><strong>Gestire il Suo Account</strong>: per gestire la Sua registrazione come utente del Servizio. I Dati Personali da Lei forniti possono consentirLe l’accesso a diverse funzionalità del Servizio disponibili per gli utenti registrati.</li>
+    <li><strong>Gestire il Suo Account</strong>: per gestire la Sua registrazione come utente del Servizio. I Dati Personali da Lei forniti possono consentirLe l'accesso a diverse funzionalità del Servizio disponibili per gli utenti registrati.</li>
     <li><strong>Esecuzione di un contratto</strong>: per lo sviluppo, il rispetto e l'adempimento del contratto di acquisto per i prodotti, gli articoli o i servizi da Lei acquistati o di qualsiasi altro contratto con Noi tramite il Servizio.</li>
     <li><strong>ContattarLa</strong>: per contattarLa via email, telefonate, SMS o altre forme equivalenti di comunicazione elettronica, come le notifiche push di un'applicazione mobile relative ad aggiornamenti o comunicazioni informative riguardanti le funzionalità, i prodotti o i servizi contrattati, inclusi gli aggiornamenti di sicurezza, quando necessari o ragionevoli per la loro implementazione.</li>
     <li><strong>FornirLe notizie, offerte speciali e informazioni generali</strong> su altri beni, servizi ed eventi che offriamo e che sono simili a quelli che ha già acquistato o per cui ha richiesto informazioni, salvo che Lei abbia scelto di non ricevere tali informazioni.</li>
     <li><strong>Gestire le Sue richieste</strong>: per rispondere e gestire le richieste che ci invia.</li>
-    <li><strong>Trasferimenti aziendali</strong>: potremmo utilizzare le Sue informazioni per valutare o condurre una fusione, cessione, ristrutturazione, riorganizzazione, scioglimento o altra vendita o trasferimento di parte o di tutte le nostre attività, sia come azienda in attività che nell’ambito di procedure di bancarotta, liquidazione o simili, in cui i Dati Personali in nostro possesso relativi agli utenti del Servizio facciano parte degli asset trasferiti.</li>
+    <li><strong>Trasferimenti aziendali</strong>: potremmo utilizzare le Sue informazioni per valutare o condurre una fusione, cessione, ristrutturazione, riorganizzazione, scioglimento o altra vendita o trasferimento di parte o di tutte le nostre attività, sia come azienda in attività che nell'ambito di procedure di bancarotta, liquidazione o simili, in cui i Dati Personali in nostro possesso relativi agli utenti del Servizio facciano parte degli asset trasferiti.</li>
     <li><strong>Altri scopi</strong>: potremmo utilizzare le Sue informazioni per altri scopi, come analisi dei dati, identificazione di tendenze di utilizzo, determinazione dell'efficacia delle nostre campagne promozionali e per valutare e migliorare il nostro Servizio, i prodotti, i servizi, il marketing e la Sua esperienza.</li>
   </ul>
 
@@ -158,7 +158,7 @@ function Privacy() {
   <h2>Contattaci</h2>
   <p>Se ha domande su questa Privacy Policy, può contattarci:</p>
   <ul>
-    <li>Via email: <a href="mailto:info@martes-ai.com">info@martes-ai.com</a></li>
+    <li>Via email: <a href="mailto:contact@martes-ai.com">contact@martes-ai.com</a></li>
     <li>Visitando questa pagina sul nostro sito web: <a href="https://martes-ai.com/chi-siamo">https://martes-ai.com/chi-siamo</a></li>
   </ul>
 
