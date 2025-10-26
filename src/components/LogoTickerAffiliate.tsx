@@ -10,8 +10,20 @@ const affiliateLogos = [
     alt: "Apify"
   },
   {
-    src: "/assets/affiliate_logos/Google_Cloud_logo.png",
-    alt: "Google-Cloud"
+    src: "/assets/affiliate_logos/aws_logo.png",
+    alt: "Amazon Web Services"
+  },
+  {
+    src: "/assets/affiliate_logos/logo_postgres.png",
+    alt: "PostgreSQL"
+  },
+  {
+    src: "/assets/affiliate_logos/pinecone_logo.png",
+    alt: "Pinecone"
+  },
+  {
+    src: "/assets/affiliate_logos/logo_supabase.png",
+    alt: "Supabase"
   },
   {
     src: "/assets/affiliate_logos/voiceflow_logo.png",
