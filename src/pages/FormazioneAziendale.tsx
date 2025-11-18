@@ -1,35 +1,145 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import LogoTicker from '../components/LogoTicker';
 
+declare global {
+  interface Window {
+    openFullscreen: (imageIndex: number) => void;
+  }
+}
+
+// Lista di tutte le immagini nella cartella home_images
+const images = [
+  { src: '/assets/home_images/formazione/pic1.jpeg', alt: 'Formazione Immagine 1' },
+  { src: '/assets/home_images/formazione/pic2.jpeg', alt: 'Formazione Immagine 2' },
+  { src: '/assets/home_images/formazione/pic3.jpeg', alt: 'Formazione Immagine 3' },
+  { src: '/assets/home_images/formazione/pic4.jpg', alt: 'Formazione Immagine 4' },
+  { src: '/assets/home_images/formazione/pic5.jpg', alt: 'Formazione Immagine 5' },
+];
+
 function FormazioneAziendale() {
+
+  useEffect(() => {
+    let currentImageIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    // Funzione per aprire fullscreen
+    window.openFullscreen = (imageIndex: number) => {
+      currentImageIndex = imageIndex;
+      const fullscreenDiv = document.getElementById('fullscreen-modal');
+      const fullscreenImg = document.getElementById('fullscreen-img') as HTMLImageElement;
+
+      if (fullscreenImg && images[imageIndex]) {
+        fullscreenImg.src = images[imageIndex].src;
+        fullscreenImg.alt = images[imageIndex].alt;
+      }
+
+      if (fullscreenDiv) {
+        fullscreenDiv.classList.remove('hidden');
+      }
+      document.body.style.overflow = 'hidden';
+    };
+
+    // Funzione per chiudere fullscreen
+    const closeFullscreen = () => {
+      const fullscreenDiv = document.getElementById('fullscreen-modal');
+      if (fullscreenDiv) {
+        fullscreenDiv.classList.add('hidden');
+      }
+      document.body.style.overflow = 'auto';
+    };
+
+    // Funzione per cambiare immagine nel fullscreen
+    const changeFullscreenImage = (direction: 'next' | 'prev') => {
+      const fullscreenImg = document.getElementById('fullscreen-img') as HTMLImageElement;
+
+      if (direction === 'next') {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+      } else {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      }
+
+      if (fullscreenImg && images[currentImageIndex]) {
+        fullscreenImg.src = images[currentImageIndex].src;
+        fullscreenImg.alt = images[currentImageIndex].alt;
+      }
+    };
+
+    // Eventi touch per swipe
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX = e.changedTouches[0].screenX;
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipeThreshold = 50;
+
+      if (touchStartX - touchEndX > swipeThreshold) {
+        // Swipe left - immagine successiva
+        changeFullscreenImage('next');
+      } else if (touchEndX - touchStartX > swipeThreshold) {
+        // Swipe right - immagine precedente
+        changeFullscreenImage('prev');
+      }
+    };
+
+    // Event listeners
+    const fullscreenModal = document.getElementById('fullscreen-modal');
+    const fullscreenImg = document.getElementById('fullscreen-img');
+
+    if (fullscreenModal) {
+      fullscreenModal.addEventListener('click', closeFullscreen);
+
+      if (fullscreenImg) {
+        fullscreenImg.addEventListener('click', (e) => e.stopPropagation());
+        fullscreenImg.addEventListener('touchstart', handleTouchStart, { passive: true });
+        fullscreenImg.addEventListener('touchend', handleTouchEnd, { passive: true });
+      }
+    }
+
+    // Cleanup
+    return () => {
+      if (fullscreenModal) {
+        fullscreenModal.removeEventListener('click', closeFullscreen);
+
+        if (fullscreenImg) {
+          fullscreenImg.removeEventListener('click', (e) => e.stopPropagation());
+          fullscreenImg.removeEventListener('touchstart', handleTouchStart);
+          fullscreenImg.removeEventListener('touchend', handleTouchEnd);
+        }
+      }
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
         <title>Formazione Aziendale AI | Martes AI</title>
         <meta name="description" content="Formazione AI pratica per aziende. Workshop dal vivo e online per preparare il tuo team alla rivoluzione AI. Corsi su Fondamenti AI, Prompt Engineering, Piattaforme No-Code e Sviluppo Agenti." />
         <meta name="keywords" content="formazione aziendale AI, workshop AI, corsi AI, prompt engineering, piattaforme no-code, agenti AI, automazioni" />
-        
+
         {/* Open Graph */}
         <meta property="og:title" content="Formazione Aziendale AI | Martes AI" />
         <meta property="og:description" content="Formazione AI pratica per restare competitivi e triplicare la produttività. Workshop dal vivo e online." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.martes-ai.com/formazione-aziendale" />
         <meta property="og:image" content="https://www.martes-ai.com/logo-martes.png" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Formazione Aziendale AI | Martes AI" />
         <meta name="twitter:description" content="Formazione AI pratica per aziende. Workshop dal vivo e online." />
         <meta name="twitter:image" content="https://www.martes-ai.com/logo-martes.png" />
-        
+
         {/* Favicon */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo-martes.png" />
-        
+
         {/* Canonical */}
         <link rel="canonical" href="https://www.martes-ai.com/formazione-aziendale" />
-        
+
         {/* JSON-LD Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -80,7 +190,7 @@ function FormazioneAziendale() {
                   <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
                     Dimenticati dei corsi su ChatGPT: formazione AI concreta per restare competitivi e triplicare la produttività
                   </p>
-                  <a 
+                  <a
                     href="https://cal.com/martesai/30min"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -172,7 +282,7 @@ function FormazioneAziendale() {
 
           {/* CTA Centrale */}
           <div className="text-center mb-8 sm:mb-12">
-            <a 
+            <a
               href="https://cal.com/martesai/30min"
               target="_blank"
               rel="noopener noreferrer"
@@ -283,10 +393,179 @@ function FormazioneAziendale() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-6 sm:py-8 md:py-12 lg:py-16 w-full bg-black">
+        <div className="container mx-auto px-4">
+          {/* Gallery Preview con Carosello */}
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="bg-mint-100/90 backdrop-blur-sm rounded-3xl p-1 sm:p-2 md:p-8 lg:p-12 border border-emerald-400/30 shadow-xl">
+              <div className="relative">
+                {/* Container immagini gallery */}
+                <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                  <div id="gallery-carousel" className="flex transition-transform duration-500 ease-in-out">
+                    {images.map((image, index) => (
+                      <div key={index} className="w-full flex-shrink-0">
+                        <img
+                          id={`gallery-img-${index}`}
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-auto object-contain rounded-xl cursor-pointer md:cursor-default min-h-[240px] md:min-h-[400px] max-h-[50vh] md:max-h-[80vh]"
+                          onClick={() => {
+                            if (window.innerWidth < 768) {
+                              window.openFullscreen(index);
+                            }
+                          }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Freccia Sinistra */}
+                  <button
+                    id="prev-btn"
+                    className="absolute left-3 md:left-6 top-1/2 transform -translate-y-1/2 bg-black/70 hover:bg-emerald-600/90 text-white p-2 md:p-4 lg:p-5 rounded-full transition-all duration-300 opacity-0 md:hover:scale-110 z-10 shadow-lg"
+                    onClick={() => {
+                      const carousel = document.getElementById('gallery-carousel') as HTMLElement;
+                      const prevBtn = document.getElementById('prev-btn') as HTMLElement;
+                      const nextBtn = document.getElementById('next-btn') as HTMLElement;
+                      const currentTransform = carousel?.style.transform || 'translateX(0%)';
+                      const currentIndex = currentTransform === 'translateX(0%)' ? 0 :
+                        Math.abs(parseInt(currentTransform.match(/-?\d+/)?.[0] || '0')) / 100;
+
+                      if (currentIndex > 0) {
+                        const newIndex = currentIndex - 1;
+                        if (carousel) carousel.style.transform = `translateX(-${newIndex * 100}%)`;
+                        if (newIndex === 0 && prevBtn) prevBtn.style.opacity = '0';
+                        if (nextBtn) nextBtn.style.opacity = '1';
+
+                        // Aggiorna indicatori
+                        images.forEach((_, idx) => {
+                          const indicator = document.getElementById(`indicator-${idx}`) as HTMLElement;
+                          if (indicator) {
+                            if (idx === newIndex) {
+                              indicator.classList.add('bg-emerald-400');
+                              indicator.classList.remove('bg-gray-300');
+                            } else {
+                              indicator.classList.add('bg-gray-300');
+                              indicator.classList.remove('bg-emerald-400');
+                            }
+                          }
+                        });
+                      }
+                    }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+
+                  {/* Freccia Destra */}
+                  <button
+                    id="next-btn"
+                    className="absolute right-3 md:right-6 top-1/2 transform -translate-y-1/2 bg-black/70 hover:bg-emerald-600/90 text-white p-2 md:p-4 lg:p-5 rounded-full transition-all duration-300 opacity-100 md:hover:scale-110 z-10 shadow-lg"
+                    onClick={() => {
+                      const carousel = document.getElementById('gallery-carousel') as HTMLElement;
+                      const prevBtn = document.getElementById('prev-btn') as HTMLElement;
+                      const nextBtn = document.getElementById('next-btn') as HTMLElement;
+                      const currentTransform = carousel?.style.transform || 'translateX(0%)';
+                      const currentIndex = currentTransform === 'translateX(0%)' ? 0 :
+                        Math.abs(parseInt(currentTransform.match(/-?\d+/)?.[0] || '0')) / 100;
+
+                      if (currentIndex < images.length - 1) {
+                        const newIndex = currentIndex + 1;
+                        if (carousel) carousel.style.transform = `translateX(-${newIndex * 100}%)`;
+                        if (prevBtn) prevBtn.style.opacity = '1';
+                        if (newIndex === images.length - 1 && nextBtn) nextBtn.style.opacity = '0';
+
+                        // Aggiorna indicatori
+                        images.forEach((_, idx) => {
+                          const indicator = document.getElementById(`indicator-${idx}`) as HTMLElement;
+                          if (indicator) {
+                            if (idx === newIndex) {
+                              indicator.classList.add('bg-emerald-400');
+                              indicator.classList.remove('bg-gray-300');
+                            } else {
+                              indicator.classList.add('bg-gray-300');
+                              indicator.classList.remove('bg-emerald-400');
+                            }
+                          }
+                        });
+                      }
+                    }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Indicatori */}
+                <div className="flex justify-center mt-4 md:mt-8 space-x-3 flex-wrap">
+                  {images.map((_, index) => (
+                    <div
+                      key={index}
+                      id={`indicator-${index}`}
+                      className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-all duration-300 cursor-pointer hover:scale-110 ${index === 0 ? 'bg-emerald-400' : 'bg-gray-300'
+                        }`}
+                      onClick={() => {
+                        const carousel = document.getElementById('gallery-carousel') as HTMLElement;
+                        const prevBtn = document.getElementById('prev-btn') as HTMLElement;
+                        const nextBtn = document.getElementById('next-btn') as HTMLElement;
+
+                        if (carousel) carousel.style.transform = `translateX(-${index * 100}%)`;
+                        if (prevBtn) prevBtn.style.opacity = index === 0 ? '0' : '1';
+                        if (nextBtn) nextBtn.style.opacity = index === images.length - 1 ? '0' : '1';
+
+                        // Aggiorna tutti gli indicatori
+                        images.forEach((_, idx) => {
+                          const indicator = document.getElementById(`indicator-${idx}`) as HTMLElement;
+                          if (indicator) {
+                            if (idx === index) {
+                              indicator.classList.add('bg-emerald-400');
+                              indicator.classList.remove('bg-gray-300');
+                            } else {
+                              indicator.classList.add('bg-gray-300');
+                              indicator.classList.remove('bg-emerald-400');
+                            }
+                          }
+                        });
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Modal Fullscreen per Mobile */}
+      <div
+        id="fullscreen-modal"
+        className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden md:hidden"
+      >
+        <div className="relative w-full h-full flex items-center justify-center p-4">
+          <img
+            id="fullscreen-img"
+            src=""
+            alt=""
+            className="max-w-full max-h-full object-contain"
+          />
+
+          {/* Indicatore di swipe */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div className="text-white text-sm opacity-70 text-center">
+              <p>Scorri a sinistra/destra per cambiare immagine</p>
+              <p>Tocca fuori per chiudere</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Final CTA Section */}
       <section className="py-6 sm:py-8 md:py-12 lg:py-16 w-full bg-black">
         <div className="container mx-auto px-4 text-center">
-          <a 
+          <a
             href="https://cal.com/martesai/30min"
             target="_blank"
             rel="noopener noreferrer"

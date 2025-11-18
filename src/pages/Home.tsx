@@ -483,7 +483,7 @@ function Home() {
                           value={formData.ruoloAzienda}
                           onChange={handleInputChange}
                           className="w-full px-0 py-4 bg-transparent border-0 border-b border-gray-600 text-white placeholder-gray-500 focus:border-emerald-400 focus:ring-0 focus:outline-none transition-all duration-300 text-lg"
-                          placeholder="Software house, E-commerce, Consulenza..."
+                          placeholder="CEO, CFO, CTO, Head of HR, ..."
                         />
                       </div>
 

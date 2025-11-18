@@ -46,6 +46,10 @@ const affiliateLogos = [
     alt: "Airtable"
   },
   {
+    src: "/assets/affiliate_logos/docker_logo.png",
+    alt: "Docker"
+  },
+  {
     src: "/assets/affiliate_logos/meta_logo.png",
     alt: "Meta"
   },
@@ -106,10 +110,10 @@ function LogoTickerAffiliate() {
     <section id="affiliate-partners" className="py-12 w-full bg-black/20">
       <div className="section-container">
         <div className="text-center mb-8">
-                          <h3 className="text-3xl md:text-4xl font-bold text-white">I Nostri Strumenti</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-white">I Nostri Strumenti</h3>
         </div>
-        
-        <div 
+
+        <div
           className="ticker-container flex overflow-hidden whitespace-nowrap"
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
@@ -127,7 +131,7 @@ function LogoTickerAffiliate() {
             }}
           >
             {affiliateLogos.concat(affiliateLogos).map((logo, index) => (
-              <div 
+              <div
                 key={`affiliate-logo-${index}`}
                 className="logo-container bg-white p-4 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
                 style={{

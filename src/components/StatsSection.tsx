@@ -15,7 +15,7 @@ function StatsSection() {
           {/* Box 1: Aziende */}
           <div className="text-center group cursor-pointer">
             <div className="text-5xl md:text-6xl font-black text-white mb-4 transition-all duration-500 group-hover:text-emerald-400 group-hover:scale-110 group-hover:drop-shadow-lg">
-              40+
+              60+
             </div>
             <div className="w-16 h-0.5 bg-emerald-400 mx-auto mb-4 transition-all duration-500 group-hover:w-24 group-hover:bg-emerald-300"></div>
             <p className="text-gray-300 text-lg font-medium transition-all duration-500 group-hover:text-white">
@@ -26,7 +26,7 @@ function StatsSection() {
           {/* Box 2: Soluzioni */}
           <div className="text-center group cursor-pointer">
             <div className="text-5xl md:text-6xl font-black text-white mb-4 transition-all duration-500 group-hover:text-emerald-400 group-hover:scale-110 group-hover:drop-shadow-lg">
-              50+
+              70+
             </div>
             <div className="w-16 h-0.5 bg-emerald-400 mx-auto mb-4 transition-all duration-500 group-hover:w-24 group-hover:bg-emerald-300"></div>
             <p className="text-gray-300 text-lg font-medium transition-all duration-500 group-hover:text-white">
@@ -37,13 +37,13 @@ function StatsSection() {
           {/* Box 3: Professionisti */}
           <div className="text-center group cursor-pointer relative">
             <div className="text-5xl md:text-6xl font-black text-white mb-4 transition-all duration-500 group-hover:text-emerald-400 group-hover:scale-110 group-hover:drop-shadow-lg">
-              2M+
+              3M+
             </div>
             <div className="w-16 h-0.5 bg-emerald-400 mx-auto mb-4 transition-all duration-500 group-hover:w-24 group-hover:bg-emerald-300"></div>
             <p className="text-gray-300 text-lg font-medium transition-all duration-500 group-hover:text-white">
               Professionisti raggiunti
             </p>
-            
+
             {/* Link allineato alla descrizione */}
             <div className="mt-8">
               <a

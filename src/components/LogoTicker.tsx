@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from 'react';
 
 const logos = [
   {
-    src: "/assets/logos/shapeup.png",
-    alt: "Shape-Up"
+    src: "/assets/logos/winesuite_logo.png",
+    alt: "WineSuite"
   },
   {
     src: "/assets/logos/fantozzi.png",
@@ -24,6 +24,14 @@ const logos = [
   {
     src: "/assets/logos/clinica_santa_lucia.png",
     alt: "Clinica Oculistica Santa Lucia"
+  },
+  {
+    src: "/assets/logos/gsp_logo.png",
+    alt: "GSP"
+  },
+  {
+    src: "/assets/logos/shapeup.png",
+    alt: "Shape-Up"
   },
   {
     src: "/assets/logos/digitalturnover.png",
@@ -84,8 +92,8 @@ function LogoTicker() {
         <div className="text-center mb-4 sm:mb-6 md:mb-8">
           <h3 className="text-2xl md:text-3xl font-semibold text-white">Sei in ottima compagnia</h3>
         </div>
-        
-        <div 
+
+        <div
           className="ticker-container flex overflow-hidden whitespace-nowrap"
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
@@ -103,7 +111,7 @@ function LogoTicker() {
             }}
           >
             {logos.concat(logos).map((logo, index) => (
-              <div 
+              <div
                 key={`logo-${index}`}
                 className="logo-container bg-white p-4 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer"
                 style={{
