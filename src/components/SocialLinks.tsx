@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Twitter, Youtube, Github } from 'lucide-react';
+import { Linkedin, Youtube, Github, Globe } from 'lucide-react';
 
 interface SocialLinksProps {
   person: 'riccardo' | 'andrea';
@@ -13,19 +13,17 @@ function SocialLinks({ person }: SocialLinksProps) {
     },
     andrea: {
       linkedin: 'https://www.linkedin.com/in/andreabellicontarini/',
-      twitter: 'https://x.com/andreabelli',
       github: 'https://github.com/andreabcontarini',
+      website: 'https://andreabcontarini.netlify.app/',
     },
   };
-
-  const links = socialLinks[person];
 
   return (
     <div className="flex gap-4 mt-4 justify-center">
       {person === 'riccardo' ? (
         <>
           <a
-            href={links.linkedin}
+            href={socialLinks.riccardo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -33,7 +31,7 @@ function SocialLinks({ person }: SocialLinksProps) {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href={links.youtube}
+            href={socialLinks.riccardo.youtube}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -44,7 +42,7 @@ function SocialLinks({ person }: SocialLinksProps) {
       ) : (
         <>
           <a
-            href={links.linkedin}
+            href={socialLinks.andrea.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
@@ -52,20 +50,21 @@ function SocialLinks({ person }: SocialLinksProps) {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href={links.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            <Twitter className="w-6 h-6" />
-          </a>
-          <a
-            href={links.github}
+            href={socialLinks.andrea.github}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition-colors"
           >
             <Github className="w-6 h-6" />
+          </a>
+          <a
+            href={socialLinks.andrea.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition-colors"
+            title="Sito Web Personale"
+          >
+            <Globe className="w-6 h-6" />
           </a>
         </>
       )}
