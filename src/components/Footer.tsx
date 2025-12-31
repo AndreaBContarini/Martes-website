@@ -160,7 +160,7 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>© 2025 Martes AI<sup>®</sup> S.R.L. Tutti i diritti riservati.</p>
+          <p>© 2026 Martes AI<sup>®</sup> S.R.L. Tutti i diritti riservati.</p>
         </div>
       </div>
     </footer>
