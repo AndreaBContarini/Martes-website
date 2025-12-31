@@ -207,7 +207,7 @@ const allCases = [
     id: "custom-gpt-email",
     title: "Agente GPT per rispondere alle mail e riassumere AI-news",
     date: new Date('2025-02-13'),
-    image: '/assets/logos/federico-loffredo.png',
+    image: '/assets/logos/studio_commercialisti.png',
     testimonial: {
       quote: "Ho chiesto due GPT personalizzati: uno per la gestione automatica delle email e uno per riassumere le ultime news sull'AI. Hanno fatto un lavoro eccellente e professionale. Consigliatissimi!",
       author: 'Federico Loffredo',

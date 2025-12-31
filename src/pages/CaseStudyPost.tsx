@@ -413,6 +413,11 @@ const cases = {
           allowfullscreen>
         </iframe>
       </div>
+      
+      <figure class="my-8 text-center">
+        <img src="/assets/logos/studio_commercialisti.png" alt="Studio Commercialisti" class="mx-auto rounded-lg shadow-lg max-w-md" />
+      </figure>
+      
     <h2>Introduzione</h2>
     <p>Nel contesto aziendale moderno, la gestione della casella email rappresenta un'attività cruciale ma spesso dispendiosa in termini di tempo. Noi abbiamo sviluppato una soluzione innovativa per un cliente che necessitava di automatizzare la gestione della propria casella email ed anche di ottenere rapidamente le ultime news dal "fronte AI", per rimanere costantemente informato.</p>
     <p>Questo caso studio illustra il problema iniziale, la soluzione implementata e i risultati ottenuti. Tratteremo - per brevità - solo la soluzione del GPT per l'automazione delle risposte mail.</p>
