@@ -1,16 +1,12 @@
 import logoRestworld from '../assets/clients/restworld.png';
-import logoMonni from '../assets/clients/monni_srl.png';
+import logoMonni from '../assets/monni_logo_colorato.png';
 import logoBluvacanze from '../assets/clients/logo-bluvacanze.png';
 import logoFantozzi from '../assets/clients/fantozzi.png';
-import logoLonghitano from '../assets/clients/Aquadra.png'; // Assuming Aquadra is closest or using placeholder if not found, but trying to find correct match. Re-checking user prompt list. User said "longhitano" in text but logo list has Aquadra, Allcore etc. Let's use a generic office icon if not found or try to match best guess. Wait, "longhitano" isn't in the list of files provided by list_dir. I'll use a placeholder or one of the existing generic looking ones if specific one is missing, to avoid broken image. Actually, I will check if I can map them better.
-// "logo_divinea.png", "logo_toscanini.png" etc exist.
-// Longhitano was using: '/assets/logos/longhitano.png'.
-// I will import all I can matching the IDs.
-
+import logoLonghitano from '../assets/clients/longhitano.png';
 import logoDigitalTurnover from '../assets/clients/turnover-Photoroom.png';
 import logoShapeUp from '../assets/clients/shapeup-Photoroom.png';
 import logoSantaLucia from '../assets/clients/clinica_santa_lucia.png';
-import logoStudioCommercialisti from '../assets/clients/allcore.png'; // Using Allcore as placeholder for "Studio Commercialisti" if specialized logo missing.
+import logoLoffredo from '../assets/clients/loffredo.png';
 import logoEcommerceParts from '../assets/clients/ecommerceparts-logo.png';
 
 export interface CaseStudy {
@@ -378,7 +374,7 @@ export const caseStudies: CaseStudy[] = [
     id: "custom-gpt-email",
     title: "Agente GPT per rispondere alle mail e riassumere AI-news",
     date: new Date('2025-02-13'),
-    image: logoStudioCommercialisti,
+    image: logoLoffredo,
     testimonial: {
       quote: "Ho chiesto due GPT personalizzati: uno per la gestione automatica delle email e uno per riassumere le ultime news sull'AI. Hanno fatto un lavoro eccellente e professionale. Consigliatissimi!",
       author: 'Federico Loffredo',

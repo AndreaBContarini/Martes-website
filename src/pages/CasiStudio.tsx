@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { format } from 'date-fns';
-import { it } from 'date-fns/locale';
 import { getOrderedCases } from '../data/caseStudies';
 import { SEOHead } from '../components/shared/SEOHead';
 import { motion } from 'framer-motion';
@@ -81,9 +79,6 @@ export const CasiStudio = () => {
                     alt={caseStudy.title}
                     className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono border border-white/20">
-                    {format(caseStudy.date, 'MMM yyyy', { locale: it })}
-                  </div>
                 </div>
                 
                 <div className="p-8 flex-1 flex flex-col">
