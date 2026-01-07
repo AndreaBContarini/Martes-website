@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { SEOHead } from '../components/shared/SEOHead';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Mail, ArrowRight, Loader2 } from 'lucide-react';
+import { useTranslation, Trans } from 'react-i18next';
 
 const Templates = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -11,7 +13,7 @@ const Templates = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setMessage('Inserisci un indirizzo email valido');
+      setMessage(t('templates.form.error_invalid'));
       setStatus('error');
       return;
     }
@@ -33,22 +35,17 @@ const Templates = () => {
     } catch (error) {
       console.error(error);
       setStatus('error');
-      setMessage('Si è verificato un errore. Riprova più tardi.');
+      setMessage(t('templates.form.error_generic'));
     }
   };
 
-  const benefits = [
-    "Corso completo di N8N",
-    "Corso completo di Vibe Coding",
-    "Template di agenti AI",
-    "Template di workflow"
-  ];
+  const benefits = t('templates.benefits', { returnObjects: true }) as string[];
 
   return (
     <div className="pt-32 pb-20 bg-martes-dark min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       <SEOHead 
-        title="Template Gratuiti & Risorse AI"
-        description="Scarica gratuitamente i nostri template per Agenti AI, workflow di automazione e accedi ai corsi esclusivi."
+        title={t('templates.seo.title')}
+        description={t('templates.seo.description')}
         pageType="website"
       />
 
@@ -63,11 +60,11 @@ const Templates = () => {
           className="text-center"
         >
           <span className="text-neutral-400 text-sm tracking-widest uppercase font-medium mb-8 block">
-            Accedi alla nostra libreria di template AI
+            {t('templates.hero.badge')}
           </span>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight tracking-tight">
-            Scarica i <span className="serif-italic text-martes-green font-normal">Template</span> Gratuiti
+            {t('templates.hero.title_start')} <span className="serif-italic text-martes-green font-normal">{t('templates.hero.title_highlight')}</span> {t('templates.hero.title_end')}
           </h1>
 
           <div className="max-w-xl mx-auto mb-16">
@@ -81,9 +78,9 @@ const Templates = () => {
                     <div className="w-16 h-16 bg-martes-green rounded-full flex items-center justify-center mx-auto mb-4 text-martes-dark shadow-[0_0_30px_rgba(74,222,128,0.3)]">
                         <Check size={32} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Email inviata!</h3>
-                    <p className="text-neutral-400 mb-4">Controlla le tue email, dovresti aver ricevuto un link per l'accesso ai template.</p>
-                    <p className="text-neutral-500 text-sm">PS: se non vedi nulla, controlla in spam o nella posta indesiderata</p>
+                    <h3 className="text-2xl font-bold text-white mb-2">{t('templates.form.success_title')}</h3>
+                    <p className="text-neutral-400 mb-4">{t('templates.form.success_message')}</p>
+                    <p className="text-neutral-500 text-sm">{t('templates.hero.note_spam')}</p>
                  </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="relative group max-w-lg mx-auto">
@@ -93,7 +90,7 @@ const Templates = () => {
                         </div>
                         <input 
                             type="email" 
-                            placeholder="Inserisci la tua email..." 
+                            placeholder={t('templates.form.placeholder')}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             disabled={status === 'loading'}
@@ -117,7 +114,7 @@ const Templates = () => {
                     </div>
                     
                     <p className="text-neutral-400 text-sm mt-4 leading-relaxed">
-                        Entro pochi minuti riceverai un link magico via email per accedere all'intera cartella con <span className="text-white font-medium">TUTTI i template e i corsi.</span>
+                        <Trans i18nKey="templates.hero.subtitle" components={[<span className="text-white font-medium" />]} />
                     </p>
 
                     {status === 'error' && (

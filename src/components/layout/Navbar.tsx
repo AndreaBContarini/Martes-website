@@ -64,7 +64,7 @@ export const Navbar = () => {
       transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.8 }}
       className="fixed top-6 left-0 right-0 z-50 flex flex-col items-center px-4 pointer-events-none"
     >
-      <div className={`pointer-events-auto bg-black/60 backdrop-blur-xl border border-white/10 rounded-full px-5 py-3 flex items-center gap-4 ${isPrismaPage ? 'md:gap-8 max-w-5xl' : 'md:gap-12 max-w-3xl'} w-auto shadow-2xl hover:border-white/20 transition-colors z-50`}>
+      <div className={`pointer-events-auto bg-black/60 backdrop-blur-xl border border-white/10 rounded-full px-5 py-3 flex items-center gap-4 ${isPrismaPage ? 'md:gap-8 max-w-5xl' : 'md:gap-12 max-w-5xl'} w-auto shadow-2xl hover:border-white/20 transition-colors z-50`}>
         <AnimatePresence mode="popLayout">
           {showLogo && (
             <motion.div
@@ -143,20 +143,20 @@ export const Navbar = () => {
           )}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-6 md:gap-8">
           
-          {/* Language Switcher */}
-          <div className="hidden md:flex items-center gap-2 border-r border-white/10 pr-4 mr-0">
+          {/* Language Switcher - Integrated */}
+          <div className="hidden md:flex items-center gap-2 text-[11px] font-bold tracking-widest border border-white/10 rounded-full px-3 py-1 bg-white/5">
              <button 
                 onClick={() => changeLanguage('it')}
-                className={`text-xs font-bold transition-colors ${currentLang.startsWith('it') ? 'text-white' : 'text-neutral-500 hover:text-white'}`}
+                className={`transition-colors hover:text-white ${currentLang.startsWith('it') ? 'text-martes-green' : 'text-neutral-500'}`}
              >
                 IT
              </button>
-             <span className="text-neutral-700 text-[10px]">/</span>
+             <span className="text-white/10 text-[9px]">|</span>
              <button 
                 onClick={() => changeLanguage('en')}
-                className={`text-xs font-bold transition-colors ${currentLang.startsWith('en') ? 'text-white' : 'text-neutral-500 hover:text-white'}`}
+                className={`transition-colors hover:text-white ${currentLang.startsWith('en') ? 'text-martes-green' : 'text-neutral-500'}`}
              >
                 EN
              </button>

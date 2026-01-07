@@ -6,11 +6,29 @@ import { ArrowLeft, Calendar, User } from 'lucide-react';
 import { format } from 'date-fns';
 import { it } from 'date-fns/locale';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export const CaseStudyDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const caseStudy = caseStudies.find((c) => c.id === id);
+  const { t, i18n } = useTranslation();
+  
+  const caseStudyMetadata = caseStudies.find((c) => c.id === id);
+
+  // Get translated content
+  const translatedData = id ? t(`cases_data.${id}`, { returnObjects: true }) as any : null;
+  
+  // Merge metadata with translation
+  const caseStudy = caseStudyMetadata && translatedData ? {
+      ...caseStudyMetadata,
+      title: translatedData.title || caseStudyMetadata.title,
+      content: translatedData.content || caseStudyMetadata.content,
+      testimonial: translatedData.testimonial ? {
+          ...caseStudyMetadata.testimonial,
+          ...translatedData.testimonial
+      } : caseStudyMetadata.testimonial
+  } : null;
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,12 +38,15 @@ export const CaseStudyDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-martes-dark">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Caso Studio Non Trovato</h1>
-          <Link to="/casi-studio" className="text-martes-green hover:underline">Torna alla lista</Link>
+          <h1 className="text-4xl font-bold mb-4">{t('cases_page.not_found.title')}</h1>
+          <Link to="/casi-studio" className="text-martes-green hover:underline">{t('cases_page.not_found.link')}</Link>
         </div>
       </div>
     );
   }
+
+  // Format date based on current language
+  const dateLocale = i18n.language === 'it' ? it : undefined; // undefined defaults to en-US usually, or import enUS
 
   return (
     <>
@@ -39,7 +60,7 @@ export const CaseStudyDetail = () => {
         <div className="container mx-auto px-6 max-w-4xl">
             <button onClick={() => navigate(-1)} className="group flex items-center gap-2 text-neutral-400 hover:text-martes-green mb-8 transition-colors">
                 <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-                Torna indietro
+                {t('cases_page.back_button')}
             </button>
 
             <motion.h1 
@@ -53,7 +74,7 @@ export const CaseStudyDetail = () => {
             <div className="flex flex-wrap items-center gap-6 text-sm text-neutral-400 mb-12 border-b border-white/10 pb-8">
                 <div className="flex items-center gap-2">
                     <Calendar size={16} />
-                    {format(caseStudy.date, 'd MMMM yyyy', { locale: it })}
+                    {format(caseStudy.date, 'd MMMM yyyy', { locale: dateLocale })}
                 </div>
                 {caseStudy.testimonial && (
                     <div className="flex items-center gap-2">

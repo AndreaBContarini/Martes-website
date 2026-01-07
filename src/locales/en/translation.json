@@ -15,9 +15,581 @@
   "hero": {
     "line1_start": "Your",
     "line1_italic": "AI Partner",
-    "line2_start": "for",
-    "line2_italic": "360° Growth.",
+    "line2_start": "at",
+    "line2_italic": "360 Degrees.",
     "cta": "Start Now",
     "secondaryCta": "Discover Services"
+  },
+  "prisma": {
+    "hero": {
+      "badge": "LIVE IN 48 HOURS",
+      "title_start": "Up to",
+      "title_highlight": "450 Hours",
+      "title_end": "Saved\nper Month.",
+      "subtitle": "Automate your employee reporting via WhatsApp.\nFree your HR team. Real-time data. Automatic reports.",
+      "cta_primary": "Try Prisma",
+      "cta_secondary": "Calculate Savings"
+    },
+    "valueProps": {
+      "problem": {
+        "title": "The Problem",
+        "items": [
+          "Lost or never filled paper reports",
+          "Incomplete Excel sheets, data arriving days late",
+          "Invoicing blocked for days",
+          "HR wasting hours chasing employees"
+        ]
+      },
+      "solution": {
+        "title": "The Solution",
+        "items": [
+          "Prisma writes to employees on WhatsApp automatically",
+          "Analyzes voice notes and images in real-time",
+          "Automatic follow-up for those who don't reply",
+          "Zero apps to install: everything on WhatsApp, super simple"
+        ]
+      },
+      "results": {
+        "title": "The Results",
+        "items": [
+          "Real-time dashboard always updated",
+          "Automatic reports for HR every day",
+          "Up to 450 hours/month saved",
+          "12.5x ROI from the first month"
+        ]
+      }
+    },
+    "platforms": {
+      "title": "Prisma is not just on WhatsApp.",
+      "subtitle": "It can be installed anywhere you want. Available on:"
+    },
+    "timeline": {
+      "badge": "HOW IT WORKS",
+      "title": "Active in 48h. Yours forever.",
+      "title_highlight": "Support Included.",
+      "cta": "Book a Call",
+      "steps": {
+        "0": {
+          "title": "Day 1: Flash Setup",
+          "desc": "We configure questions tailored to your sector. We integrate Prisma with your existing software (or provide a ready-to-use dashboard)."
+        },
+        "1": {
+          "title": "Day 2: Launch",
+          "desc": "Prisma goes live. Your team receives the WhatsApp number. Zero training needed: if they can send a voice note, they can use Prisma."
+        },
+        "2": {
+          "title": "Day 2-30: Continuous Support",
+          "desc": "We monitor the first days of usage to ensure everything runs perfectly. Direct support via WhatsApp for any doubts."
+        },
+        "3": {
+          "title": "Month 1+: Growth",
+          "desc": "You see the first tangible results: hours saved, punctual reports, and structured data to make better decisions."
+        }
+      }
+    },
+    "pricing": {
+      "title": "Simple",
+      "title_highlight": "Pricing",
+      "badge": "All Inclusive",
+      "perEmployee": "per employee",
+      "features": [
+        "Prisma Agent on WhatsApp",
+        "Control Dashboard",
+        "Unlimited PDF/Excel Reports",
+        "Priority Support",
+        "Updates Included"
+      ],
+      "cta": "Start Now",
+      "comparison": {
+        "title": "Why is it a no-brainer?",
+        "invest": "Invest",
+        "save": "Save"
+      }
+    },
+    "gdpr": {
+      "title_start": "Your data is",
+      "title_highlight": "safe.",
+      "desc": "Prisma is designed in compliance with European GDPR:",
+      "items": [
+        { "bold": "Servers in Europe", "text": "– Data hosted on European data centers" },
+        { "bold": "End-to-end encryption", "text": "– Protected in transit and at rest" },
+        { "bold": "Certified providers", "text": "– ISO/IEC 27001 Security Standard" },
+        { "bold": "DPA", "text": "– Data Processing Agreement available on request" }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "My employees are not tech-savvy, they will never use such a system",
+          "a": "Prisma isn't a new app to learn. It's WhatsApp, which your employees already use every day to message friends and family. They answer 4-5 questions in 30 seconds and they're done. Zero training needed, zero complications."
+        },
+        {
+          "q": "How long does it take to get up and running?",
+          "a": "24-48 hours. We configure the entire system on our end: WhatsApp and the entire infrastructure for the AI agent. You just need to send us the employee list. Zero installations on your part, zero training to organize. You're live in 2 days."
+        },
+        {
+          "q": "€30 per month per employee seems expensive",
+          "a": "With Prisma, you save an average of 15 hours per month per employee. At €25/hour (average cost of an employee in the construction, facility, and real estate sectors in Italy), that's €375 in savings. Prisma costs €30/month. You are gaining €345 net per month per employee. 12.5x ROI. It's an investment that pays for itself 12 times over."
+        },
+        {
+          "q": "What if employees forget to reply to Prisma?",
+          "a": "Prisma sends automatic reminders at the end of the day. If someone doesn't reply by the set time, they get a follow-up. You see immediately from the dashboard who is missing and can nudge them if necessary. The system is designed to minimize 'forgetfulness'."
+        },
+        {
+          "q": "Does it only work on WhatsApp?",
+          "a": "WhatsApp is the default because everyone uses it. But if your team communicates on other platforms, no problem: we have Prisma on Telegram, Slack, and Microsoft Teams too. You choose where you want it to work."
+        },
+        {
+          "q": "Are our data safe? Who has access?",
+          "a": "Only you and your authorized team. Data is end-to-end encrypted and saved on European servers (100% GDPR compliant). We at Martes AI maintain the technical infrastructure, but we never access your data without your explicit permission."
+        },
+        {
+          "q": "How does the trial period work?",
+          "a": "First 30 days completely free to test Prisma in the field with your real employees. No credit card required upfront. Zero contractual constraints: if you're not convinced, cancel whenever you want without penalties."
+        },
+        {
+          "q": "Can we integrate Prisma with our management software?",
+          "a": "Yes. Prisma automatically exports data to Excel/CSV which you can import into your management software. If you want a direct automatic integration with your specific software, that would be a custom integration. Let's evaluate it together on a call to understand feasibility and costs."
+        },
+        {
+          "q": "My employees sometimes have a lot to tell, can Prisma handle long messages?",
+          "a": "Absolutely yes. Prisma can analyze voice notes of even 5-6 minutes and multiple images in a single conversation. If an employee has had a complex day with multiple interventions or problems to report, they can send everything: Prisma automatically extracts all relevant information (hours, materials, problems, location) and organizes photos in the dashboard. The employee speaks naturally, Prisma does the rest."
+        },
+        {
+          "q": "What happens if an employee sends wrong information?",
+          "a": "Prisma saves the entire history: original voice notes, photos, timestamps. You can always trace back to the full conversation to verify. Additionally, HR can correct data from the dashboard at any time. You have total control and transparency."
+        },
+        {
+          "q": "We already have an internal system, why should we change?",
+          "a": "The question is: does your current system save you 15 hours a month per employee? Do your employees use it willingly or see it as a burden? If you are still chasing someone for reports, it means the system isn't working. Prisma is designed to be so simple that employees prefer using it rather than filling out sheets."
+        },
+        {
+          "q": "What if we have employees working in areas without internet connection?",
+          "a": "WhatsApp works even with limited data connection. The employee can send the report as soon as they get back into a covered area (even hours later). Prisma processes messages as soon as they arrive and updates the dashboard automatically. No data lost."
+        },
+        {
+          "q": "Can Prisma manage multiple locations/sites/teams simultaneously?",
+          "a": "Absolutely yes. Prisma is multi-tenant: you can have different locations, different teams, different projects, all managed by the same system. From the dashboard, you can filter by location, team, project, employee. Everything organized and under control in one place."
+        },
+        {
+          "q": "Are reports customizable?",
+          "a": "Yes. During setup, we configure together the questions Prisma should ask employees based on your sector and needs (hours, materials, client, intervention type, problems encountered, etc.). Automatic reports are also customizable: choose frequency (daily, weekly), format, and what to include."
+        },
+        {
+          "q": "What happens if Prisma stops working?",
+          "a": "Prisma is built on enterprise-grade cloud infrastructure with 99.9% uptime. In case of rare technical issues, you have priority support via WhatsApp with a response within 1 hour during business hours. Furthermore, all historical data remains always accessible from the dashboard even offline."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Reclaim",
+      "title_highlight": "your time.",
+      "cta": "Start Now"
+    },
+    "calculator": {
+       "title_start": "How much can you",
+       "title_highlight": "save",
+       "title_end": "with Prisma?",
+       "sector": "Sector",
+       "employees": "Number of Employees",
+       "cta": "Discover Savings",
+       "result_title": "Estimated Annual Savings",
+       "hours_saved": "working hours recovered",
+       "disclaimer_edile": "€32/h for Construction sector.",
+       "disclaimer_facility": "€28/h for Facility sector.",
+       "disclaimer_other": "€30/h for Real Estate/Services sector.",
+       "disclaimer_prefix": "*Calculation based on national average hourly cost (includes indirect costs):",
+       "recalculate": "Recalculate",
+       "get_result": "Get this result",
+       "sectors": {
+         "edile": "Construction",
+         "facility": "Facility",
+         "immobiliare": "Real Estate",
+         "altro": "Other"
+       }
+    },
+    "cases": {
+      "title_start": "Some stories of",
+      "title_highlight": "Success.",
+      "items": [
+        {
+          "id": "dolomiti",
+          "name": "Dolomiti Strade",
+          "challenge": "HR was completely overwhelmed: paper reports lost, incomplete Excel sheets, 2-3 hours every evening chasing 30 workers. Not to mention the time every single worker wasted filling out Excel, paper reports, and delivering them to HR. A totally inefficient system that drove everyone crazy.",
+          "solution": "With Prisma, employees simply send voice notes and photos on WhatsApp. Prisma transcribes the audio, analyzes the photos, and saves everything in a centralized dashboard. HR receives automatic weekly reports via email. Result? Zero chasing, workers love the new system because it simplifies their lives, and an HR team finally freed from daily chaos.",
+          "results": [
+            { "value": "450h", "label": "Recovered / Month" },
+            { "value": "12.5x", "label": "ROI" }
+          ]
+        },
+        {
+          "id": "buildup",
+          "name": "Build Up",
+          "challenge": "15 technicians in the field, 15 different Excel sheets to merge manually every week. Technicians forgot to log interventions, some used paper, others scattered voice messages everywhere. Monthly reports required 2 full days of manual work. Zero real-time visibility on who was where and doing what. A total operational nightmare.",
+          "solution": "With Prisma, every technician closes an intervention in 30 seconds via WhatsApp: client, hours, materials, photos. Everything is automatically centralized in a single dashboard. Report export in 1 click, ready for invoicing. Technicians appreciate the simplicity (30 seconds and done), while the office finally has complete visibility and effortlessly organized data.",
+          "results": [
+            { "value": "225h", "label": "Recovered / Month" },
+            { "value": "12.5x", "label": "ROI" }
+          ]
+        },
+        {
+          "id": "aquadra",
+          "name": "Aquadra",
+          "challenge": "Managing 40 condominiums and hundreds of fault reports per month. The phone rang constantly, messages on personal WhatsApp, lost emails. Keeping track of every intervention and ensuring it was resolved was a full-time job for 2 people. Communication with residents was fragmented and slow.",
+          "solution": "Prisma now handles the first line of reports. Residents send photos of the fault on WhatsApp. Prisma automatically opens a ticket, assigns it to the correct maintenance worker, and updates the resident on the status. If a part is missing, the maintenance worker tells Prisma, which orders it or notifies the office. Everything tracked, everything automatic.",
+          "results": [
+            { "value": "300h", "label": "Recovered / Month" },
+            { "value": "15x", "label": "ROI" }
+          ]
+        }
+      ]
+    }
+  },
+  "home": {
+    "seo": {
+      "title": "Martes AI | AI Transformation Partner",
+      "description": "We help companies scale with Artificial Intelligence. Automation, AI Agents, and Training."
+    },
+    "services": {
+      "title_start": "Choose your",
+      "title_highlight": "path",
+      "subtitle": "Tailored automation or ready-to-use products.",
+      "items": [
+        {
+          "title": "AI Transformation Partner",
+          "subtitle": "Training, Analysis, and Development.",
+          "description": "We teach your team to use AI every day. We analyze your processes to understand where to implement AI, eliminate bottlenecks, and develop tailored solutions.",
+          "linkText": "START NOW"
+        },
+        {
+          "title": "Prisma Agent",
+          "subtitle": "The AI agent for WhatsApp reporting",
+          "description": "Prisma contacts the team and transforms voice notes, photos, and messages into structured data and weekly reports. Save 20 minutes per day per employee and free HR from hours of manual work.",
+          "linkText": "DISCOVER PRISMA"
+        }
+      ]
+    },
+    "stats": {
+      "title": "Our Impact",
+      "items": [
+        { "label": "Partner Companies", "suffix": "+" },
+        { "label": "Solutions in Production", "suffix": "+" },
+        { "label": "Users Reached", "suffix": "M+" }
+      ]
+    },
+    "cases": {
+      "title_start": "Some stories of",
+      "title_highlight": "Success.",
+      "cta": "See other case studies",
+      "items": [
+        {
+          "id": "bluvacanze",
+          "name": "Bluvacanze",
+          "category": "Database Reactivation",
+          "challenge": "An archive of thousands of inactive contacts. A true commercial treasure, but impossible to manage manually.",
+          "solution": "An AI agent that initiates proactive conversations on WhatsApp, profiles the user, and proposes personalized trips.",
+          "result": "€82.271",
+          "resultLabel": "Generated in just one month"
+        },
+        {
+          "id": "dolomiti",
+          "name": "Dolomiti Strade",
+          "category": "Automatic Reporting",
+          "challenge": "Reporting from construction sites slow and chaotic. Lost voice notes, sheets of paper, and administrative delays.",
+          "solution": "That's where Prisma was born. The agent that transcribes voice messages and photos from the site directly into the management system.",
+          "results": [
+            { "value": "200h", "label": "Saved / Month" },
+            { "value": "100%", "label": "Workers Reached" }
+          ]
+        },
+        {
+          "id": "restworld",
+          "name": "Restworld",
+          "category": "Lead Qualification Agent",
+          "challenge": "A constant flow of unqualified leads slowing down the sales team, with response times too long.",
+          "solution": "A smart filter active 24/7. The AI Agent analyzes responses and passes only concrete opportunities to sales reps.",
+          "results": [
+            { "value": "€35k", "label": "Savings / Year" },
+            { "value": "20%", "label": "Lead Conversion" }
+          ]
+        }
+      ]
+    }
+  },
+  "contact": {
+    "badge": "CONTACT US",
+    "title_start": "Let's talk about your",
+    "title_highlight": "project.",
+    "subtitle": "Fill out the form below to schedule a discovery call.",
+    "success_title": "Request Sent!",
+    "success_message": "Thank you for contacting us. We have received your request and will respond as soon as possible.",
+    "loading": "Sending...",
+    "submit": "Send Request",
+    "error": "An error occurred. Please try again later or email us at info@martes.ai",
+    "form": {
+      "name": "Name and Surname",
+      "email": "Company Email",
+      "phone": "Phone Number",
+      "company": "Company Name",
+      "role": "What is your role?",
+      "role_placeholder": "e.g. CEO, Marketing Manager, Developer...",
+      "service": "Which service are you interested in?",
+      "project": "Describe your project specifically",
+      "turnover": "Annual Revenue",
+      "website": "Company Website",
+      "employees": "Company Size",
+      "budget": "Investment for the project",
+      "source": "How did you hear about us?"
+    },
+    "options": {
+      "services": ["AI Transformation Partner", "Prisma Agent", "Other"],
+      "sources": ["LinkedIn", "YouTube", "Instagram", "TikTok", "Word of Mouth", "Other"]
+    }
+  },
+  "templates": {
+    "seo": {
+      "title": "Templates & Free Resources | Martes AI",
+      "description": "Download our free templates for AI Agents, prompt engineering, and automation."
+    },
+    "hero": {
+      "badge": "ACCESS OUR AI TEMPLATE LIBRARY",
+      "title_start": "Download Free",
+      "title_highlight": "Templates",
+      "title_end": "",
+      "subtitle": "Within minutes you will receive a magic link via email to access the entire folder with <0>ALL templates and courses.</0>",
+      "note_spam": "Check your spam folder if you don't find it."
+    },
+    "form": {
+        "title": "Get the templates",
+        "placeholder": "Enter your email...",
+        "cta": "Submit",
+        "error_invalid": "Please enter a valid email",
+        "error_generic": "Something went wrong. Please try again.",
+        "success_title": "Check your email!",
+        "success_message": "We just sent you the link to access the resources."
+    },
+    "benefits": [
+        "Complete N8N Course",
+        "Complete Vibe Coding Course",
+        "AI Agent Templates",
+        "Workflow Templates"
+    ]
+  },
+  "team": {
+      "seo": {
+          "title": "The Team | Martes AI",
+          "description": "Meet the team behind Martes AI. We are a multidisciplinary group dedicated to your growth."
+      },
+      "hero": {
+          "badge": "OUR TEAM",
+          "title_start": "Our",
+          "title_highlight": "Team",
+          "subtitle": "A multidisciplinary team dedicated to your growth."
+      },
+      "cards": {
+          "click_close": "CLICK TO CLOSE",
+          "click_info": "CLICK FOR INFO"
+      },
+      "members": [
+          {
+              "name": "Riccardo Belli Contarini",
+              "role": "CEO & Founder",
+              "description": "Computer engineer with a vision to democratize AI. He shares his expertise through outreach channels and his YouTube channel."
+          },
+          {
+              "name": "Andrea Belli Contarini",
+              "role": "CTO & Co-Founder",
+              "description": "Computational physicist specialized in ML. He brings scientific rigor to AI model development, ensuring precision and reliability."
+          },
+          {
+              "name": "Tommaso Misiti",
+              "role": "Senior Software Engineer",
+              "description": "Back-end systems architect. He builds scalable and high-performance SQL infrastructures that support our AI solutions."
+          },
+          {
+              "name": "Paolo Pagliarini",
+              "role": "Software Engineer",
+              "description": "Computer engineer specialized in ML and back-end architectures. He combines artificial intelligence and databases to create robust and intelligent systems."
+          },
+          {
+              "name": "Filippo Bartoletti",
+              "role": "Software Engineer",
+              "description": "Computer engineer focusing on machine learning. He develops intelligent AI solutions that solve concrete business problems."
+          },
+          {
+              "name": "Giovanni Fiore",
+              "role": "Software Engineer",
+              "description": "Computer scientist specialized in front-end and AI solution development. He creates intuitive interfaces that make artificial intelligence accessible."
+          },
+          {
+              "name": "Luca Tam",
+              "role": "Software Engineer",
+              "description": "Computer engineer specialized in ML and AI. A technological innovator bringing cutting-edge solutions to every project."
+          },
+          {
+              "name": "Ilaria Pretolani",
+              "role": "CFO",
+              "description": "CFO with decades of experience in companies like Arthur Andersen. She ensures financial solidity and sustainable growth."
+          }
+      ]
+  },
+  "aitp": {
+      "seo": {
+          "title": "AI Transformation Partner - Martes AI",
+          "description": "Guide your company in AI transformation with our EID Framework: Education, Identification, Development."
+      },
+      "hero": {
+          "badge": "THE MARTES AI METHOD",
+          "title_start": "Framework",
+          "title_highlight": "EID",
+          "subtitle": "Education. Identification. Development.<br/>The structured approach to transform your company with AI.",
+          "cta": "Start Now"
+      },
+      "ticker": "Companies that <0>trust</0> our method",
+      "steps": {
+          "education": {
+              "title": "Education",
+              "description": "We enable your team for practical AI use to maximize productivity and save hours every day.",
+              "details": [
+                  "<strong>AI Readiness Assessment:</strong> We measure your team's AI maturity.",
+                  "<strong>Strategic Workshop:</strong> Practical training on AI tools and models to save time.",
+                  "<strong>Vertical Workshops:</strong> Specific focus per department on high-impact workflows."
+              ]
+          },
+          "identification": {
+              "title": "Identification",
+              "description": "We analyze processes to identify high-impact AI solutions and define a 12-month strategic roadmap based on ROI.",
+              "details": [
+                  "<strong>Process Audit:</strong> Complete operational analysis and stakeholder interviews.",
+                  "<strong>Report & Roadmap:</strong> 12-month strategy with measurable goals and development plan.",
+                  "<strong>Impact/Complexity Matrix:</strong> We prioritize initiatives by ROI and complexity."
+              ]
+          },
+          "development": {
+              "title": "Development",
+              "description": "We turn the roadmap into reality: we develop tailored AI solutions, integrate them into your systems, and ensure deployment, maintenance, and continuous support.",
+              "details": [
+                  "Tailored AI solution development",
+                  "Integration with existing systems",
+                  "Performance monitoring and ROI calculation"
+              ]
+          }
+      },
+      "cta_bottom": {
+          "title_start": "Your company's future",
+          "title_highlight": "starts here.",
+          "subtitle": "Don't let technology outpace you. We guide your digital transformation step by step.",
+          "cta": "Contact us now"
+      }
+  },
+  "cases_page": {
+      "seo": {
+          "title": "Case Studies | Martes AI",
+          "description": "Explore our case studies: concrete examples of how artificial intelligence transformed our clients' businesses."
+      },
+      "hero": {
+          "title_start": "Stories of",
+          "title_highlight": "Success",
+          "subtitle": "Discover how we helped companies scale using AI."
+      },
+      "cta_read": "Read Case Study",
+      "not_found": {
+          "title": "Case Study not found",
+          "link": "Back to Case Studies"
+      },
+      "back_button": "Back"
+  },
+  "cases_data": {
+    "ruggiada-agente-ai-restworld": {
+        "title": "Rugiada: the AI agent that qualifies leads for Restworld",
+        "testimonial": {
+            "quote": "A young and competent team. They helped us develop an agent in a few weeks that would have taken us months internally. Continuous feedback loops and constant support, we produced a great product even during summer. We will definitely work together again.",
+            "author": "Luca Lotterio",
+            "role": "CEO of Restworld"
+        },
+        "content" : "<div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe class='absolute top-0 left-0 w-full h-full' src='https://www.youtube.com/embed/wujo3X74ggE?si=9Bi9tLooavamJyPE' title='Rugiada - WhatsApp agent for lead qualification' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><h2>Summary: from problem to solution</h2><ul><li><strong>The problem:</strong> thousands of requests/month from Typeform, lean team, risk of lost opportunities and time spent on non-target leads.</li><li><strong>The solution:</strong> <strong>Rugiada</strong>, an <strong>AI agent on WhatsApp</strong> that starts chatting a few minutes after the form, asks strategic questions, calculates a score, updates <strong>HubSpot</strong>, manages <strong>Calendly</strong> and sends follow-ups.</li><li><strong>The impact:</strong> <strong>20–30%</strong> of leads automatically qualified, <strong>98%</strong> of interactions on WhatsApp and strong reduction of operational load.</li></ul><h2>Context and Why</h2><p>Restworld operates in the HORECA sector helping companies find qualified staff. With high volumes of incoming leads, manual qualification compromises priorities and conversions.</p><h2>Rugiada: the AI agent that qualifies on WhatsApp</h2><p>Immediately after filling out the form, Rugiada writes on WhatsApp and guides a short pre-call conversation. Based on the answers, it updates the CRM, books/cancels the call and notifies the user.</p><figure class='my-12 text-center'><img src='/assets/immagini/esempio_chat1.png' alt='Objection handling and Calendly link' class='mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in bg-transparent' /><figcaption class='text-sm text-gray-400 mt-4'>📱 Objection handling and Calendly link: the agent answers pricing questions and immediately proposes rescheduling the call.</figcaption></figure><figure class='my-12 text-center'><img src='/assets/immagini/esempio_chat2.png' alt='Chat flow example' class='mx-auto rounded-lg shadow-2xl w-full max-w-3xl transition-transform duration-200 hover:scale-105 cursor-zoom-in bg-transparent' /><figcaption class='text-sm text-gray-400 mt-4'>📱 Fluid and natural interaction with the candidate.</figcaption></figure>"
+    },
+    "automazione-rendicontazione-monni-srl": {
+        "title": "Operational Reporting Automation with WhatsApp Agent",
+        "testimonial": {
+            "quote": "With the WhatsApp conversational agent, we completely digitized the reporting process, significantly reducing the time required and ensuring structured and punctual data collection.",
+            "author": "Monni SRL",
+            "role": "Construction and Road Works Company"
+        },
+        "content": "<div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe src='https://www.youtube.com/embed/b0MY-e7UpCg' title='Monni SRL Case Study - Operational Reporting Automation' class='w-full h-full absolute top-0 left-0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><h2>Introduction</h2><p><a href='https://gesuinomonnisrl.it/' target='_blank' rel='noopener noreferrer' class='text-martes-green hover:underline'>Monni SRL</a>, a leader in the construction and road works sector, faced a common challenge for many companies in the industry: efficient management of daily worker reporting. The need to collect detailed information on activities performed, vehicle usage, and related documentation led to the development of an innovative solution based on artificial intelligence and automation.</p><h2>The Challenge</h2><p>Before implementing the solution, Monni SRL faced several critical issues:</p><ul><li>Inconsistent and often incomplete reporting</li><li>Low punctuality in daily data collection</li><li>Difficulty managing different formats (voice notes, images, text)</li><li>Absence of automated follow-ups</li><li>Impossibility of structured analysis of collected data</li></ul><h2>The Solution</h2><p>an integrated system was developed combining a conversational agent on Voiceflow, integration with WhatsApp, Make automations, and Whisper for transcription.</p><h3>1. Automatic Message Management</h3><p>The orchestrator flow analyzes the type of content received: text, images, or voice notes, which are transcribed and archived.</p><figure class='my-12 text-center'><img src='/assets/immagini/scenario1.png' alt='Automated message management scenario' class='mx-auto rounded-lg shadow-lg w-full max-w-4xl' /><figcaption class='text-sm text-gray-400 mt-4'>Scenario for automated management of incoming WhatsApp messages.</figcaption></figure><h3>2. Intelligent Follow-up System</h3><p>Every day at 6 PM, the agent automatically sends a message to workers for reporting, handling delays and follow-ups.</p><figure class='my-12 text-center'><img src='/assets/immagini/scenario2.png' alt='Scheduled sending scenario' class='mx-auto rounded-lg shadow-lg w-full max-w-4xl' /><figcaption class='text-sm text-gray-400 mt-4'>Scenario for scheduled sending of reporting messages.</figcaption></figure>"
+    },
+    "50-clienti-in-piu-al-mese-agenzia-di-viaggio-wetravel-group": {
+        "title": "50 more clients per month for a travel agency",
+        "testimonial": {
+            "quote": "Thanks to the AI chatbot and integrated automations, we effectively manage 3000 monthly contacts on WhatsApp for customer acquisition and management, generating a significant increase in bookings and an additional monthly profit of € 27,500 for the agency.",
+            "author": "Diego Vassalli",
+            "role": "CEO We Travel Group"
+        },
+        "content" : "<div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe src='https://www.youtube.com/embed/avrP3wm11KM' title='WeTravel Group Case Study' class='w-full h-full absolute top-0 left-0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><h2 class='text-3xl font-bold mt-8 mb-4'>Monthly revenue increase: +€27,500 with an AI Chatbot</h2><div class='bg-white/5 p-6 rounded-lg mt-8 border border-white/10'><p class='font-semibold text-white'>Note: In October 2024, the system was able to generate €82,170. Below is a screenshot of some contracts:</p><img src='https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=861,h=549,fit=crop/mk39w0PZ1DIe7Dp6/whatsapp-image-2024-11-01-at-23.22.10-A3Qw77Ok5PfMMzGy.jpeg' alt='Contracts' class='w-full mt-4 rounded-lg shadow-lg opacity-90 hover:opacity-100 transition-opacity' /></div><h3>Introduction: The Power of AI Automation</h3><p>Adopting our AI-based technologies has had a significant impact for one of the travel agencies. Thanks to this automation, the agency saw a monthly revenue increase of approximately €27,500.</p>"
+    },
+    "generazione-di-lead-qualificati-via-linkedin": {
+        "title": "Qualified Lead Generation via LinkedIn",
+        "testimonial": {
+            "quote": "Thanks to Martes AI, I turned LinkedIn into a source of new clients without wasting time. In a few days, I obtained qualified contacts and already acquired a client. Effective strategy and zero effort!",
+            "author": "Edoardo Belli Contarini",
+            "role": "Partner at Studio Legale Fantozzi & Associati"
+        },
+        "content": "<div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe src='https://www.youtube.com/embed/30iApbt6wMo' title='Fantozzi Case Study' class='w-full h-full absolute top-0 left-0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><h2>Context: The Problem of Professionals Generating Leads</h2><p>Many freelancers rely on word-of-mouth to attract new clients, finding it difficult to use platforms like LinkedIn to find qualified leads. We decided to accept the challenge, implementing a completely automated method.</p><h2>The Project: Personal Branding, Automation, and Lead Generation</h2><h3>Phase 1: Building Personal Brand</h3><p>Creating a strong and professional digital presence for the lawyer, with a personal website and curated content.</p><h3>Phase 2: Content Automation</h3><p>Make scenario to automate content publishing: retrieving news, GPT synthesis, approval, and publishing.</p><figure class='my-12 text-center'><img src='https://i.ibb.co/cKyNWcLd/make1.png' alt='Make Scenario for Automation' class='mx-auto w-full max-w-lg rounded-lg shadow-lg' /><figcaption class='text-sm text-gray-400 mt-4'>Make scenario for content automation.</figcaption></figure><h3>Phase 3: Automated Lead Generation</h3><p>Using Dripify to automate connection requests, personalized messages, and follow-ups.</p><figure class='my-12 text-center'><img src='https://i.ibb.co/gFjzydxW/make2.png' alt='Make Scenario for Lead Generation' class='mx-auto w-full max-w-lg rounded-lg shadow-lg'/><figcaption class='text-sm text-gray-400 mt-4'>Lead Generaton Scenario.</figcaption></figure>"
+    },
+    "f24-whatsapp-studio-longhitano": {
+        "title": "F24 on WhatsApp: smart reminders and controlled payments",
+        "testimonial": {
+            "quote": "Controlled and automated process management, time saved, and zero forgetfulness.",
+            "author": "Studio Longhitano",
+            "role": "Condominium Administration"
+        },
+        "content": "<h2>Context</h2><p>Studio Longhitano manages dozens of F24 tax forms daily. The main challenge was keeping track of all tax deadlines, avoiding forgetfulness, and ensuring a smooth and traceable payment process.</p><h2>The Solution: Intelligent Automation</h2><p>We developed a fully automated system that transforms F24 management from a manual process to a smart and controlled flow.</p><h3>1. Automatic Acquisition and Archiving</h3><p>Our AI agent downloads every PDF from emails and organizes it on Google Drive, automatically recognizing the client.</p><h3>2. Data Extraction and Structuring</h3><p>A second agent extracts key data from each document: total amount, partials, deadline, and notes.</p><figure class='my-12 text-center'><img src='/assets/immagini/longhitano_make2.JPG' alt='AI Document Interpretation' class='mx-auto rounded-lg shadow-lg w-full max-w-2xl' /><figcaption class='text-sm text-gray-400 mt-4'>Document interpretation level: the agent analyzes PDFs with AI.</figcaption></figure><h3>3. Proactive Communication on WhatsApp</h3><p>The agent opens a conversation on WhatsApp with the taxpayer one week before the deadline, summarizing amounts and due dates.</p><figure class='my-12 text-center'><img src='/assets/immagini/longhitano_make1.JPG' alt='Interactive WhatsApp Flow' class='mx-auto rounded-lg shadow-lg w-full max-w-2xl' /><figcaption class='text-sm text-gray-400 mt-4'>Interactive WhatsApp flow with the client.</figcaption></figure><figure class='my-12 text-center'><img src='/assets/immagini/longhitano_make3.JPG' alt='Advanced F24 Analysis Pipeline' class='mx-auto rounded-lg shadow-lg w-full max-w-2xl' /><figcaption class='text-sm text-gray-400 mt-4'>Advanced analysis pipeline and error management.</figcaption></figure>"
+    },
+    "digital-turnover-automazione-content-intelligence": {
+        "title": "E-commerce: Data, Content and Posts controlled by an AI Agent",
+        "testimonial": {
+             "quote": "With this system, we eliminated hours of manual work: today content from newsletters, social media, and podcasts arrives organized and ready to use. A huge leap in efficiency and strategy.",
+             "author": "Fabio Marin",
+             "role": "CEO of Digital Turnover"
+        },
+        "content" : "<h2>Context</h2><p>Digital Turnover, a fast-growing e-commerce, needed to manage a growing volume of information from different sources. The challenge was to collect, organize, and leverage it automatically.</p><h2>The Solution: An Intelligent Ecosystem</h2><p>We designed a customized AI agent that operates as a digital assistant, automating the entire information lifecycle.</p><figure class='my-12 text-center'><img src='/assets/immagini/scenario1_digital.png' alt='Digital Turnover Automation Scenario' class='mx-auto rounded-lg shadow-lg w-full max-w-4xl' /><figcaption class='text-sm text-gray-400 mt-4'>The complete automation flow: from source collection to final publication.</figcaption></figure><h3>1. Intelligent Source Collection</h3><p>The agent monitors newsletters, Instagram posts, podcasts, and LinkedIn to extract relevant content.</p><h3>2. Intelligent Structural Organization</h3><p>Information is organized on Google Drive with a temporal hierarchical structure (annual, monthly, weekly).</p><h3>3. Advanced Processing and Synthesis</h3><p>AI extracts key points and generates structured documents on Google Docs.</p><h3>4. Automatic Newsletter Generation and Sending</h3><p>The system produces complete articles and cover images, preparing everything for sending (with human approval).</p><div class='grid md:grid-cols-2 gap-8 my-12'><figure class='text-center'><img src='/assets/immagini/db1_digital.png' alt='Digital Turnover Database' class='mx-auto rounded-lg shadow-lg w-full' /><figcaption class='text-sm text-gray-400 mt-4'>Newsletter management.</figcaption></figure><figure class='text-center'><img src='/assets/immagini/db2_digital.png' alt='Control Dashboard' class='mx-auto rounded-lg shadow-lg w-full' /><figcaption class='text-sm text-gray-400 mt-4'>Advanced control dashboard.</figcaption></figure></div>"
+    },
+    "agente-ai-newsletter-scientifica-shape-up": {
+        "title": "AI Agent for a Scientific Newsletter",
+        "testimonial": {
+             "quote": "Martes AI's AI Agent revolutionized our newsletter: reliable and well-written scientific content, professional images... all just a click away.",
+             "author": "Davide Beccetti",
+             "role": "CEO @ Shape-UP"
+        },
+        "content": "<div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe src='https://www.youtube.com/embed/qarwJCCqTmA' title='Shape-UP Newsletter Automation Case Study' class='w-full h-full absolute top-0 left-0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><h2>Introduction</h2><p>Shape-UP turned to Martes AI to optimize the creation of its scientific newsletter. The goal: automate the process while maintaining authority and quality.</p><h2>The Solution: A Tailored AI Agent</h2><p>Martes AI developed an agent integrated with Google Sheets, Make, and Mailchimp.</p><figure class='my-12 text-center'><img src='/assets/scenario_make_shapeup.png' alt='Make.com Scenario' class='mx-auto rounded-lg shadow-lg w-full max-w-2xl bg-white p-2' /><figcaption class='text-sm text-gray-400 mt-4'>Make.com scenario automating the newsletter.</figcaption></figure><figure class='my-12 text-center'><img src='/assets/immagini/esempio_newsletter.jpeg' alt='Newsletter Example' class='mx-auto rounded-xl shadow-2xl w-full max-w-xs border-4 border-white' /><figcaption class='text-sm text-gray-400 mt-4'>Real example of sent newsletter.</figcaption></figure>"
+    },
+    "automazione-ai-clinica-oculistica-santa-lucia": {
+         "title": "AI Automation for Santa Lucia Eye Clinic",
+         "testimonial": {
+             "quote": "Thanks to Martes AI solutions, Santa Lucia Eye Clinic reduced waiting times, optimized appointment management, and automated emails, saving valuable time and offering patients a smoother and more efficient experience.",
+             "author": "Dr. Mario Cipolla",
+             "role": "Administrative Director"
+         },
+         "content": "<h2>Introduction</h2><p>Santa Lucia Eye Clinic faced problems managing appointments and emails. Martes AI implemented a chatbot for the website and an automation system for email classification.</p><div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe src='https://www.youtube.com/embed/nQenVuDQRvI' title='How to automate email management with AI' class='w-full h-full absolute top-0 left-0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><figure class='my-12 text-center'><img src='https://i.ibb.co/0yvHGXZK/scenario-clinica.png' alt='Email Automation Schema' class='mx-auto rounded-lg shadow-lg w-full max-w-3xl' /><figcaption class='text-sm text-gray-400 mt-4'>Schema of the implemented email automation.</figcaption></figure>"
+    },
+     "custom-gpt-email": {
+         "title": "GPT Agent to answer emails and summarize AI news",
+         "testimonial": {
+             "quote": "I asked for two custom GPTs: one for automatic email management and one to summarize the latest AI news. They did an excellent and professional job. Highly recommended!",
+             "author": "Federico Loffredo",
+             "role": "Accountant"
+         },
+         "content": "<div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe src='https://www.youtube.com/embed/cnmfmvFPszc' title='Loffredo Case Study' class='w-full h-full absolute top-0 left-0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><h2>Introduction</h2><p>For an accountant with a high volume of emails, we developed a custom GPT integrated with Make and Zapier to automate responses.</p><h2>The Solution</h2><p>The system organizes emails and generates automatic draft responses (informal, technical, ironic) that the user can choose and send with a click.</p>"
+     },
+     "supporto-clienti-ai-e-tracciamento-ordini-dinamico-per-un-ecommerce": {
+         "title": "AI Customer Support and Dynamic Order Tracking for Ecommerce",
+         "testimonial": {
+             "quote": "Thanks to Martes AI, we revolutionized our customer service. Their AI chatbot on WhatsApp drastically reduced the number of daily emails and improved efficiency.",
+             "author": "Giuseppe Romano",
+             "role": "CEO Ecommerceparts"
+         },
+         "content": "<div class='relative w-full pb-[56.25%] mb-8 rounded-2xl overflow-hidden shadow-2xl'><iframe src='https://www.youtube.com/embed/e-wBAxcebsE' title='Ecommerceparts Case Study' class='w-full h-full absolute top-0 left-0' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><h2>The Problem</h2><p>An ecommerce on eBay received about 500 emails a day with repetitive questions ('Where is my package?').</p><h2>The Solution</h2><p>An AI chatbot on WhatsApp automates answers and order tracking, reducing daily emails by about 200 units.</p>"
+     }
   }
 }

@@ -4,13 +4,31 @@ import { getOrderedCases } from '../data/caseStudies';
 import { SEOHead } from '../components/shared/SEOHead';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-const cases = getOrderedCases();
+// Get just the metadata structure from the TS file
+const rawCases = getOrderedCases();
 
 export const CasiStudio = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const casesPerPage = 6;
   const location = useLocation();
+
+  // Map over the raw cases to inject translated titles and testimonials
+  // The structure of rawCases is preserved (dates, images)
+  const cases = rawCases.map(c => {
+      // Safely access nested objects from translation
+      const translatedData = t(`cases_data.${c.id}`, { returnObjects: true }) as any;
+      return {
+          ...c,
+          title: translatedData?.title || c.title,
+          testimonial: translatedData?.testimonial ? {
+              ...c.testimonial,
+              ...translatedData.testimonial
+          } : c.testimonial
+      };
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,8 +55,8 @@ export const CasiStudio = () => {
   return (
     <div className="pt-32 pb-20 bg-martes-dark min-h-screen">
       <SEOHead 
-        title="Casi Studio | Martes AI"
-        description="Esplora i nostri casi studio: esempi concreti di come l'intelligenza artificiale ha trasformato il business dei nostri clienti."
+        title={t('cases_page.seo.title')}
+        description={t('cases_page.seo.description')}
       />
 
       <div className="container mx-auto px-6">
@@ -48,7 +66,7 @@ export const CasiStudio = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-bold mb-6"
           >
-            Storie di <span className="text-martes-green italic">Successo</span>
+            {t('cases_page.hero.title_start')} <span className="text-martes-green italic">{t('cases_page.hero.title_highlight')}</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -56,7 +74,7 @@ export const CasiStudio = () => {
             transition={{ delay: 0.2 }}
             className="text-xl text-neutral-400 max-w-2xl mx-auto"
           >
-            Scopri come abbiamo aiutato le aziende a scalare grazie all'AI.
+            {t('cases_page.hero.subtitle')}
           </motion.p>
         </div>
 
@@ -98,7 +116,7 @@ export const CasiStudio = () => {
                   )}
 
                   <div className="mt-6 flex items-center text-sm font-bold text-white group-hover:translate-x-2 transition-transform">
-                    Leggi Case Study <ArrowRight className="w-4 h-4 ml-2" />
+                    {t('cases_page.cta_read')} <ArrowRight className="w-4 h-4 ml-2" />
                   </div>
                 </div>
               </Link>

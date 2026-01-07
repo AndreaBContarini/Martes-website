@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { SEOHead } from '../components/shared/SEOHead';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Check, X, Sparkles, Rocket, Headphones, TrendingUp, Minus, Plus } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 // Client Assets
 import dolomitiLogo from '../assets/clients/dolomiti-strade-logo.png';
@@ -16,6 +17,8 @@ import slackLogo from '../assets/socials/slack.png';
 import teamsLogo from '../assets/socials/teams.png';
 
 export const Prisma = () => {
+    const { t } = useTranslation();
+    
     useEffect(() => {
         window.scrollTo(0, 0);
 
@@ -44,7 +47,7 @@ export const Prisma = () => {
         <div className="bg-martes-dark min-h-screen font-sans text-neutral-200 overflow-x-hidden selection:bg-martes-green/30">
             <SEOHead
                 title="Prisma Agent | Martes AI"
-                description="Prisma automatizza la reportistica dei tuoi dipendenti via WhatsApp. Fino a 450 ore risparmiate al mese."
+                description={t('prisma.hero.subtitle').split('\n')[0]} 
             />
 
             {/* Background Ambience */}
@@ -61,21 +64,18 @@ export const Prisma = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <div className="inline-block px-4 py-1 rounded-full border border-martes-green/20 bg-martes-green/5 text-martes-green text-sm font-bold tracking-wider mb-8 backdrop-blur-sm">
-                        OPERATIVO IN 48 ORE
+                        {t('prisma.hero.badge')}
                     </div>
                     
                     <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-                        Fino a <span className="relative whitespace-nowrap inline-block">
+                        {t('prisma.hero.title_start')} <span className="relative whitespace-nowrap inline-block">
                             <span className="absolute bg-martes-green bottom-0 left-0 w-full h-[30%] -z-10 -rotate-1 opacity-60 rounded-sm"></span>
-                            450 Ore
-                        </span> al Mese<br />
-                        Risparmiate.
+                            {t('prisma.hero.title_highlight')}
+                        </span> <span className="whitespace-pre-line">{t('prisma.hero.title_end')}</span>
                     </h1>
 
-                    <p className="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-                        Automatizza la reportistica dei tuoi dipendenti. 
-                        <br />
-                        Libera il tuo team HR. Dati in tempo reale. Report automatici.
+                    <p className="text-xl text-neutral-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line">
+                        {t('prisma.hero.subtitle')}
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -86,7 +86,7 @@ export const Prisma = () => {
                             className="group relative px-8 py-4 bg-martes-green text-martes-dark font-bold rounded-xl text-lg overflow-hidden transition-all hover:scale-105"
                         >
                             <span className="relative z-10 flex items-center gap-2">
-                                Prova Prisma <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                                {t('prisma.hero.cta_primary')} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                             </span>
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                         </a>
@@ -94,7 +94,7 @@ export const Prisma = () => {
                             onClick={scrollToCalculator}
                             className="px-8 py-4 bg-white/5 border border-white/10 text-white font-medium rounded-xl text-lg hover:bg-white/10 hover:border-white/20 transition-all backdrop-blur-sm"
                         >
-                            Calcola il tuo Risparmio
+                            {t('prisma.hero.cta_secondary')}
                         </button>
                     </div>
                 </motion.div>
@@ -126,34 +126,19 @@ export const Prisma = () => {
                 <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-3 gap-8">
                         <ValueCard 
-                            title="Il Problema"
-                            items={[
-                                "Rapportini cartacei persi o mai compilati",
-                                "Excel incompleti, dati che arrivano il giorno dopo",
-                                "Fatturazione bloccata per giorni",
-                                "HR che perde ore a inseguire i dipendenti"
-                            ]}
+                            title={t('prisma.valueProps.problem.title')}
+                            items={t('prisma.valueProps.problem.items', { returnObjects: true })}
                             accent="red"
                         />
                         <ValueCard 
-                            title="La Soluzione"
-                            items={[
-                                "Prisma scrive ai dipendenti su WhatsApp automaticamente",
-                                "Analizza vocali e immagini in tempo reale",
-                                "Follow-up automatico a chi non risponde",
-                                "Zero app da installare: tutto su WhatsApp, semplicissimo"
-                            ]}
+                            title={t('prisma.valueProps.solution.title')}
+                            items={t('prisma.valueProps.solution.items', { returnObjects: true })}
                             accent="green"
                             highlight
                         />
                          <ValueCard 
-                            title="I Risultati"
-                            items={[
-                                "Dashboard in tempo reale sempre aggiornata",
-                                "Report automatici per l'HR ogni giorno",
-                                "Fino a 450 ore/mese risparmiate",
-                                "ROI 12.5x dal primo mese"
-                            ]}
+                            title={t('prisma.valueProps.results.title')}
+                            items={t('prisma.valueProps.results.items', { returnObjects: true })}
                             accent="blue"
                         />
                     </div>
@@ -170,9 +155,9 @@ export const Prisma = () => {
              {/* 4. PLATFORMS - Social Logos (No Box, Bigger) */}
             <section className="py-12 md:py-24 text-center border-t border-white/5 bg-white/[0.02] relative z-10">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Prisma non è solo su WhatsApp.</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">{t('prisma.platforms.title')}</h2>
                     <p className="text-neutral-400 max-w-2xl mx-auto mb-16 text-lg">
-                        Può essere installato dove vuoi. È disponibile su:
+                        {t('prisma.platforms.subtitle')}
                     </p>
                     
                     <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
@@ -192,9 +177,9 @@ export const Prisma = () => {
                  <div className="absolute inset-0 bg-gradient-to-b from-martes-green/5 to-transparent pointer-events-none" />
                  <div className="container mx-auto px-6 text-center relative z-10">
                      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-white">
-                        Pricing <span className="relative whitespace-nowrap inline-block">
+                        {t('prisma.pricing.title')} <span className="relative whitespace-nowrap inline-block">
                             <span className="absolute bg-martes-green bottom-0 left-0 w-full h-[30%] -z-10 -rotate-1 opacity-60 rounded-sm"></span>
-                            Semplice
+                            {t('prisma.pricing.title_highlight')}
                         </span>
                      </h2>
 
@@ -210,19 +195,17 @@ export const Prisma = () => {
                          {/* Glow */}
                          <div className="absolute top-0 right-0 w-64 h-64 bg-martes-green/10 blur-[80px] rounded-full pointer-events-none" />
 
-                         <div className="text-neutral-400 font-bold mb-4 uppercase tracking-widest text-sm">Tutto Incluso</div>
+                         <div className="text-neutral-400 font-bold mb-4 uppercase tracking-widest text-sm">{t('prisma.pricing.badge')}</div>
                          <div className="flex items-baseline justify-center gap-2 mb-2">
                              <span className="text-6xl font-bold text-white tracking-tighter">€30</span>
                              <span className="text-xl text-neutral-500">/mese</span>
                          </div>
-                         <div className="text-neutral-400 mb-10 text-sm">per dipendente</div>
+                         <div className="text-neutral-400 mb-10 text-sm">{t('prisma.pricing.perEmployee')}</div>
 
                          <div className="space-y-4 mb-10 text-left pl-4 max-w-xs mx-auto">
-                            <CheckListIcon text="Prisma Agent su WhatsApp" />
-                            <CheckListIcon text="Dashboard di Controllo" />
-                            <CheckListIcon text="Report PDF/Excel Illimitati" />
-                            <CheckListIcon text="Supporto Prioritario" />
-                            <CheckListIcon text="Aggiornamenti Inclusi" />
+                            {(t('prisma.pricing.features', { returnObjects: true }) as string[]).map((feature, i) => (
+                                <CheckListIcon key={i} text={feature} />
+                            ))}
                          </div>
 
                          <a 
@@ -231,7 +214,7 @@ export const Prisma = () => {
                             rel="noopener noreferrer"
                             className="block w-full py-4 bg-white text-black font-bold rounded-xl hover:bg-martes-green transition-colors shadow-lg"
                          >
-                             Inizia Ora
+                             {t('prisma.pricing.cta')}
                          </a>
                      </div>
 
@@ -242,16 +225,16 @@ export const Prisma = () => {
                         viewport={{ once: true }}
                         className="mt-20 max-w-3xl mx-auto"
                      >
-                         <p className="text-neutral-500 text-xl mb-6">Perché è un no-brainer?</p>
-                         <div className="inline-flex items-center gap-12 px-12 py-6 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl group hover:border-martes-green/30 transition-colors">
-                             <div className="text-left">
-                                 <div className="text-sm text-neutral-500 uppercase font-bold tracking-wider mb-1">Investi</div>
-                                 <div className="text-3xl font-bold text-white">€30<span className="text-lg text-neutral-500 font-normal">/mese</span></div>
+                         <p className="text-neutral-500 text-xl mb-6">{t('prisma.pricing.comparison.title')}</p>
+                         <div className="inline-flex flex-row items-center gap-6 md:gap-12 px-6 py-4 md:px-10 md:py-5 rounded-full border border-white/10 bg-[#050505] shadow-2xl w-auto max-w-[95vw] mx-auto justify-between">
+                             <div className="text-left shrink-0">
+                                 <div className="text-[10px] md:text-xs text-neutral-500 uppercase font-bold tracking-widest mb-1">{t('prisma.pricing.comparison.invest')}</div>
+                                 <div className="text-xl md:text-3xl font-bold text-white">€30<span className="text-sm md:text-lg text-neutral-600 font-normal">/mese</span></div>
                              </div>
-                             <ArrowRight className="text-neutral-600 w-8 h-8 group-hover:text-martes-green transition-colors" />
-                             <div className="text-left">
-                                 <div className="text-sm text-martes-green uppercase font-bold tracking-wider mb-1">Risparmi</div>
-                                 <div className="text-3xl font-bold text-white">€375+<span className="text-lg text-neutral-500 font-normal">/mese</span></div>
+                             <ArrowRight className="text-neutral-700 w-5 h-5 md:w-6 md:h-6 shrink-0" />
+                             <div className="text-left shrink-0">
+                                 <div className="text-[10px] md:text-xs text-martes-green uppercase font-bold tracking-widest mb-1">{t('prisma.pricing.comparison.save')}</div>
+                                 <div className="text-xl md:text-3xl font-bold text-white">€375+<span className="text-sm md:text-lg text-neutral-600 font-normal">/mese</span></div>
                              </div>
                          </div>
                      </motion.div>
@@ -268,9 +251,9 @@ export const Prisma = () => {
              <section className="py-16 md:py-24 bg-martes-dark relative z-10 border-t border-white/5">
                  <div className="container mx-auto px-6 text-center">
                      <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">
-                         I tuoi dati sono <span className="relative whitespace-nowrap inline-block">
+                         {t('prisma.gdpr.title_start')} <span className="relative whitespace-nowrap inline-block">
                             <span className="absolute bg-martes-green bottom-0 left-0 w-full h-[30%] -z-10 -rotate-1 opacity-60 rounded-sm"></span>
-                            al sicuro.
+                            {t('prisma.gdpr.title_highlight')}
                          </span>
                      </h2>
 
@@ -286,42 +269,20 @@ export const Prisma = () => {
                          {/* Text Content */}
                          <div className="flex-1 text-left space-y-6">
                              <div>
-                                 <p className="text-neutral-400 text-lg">Prisma è progettato in conformità al GDPR europeo:</p>
+                                 <p className="text-neutral-400 text-lg">{t('prisma.gdpr.desc')}</p>
                              </div>
                              
                              <ul className="space-y-4">
-                                 <li className="flex items-start gap-3">
-                                     <div className="w-6 h-6 rounded-full bg-martes-green/10 flex items-center justify-center text-martes-green shrink-0 mt-0.5">
-                                         <Check size={14} />
-                                     </div>
-                                     <span className="text-neutral-300">
-                                         <strong className="text-white">Server in Europa</strong> – Dati ospitati su data center europei
-                                     </span>
-                                 </li>
-                                 <li className="flex items-start gap-3">
-                                     <div className="w-6 h-6 rounded-full bg-martes-green/10 flex items-center justify-center text-martes-green shrink-0 mt-0.5">
-                                         <Check size={14} />
-                                     </div>
-                                     <span className="text-neutral-300">
-                                         <strong className="text-white">Crittografia end-to-end</strong> – Protetti in transito e a riposo
-                                     </span>
-                                 </li>
-                                 <li className="flex items-start gap-3">
-                                     <div className="w-6 h-6 rounded-full bg-martes-green/10 flex items-center justify-center text-martes-green shrink-0 mt-0.5">
-                                         <Check size={14} />
-                                     </div>
-                                     <span className="text-neutral-300">
-                                         <strong className="text-white">Provider certificati</strong> – ISO/IEC 27001 Standard di sicurezza
-                                     </span>
-                                 </li>
-                                 <li className="flex items-start gap-3">
-                                     <div className="w-6 h-6 rounded-full bg-martes-green/10 flex items-center justify-center text-martes-green shrink-0 mt-0.5">
-                                         <Check size={14} />
-                                     </div>
-                                     <span className="text-neutral-300">
-                                         <strong className="text-white">DPA</strong> – Data Processing Agreement disponibile su richiesta
-                                     </span>
-                                 </li>
+                                {(t('prisma.gdpr.items', { returnObjects: true }) as Array<{bold: string, text: string}>).map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <div className="w-6 h-6 rounded-full bg-martes-green/10 flex items-center justify-center text-martes-green shrink-0 mt-0.5">
+                                            <Check size={14} />
+                                        </div>
+                                        <span className="text-neutral-300">
+                                            <strong className="text-white">{item.bold}</strong> {item.text}
+                                        </span>
+                                    </li>
+                                ))}
                              </ul>
                          </div>
 
@@ -343,68 +304,15 @@ export const Prisma = () => {
              {/* 8. FAQ */}
             <section id="faq" className="py-16 md:py-32 bg-martes-dark relative z-10 border-t border-white/5">
                 <div className="container mx-auto px-6 max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 text-center">Domande Frequenti</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 text-center">{t('prisma.faq.title')}</h2>
                     <div className="space-y-6">
-                        <FAQItem 
-                            question="I miei dipendenti non sono tecnologici, non useranno mai un sistema del genere" 
-                            answer="Prisma non è un'app nuova da imparare. È WhatsApp, che i tuoi dipendenti usano già ogni giorno per messaggiare con amici e famiglia. Rispondono a 4-5 domande in 30 secondi e hanno finito. Zero formazione necessaria, zero complicazioni." 
-                        />
-                        <FAQItem 
-                            question="Quanto tempo ci vuole per essere operativi?" 
-                            answer="24-48 ore. Noi configuriamo tutto il sistema lato nostro: WhatsApp e l'intera infrastruttura per l'agente AI. Tu devi solo mandarci la lista dei dipendenti. Zero installazioni da parte tua, zero formazione da organizzare. In 2 giorni sei live." 
-                        />
-                        <FAQItem 
-                            question="€30 al mese per dipendente mi sembra costoso" 
-                            answer="Con Prisma risparmi in media 15 ore al mese per dipendente. A €25/ora (costo medio  di un dipendente nel settore edilizia, facility e immobiliare in Italia) sono €375 di risparmio. Prisma costa €30/mese. Stai guadagnando €345 netti al mese per dipendente. ROI 12.5x. È un investimento che si ripaga da solo 12 volte." 
-                        />
-                        <FAQItem 
-                            question="E se i dipendenti dimenticano di rispondere a Prisma?" 
-                            answer="Prisma manda promemoria automatici a fine giornata. Se qualcuno non risponde entro l'orario impostato, riceve un follow-up. Tu vedi subito dalla dashboard chi manca e puoi sollecitarlo se necessario. Il sistema è progettato per minimizzare i 'dimenticati'." 
-                        />
-                        <FAQItem 
-                           question="Funziona solo su WhatsApp?" 
-                           answer="WhatsApp è il default perché tutti lo usano. Ma se il tuo team comunica su altre piattaforme, nessun problema: abbiamo Prisma anche su Telegram, Slack e Microsoft Teams. Scegli tu dove vuoi che funzioni." 
-                        />
-                        <FAQItem 
-                           question="I nostri dati sono al sicuro? Chi ha accesso?" 
-                           answer="Solo tu e il tuo team autorizzato. I dati sono criptati end-to-end e salvati su server europei (100% GDPR compliant). Noi di Martes AI manteniamo l'infrastruttura tecnica, ma non accediamo mai ai tuoi dati senza un permesso esplicito da parte tua." 
-                        />
-                        <FAQItem 
-                           question="Come funziona il periodo di prova?" 
-                           answer="Primi 30 giorni completamente gratis per testare Prisma sul campo con i tuoi dipendenti reali. Nessuna carta di credito richiesta in anticipo. Zero vincoli contrattuali: se non ti convince, cancelli quando vuoi senza penali." 
-                        />
-                        <FAQItem 
-                           question="Possiamo integrare Prisma con il nostro gestionale?" 
-                           answer="Sì. Prisma esporta automaticamente i dati in Excel/CSV che puoi importare nel tuo gestionale. Se vuoi un'integrazione automatica diretta con il tuo gestionale specifico, si tratterebbe di un'integrazione custom. Valutiamola insieme in una chiamata per capire fattibilità e costi." 
-                        />
-                        <FAQItem 
-                           question="I miei dipendenti a volte hanno molto da raccontare, Prisma gestisce messaggi lunghi?" 
-                           answer="Assolutamente sì. Prisma può analizzare vocali anche di 5-6 minuti e molteplici immagini in un'unica conversazione. Se un dipendente ha avuto una giornata complessa con più interventi o problemi da segnalare, può mandare tutto: Prisma estrae automaticamente tutte le informazioni rilevanti (ore, materiali, problemi, location) e organizza le foto nella dashboard. Il dipendente parla naturalmente, Prisma fa il resto." 
-                        />
-                        <FAQItem 
-                           question="Cosa succede se un dipendente manda informazioni sbagliate?" 
-                           answer="Prisma salva tutto lo storico: vocali originali, foto, timestamp. Puoi sempre risalire alla conversazione completa per verificare. Inoltre, l'HR può correggere i dati dalla dashboard in qualsiasi momento. Hai controllo e trasparenza totali." 
-                        />
-                        <FAQItem 
-                           question="Abbiamo già un sistema interno, perché dovremmo cambiare?" 
-                           answer="La domanda è: il tuo sistema attuale ti fa risparmiare 15 ore al mese per dipendente? I tuoi dipendenti lo usano volentieri o lo vedono come un peso? Se stai ancora inseguendo qualcuno per i report, significa che il sistema non funziona. Prisma è progettato per essere così semplice che i dipendenti preferiscono usarlo piuttosto che compilare fogli." 
-                        />
-                        <FAQItem 
-                           question="E se abbiamo dipendenti che lavorano in zone senza connessione internet?" 
-                           answer="WhatsApp funziona anche con connessione dati limitata. Il dipendente può mandare il report appena torna in zona coperta (anche ore dopo). Prisma processa i messaggi non appena arrivano e aggiorna la dashboard automaticamente. Nessun dato perso." 
-                        />
-                        <FAQItem 
-                           question="Prisma può gestire più sedi/cantieri/squadre contemporaneamente?" 
-                           answer="Assolutamente sì. Prisma è multi-tenant: puoi avere sedi diverse, squadre diverse, progetti diversi, tutti gestiti dallo stesso sistema. Dalla dashboard puoi filtrare per sede, squadra, progetto, dipendente. Tutto organizzato e sotto controllo in un unico posto." 
-                        />
-                         <FAQItem 
-                           question="I report sono personalizzabili?" 
-                           answer="Sì. Durante il setup configuriamo insieme le domande che Prisma deve fare ai dipendenti in base al tuo settore e alle tue esigenze (ore, materiali, cliente, tipo intervento, problemi riscontrati, etc.). Anche i report automatici sono personalizzabili: scegli frequenza (giornaliera, settimanale), formato, e cosa includere." 
-                        />
-                         <FAQItem 
-                           question="Cosa succede se Prisma smette di funzionare?" 
-                           answer="Prisma è costruito su infrastruttura cloud enterprise-grade con uptime 99.9%. In caso di problemi tecnici rari, hai supporto prioritario via WhatsApp con risposta entro 1 ora durante l'orario lavorativo. Inoltre, tutti i dati storici rimangono sempre accessibili dalla dashboard anche offline." 
-                        />
+                        {(t('prisma.faq.items', { returnObjects: true }) as Array<{q: string, a: string}>).map((item, i) => (
+                             <FAQItem 
+                                key={i}
+                                question={item.q} 
+                                answer={item.a} 
+                            />
+                        ))}
                     </div>
                 </div>
             </section>
@@ -413,7 +321,7 @@ export const Prisma = () => {
              <section className="py-16 md:py-32 text-center relative overflow-hidden z-10">
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-martes-green/10 blur-[150px] rounded-full pointer-events-none" />
                  <h2 className="text-5xl md:text-8xl font-bold text-white mb-12 relative z-10 tracking-tighter">
-                     Recupera il <br/><span className="serif-italic text-martes-green">tuo tempo.</span>
+                     {t('prisma.finalCta.title')} <br/><span className="serif-italic text-martes-green">{t('prisma.finalCta.title_highlight')}</span>
                  </h2>
                  <a 
                     href="https://cal.com/andrea-belli-contarini" 
@@ -421,7 +329,7 @@ export const Prisma = () => {
                     rel="noopener noreferrer"
                     className="relative z-10 inline-flex items-center gap-3 px-10 py-5 bg-martes-green text-black font-bold rounded-2xl text-xl hover:scale-105 transition-transform duration-300 shadow-[0_0_50px_rgba(74,222,128,0.3)]"
                 >
-                    Inizia Ora <ArrowRight size={24} />
+                    {t('prisma.finalCta.cta')} <ArrowRight size={24} />
                 </a>
              </section>
         </div>
@@ -430,6 +338,7 @@ export const Prisma = () => {
 
 // --- TIMELINE COMPONENT (REFACTORED for GEOMETRIC PERFECTION) ---
 const TimelineSection = () => {
+    const { t } = useTranslation();
     const containerRef = useRef<HTMLDivElement>(null);
     const stepsRef = useRef<HTMLDivElement>(null);
     
@@ -441,18 +350,19 @@ const TimelineSection = () => {
 
     const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
+    const steps = t('prisma.timeline.steps', { returnObjects: true }) as Record<string, { title: string, desc: string }>;
+
     return (
         <section id="timeline" ref={containerRef} className="py-16 md:py-32 container mx-auto px-6 relative z-10">
              <div className="grid lg:grid-cols-2 gap-20 items-start">
                  {/* Sticky Left Content */}
                  <div className="lg:sticky lg:top-32">
                      <div className="inline-block px-4 py-1 rounded-full border border-martes-green/20 bg-martes-green/5 text-martes-green text-sm font-bold tracking-wider mb-6">
-                          COME FUNZIONA
+                          {t('prisma.timeline.badge')}
                      </div>
                      <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
-                         Attivo in 48h. <br/>
-                         Tuo per sempre. <br/>
-                         <span className="serif-italic text-martes-green">Supporto Incluso.</span>
+                         {t('prisma.timeline.title')} <br/>
+                         <span className="serif-italic text-martes-green">{t('prisma.timeline.title_highlight')}</span>
                      </h2>
                      <a 
                          href="https://cal.com/andrea-belli-contarini" 
@@ -460,7 +370,7 @@ const TimelineSection = () => {
                          rel="noopener noreferrer"
                          className="inline-flex items-center gap-2 bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-martes-green transition-colors"
                      >
-                         Prenota Chiamata <ArrowRight size={20} />
+                         {t('prisma.timeline.cta')} <ArrowRight size={20} />
                      </a>
                  </div>
                  
@@ -478,32 +388,32 @@ const TimelineSection = () => {
 
                       <TimelineStep 
                          icon={<Sparkles size={24} />}
-                         title="Giorno 1: Setup Lampo"
-                         desc="Configuriamo le domande su misura per il tuo settore. Integriamo Prisma con i tuoi software esistenti (o ti forniamo una dashboard pronta)."
+                         title={steps[0].title}
+                         desc={steps[0].desc}
                          progress={scrollYProgress}
                          index={0}
                          total={4}
                       />
                       <TimelineStep 
                           icon={<Rocket size={24} />}
-                          title="Giorno 2: Lancio"
-                          desc="Prisma va live. Il tuo team riceve il numero WhatsApp. Zero formazione necessaria: se sanno mandare un vocale, sanno usare Prisma."
+                          title={steps[1].title}
+                          desc={steps[1].desc}
                           progress={scrollYProgress}
                           index={1}
                           total={4}
                       />
                       <TimelineStep 
                           icon={<Headphones size={24} />}
-                          title="Giorno 2-30: Supporto Continuo"
-                          desc="Monitoriamo i primi giorni di utilizzo per assicurarci che tutto funzioni alla perfezione. Supporto diretto via WhatsApp per qualsiasi dubbio."
+                          title={steps[2].title}
+                          desc={steps[2].desc}
                           progress={scrollYProgress}
                           index={2}
                           total={4}
                       />
                       <TimelineStep 
                           icon={<TrendingUp size={24} />}
-                          title="Mese 1+: Crescita"
-                          desc="Vedi i primi risultati tangibili: ore risparmiate, report puntuali e dati strutturati per prendere decisioni migliori."
+                          title={steps[3].title}
+                          desc={steps[3].desc}
                           progress={scrollYProgress}
                           index={3}
                           total={4}
@@ -590,6 +500,7 @@ const ValueCard = ({ title, items, accent, highlight }: any) => {
 }
 
 const SavingsCalculatorReveal = () => {
+    const { t } = useTranslation();
     const [step, setStep] = useState(1);
     const [employees, setEmployees] = useState<number | ''>(30); // Allow empty state for typing
     const [sector, setSector] = useState('edile');
@@ -597,7 +508,7 @@ const SavingsCalculatorReveal = () => {
 
     const calculate = () => {
         if (employees === '' || employees <= 0) {
-            alert("Inserisci un numero valido di dipendenti");
+            alert(t('prisma.calculator.employees_error') || "Inserisci un numero valido di dipendenti");
             return;
         }
 
@@ -636,8 +547,10 @@ const SavingsCalculatorReveal = () => {
         setEmployees(newVal);
     }
 
+    const sectors = ['edile', 'facility', 'immobiliare', 'altro'];
+
     return (
-        <div id="calculator" className="max-w-4xl mx-auto bg-black border border-white/10 rounded-[3rem] p-12 md:p-16 text-center relative overflow-hidden hover:border-martes-green/50 hover:shadow-[0_0_50px_rgba(74,222,128,0.1)] transition-all duration-500 group">
+        <div id="calculator" className="max-w-4xl mx-auto bg-black border border-white/10 rounded-[2rem] md:rounded-[3rem] p-6 md:p-16 text-center relative overflow-hidden hover:border-martes-green/50 hover:shadow-[0_0_50px_rgba(74,222,128,0.1)] transition-all duration-500 group">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none group-hover:from-martes-green/10 transition-colors duration-500" />
             
             <AnimatePresence mode="wait">
@@ -650,29 +563,29 @@ const SavingsCalculatorReveal = () => {
                         className="relative z-10"
                     >
                          <h3 className="text-3xl md:text-5xl font-bold text-white mb-12">
-                            Quanto puoi <span className="relative whitespace-nowrap inline-block">
+                            {t('prisma.calculator.title_start')} <span className="relative whitespace-nowrap inline-block">
                                 <span className="absolute bg-martes-green bottom-0 left-0 w-full h-[30%] -z-10 -rotate-1 opacity-60 rounded-sm"></span>
-                                risparmiare
-                            </span> con Prisma?
+                                {t('prisma.calculator.title_highlight')}
+                            </span> {t('prisma.calculator.title_end')}
                          </h3>
                          
                          <div className="grid md:grid-cols-2 gap-12 mb-12 text-left">
                              <div>
-                                 <label className="text-sm text-neutral-500 uppercase tracking-widest font-bold mb-4 block">Settore</label>
+                                 <label className="text-sm text-neutral-500 uppercase tracking-widest font-bold mb-4 block">{t('prisma.calculator.sector')}</label>
                                  <div className="grid grid-cols-2 gap-3">
-                                     {['Edile', 'Facility', 'Immobiliare', 'Altro'].map(s => (
+                                     {sectors.map(s => (
                                          <button 
                                             key={s}
                                             onClick={() => setSector(s.toLowerCase())}
                                             className={`px-4 py-3 rounded-xl border transition-all font-medium ${sector === s.toLowerCase() ? 'bg-white text-black border-white shadow-lg' : 'bg-transparent border-white/20 text-neutral-400 hover:border-white hover:text-white'}`}
                                          >
-                                             {s}
+                                             {t(`prisma.calculator.sectors.${s}`)}
                                          </button>
                                      ))}
                                  </div>
                              </div>
                              <div>
-                                  <label className="text-sm text-neutral-500 uppercase tracking-widest font-bold mb-4 block">Numero Dipendenti</label>
+                                  <label className="text-sm text-neutral-500 uppercase tracking-widest font-bold mb-4 block">{t('prisma.calculator.employees')}</label>
                                   
                                   {/* CUSTOM INPUT WITH SPINNERS */}
                                   <div className="relative flex items-center bg-white/5 border border-white/10 rounded-xl overflow-hidden focus-within:border-martes-green transition-colors">
@@ -714,7 +627,7 @@ const SavingsCalculatorReveal = () => {
                             onClick={calculate}
                             className="px-10 py-5 bg-martes-green text-black font-bold rounded-2xl text-xl hover:scale-105 transition-transform shadow-[0_0_40px_rgba(74,222,128,0.3)]"
                          >
-                             Scopri il Risparmio
+                             {t('prisma.calculator.cta')}
                          </button>
                     </motion.div>
                 ) : (
@@ -724,19 +637,19 @@ const SavingsCalculatorReveal = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         className="relative z-10 flex flex-col items-center"
                     >
-                        <p className="text-neutral-500 text-lg mb-4">Risparmio annuo stimato</p>
+                        <p className="text-neutral-500 text-lg mb-4">{t('prisma.calculator.result_title')}</p>
                         <div className="text-6xl md:text-8xl font-bold text-white mb-2 tracking-tighter shadow-martes-green drop-shadow-lg">
                             €{new Intl.NumberFormat('it-IT').format(result * 12)}
                         </div>
                         <div className="text-martes-green font-serif italic text-2xl mb-4">
-                            e {new Intl.NumberFormat('it-IT').format(Math.round(safeNumberDisplay(employees) * 15 * 12))} ore di lavoro recuperate
+                            e {new Intl.NumberFormat('it-IT').format(Math.round(safeNumberDisplay(employees) * 15 * 12))} {t('prisma.calculator.hours_saved')}
                         </div>
 
                         <p className="text-neutral-500 text-xs max-w-md mx-auto mb-12 italic">
-                            *Calcolo basato su costo orario medio nazionale (include costi indiretti): 
-                            {sector === 'edile' && ' €32/h per il settore Edile.'}
-                            {sector === 'facility' && ' €28/h per il settore Facility.'}
-                            {(sector === 'immobiliare' || sector === 'altro') && ' €30/h per il settore Immobiliare/Servizi.'}
+                            {t('prisma.calculator.disclaimer_prefix')} 
+                            {sector === 'edile' && ` ${t('prisma.calculator.disclaimer_edile')}`}
+                            {sector === 'facility' && ` ${t('prisma.calculator.disclaimer_facility')}`}
+                            {(sector === 'immobiliare' || sector === 'altro') && ` ${t('prisma.calculator.disclaimer_other')}`}
                         </p>
 
                          <div className="flex gap-4">
@@ -744,7 +657,7 @@ const SavingsCalculatorReveal = () => {
                                 onClick={() => setStep(1)}
                                 className="px-6 py-3 rounded-xl text-neutral-500 hover:text-white transition-colors border border-transparent hover:border-white/20"
                             >
-                                Ricalcola
+                                {t('prisma.calculator.recalculate')}
                             </button>
                             <a 
                                 href="https://cal.com/andrea-belli-contarini" 
@@ -752,7 +665,7 @@ const SavingsCalculatorReveal = () => {
                                 rel="noopener noreferrer"
                                 className="px-8 py-3 bg-white text-black font-bold rounded-xl hover:bg-martes-green transition-colors shadow-lg"
                             >
-                                Ottieni questo risultato
+                                {t('prisma.calculator.get_result')}
                             </a>
                         </div>
                     </motion.div>
@@ -771,41 +684,6 @@ const CheckListIcon = ({ text }: { text: string }) => (
     </div>
 );
 
-// --- CASE STUDIES (COPIED FROM Cases.tsx) ---
-
-// Cases Data specific for Prisma
-const prismaCases = [
-  {
-    id: 'dolomiti',
-    name: 'Dolomiti Strade',
-    challenge: 'L\'HR era completamente sommerso dal lavoro: rapportini cartacei persi, Excel mai completati, 2-3 ore ogni sera per inseguire 30 operai. E non parliamo del tempo che ogni singolo operaio perdeva a compilare Excel, rapportini cartacei e poi doverli consegnare all\'HR. Un sistema totalmente inefficiente che faceva impazzire tutti.',
-    solution: 'Con Prisma, i dipendenti mandano semplicemente vocali e foto su WhatsApp. Prisma trascrive i vocali, analizza le foto e salva tutto in una dashboard centralizzata. L\'HR riceve report settimanali automatici via email. Risultato? Zero inseguimenti, operai che adorano il nuovo sistema perché gli semplifica la vita, e un team HR finalmente liberato dal caos quotidiano.',
-    results: [
-      { value: '450h', label: 'Recuperate / Mese' },
-      { value: '12.5x', label: 'ROI' },
-    ],
-  },
-  {
-    id: 'buildup',
-    name: 'Build Up',
-    challenge: '15 tecnici sul campo, 15 fogli Excel diversi da unire manualmente ogni settimana. I tecnici dimenticavano di segnare gli interventi, alcuni usavano carta, altri messaggi vocali sparsi ovunque. I report mensili richiedevano 2 interi giorni di lavoro manuale. Zero visibilità real-time su chi stava dove e cosa stava facendo. Un incubo operativo totale.',
-    solution: 'Con Prisma, ogni tecnico chiude l\'intervento in 30 secondi da WhatsApp: cliente, ore, materiali, foto. Tutto viene centralizzato automaticamente in un\'unica dashboard. Export dei report in 1 click, pronti per la fatturazione. I tecnici apprezzano la semplicità (30 secondi e hanno finito), mentre l\'ufficio ha finalmente visibilità completa e dati organizzati senza sforzo.',
-    results: [
-      { value: '225h', label: 'Recuperate / Mese' },
-      { value: '12.5x', label: 'ROI' },
-    ],
-  },
-  {
-    id: 'aquadra',
-    name: 'Aquadra',
-    challenge: 'I 18 dipendenti aspettavano il fine settimana per consegnare i rapportini, spesso compilati a memoria giorni dopo. Risultato: fatturazione con 7-10 giorni di ritardo costante, materiali non tracciati correttamente con conseguenti perdite economiche, e un HR che impazziva a ricostruire chi aveva fatto cosa. Il cash flow dell\'azienda ne risentiva pesantemente.',
-    solution: 'Con Prisma, ogni dipendente manda il report da WhatsApp appena finisce il lavoro: cliente, ore, materiali, usati con foto di tutto. I dati sono disponibili in tempo reale per l\'ufficio amministrativo. La fatturazione ora parte in 24h invece di 7-10 giorni, i materiali sono tracciati al 100%, e i dipendenti apprezzano quanto è semplice (30 secondi su WhatsApp). L\'HR ha finalmente il controllo completo senza stress.',
-    results: [
-      { value: '270h', label: 'Recuperate / Mese' },
-      { value: '12.5x', label: 'ROI' },
-    ],
-  },
-];
 
 const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -840,7 +718,16 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
 };
 
 const CaseStudiesSection = () => {
+    const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState(0);
+    
+    const cases = t('prisma.cases.items', { returnObjects: true }) as Array<{
+        id: string;
+        name: string;
+        challenge: string;
+        solution: string;
+        results: Array<{ value: string; label: string; }>;
+    }>;
   
     return (
       <section className="pt-16 pb-24 border-b border-white/5 bg-black relative z-10">
@@ -853,8 +740,7 @@ const CaseStudiesSection = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-5xl text-white mb-6">
-              Alcune storie di{' '}
-              <span className="serif-italic text-martes-green">Successo.</span>
+              {t('prisma.cases.title_start')} <span className="serif-italic text-martes-green">{t('prisma.cases.title_highlight')}</span>
             </h2>
           </motion.div>
   
@@ -866,7 +752,7 @@ const CaseStudiesSection = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="flex justify-center gap-4 mb-12 flex-wrap"
           >
-            {prismaCases.map((caseItem, index) => (
+            {cases.map((caseItem, index) => (
               <button
                 key={caseItem.id}
                 onClick={() => setActiveTab(index)}
@@ -897,13 +783,13 @@ const CaseStudiesSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center h-full">
               <div>
                 <div className="mb-8 h-52 flex items-center">
-                  {prismaCases[activeTab].id === 'dolomiti' && (
+                  {cases[activeTab].id === 'dolomiti' && (
                     <img src={dolomitiLogo} alt="Dolomiti" className="h-44 md:h-52 w-auto object-contain brightness-0 invert" />
                   )}
-                   {prismaCases[activeTab].id === 'buildup' && (
+                   {cases[activeTab].id === 'buildup' && (
                     <img src={buildupLogo} alt="Build Up" className="h-20 md:h-24 w-auto object-contain brightness-0 invert" />
                   )}
-                   {prismaCases[activeTab].id === 'aquadra' && (
+                   {cases[activeTab].id === 'aquadra' && (
                     <img src={aquadraLogo} alt="Aquadra" className="h-44 md:h-52 w-auto object-contain brightness-0 invert" />
                   )}
                 </div>
@@ -911,19 +797,19 @@ const CaseStudiesSection = () => {
                 <div className="space-y-6">
                   <div>
                     <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-2 opacity-70">
-                      La Sfida
+                      {t('prisma.valueProps.problem.title')} {/* Using generic problem title or add specific one */}
                     </h4>
                     <p className="text-neutral-400 leading-relaxed text-lg font-light">
-                      {prismaCases[activeTab].challenge}
+                      {cases[activeTab].challenge}
                     </p>
                   </div>
   
                   <div>
                     <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-2 opacity-70">
-                      La Nostra Soluzione
+                      {t('prisma.valueProps.solution.title')}
                     </h4>
                     <p className="text-neutral-400 leading-relaxed text-lg font-light">
-                      {prismaCases[activeTab].solution}
+                      {cases[activeTab].solution}
                     </p>
                   </div>
                 </div>
@@ -931,7 +817,7 @@ const CaseStudiesSection = () => {
   
               <div className="flex flex-col justify-center h-full border-t md:border-t-0 md:border-l border-white/10 pt-10 md:pt-0 md:pl-16">
                  <div className="space-y-10">
-                    {prismaCases[activeTab].results.map((result, index) => (
+                    {cases[activeTab].results.map((result, index) => (
                       <div key={index}>
                         <div className="text-6xl font-bold text-white mb-2 tracking-tighter">
                           {result.value}

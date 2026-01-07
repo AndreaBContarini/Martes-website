@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import boxATP from '../assets/boxes/box_ATP.png';
 import { LogoTicker } from '../components/sections/LogoTicker';
+import { useTranslation, Trans } from 'react-i18next';
 
 // Education Images
 import pic1 from '../assets/images/pic1.jpg';
@@ -16,6 +17,7 @@ import identificationInfo from '../assets/infographics/identification.png';
 import developmentInfo from '../assets/infographics/development.png';
 
 export const AITransformationPartner = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -29,8 +31,8 @@ export const AITransformationPartner = () => {
         <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-martes-green/5 blur-[150px] rounded-full pointer-events-none hidden md:block" />
 
       <SEOHead 
-        title="AI Transformation Partner - Martes AI"
-        description="Guida la tua azienda nella trasformazione AI con il nostro Framework EID: Education, Identification, Development."
+        title={t('aitp.seo.title')}
+        description={t('aitp.seo.description')}
       />
 
       {/* Hero Section */}
@@ -44,15 +46,13 @@ export const AITransformationPartner = () => {
                 className="text-left"
             >
                 <div className="inline-block px-4 py-1 rounded-full border border-martes-green/30 bg-martes-green/10 text-martes-green text-sm font-bold tracking-wider mb-6">
-                    IL METODO MARTES AI
+                    {t('aitp.hero.badge')}
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    Framework <span className="text-martes-green serif-italic">EID</span>
+                    {t('aitp.hero.title_start')} <span className="text-martes-green serif-italic">{t('aitp.hero.title_highlight')}</span>
                 </h1>
                 <p className="text-xl text-neutral-300 leading-relaxed max-w-lg mb-8">
-                    Education. Identification. Development. <br/>
-                
-                    L'approccio strutturato per trasformare la tua azienda con l'AI.
+                     <Trans i18nKey="aitp.hero.subtitle" />
                 </p>
                 <a 
                         href="https://cal.com/martesai"
@@ -60,7 +60,7 @@ export const AITransformationPartner = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 bg-martes-green text-black px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform"
                     >
-                        Inizia Ora <ArrowRight size={20} />
+                        {t('aitp.hero.cta')} <ArrowRight size={20} />
                 </a>
             </motion.div>
             
@@ -87,7 +87,7 @@ export const AITransformationPartner = () => {
       <div className="mb-32">
             <div className="text-center mb-12 relative z-10 px-6">
                 <p className="text-2xl md:text-3xl text-white font-light tracking-wide">
-                    Aziende che si <span className="serif-italic text-martes-green">fidano</span> del nostro metodo
+                    <Trans i18nKey="aitp.ticker" components={[<span className="serif-italic text-martes-green" />]} />
                 </p>
             </div>
             <LogoTicker />
@@ -102,13 +102,11 @@ export const AITransformationPartner = () => {
             {/* Education */}
             <Step 
                 number="01" 
-                title="Education" 
-                description="Abilitiamo il vostro team all'uso pratico dell'AI per massimizzare la produttività e risparmiare ore ogni giorno."
-                details={[
-                    <span><strong>Assessment di AI Readiness:</strong> Misuriamo la maturità AI del vostro team.</span>,
-                    <span><strong>Workshop Strategico:</strong> Formazione pratica su tools e modelli AI per risparmiare tempo.</span>,
-                    <span><strong>Workshop Verticali:</strong> Focus specifici per dipartimento sui workflow a maggior impatto.</span>
-                ]}
+                title={t('aitp.steps.education.title')}
+                description={t('aitp.steps.education.description')}
+                details={(t('aitp.steps.education.details', { returnObjects: true }) as string[]).map((detail, idx) => (
+                    <span key={idx} dangerouslySetInnerHTML={{ __html: detail }} />
+                ))}
                 alignment="left"
                 customVisual={<EducationCarousel />}
             />
@@ -116,13 +114,11 @@ export const AITransformationPartner = () => {
             {/* Identification */}
             <Step 
                 number="02" 
-                title="Identification" 
-                description="Analizziamo i processi per identificare soluzioni AI ad alto impatto e definire una roadmap strategica di 12 mesi basata sul ROI."
-                details={[
-                    <span><strong>Audit Processi:</strong> Analisi operativa completa e interviste agli stakeholder.</span>,
-                    <span><strong>Report & Roadmap:</strong> Strategia a 12 mesi con obiettivi misurabili e piano di sviluppo.</span>,
-                    <span><strong>Matrice Impatto/Complessità:</strong> Prioritizziamo le iniziative per ROI e complessità.</span>
-                ]}
+                title={t('aitp.steps.identification.title')}
+                description={t('aitp.steps.identification.description')}
+                details={(t('aitp.steps.identification.details', { returnObjects: true }) as string[]).map((detail, idx) => (
+                    <span key={idx} dangerouslySetInnerHTML={{ __html: detail }} />
+                ))}
                 alignment="right"
                 customVisual={
                     <div className="relative w-full aspect-square max-w-[600px] flex items-center justify-center">
@@ -146,13 +142,11 @@ export const AITransformationPartner = () => {
             {/* Development */}
             <Step 
                 number="03" 
-                title="Development" 
-                description="Trasformiamo la roadmap in realtà: sviluppiamo le soluzioni AI su misura, le integriamo nei vostri sistemi e garantiamo deployment, manutenzione e supporto continuo."
-                details={[
-                    "Sviluppo soluzioni AI su misura",
-                    "Integrazione con sistemi esistenti",
-                    "Monitoraggio performance e calcolo ROI"
-                ]}
+                title={t('aitp.steps.development.title')} 
+                description={t('aitp.steps.development.description')}
+                details={(t('aitp.steps.development.details', { returnObjects: true }) as string[]).map((detail, idx) => (
+                    <span key={idx} dangerouslySetInnerHTML={{ __html: detail }} />
+                ))}
                 alignment="left"
                 customVisual={
                     <div className="relative w-full aspect-square max-w-[600px] flex items-center justify-center">
@@ -179,10 +173,10 @@ export const AITransformationPartner = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-martes-green/20 blur-[120px] rounded-full pointer-events-none hidden md:block" />
             
             <h2 className="text-5xl md:text-7xl font-bold mb-8 text-white relative z-10 tracking-tight">
-                Il futuro della tua azienda <span className="text-martes-green serif-italic">inizia qui.</span>
+                {t('aitp.cta_bottom.title_start')} <span className="text-martes-green serif-italic">{t('aitp.cta_bottom.title_highlight')}</span>
             </h2>
             <p className="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto relative z-10 leading-relaxed">
-                Non lasciare che la tecnologia ti superi. Guidiamo la tua trasformazione digitale passo dopo passo.
+                {t('aitp.cta_bottom.subtitle')}
             </p>
             <a 
                 href="https://cal.com/martesai"
@@ -190,7 +184,7 @@ export const AITransformationPartner = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-martes-green text-black px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform hover:shadow-[0_0_30px_rgba(74,222,128,0.4)] relative z-10"
             >
-                Contattaci ora <ArrowRight size={20} />
+                {t('aitp.cta_bottom.cta')} <ArrowRight size={20} />
             </a>
         </div>
 

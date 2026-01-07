@@ -1,8 +1,10 @@
 
+
 import { motion, AnimatePresence } from 'framer-motion';
 import { SEOHead } from '../components/shared/SEOHead';
 import { Linkedin, Youtube } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import riccardoImg from '../assets/team/riccardo.png';
 import andreaImg from '../assets/team/andrea.png';
@@ -13,72 +15,58 @@ import lucaImg from '../assets/team/luca.png';
 import ilariaImg from '../assets/team/ilaria.png';
 import paoloImg from '../assets/team/paolo.png';
 
-const teamMembers = [
-  {
-    name: 'Riccardo Belli-Contarini',
-    role: 'Founder & CEO',
-    description: 'Ingegnere informatico con la visione di democratizzare l\'AI. Condivide la sua expertise attraverso canali di divulgazione e il suo canale YouTube.',
-    image: riccardoImg,
-    linkedin: 'https://www.linkedin.com/in/riccardobellicontarini/',
-    youtube: 'https://www.youtube.com/@riccardobellicontarini'
-  },
-  {
-    name: 'Andrea Belli-Contarini',
-    role: 'Co-Founder & CTO',
-    description: 'Fisico computazionale specializzato in ML. Porta rigore scientifico nello sviluppo di modelli AI, garantendo precisione e affidabilità.',
-    image: andreaImg,
-    linkedin: 'https://www.linkedin.com/in/andreabellicontarini/'
-  },
-  {
-    name: 'Tommaso Misiti',
-    role: 'Senior Software Engineer',
-    description: 'Architetto di sistemi back-end. Costruisce infrastrutture SQL scalabili e performanti che sostengono le nostre soluzioni AI.',
-    image: tommasoImg,
-    linkedin: 'https://www.linkedin.com/in/tommasomisiti/'
-  },
-  {
-    name: 'Paolo Pagliarini',
-    role: 'Software Engineer',
-    description: 'Ingegnere informatico specializzato in ML e architetture back-end. Unisce intelligenza artificiale e database per creare sistemi robusti e intelligenti.',
-    image: paoloImg,
-    linkedin: 'https://www.linkedin.com/in/paolo-pagliarini/'
-  },
-  {
-    name: 'Filippo Bartoletti',
-    role: 'Software Engineer',
-    description: 'Informatico specializzato in front-end e sviluppo di soluzioni AI. Crea interfacce intuitive che rendono l\'intelligenza artificiale accessibile.',
-    image: filippoImg,
-    linkedin: 'https://www.linkedin.com/in/filippo-bartoletti-801641397/'
-  },
-  {
-    name: 'Giovanni Fiore',
-    role: 'Software Engineer',
-    description: 'Ingegnere informatico con focus su machine learning. Sviluppa soluzioni AI intelligenti che risolvono problemi concreti del business.',
-    image: giovanniImg,
-    linkedin: 'https://www.linkedin.com/in/giovanni-fiore-8877331b6/'
-  },
-  {
-    name: 'Luca Tam',
-    role: 'Software Engineer',
-    description: 'Ingegnere informatico specializzato in ML e AI. Innovatore tecnologico che porta soluzioni all\'avanguardia in ogni progetto.',
-    image: lucaImg,
-    linkedin: 'https://www.linkedin.com/in/luca-tam/'
-  },
-  {
-    name: 'Ilaria Pretolani',
-    role: 'CFO',
-    description: 'CFO con decenni di esperienza in aziende come Arthur Andersen. Garantisce solidità finanziaria e crescita sostenibile.',
-    image: ilariaImg,
-    linkedin: 'https://www.linkedin.com/in/ilaria-pretolani-410b325/'
-  },
-];
-
 export const Team = () => {
+    const { t } = useTranslation();
+
+    // Map images and static links to translated data
+    // The order must match the 'tour.members' array in JSON
+    const memberAssets = [
+        {
+             image: riccardoImg,
+             linkedin: 'https://www.linkedin.com/in/riccardobellicontarini/',
+             youtube: 'https://www.youtube.com/@riccardobellicontarini'
+        },
+        {
+             image: andreaImg,
+             linkedin: 'https://www.linkedin.com/in/andreabellicontarini/'
+        },
+        {
+             image: tommasoImg,
+             linkedin: 'https://www.linkedin.com/in/tommasomisiti/'
+        },
+        {
+             image: paoloImg,
+             linkedin: 'https://www.linkedin.com/in/paolo-pagliarini/'
+        },
+        {
+             image: filippoImg,
+             linkedin: 'https://www.linkedin.com/in/filippo-bartoletti-801641397/'
+        },
+        {
+             image: giovanniImg,
+             linkedin: 'https://www.linkedin.com/in/giovanni-fiore-8877331b6/'
+        },
+        {
+             image: lucaImg,
+             linkedin: 'https://www.linkedin.com/in/luca-tam/'
+        },
+        {
+             image: ilariaImg,
+             linkedin: 'https://www.linkedin.com/in/ilaria-pretolani-410b325/'
+        }
+    ];
+
+    const membersData = t('team.members', { returnObjects: true }) as any[];
+    const teamMembers = membersData.map((member, index) => ({
+        ...member,
+        ...memberAssets[index]
+    }));
+
     return (
         <div className="bg-martes-dark min-h-screen relative overflow-hidden">
              <SEOHead 
-                title="Chi Siamo - Martes AI"
-                description="Conosci il team di ingegneri e professionisti che guida la rivoluzione dell'AI in Italia."
+                title={t('team.seo.title')}
+                description={t('team.seo.description')}
             />
 
             {/* Background Elements */}
@@ -92,14 +80,13 @@ export const Team = () => {
                     className="text-center mb-24 max-w-3xl mx-auto"
                 >
                     <div className="inline-block px-4 py-1 rounded-full border border-martes-green/30 bg-martes-green/10 text-martes-green text-sm font-bold tracking-wider mb-6">
-                        IL NOSTRO TEAM
+                        {t('team.hero.badge')}
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                        Il Team dietro <span className="serif-italic text-martes-green">Martes AI</span>
+                        {t('team.hero.title_start')} <span className="serif-italic text-martes-green">{t('team.hero.title_highlight')}</span>
                     </h1>
                     <p className="text-xl text-neutral-400 leading-relaxed">
-                        Ingegneri informatici, informatici, fisici e sviluppatori. 
-                        Un mix di competenze tecniche al servizio dell'AI.
+                        {t('team.hero.subtitle')}
                     </p>
                 </motion.div>
 
@@ -115,6 +102,7 @@ export const Team = () => {
 
 const TeamCard = ({ member, index }: { member: any, index: number }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <motion.div
@@ -186,17 +174,14 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
                             )}
                         </div>
                          <div className="mt-8 text-xs text-white/30 font-medium uppercase tracking-widest">
-                            Clicca per chiudere
+                            {t('team.cards.click_close')}
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
 
 
-            {/* Content (Name & Role) - Hidden when open to focus on description, or keep it visible? */}
-            {/* Let's keep it visible but maybe dimmed or moved? Actually simplifying: Hide name/role when open to show description clearly or move them? 
-                Let's hide name/role when open to avoid clutter.
-            */}
+            {/* Content (Name & Role) */}
             <motion.div 
                 animate={{ opacity: isOpen ? 0 : 1, y: isOpen ? 20 : 0 }}
                 className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 z-30 text-center pointer-events-none"
@@ -211,7 +196,7 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
                     
                     <div className="overflow-hidden h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75">
                          <span className="text-[10px] uppercase tracking-widest text-white/50">
-                             Clicca per info
+                             {t('team.cards.click_info')}
                          </span>
                     </div>
                 </div>
