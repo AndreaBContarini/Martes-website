@@ -22,7 +22,7 @@ export const LogoTicker = ({ clients = allClients, speed = 45 }: LogoTickerProps
                 repeat: Infinity,
                 ease: 'linear',
               }}
-              className="flex gap-20 items-center shrink-0 pr-20"
+              className="flex gap-20 items-center shrink-0 pr-20 will-change-transform"
             >
               {[...clients, ...clients].map((client, index) => {
                 // Dimensioni specifiche per loghi che necessitano ingrandimento EXTRA

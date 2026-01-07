@@ -54,7 +54,7 @@ export const Prisma = () => {
             </div>
 
             {/* 1. HERO SECTION */}
-            <section className="pt-32 pb-20 container mx-auto px-6 relative z-10 text-center">
+            <section className="pt-24 pb-12 md:pt-32 md:pb-20 container mx-auto px-6 relative z-10 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export const Prisma = () => {
                     initial={{ opacity: 0, y: 60, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="mt-24 max-w-5xl mx-auto relative group"
+                    className="mt-12 md:mt-24 max-w-5xl mx-auto relative group"
                 >
                     <div className="absolute -inset-1 bg-gradient-to-tr from-martes-green/20 via-transparent to-blue-500/20 rounded-[32px] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
                     <div className="aspect-video bg-black rounded-[2rem] border border-white/10 overflow-hidden relative shadow-2xl z-10">
@@ -122,7 +122,7 @@ export const Prisma = () => {
             </section>
 
              {/* 2. VALUE PROPOSITION */}
-             <section className="py-32 relative z-10">
+             <section className="py-16 md:py-32 relative z-10">
                 <div className="container mx-auto px-6">
                     <div className="grid lg:grid-cols-3 gap-8">
                         <ValueCard 
@@ -161,14 +161,14 @@ export const Prisma = () => {
              </section>
 
              {/* 3. CALCULATOR SECTION */}
-             <section ref={calculatorRef} className="py-24 relative z-10">
+             <section ref={calculatorRef} className="py-12 md:py-24 relative z-10">
                 <div className="container mx-auto px-6">
                     <SavingsCalculatorReveal />
                 </div>
              </section>
 
              {/* 4. PLATFORMS - Social Logos (No Box, Bigger) */}
-            <section className="py-24 text-center border-t border-white/5 bg-white/[0.02] relative z-10">
+            <section className="py-12 md:py-24 text-center border-t border-white/5 bg-white/[0.02] relative z-10">
                 <div className="container mx-auto px-6">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Prisma non è solo su WhatsApp.</h2>
                     <p className="text-neutral-400 max-w-2xl mx-auto mb-16 text-lg">
@@ -188,7 +188,7 @@ export const Prisma = () => {
             <TimelineSection />
 
              {/* 6. PRICING */}
-             <section id="pricing" className="pt-32 pb-16 bg-black relative overflow-hidden z-20">
+             <section id="pricing" className="pt-16 pb-12 md:pt-32 md:pb-16 bg-black relative overflow-hidden z-20">
                  <div className="absolute inset-0 bg-gradient-to-b from-martes-green/5 to-transparent pointer-events-none" />
                  <div className="container mx-auto px-6 text-center relative z-10">
                      <h2 className="text-3xl md:text-5xl font-bold mb-16 text-white">
@@ -265,7 +265,7 @@ export const Prisma = () => {
              </div>
 
              {/* GDPR SECTION */}
-             <section className="py-24 bg-martes-dark relative z-10 border-t border-white/5">
+             <section className="py-16 md:py-24 bg-martes-dark relative z-10 border-t border-white/5">
                  <div className="container mx-auto px-6 text-center">
                      <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">
                          I tuoi dati sono <span className="relative whitespace-nowrap inline-block">
@@ -341,7 +341,7 @@ export const Prisma = () => {
              </section>
 
              {/* 8. FAQ */}
-            <section id="faq" className="py-32 bg-martes-dark relative z-10 border-t border-white/5">
+            <section id="faq" className="py-16 md:py-32 bg-martes-dark relative z-10 border-t border-white/5">
                 <div className="container mx-auto px-6 max-w-4xl">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 text-center">Domande Frequenti</h2>
                     <div className="space-y-6">
@@ -410,7 +410,7 @@ export const Prisma = () => {
             </section>
 
              {/* 9. FINAL CTA */}
-             <section className="py-32 text-center relative overflow-hidden z-10">
+             <section className="py-16 md:py-32 text-center relative overflow-hidden z-10">
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-martes-green/10 blur-[150px] rounded-full pointer-events-none" />
                  <h2 className="text-5xl md:text-8xl font-bold text-white mb-12 relative z-10 tracking-tighter">
                      Recupera il <br/><span className="serif-italic text-martes-green">tuo tempo.</span>
@@ -442,7 +442,7 @@ const TimelineSection = () => {
     const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
     return (
-        <section id="timeline" ref={containerRef} className="py-32 container mx-auto px-6 relative z-10">
+        <section id="timeline" ref={containerRef} className="py-16 md:py-32 container mx-auto px-6 relative z-10">
              <div className="grid lg:grid-cols-2 gap-20 items-start">
                  {/* Sticky Left Content */}
                  <div className="lg:sticky lg:top-32">

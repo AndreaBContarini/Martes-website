@@ -26,7 +26,7 @@ export const AITransformationPartner = () => {
     <div ref={containerRef} className="bg-martes-dark min-h-screen relative overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute top-0 left-0 w-full h-[800px] bg-gradient-to-b from-martes-green/10 via-transparent to-transparent pointer-events-none" />
-        <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-martes-green/5 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-martes-green/5 blur-[150px] rounded-full pointer-events-none hidden md:block" />
 
       <SEOHead 
         title="AI Transformation Partner - Martes AI"
@@ -176,7 +176,7 @@ export const AITransformationPartner = () => {
 
         {/* Bottom CTA */}
         <div className="mt-40 mb-20 text-center relative z-10">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-martes-green/20 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-martes-green/20 blur-[120px] rounded-full pointer-events-none hidden md:block" />
             
             <h2 className="text-5xl md:text-7xl font-bold mb-8 text-white relative z-10 tracking-tight">
                 Il futuro della tua azienda <span className="text-martes-green serif-italic">inizia qui.</span>

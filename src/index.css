@@ -18,7 +18,17 @@
 body {
   @apply bg-martes-dark text-gray-200 overflow-x-hidden;
   font-family: var(--font-sans);
-  cursor: none;
+  /* cursor: none; removed from here, applied via media query below */
+}
+
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+}
+
+html, body {
+  overscroll-behavior: none;
 }
 
 h1 {
