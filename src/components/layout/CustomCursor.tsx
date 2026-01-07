@@ -41,7 +41,7 @@ export const CustomCursor = () => {
   return (
     <>
       <div
-        className="cursor-dot"
+        className="cursor-dot hidden lg:block"
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
