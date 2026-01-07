@@ -1,582 +1,274 @@
-import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import LogoTicker from '../components/LogoTicker';
+import { useRef, useState } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { SEOHead } from '../components/shared/SEOHead';
+import { LogoTicker } from '../components/sections/LogoTicker';
+import { Users, MonitorPlay, Zap, Bot, ArrowRight, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-declare global {
-  interface Window {
-    openFullscreen: (imageIndex: number) => void;
-  }
-}
-
-// Lista di tutte le immagini nella cartella home_images
 const images = [
-  { src: '/assets/home_images/formazione/pic1.jpeg', alt: 'Formazione Immagine 1' },
-  { src: '/assets/home_images/formazione/pic2.jpeg', alt: 'Formazione Immagine 2' },
-  { src: '/assets/home_images/formazione/pic3.jpeg', alt: 'Formazione Immagine 3' },
-  { src: '/assets/home_images/formazione/pic4.jpg', alt: 'Formazione Immagine 4' },
-  { src: '/assets/home_images/formazione/pic5.jpg', alt: 'Formazione Immagine 5' },
+  { src: '/assets/home_images/formazione/pic1.jpeg', alt: 'Workshop AI dal vivo' },
+  { src: '/assets/home_images/formazione/pic2.jpeg', alt: 'Team al lavoro' },
+  { src: '/assets/home_images/formazione/pic3.jpeg', alt: 'Sessione pratica Prompt Engineering' },
+  { src: '/assets/home_images/formazione/pic4.jpg', alt: 'Presentazione strategia AI' },
+  { src: '/assets/home_images/formazione/pic5.jpg', alt: 'Formazione aziendale Martes AI' },
 ];
 
-function FormazioneAziendale() {
+export const FormazioneAziendale = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
-  useEffect(() => {
-    let currentImageIndex = 0;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    // Funzione per aprire fullscreen
-    window.openFullscreen = (imageIndex: number) => {
-      currentImageIndex = imageIndex;
-      const fullscreenDiv = document.getElementById('fullscreen-modal');
-      const fullscreenImg = document.getElementById('fullscreen-img') as HTMLImageElement;
-
-      if (fullscreenImg && images[imageIndex]) {
-        fullscreenImg.src = images[imageIndex].src;
-        fullscreenImg.alt = images[imageIndex].alt;
-      }
-
-      if (fullscreenDiv) {
-        fullscreenDiv.classList.remove('hidden');
-      }
-      document.body.style.overflow = 'hidden';
-    };
-
-    // Funzione per chiudere fullscreen
-    const closeFullscreen = () => {
-      const fullscreenDiv = document.getElementById('fullscreen-modal');
-      if (fullscreenDiv) {
-        fullscreenDiv.classList.add('hidden');
-      }
-      document.body.style.overflow = 'auto';
-    };
-
-    // Funzione per cambiare immagine nel fullscreen
-    const changeFullscreenImage = (direction: 'next' | 'prev') => {
-      const fullscreenImg = document.getElementById('fullscreen-img') as HTMLImageElement;
-
-      if (direction === 'next') {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-      } else {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-      }
-
-      if (fullscreenImg && images[currentImageIndex]) {
-        fullscreenImg.src = images[currentImageIndex].src;
-        fullscreenImg.alt = images[currentImageIndex].alt;
-      }
-    };
-
-    // Eventi touch per swipe
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartX = e.changedTouches[0].screenX;
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      touchEndX = e.changedTouches[0].screenX;
-      const swipeThreshold = 50;
-
-      if (touchStartX - touchEndX > swipeThreshold) {
-        // Swipe left - immagine successiva
-        changeFullscreenImage('next');
-      } else if (touchEndX - touchStartX > swipeThreshold) {
-        // Swipe right - immagine precedente
-        changeFullscreenImage('prev');
-      }
-    };
-
-    // Event listeners
-    const fullscreenModal = document.getElementById('fullscreen-modal');
-    const fullscreenImg = document.getElementById('fullscreen-img');
-
-    if (fullscreenModal) {
-      fullscreenModal.addEventListener('click', closeFullscreen);
-
-      if (fullscreenImg) {
-        fullscreenImg.addEventListener('click', (e) => e.stopPropagation());
-        fullscreenImg.addEventListener('touchstart', handleTouchStart, { passive: true });
-        fullscreenImg.addEventListener('touchend', handleTouchEnd, { passive: true });
-      }
-    }
-
-    // Cleanup
-    return () => {
-      if (fullscreenModal) {
-        fullscreenModal.removeEventListener('click', closeFullscreen);
-
-        if (fullscreenImg) {
-          fullscreenImg.removeEventListener('click', (e) => e.stopPropagation());
-          fullscreenImg.removeEventListener('touchstart', handleTouchStart);
-          fullscreenImg.removeEventListener('touchend', handleTouchEnd);
-        }
-      }
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
     <>
-      <Helmet>
-        <title>Formazione Aziendale AI | Martes AI</title>
-        <meta name="description" content="Formazione AI pratica per aziende. Workshop dal vivo e online per preparare il tuo team alla rivoluzione AI. Corsi su Fondamenti AI, Prompt Engineering, Piattaforme No-Code e Sviluppo Agenti." />
-        <meta name="keywords" content="formazione aziendale AI, workshop AI, corsi AI, prompt engineering, piattaforme no-code, agenti AI, automazioni" />
+      <SEOHead
+        title="Formazione Aziendale AI"
+        description="Formazione AI pratica per aziende. Workshop dal vivo e online su Prompt Engineering, No-Code e Agenti AI."
+      />
 
-        {/* Open Graph */}
-        <meta property="og:title" content="Formazione Aziendale AI | Martes AI" />
-        <meta property="og:description" content="Formazione AI pratica per restare competitivi e triplicare la produttività. Workshop dal vivo e online." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.martes-ai.com/formazione-aziendale" />
-        <meta property="og:image" content="https://www.martes-ai.com/logo-martes.png" />
+      {/* Hero Section */}
+      <section ref={containerRef} className="relative min-h-[85vh] flex items-center pt-32 pb-20 overflow-hidden bg-martes-dark">
+         <motion.div style={{ y, opacity }} className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-martes-green/5 blur-[120px] rounded-full" />
+            <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-emerald-500/5 blur-[100px] rounded-full" />
+         </motion.div>
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Formazione Aziendale AI | Martes AI" />
-        <meta name="twitter:description" content="Formazione AI pratica per aziende. Workshop dal vivo e online." />
-        <meta name="twitter:image" content="https://www.martes-ai.com/logo-martes.png" />
-
-        {/* Favicon */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/logo-martes.png" />
-
-        {/* Canonical */}
-        <link rel="canonical" href="https://www.martes-ai.com/formazione-aziendale" />
-
-        {/* JSON-LD Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Formazione Aziendale AI",
-            "description": "Formazione AI pratica per aziende con workshop dal vivo e online",
-            "provider": {
-              "@type": "Organization",
-              "name": "Martes AI"
-            },
-            "offers": {
-              "@type": "Offer",
-              "description": "Workshop AI, corsi Fondamenti AI, Prompt Engineering, Piattaforme No-Code"
-            }
-          })}
-        </script>
-      </Helmet>
-
-      {/* Header Principale */}
-      <section className="pt-20 sm:pt-24 md:pt-28 pb-0 sm:pb-4 md:pb-8 w-full bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h1 className="text-5xl md:text-6xl font-black text-white mb-4">
-              <span className="text-white relative">
-                Formazione
-                <span className="absolute bottom-0 left-0 w-full h-1 bg-emerald-400"></span>
-              </span>
-              <br className="block md:hidden" />
-              <span className="hidden md:inline"> </span>
-              Aziendale
-            </h1>
-          </div>
-        </div>
-      </section>
-
-      {/* Hero Section - Formazione AI Pratica */}
-      <section className="py-0 w-full bg-gradient-to-br from-emerald-900/20 via-black/40 to-emerald-800/20 relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-mint-100/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 border border-emerald-400/30 shadow-xl group">
-              <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12">
-                {/* Contenuto Sinistro */}
-                <div className="flex-1 text-center lg:text-left">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight whitespace-nowrap">
-                    Formazione AI Pratica
-                  </h2>
-                  <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
-                    Dimenticati dei corsi su ChatGPT: formazione AI concreta per restare competitivi e triplicare la produttività
-                  </p>
-                  <a
-                    href="https://cal.com/martesai/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold transition-all duration-300 inline-block shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-0.5 transform hover:scale-105 border border-emerald-300/30 group-hover:scale-110"
-                  >
-                    Prenota una call
-                  </a>
-                </div>
-
-                {/* Contenuto Destro - Immagine Box */}
-                <div className="flex-1 flex justify-center lg:justify-end">
-                  <div className="relative group">
-                    <img
-                      src="/assets/home_images/BOX2_Formazione.png"
-                      alt="Formazione Aziendale - Box 3D"
-                      className="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 -z-10 bg-emerald-400/20 blur-2xl rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Logo Partnership Section */}
-      <section className="py-4 sm:py-6 md:py-8 lg:py-12 w-full bg-black/20">
-        <div className="container mx-auto px-4">
-          <LogoTicker />
-        </div>
-      </section>
-
-      {/* Services Section - Workshop */}
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16 w-full bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight tracking-tight">
-              Prepara il Tuo Team alla{' '}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-500 bg-clip-text text-transparent drop-shadow-lg italic">
-                  Rivoluzione AI.
-                </span>
-                {/* Effetto di shading/glow dietro "Rivoluzione AI" */}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 via-emerald-500/30 to-emerald-600/20 blur-xl -z-10 transform scale-110"></div>
-              </span>
-            </h2>
-          </div>
-
-          {/* Due Cards Workshop */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto mb-8 sm:mb-12">
-            {/* Card 1: Workshop dal vivo */}
-            <div className="bg-mint-100/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-emerald-400/30 shadow-xl group hover:transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400/30 transition-all duration-500 cursor-pointer">
-              <div className="flex flex-col items-center text-center">
-                {/* Icona Workshop dal vivo */}
-                <div className="mb-3 sm:mb-4 md:mb-6 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 ease-out">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                  </svg>
-                </div>
-                <h3 className="text-lg sm:text-xl font-black mb-3 sm:mb-4 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                  Workshop dal vivo
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600">
-                  Formazione su misura direttamente nella tua sede
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2: Workshop Online */}
-            <div className="bg-mint-100/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-emerald-400/30 shadow-xl group hover:transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400/30 transition-all duration-500 cursor-pointer">
-              <div className="flex flex-col items-center text-center">
-                {/* Icona Workshop Online */}
-                <div className="mb-3 sm:mb-4 md:mb-6 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 ease-out">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
-                  </svg>
-                </div>
-                <h3 className="text-lg sm:text-xl font-black mb-3 sm:mb-4 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                  Workshop Online
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600">
-                  Formazione interattiva da remoto con sessioni pratiche
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Centrale */}
-          <div className="text-center mb-8 sm:mb-12">
-            <a
-              href="https://cal.com/martesai/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold transition-all duration-300 inline-block shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-0.5 transform hover:scale-105 border border-emerald-300/30"
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
             >
-              Prenota una call
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Detailed Services Section */}
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16 w-full bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-6 sm:mb-8 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight tracking-tight">
-              I Nostri{' '}
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-emerald-300 via-emerald-400 to-emerald-500 bg-clip-text text-transparent drop-shadow-lg">
-                  Percorsi
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                Formazione <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-martes-green to-emerald-400">
+                  Aziendale.
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 via-emerald-500/30 to-emerald-600/20 blur-xl -z-10 transform scale-110"></div>
-              </span>
-            </h2>
-          </div>
+              </h1>
+              <p className="text-xl text-neutral-300 mb-10 leading-relaxed max-w-xl">
+                Dimenticati dei corsi teorici. <br/>
+                <span className="text-white font-medium">Formazione AI concreta</span> per triplicare la produttività del tuo team.
+              </p>
+              
+              <a 
+                href="https://cal.com/martesai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-martes-green text-martes-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-emerald-400 transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(74,222,128,0.3)]"
+              >
+                Scopri i Workshop
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
 
-          {/* 4 Cards Servizi Dettagliati */}
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
-            {/* Card 1: Fondamenti AI */}
-            <div className="bg-mint-100/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-emerald-400/30 shadow-xl group hover:transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400/30 transition-all duration-500 cursor-pointer">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 ease-out flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                    Fondamenti AI
-                  </h3>
-                  <ul className="text-sm sm:text-base text-gray-600 space-y-1">
-                    <li>• Cos'è l'Intelligenza Artificiale e come funziona – introduzione ai migliori tool</li>
-                    <li>• Opportunità e applicazioni concrete nel business</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2: Prompt Engineering Avanzato */}
-            <div className="bg-mint-100/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-emerald-400/30 shadow-xl group hover:transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400/30 transition-all duration-500 cursor-pointer">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 ease-out flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                    Prompt Engineering Avanzato
-                  </h3>
-                  <ul className="text-sm sm:text-base text-gray-600 space-y-1">
-                    <li>• Guida avanzata alla stesura di prompt perfetti per Workflow ed Agenti</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3: Piattaforme No-Code */}
-            <div className="bg-mint-100/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-emerald-400/30 shadow-xl group hover:transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400/30 transition-all duration-500 cursor-pointer">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 ease-out flex-shrink-0">
-                  <img
-                    src="/assets/home_images/n8n_stilizzato.png"
-                    alt="n8n stilizzato"
-                    className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
-                  />
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                    Piattaforme No-Code
-                  </h3>
-                  <ul className="text-sm sm:text-base text-gray-600 space-y-1">
-                    <li>• Corsi specializzati su Make, n8n e Voiceflow</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4: Sviluppo Agenti AI e Automazioni */}
-            <div className="bg-mint-100/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-2xl border border-emerald-400/30 shadow-xl group hover:transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400/30 transition-all duration-500 cursor-pointer">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-black rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500 ease-out flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-black mb-2 sm:mb-3 text-gray-800 group-hover:text-emerald-700 transition-colors duration-300">
-                    Sviluppo Agenti AI e Automazioni
-                  </h3>
-                  <ul className="text-sm sm:text-base text-gray-600 space-y-1">
-                    <li>• Come progettare e implementare agenti AI e automazioni</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative flex justify-center"
+            >
+              <img 
+                src="/assets/home_images/BOX2_Formazione.png" 
+                alt="AI Training Box" 
+                className="relative z-10 w-full max-w-md object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-martes-green/20 blur-[60px] transform scale-90 z-0" />
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16 w-full bg-black">
-        <div className="container mx-auto px-4">
-          {/* Gallery Preview con Carosello */}
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="bg-mint-100/90 backdrop-blur-sm rounded-3xl p-1 sm:p-2 md:p-8 lg:p-12 border border-emerald-400/30 shadow-xl">
-              <div className="relative">
-                {/* Container immagini gallery */}
-                <div className="relative overflow-hidden rounded-xl shadow-2xl">
-                  <div id="gallery-carousel" className="flex transition-transform duration-500 ease-in-out">
-                    {images.map((image, index) => (
-                      <div key={index} className="w-full flex-shrink-0">
-                        <img
-                          id={`gallery-img-${index}`}
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-auto object-contain rounded-xl cursor-pointer md:cursor-default min-h-[240px] md:min-h-[400px] max-h-[50vh] md:max-h-[80vh]"
-                          onClick={() => {
-                            if (window.innerWidth < 768) {
-                              window.openFullscreen(index);
-                            }
-                          }}
-                        />
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Freccia Sinistra */}
-                  <button
-                    id="prev-btn"
-                    className="absolute left-3 md:left-6 top-1/2 transform -translate-y-1/2 bg-black/70 hover:bg-emerald-600/90 text-white p-2 md:p-4 lg:p-5 rounded-full transition-all duration-300 opacity-0 md:hover:scale-110 z-10 shadow-lg"
-                    onClick={() => {
-                      const carousel = document.getElementById('gallery-carousel') as HTMLElement;
-                      const prevBtn = document.getElementById('prev-btn') as HTMLElement;
-                      const nextBtn = document.getElementById('next-btn') as HTMLElement;
-                      const currentTransform = carousel?.style.transform || 'translateX(0%)';
-                      const currentIndex = currentTransform === 'translateX(0%)' ? 0 :
-                        Math.abs(parseInt(currentTransform.match(/-?\d+/)?.[0] || '0')) / 100;
-
-                      if (currentIndex > 0) {
-                        const newIndex = currentIndex - 1;
-                        if (carousel) carousel.style.transform = `translateX(-${newIndex * 100}%)`;
-                        if (newIndex === 0 && prevBtn) prevBtn.style.opacity = '0';
-                        if (nextBtn) nextBtn.style.opacity = '1';
-
-                        // Aggiorna indicatori
-                        images.forEach((_, idx) => {
-                          const indicator = document.getElementById(`indicator-${idx}`) as HTMLElement;
-                          if (indicator) {
-                            if (idx === newIndex) {
-                              indicator.classList.add('bg-emerald-400');
-                              indicator.classList.remove('bg-gray-300');
-                            } else {
-                              indicator.classList.add('bg-gray-300');
-                              indicator.classList.remove('bg-emerald-400');
-                            }
-                          }
-                        });
-                      }
-                    }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                    </svg>
-                  </button>
-
-                  {/* Freccia Destra */}
-                  <button
-                    id="next-btn"
-                    className="absolute right-3 md:right-6 top-1/2 transform -translate-y-1/2 bg-black/70 hover:bg-emerald-600/90 text-white p-2 md:p-4 lg:p-5 rounded-full transition-all duration-300 opacity-100 md:hover:scale-110 z-10 shadow-lg"
-                    onClick={() => {
-                      const carousel = document.getElementById('gallery-carousel') as HTMLElement;
-                      const prevBtn = document.getElementById('prev-btn') as HTMLElement;
-                      const nextBtn = document.getElementById('next-btn') as HTMLElement;
-                      const currentTransform = carousel?.style.transform || 'translateX(0%)';
-                      const currentIndex = currentTransform === 'translateX(0%)' ? 0 :
-                        Math.abs(parseInt(currentTransform.match(/-?\d+/)?.[0] || '0')) / 100;
-
-                      if (currentIndex < images.length - 1) {
-                        const newIndex = currentIndex + 1;
-                        if (carousel) carousel.style.transform = `translateX(-${newIndex * 100}%)`;
-                        if (prevBtn) prevBtn.style.opacity = '1';
-                        if (newIndex === images.length - 1 && nextBtn) nextBtn.style.opacity = '0';
-
-                        // Aggiorna indicatori
-                        images.forEach((_, idx) => {
-                          const indicator = document.getElementById(`indicator-${idx}`) as HTMLElement;
-                          if (indicator) {
-                            if (idx === newIndex) {
-                              indicator.classList.add('bg-emerald-400');
-                              indicator.classList.remove('bg-gray-300');
-                            } else {
-                              indicator.classList.add('bg-gray-300');
-                              indicator.classList.remove('bg-emerald-400');
-                            }
-                          }
-                        });
-                      }
-                    }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-                    </svg>
-                  </button>
-                </div>
-
-                {/* Indicatori */}
-                <div className="flex justify-center mt-4 md:mt-8 space-x-3 flex-wrap">
-                  {images.map((_, index) => (
-                    <div
-                      key={index}
-                      id={`indicator-${index}`}
-                      className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-all duration-300 cursor-pointer hover:scale-110 ${index === 0 ? 'bg-emerald-400' : 'bg-gray-300'
-                        }`}
-                      onClick={() => {
-                        const carousel = document.getElementById('gallery-carousel') as HTMLElement;
-                        const prevBtn = document.getElementById('prev-btn') as HTMLElement;
-                        const nextBtn = document.getElementById('next-btn') as HTMLElement;
-
-                        if (carousel) carousel.style.transform = `translateX(-${index * 100}%)`;
-                        if (prevBtn) prevBtn.style.opacity = index === 0 ? '0' : '1';
-                        if (nextBtn) nextBtn.style.opacity = index === images.length - 1 ? '0' : '1';
-
-                        // Aggiorna tutti gli indicatori
-                        images.forEach((_, idx) => {
-                          const indicator = document.getElementById(`indicator-${idx}`) as HTMLElement;
-                          if (indicator) {
-                            if (idx === index) {
-                              indicator.classList.add('bg-emerald-400');
-                              indicator.classList.remove('bg-gray-300');
-                            } else {
-                              indicator.classList.add('bg-gray-300');
-                              indicator.classList.remove('bg-emerald-400');
-                            }
-                          }
-                        });
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Modal Fullscreen per Mobile */}
-      <div
-        id="fullscreen-modal"
-        className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden md:hidden"
-      >
-        <div className="relative w-full h-full flex items-center justify-center p-4">
-          <img
-            id="fullscreen-img"
-            src=""
-            alt=""
-            className="max-w-full max-h-full object-contain"
-          />
-
-          {/* Indicatore di swipe */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <div className="text-white text-sm opacity-70 text-center">
-              <p>Scorri a sinistra/destra per cambiare immagine</p>
-              <p>Tocca fuori per chiudere</p>
-            </div>
-          </div>
-        </div>
+      <div className="py-12 bg-black/50 border-y border-white/5">
+        <LogoTicker />
       </div>
 
-      {/* Final CTA Section */}
-      <section className="py-6 sm:py-8 md:py-12 lg:py-16 w-full bg-black">
-        <div className="container mx-auto px-4 text-center">
-          <a
+      {/* Workshop Types */}
+      <section className="py-32 bg-neutral-900/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Prepara il tuo Team alla <span className="text-martes-green italic">Rivoluzione.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-32">
+            <WorkshopCard 
+              title="Dal Vivo" 
+              desc="Formazione su misura direttamente nella tua sede."
+              icon={<Users className="w-8 h-8 text-martes-green" />}
+            />
+            <WorkshopCard 
+              title="Online" 
+              desc="Sessioni interattive da remoto con esercizi pratici."
+              icon={<MonitorPlay className="w-8 h-8 text-martes-green" />}
+            />
+          </div>
+
+          {/* Detailed Tracks */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+             <TrackCard 
+               title="Fondamenti AI" 
+               items={["Intro ai tool AI", "Applicazioni Business"]}
+               icon={<Zap className="w-6 h-6 text-martes-green" />}
+             />
+             <TrackCard 
+               title="Prompt Engineering" 
+               items={["Prompt per Workflow", "Tecniche Avanzate"]}
+               icon={<MessageSquareIcon className="w-6 h-6 text-martes-green" />}
+             />
+             <TrackCard 
+               title="No-Code" 
+               items={["Make & n8n", "Automazioni Rapide"]}
+               icon={<img src="/assets/home_images/n8n_stilizzato.png" alt="NoCode" className="w-6 h-6 object-contain grayscale group-hover:grayscale-0 transition-all opacity-80 group-hover:opacity-100" />}
+             />
+             <TrackCard 
+               title="Sviluppo Agenti" 
+               items={["Progettazione Agenti", "Deploy & Test"]}
+               icon={<Bot className="w-6 h-6 text-martes-green" />}
+             />
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Carousel */}
+      <section className="py-32 bg-black overflow-hidden">
+        <div className="container mx-auto px-6">
+           <h2 className="text-3xl font-bold text-center mb-16">Momenti di Formazione</h2>
+           <Gallery />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-32 relative text-center">
+        <div className="container mx-auto px-6 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-10">Pronto a formare il tuo team?</h2>
+          <a 
             href="https://cal.com/martesai/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gradient-to-r from-emerald-400 to-emerald-500 hover:from-emerald-500 hover:to-emerald-600 text-black px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-xl text-lg sm:text-xl md:text-2xl font-bold transition-all duration-300 inline-block shadow-lg hover:shadow-xl hover:shadow-emerald-400/25 hover:-translate-y-1 transform hover:scale-105 border border-emerald-300/30"
+            className="inline-flex items-center gap-2 border border-martes-green text-martes-green px-10 py-5 rounded-full font-bold text-xl hover:bg-martes-green hover:text-black transition-all duration-300 overflow-hidden relative group"
           >
-            Prenota una call
+            <span className="relative z-10">Parla con noi</span>
+            <div className="absolute inset-0 bg-martes-green transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 -z-0" />
           </a>
         </div>
       </section>
     </>
   );
-}
+};
 
-export default FormazioneAziendale;
+// Subcomponents
+import { MessageSquare as MessageSquareIcon } from 'lucide-react';
+
+const WorkshopCard = ({ title, desc, icon }: any) => (
+  <motion.div 
+    whileHover={{ y: -5 }}
+    className="bg-black/40 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:border-martes-green/50 transition-all duration-300"
+  >
+    <div className="bg-white/5 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+      {icon}
+    </div>
+    <h3 className="text-2xl font-bold mb-3">{title}</h3>
+    <p className="text-neutral-400">{desc}</p>
+  </motion.div>
+);
+
+const TrackCard = ({ title, items, icon }: any) => (
+  <motion.div 
+    whileHover={{ y: -5 }}
+    className="bg-white/5 border border-white/5 p-6 rounded-2xl hover:bg-white/10 transition-all duration-300 group"
+  >
+    <div className="mb-4">{icon}</div>
+    <h3 className="text-lg font-bold mb-3 group-hover:text-martes-green transition-colors">{title}</h3>
+    <ul className="text-sm text-neutral-400 space-y-2">
+      {items.map((it: string, idx: number) => (
+        <li key={idx}>• {it}</li>
+      ))}
+    </ul>
+  </motion.div>
+);
+
+const Gallery = () => {
+  const [index, setIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const nextImage = () => setIndex((prev) => (prev + 1) % images.length);
+  const prevImage = () => setIndex((prev) => (prev - 1 + images.length) % images.length);
+
+  return (
+    <div className="relative max-w-5xl mx-auto">
+      <div className="relative aspect-video rounded-3xl overflow-hidden cursor-pointer group" onClick={() => setIsFullscreen(true)}>
+        <AnimatePresence mode="wait">
+          <motion.img 
+            key={index}
+            src={images[index].src}
+            alt={images[index].alt}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span className="bg-black/50 text-white px-4 py-2 rounded-full backdrop-blur-sm text-sm border border-white/20">Clicca per ingrandire</span>
+        </div>
+
+        {/* Controls */}
+        <button onClick={(e) => { e.stopPropagation(); prevImage(); }} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-martes-green hover:text-black transition-all">
+          <ChevronLeft />
+        </button>
+        <button onClick={(e) => { e.stopPropagation(); nextImage(); }} className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-full hover:bg-martes-green hover:text-black transition-all">
+          <ChevronRight />
+        </button>
+      </div>
+
+      <div className="flex justify-center mt-6 gap-2">
+        {images.map((_, i) => (
+          <button 
+            key={i} 
+            onClick={() => setIndex(i)}
+            className={`w-2 h-2 rounded-full transition-all ${i === index ? 'w-8 bg-martes-green' : 'bg-white/20 hover:bg-white/40'}`}
+          />
+        ))}
+      </div>
+
+      {/* Fullscreen Modal */}
+      <AnimatePresence>
+        {isFullscreen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
+            onClick={() => setIsFullscreen(false)}
+          >
+            <button className="absolute top-8 right-8 text-white hover:text-martes-green">
+              <X size={32} />
+            </button>
+            <motion.img 
+              src={images[index].src}
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              onClick={(e) => e.stopPropagation()} 
+            />
+            {/* Fullscreen Nav */}
+             <button onClick={(e) => { e.stopPropagation(); prevImage(); }} className="absolute left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-4">
+               <ChevronLeft size={48} />
+             </button>
+             <button onClick={(e) => { e.stopPropagation(); nextImage(); }} className="absolute right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-4">
+               <ChevronRight size={48} />
+             </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

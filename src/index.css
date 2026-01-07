@@ -1,469 +1,121 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
-/* Set black background for body to prevent green background on mobile pull-to-refresh */
-html, body {
-  background-color: #000000;
+@theme {
+  --font-sans: 'Manrope', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --color-martes-green: #4ADE80;
+  --color-martes-dark: #050505;
+  --color-card-bg: #0A0A0A;
 }
 
-/* Additional mobile overscroll and status bar styling */
-html {
-  background-color: #000000;
-  /* Prevent overscroll background on mobile */
-  overscroll-behavior: none;
-  -webkit-overscroll-behavior: none;
+:root {
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 body {
-  background-color: #000000;
-  /* Ensure consistent background on mobile browsers */
-  background-attachment: fixed;
+  @apply bg-martes-dark text-gray-200 overflow-x-hidden;
+  font-family: var(--font-sans);
+  cursor: none;
 }
 
-/* WebKit specific overscroll styling for iOS */
-@supports (-webkit-appearance: none) {
-  html {
-    background: #000000;
-  }
-  
-  body {
-    background: #000000;
-    /* Prevent rubber band effect background */
-    overscroll-behavior-y: none;
-    -webkit-overscroll-behavior-y: none;
-  }
+h1 {
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
-/* Animated gradient background */
-@keyframes gradient-xy {
-  0%, 100% {
-    background-size: 400% 400%;
-    background-position: 0% 0%;
-  }
-  25% {
-    background-size: 400% 400%;
-    background-position: 100% 0%;
-  }
-  50% {
-    background-size: 400% 400%;
-    background-position: 100% 100%;
-  }
-  75% {
-    background-size: 400% 400%;
-    background-position: 0% 100%;
-  }
+.serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
 }
 
-.animate-gradient-xy {
-  animation: gradient-xy 20s ease infinite;
+.cursor-dot,
+.cursor-outline {
+  @apply fixed top-0 left-0 rounded-full pointer-events-none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
 }
 
-/* Floating particles effect */
-.particles-container {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 0;
+.cursor-dot {
+  @apply w-4 h-4;
+  background-color: var(--color-martes-green);
 }
 
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(39, 79, 54, 0.5);
-  border-radius: 50%;
-  filter: blur(1px);
-  animation: float var(--duration) var(--delay) infinite ease-in-out;
+.cursor-outline {
+  @apply w-10 h-10 border;
+  border-color: rgba(74, 222, 128, 0.5);
+  transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
+
+body.hovering .cursor-outline {
+  @apply w-[60px] h-[60px] border-transparent;
+  background-color: rgba(74, 222, 128, 0.1);
+}
+
+.bg-noise {
+  @apply fixed top-0 left-0 w-full h-full opacity-[0.02] pointer-events-none z-[1];
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.spotlight-element {
+  @apply relative overflow-hidden transition-colors;
+  background: linear-gradient(180deg, rgba(35, 35, 35, 0.6) 0%, rgba(20, 20, 20, 0.4) 100%);
+  border: 1px solid var(--border-subtle);
+}
+
+.spotlight-element:hover {
+  border-color: rgba(74, 222, 128, 0.3);
+}
+
+.spotlight-element::before {
+  content: '';
+  @apply absolute top-0 left-0 right-0 bottom-0 opacity-0 pointer-events-none z-[1];
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(74, 222, 128, 0.08), transparent 40%);
+  transition: opacity 0.5s ease;
+}
+
+.spotlight-element:hover::before {
+  @apply opacity-100;
+}
+
+.fade-up-scroll {
+  @apply opacity-0 translate-y-10;
+  transition: opacity 0.8s ease-out, transform 1s var(--ease-out-expo);
+}
+
+.fade-up-scroll.visible {
+  @apply opacity-100 translate-y-0;
+}
+
+.logo-filter {
+  filter: brightness(0) invert(1);
+}
+
+::selection {
+  @apply bg-green-500 text-black;
+}
+
+/* Smooth scroll disabled globally - using custom page transition instead */
 
 @keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.3;
-  }
-  25% {
-    transform: translate(var(--x-offset), var(--y-offset)) scale(1.2);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(var(--x-offset-alt), var(--y-offset-alt)) scale(1);
-    opacity: 0.3;
-  }
-  75% {
-    transform: translate(var(--x-offset-final), var(--y-offset-final)) scale(1.1);
-    opacity: 0.5;
-  }
+  0%, 100% { transform: translateY(-15px); }
+  50% { transform: translateY(15px); }
 }
 
-/* Text reveal animation */
-.reveal-text {
-  animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
-  opacity: 0;
-  transform: translateY(40px);
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Partners ticker */
-.section-container {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow: hidden;
-}
-
-.ticker-container {
-  width: 100%;
-  max-width: 1200px;
-  overflow: hidden;
-  position: relative;
-  padding: 1rem 0;
-  background: transparent;
-  margin: 0 auto;
-}
-
-.ticker-content {
-  display: flex;
-  animation: scroll 20s linear infinite;
-  gap: 3rem;
-}
-
-@media (min-width: 768px) {
-  .ticker-content {
-    gap: 5rem;
-  }
-}
-
-.partner-logo {
-  width: 120px;
-  height: 60px;
-  object-fit: contain;
-  background-color: white;
-  border-radius: 0.75rem;
-  padding: 0.75rem;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-}
-
-@media (min-width: 768px) {
-  .partner-logo {
-    width: 160px;
-    height: 80px;
-    padding: 1rem;
-  }
-}
-
-.partner-logo:hover {
-  transform: scale(1.05);
-  filter: grayscale(0%);
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Scroll animations */
-.slide-hidden {
-  opacity: 0;
-  filter: blur(5px);
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.slide-hidden.slide-from-left {
-  transform: translateX(-100px);
-}
-
-.slide-hidden.slide-from-right {
-  transform: translateX(100px);
-}
-
-.slide-show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
-}
-
-/* Stagger children animations */
-.stagger-children > * {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.stagger-children.slide-show > *:nth-child(1) { transition-delay: 0.1s; }
-.stagger-children.slide-show > *:nth-child(2) { transition-delay: 0.2s; }
-.stagger-children.slide-show > *:nth-child(3) { transition-delay: 0.3s; }
-.stagger-children.slide-show > *:nth-child(4) { transition-delay: 0.4s; }
-.stagger-children.slide-show > *:nth-child(5) { transition-delay: 0.5s; }
-
-.stagger-children.slide-show > * {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Calendly widget responsive styles */
-.calendly-inline-widget {
-  position: relative;
-  min-width: 320px;
-  height: 700px;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 0.75rem;
-}
-
-@media (max-width: 767px) {
-  .calendly-inline-widget {
-    height: 600px;
-  }
-}
-
-/* Nuove animazioni per la hero section */
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes pulse-slow-2 {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.2; }
-}
-
-@keyframes pulse-slow-3 {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.4; }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 8s ease-in-out infinite;
-}
-
-.animate-pulse-slow-2 {
-  animation: pulse-slow-2 12s ease-in-out infinite;
-}
-
-.animate-pulse-slow-3 {
-  animation: pulse-slow-3 10s ease-in-out infinite;
-}
-
-/* Migliora l'animazione del gradiente esistente */
-@keyframes gradient-xy {
-  0%, 100% {
-    background-size: 400% 400%;
-    background-position: 0% 0%;
-  }
-  25% {
-    background-size: 400% 400%;
-    background-position: 100% 0%;
-  }
-  50% {
-    background-size: 400% 400%;
-    background-position: 100% 100%;
-  }
-  75% {
-    background-size: 400% 400%;
-    background-position: 0% 100%;
-  }
-}
-
-.animate-gradient-xy {
-  animation: gradient-xy 20s ease infinite;
-}
-
-/* Aggiungi questi stili per l'animazione della hero */
-.hero-gradient {
-  background: linear-gradient(
-    45deg,
-    rgba(39, 79, 54, 0.2) 0%,
-    rgba(0, 0, 0, 0.1) 25%,
-    rgba(39, 79, 54, 0.2) 50%,
-    rgba(0, 0, 0, 0.1) 75%,
-    rgba(39, 79, 54, 0.2) 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientFlow 15s ease infinite;
-}
-
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Aggiungi hover effect per rallentare quando il mouse è sopra */
-.ticker-container:hover .ticker-content {
-  animation-play-state: paused;
-}
-
-/* Effetto grayscale per le immagini */
-.article-cover {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-
-.article-cover:hover {
-  filter: grayscale(0%);
-}
-
-/* Animazione per i video YouTube */
-.youtube-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.youtube-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(39, 79, 54, 0.2);
-}
-
-@media (hover: none) {
-  .article-cover:active {
-    filter: grayscale(0);
-  }
-}
-
-/* Google Translate Custom Styles */
-.goog-te-gadget {
-  font-family: inherit !important;
-}
-
-.goog-te-gadget-simple {
-  background-color: transparent !important;
-  border: 1px solid #e5e7eb !important;
-  padding: 8px !important;
-  border-radius: 0.5rem !important;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
-}
-
-.goog-te-gadget-simple .goog-te-menu-value {
-  color: #374151 !important;
-}
-
-@media (max-width: 640px) {
-  #google_translate_element {
-    top: 1rem;
-    right: 1rem;
-  }
-}
-
-/* Animazioni per il menu del traduttore */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.2s ease-out forwards;
-}
-
-/* Nascondi il widget originale di Google Translate */
-.goog-te-banner-frame {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  font-family: inherit !important;
-  color: transparent !important;
-}
-
-.goog-te-gadget .goog-te-combo {
-  display: none !important;
-}
-
-.VIpgJd-ZVi9od-l4eHX-hSRGPd,
-.VIpgJd-ZVi9od-ORHb-OEVmcd {
-  display: none !important;
-}
-
-/* Stili migliorati per il selettore del prefisso telefonico */
-.react-tel-input {
-  font-family: inherit !important;
-}
-
-.react-tel-input .form-control {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  width: 100%;
-  height: 48px;
-  padding: 0 10px 0 52px;
-}
-
-.react-tel-input .form-control:focus {
-  border: 1px solid #10b981;
-  box-shadow: 0 0 0 1px #10b981;
-}
-
-.react-tel-input .selected-flag {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.react-tel-input .selected-flag:hover, 
-.react-tel-input .selected-flag:focus {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.react-tel-input .country-list {
-  background-color: rgba(0, 0, 0, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  max-height: 200px;
-}
-
-.react-tel-input .country-list .country:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.react-tel-input .country-list .country.highlight {
-  background-color: rgba(39, 79, 54, 0.8);
-}
-
-.react-tel-input .country-list .search-box {
-  background-color: white;
-  padding: 10px;
-}
-
-.react-tel-input .country-list .search-box input {
-  background-color: white;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 8px;
-  width: 100%;
-  font-size: 14px;
-  border-radius: 4px;
-}
-
-.react-tel-input .country-list .search-box input::placeholder {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-.react-tel-input .country-list .no-entries-message {
-  color: rgba(255, 255, 255, 0.7);
-  padding: 10px;
+/* Autofill fix for dark mode */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1a1a1a inset !important;
+  -webkit-text-fill-color: white !important;
+  caret-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
 }

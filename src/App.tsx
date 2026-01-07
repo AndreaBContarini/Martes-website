@@ -1,26 +1,66 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import AppRoutes from './AppRoutes';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import CustomTranslate from './components/CustomTranslate';
-import CookieBanner from './components/CookieBanner';
-import GoogleAnalytics from './components/GoogleAnalytics';
+import { Layout } from './components/layout/Layout';
+import { Home } from './pages/Home';
+
+import { AITransformationPartner } from './pages/AITransformationPartner';
+import { FormazioneAziendale } from './pages/FormazioneAziendale';
+import { Prisma } from './pages/Prisma';
+import { CasiStudio } from './pages/CasiStudio';
+import { CaseStudyDetail } from './pages/CaseStudyDetail';
+import { Blog } from './pages/Blog';
+import { BlogDetail } from './pages/BlogDetail';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
+import Newsletter from './pages/Newsletter';
+import Templates from './pages/Templates';
+
+import { Team } from './pages/Team';
+
+
+
+const helmetContext = {};
 
 function App() {
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <Router>
-        <div className="flex flex-col min-h-screen overflow-hidden bg-black text-white">
-          <GoogleAnalytics />
-          <Navbar />
-          <CustomTranslate />
-          <main className="flex-grow">
-            <AppRoutes />
-          </main>
-          <Footer />
-          <CookieBanner />
-        </div>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="chi-siamo" element={<Team />} />
+            <Route path="ai-transformation-partner" element={<AITransformationPartner />} />
+            <Route path="formazione-aziendale" element={<FormazioneAziendale />} />
+            <Route path="prisma" element={<Prisma />} />
+            <Route path="casi-studio" element={<CasiStudio />} />
+            <Route path="casi-studio/:id" element={<CaseStudyDetail />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blog/:id" element={<BlogDetail />} />
+            
+            {/* Utilities */}
+
+            <Route path="newsletter" element={<Newsletter />} />
+            <Route path="templates" element={<Templates />} />
+
+            {/* Legal */}
+            <Route path="privacy" element={<Privacy />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="cookies" element={<Cookies />} />
+            {/* Future Routes */}
+            {/* <Route path="chi-siamo" element={<About />} /> */}
+            {/* <Route path="soluzioni-custom" element={<CustomSolutions />} /> */}
+            {/* <Route path="formazione-aziendale" element={<Training />} /> */}
+            {/* <Route path="agente-reportistica" element={<PrismaAgent />} /> */}
+            {/* <Route path="casi-studio" element={<CaseStudies />} /> */}
+            {/* <Route path="casi-studio/:id" element={<CaseStudyDetail />} /> */}
+            {/* <Route path="blog" element={<Blog />} /> */}
+            {/* <Route path="blog/:id" element={<BlogPost />} /> */}
+            {/* <Route path="privacy" element={<Privacy />} /> */}
+            {/* <Route path="terms" element={<Terms />} /> */}
+            {/* <Route path="cookies" element={<Cookies />} /> */}
+          </Route>
+        </Routes>
       </Router>
     </HelmetProvider>
   );

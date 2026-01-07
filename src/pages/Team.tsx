@@ -1,0 +1,221 @@
+
+import { motion, AnimatePresence } from 'framer-motion';
+import { SEOHead } from '../components/shared/SEOHead';
+import { Linkedin, Youtube } from 'lucide-react';
+import { useState } from 'react';
+
+import riccardoImg from '../assets/team/riccardo.png';
+import andreaImg from '../assets/team/andrea.png';
+import tommasoImg from '../assets/team/tommaso.png';
+import filippoImg from '../assets/team/filippo.png';
+import giovanniImg from '../assets/team/giovanni.png';
+import lucaImg from '../assets/team/luca.png';
+import ilariaImg from '../assets/team/ilaria.png';
+import paoloImg from '../assets/team/paolo.png';
+
+const teamMembers = [
+  {
+    name: 'Riccardo Belli-Contarini',
+    role: 'Founder & CEO',
+    description: 'Ingegnere informatico con la visione di democratizzare l\'AI. Condivide la sua expertise attraverso canali di divulgazione e il suo canale YouTube.',
+    image: riccardoImg,
+    linkedin: 'https://www.linkedin.com/in/riccardobellicontarini/',
+    youtube: 'https://www.youtube.com/@riccardobellicontarini'
+  },
+  {
+    name: 'Andrea Belli-Contarini',
+    role: 'Co-Founder & CTO',
+    description: 'Fisico computazionale specializzato in ML. Porta rigore scientifico nello sviluppo di modelli AI, garantendo precisione e affidabilità.',
+    image: andreaImg,
+    linkedin: 'https://www.linkedin.com/in/andreabellicontarini/'
+  },
+  {
+    name: 'Tommaso Misiti',
+    role: 'Senior Software Engineer',
+    description: 'Architetto di sistemi back-end. Costruisce infrastrutture SQL scalabili e performanti che sostengono le nostre soluzioni AI.',
+    image: tommasoImg,
+    linkedin: 'https://www.linkedin.com/in/tommasomisiti/'
+  },
+  {
+    name: 'Paolo Pagliarini',
+    role: 'Software Engineer',
+    description: 'Ingegnere informatico specializzato in ML e architetture back-end. Unisce intelligenza artificiale e database per creare sistemi robusti e intelligenti.',
+    image: paoloImg,
+    linkedin: 'https://www.linkedin.com/in/paolo-pagliarini/'
+  },
+  {
+    name: 'Filippo Bartoletti',
+    role: 'Software Engineer',
+    description: 'Informatico specializzato in front-end e sviluppo di soluzioni AI. Crea interfacce intuitive che rendono l\'intelligenza artificiale accessibile.',
+    image: filippoImg,
+    linkedin: 'https://www.linkedin.com/in/filippo-bartoletti-801641397/'
+  },
+  {
+    name: 'Giovanni Fiore',
+    role: 'Software Engineer',
+    description: 'Ingegnere informatico con focus su machine learning. Sviluppa soluzioni AI intelligenti che risolvono problemi concreti del business.',
+    image: giovanniImg,
+    linkedin: 'https://www.linkedin.com/in/giovanni-fiore-8877331b6/'
+  },
+  {
+    name: 'Luca Tam',
+    role: 'Software Engineer',
+    description: 'Ingegnere informatico specializzato in ML e AI. Innovatore tecnologico che porta soluzioni all\'avanguardia in ogni progetto.',
+    image: lucaImg,
+    linkedin: 'https://www.linkedin.com/in/luca-tam/'
+  },
+  {
+    name: 'Ilaria Pretolani',
+    role: 'CFO',
+    description: 'CFO con decenni di esperienza in aziende come Arthur Andersen. Garantisce solidità finanziaria e crescita sostenibile.',
+    image: ilariaImg,
+    linkedin: 'https://www.linkedin.com/in/ilaria-pretolani-410b325/'
+  },
+];
+
+export const Team = () => {
+    return (
+        <div className="bg-martes-dark min-h-screen relative overflow-hidden">
+             <SEOHead 
+                title="Chi Siamo - Martes AI"
+                description="Conosci il team di ingegneri e professionisti che guida la rivoluzione dell'AI in Italia."
+            />
+
+            {/* Background Elements */}
+            <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-martes-green/5 via-transparent to-transparent pointer-events-none" />
+            
+            <div className="pt-32 pb-20 container mx-auto px-6 relative z-10">
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-24 max-w-3xl mx-auto"
+                >
+                    <div className="inline-block px-4 py-1 rounded-full border border-martes-green/30 bg-martes-green/10 text-martes-green text-sm font-bold tracking-wider mb-6">
+                        IL NOSTRO TEAM
+                    </div>
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                        Il Team dietro <span className="serif-italic text-martes-green">Martes AI</span>
+                    </h1>
+                    <p className="text-xl text-neutral-400 leading-relaxed">
+                        Ingegneri informatici, informatici, fisici e sviluppatori. 
+                        Un mix di competenze tecniche al servizio dell'AI.
+                    </p>
+                </motion.div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-[1200px] mx-auto">
+                    {teamMembers.map((member, index) => (
+                        <TeamCard key={index} member={member} index={index} />
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const TeamCard = ({ member, index }: { member: any, index: number }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <motion.div
+            layout
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            onClick={() => setIsOpen(!isOpen)}
+            className={`group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-gradient-to-b from-white/5 to-black/50 hover:border-martes-green/30 transition-all duration-500 shadow-2xl ${isOpen ? 'ring-2 ring-martes-green/50' : ''}`}
+        >
+             {/* Image Layer */}
+            <div className={`absolute inset-0 flex flex-col justify-center items-center p-4 transition-transform duration-500 ${isOpen ? 'scale-110 blur-md grayscale' : ''}`}>
+                 {/* Spotlight Effect behind person */}
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-martes-green/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full" />
+                 
+                {member.image ? (
+                     <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="w-auto h-auto max-h-[85%] max-w-[90%] object-contain transition-transform duration-700 group-hover:scale-105 relative z-10" 
+                    />
+                ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                        <span className="text-6xl font-serif italic text-white/10">
+                            {member.name.split(' ')[0][0]}{member.name.split(' ')[1][0]}
+                        </span>
+                    </div>
+                )}
+            </div>
+
+            {/* Gradient Overlay */}
+            <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent transition-opacity duration-500 z-20 ${isOpen ? 'opacity-90' : 'opacity-90 group-hover:opacity-100'}`} />
+            
+            {/* Description Overlay (Visible when Open) */}
+             <AnimatePresence>
+                {isOpen && (
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        className="absolute inset-0 z-40 flex flex-col items-center justify-center p-6 text-center bg-black/80 backdrop-blur-sm"
+                    >
+                        <p className="text-white text-base leading-relaxed font-medium mb-6">
+                            "{member.description}"
+                        </p>
+                        <div className="flex items-center gap-4">
+                            {member.linkedin && (
+                                <a 
+                                    href={member.linkedin} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-white/10 rounded-full hover:bg-martes-green hover:text-black transition-colors"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Linkedin size={20} />
+                                </a>
+                            )}
+                            {member.youtube && (
+                                <a 
+                                    href={member.youtube} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-white/10 rounded-full hover:bg-red-600 hover:text-white transition-colors"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Youtube size={20} />
+                                </a>
+                            )}
+                        </div>
+                         <div className="mt-8 text-xs text-white/30 font-medium uppercase tracking-widest">
+                            Clicca per chiudere
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+
+            {/* Content (Name & Role) - Hidden when open to focus on description, or keep it visible? */}
+            {/* Let's keep it visible but maybe dimmed or moved? Actually simplifying: Hide name/role when open to show description clearly or move them? 
+                Let's hide name/role when open to avoid clutter.
+            */}
+            <motion.div 
+                animate={{ opacity: isOpen ? 0 : 1, y: isOpen ? 20 : 0 }}
+                className="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 z-30 text-center pointer-events-none"
+            >
+                <div className="relative">
+                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-martes-green transition-colors">
+                        {member.name}
+                    </h3>
+                    <p className="text-xs font-bold text-martes-green mb-4 uppercase tracking-widest opacity-80">
+                        {member.role}
+                    </p>
+                    
+                    <div className="overflow-hidden h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75">
+                         <span className="text-[10px] uppercase tracking-widest text-white/50">
+                             Clicca per info
+                         </span>
+                    </div>
+                </div>
+            </motion.div>
+        </motion.div>
+    );
+}
