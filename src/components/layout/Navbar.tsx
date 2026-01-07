@@ -234,23 +234,23 @@ export const Navbar = () => {
                       {t('navbar.home')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
-                    <button onClick={(e) => handleSmoothScroll(e, 'calculator')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
+                    <button onClick={(e) => handleSmoothScroll(e, 'calculator')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group text-left">
                       {t('navbar.discover')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
-                     <button onClick={(e) => handleSmoothScroll(e, 'timeline')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
+                     <button onClick={(e) => handleSmoothScroll(e, 'timeline')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group text-left">
                       {t('navbar.howItWorks')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
-                     <button onClick={(e) => handleSmoothScroll(e, 'pricing')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
+                     <button onClick={(e) => handleSmoothScroll(e, 'pricing')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group text-left">
                       {t('navbar.pricing')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
-                     <button onClick={(e) => handleSmoothScroll(e, 'case-studies')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
+                     <button onClick={(e) => handleSmoothScroll(e, 'case-studies')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group text-left">
                       {t('navbar.caseStudies')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
-                     <button onClick={(e) => handleSmoothScroll(e, 'faq')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
+                     <button onClick={(e) => handleSmoothScroll(e, 'faq')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group text-left">
                       {t('navbar.faq')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
