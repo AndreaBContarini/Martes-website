@@ -2,13 +2,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import logoMartes from '../../assets/logos/logo_martes/martes-logo.png';
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [showLogo, setShowLogo] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const currentLang = i18n.language || 'it';
+
   // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
@@ -85,64 +93,82 @@ export const Navbar = () => {
               // Links for Homepage
               <>
                   <a href="#services" className="hover:text-white transition-colors hoverable">
-                    Soluzioni
+                    {t('navbar.solutions')}
                   </a>
                   <a href="#cases" className="hover:text-white transition-colors hoverable">
-                    Casi Studio
+                    {t('navbar.caseStudies')}
                   </a>
                   <Link to="/chi-siamo" className="hover:text-white transition-colors hoverable">
-                    Chi Siamo
+                    {t('navbar.about')}
                   </Link>
                   <Link to="/templates" className="hover:text-white transition-colors hoverable">
-                    Templates
+                    {t('navbar.templates')}
                   </Link>
               </>
           ) : isPrismaPage ? (
               // Links for Prisma Landing Page
               <>
                   <Link to="/" className="hover:text-white transition-colors hoverable">
-                    Home
+                    {t('navbar.home')}
                   </Link>
                   <button onClick={(e) => handleSmoothScroll(e, 'timeline')} className="hover:text-white transition-colors hoverable whitespace-nowrap uppercase">
-                    Come Funziona
+                    {t('navbar.howItWorks')}
                   </button>
                   <button onClick={(e) => handleSmoothScroll(e, 'pricing')} className="hover:text-white transition-colors hoverable uppercase">
-                    Pricing
+                    {t('navbar.pricing')}
                   </button>
                    <button onClick={(e) => handleSmoothScroll(e, 'case-studies')} className="hover:text-white transition-colors hoverable whitespace-nowrap uppercase">
-                    Casi Studio
+                    {t('navbar.caseStudies')}
                   </button>
                   <button onClick={(e) => handleSmoothScroll(e, 'faq')} className="hover:text-white transition-colors hoverable uppercase">
-                    FAQ
+                    {t('navbar.faq')}
                   </button>
               </>
           ) : (
               // Links for Internal Pages (ATP, etc.)
               <>
                   <Link to="/" className="hover:text-white transition-colors hoverable">
-                    Home
+                    {t('navbar.home')}
                   </Link>
                   <Link to="/casi-studio" className="hover:text-white transition-colors hoverable">
-                    Casi Studio
+                    {t('navbar.caseStudies')}
                   </Link>
                    <Link to="/chi-siamo" className="hover:text-white transition-colors hoverable">
-                    Chi Siamo
+                    {t('navbar.about')}
                   </Link>
                   <Link to="/templates" className="hover:text-white transition-colors hoverable">
-                    Templates
+                    {t('navbar.templates')}
                   </Link>
               </>
           )}
         </div>
 
         <div className="flex items-center gap-3">
+          
+          {/* Language Switcher */}
+          <div className="hidden md:flex items-center gap-2 border-r border-white/10 pr-4 mr-0">
+             <button 
+                onClick={() => changeLanguage('it')}
+                className={`text-xs font-bold transition-colors ${currentLang.startsWith('it') ? 'text-white' : 'text-neutral-500 hover:text-white'}`}
+             >
+                IT
+             </button>
+             <span className="text-neutral-700 text-[10px]">/</span>
+             <button 
+                onClick={() => changeLanguage('en')}
+                className={`text-xs font-bold transition-colors ${currentLang.startsWith('en') ? 'text-white' : 'text-neutral-500 hover:text-white'}`}
+             >
+                EN
+             </button>
+          </div>
+
           <a
             href={isPrismaPage ? "https://cal.com/andrea-belli-contarini" : "https://cal.com/martesai"}
             target="_blank"
             rel="noopener noreferrer"
             className="hoverable bg-[#1a1a1a] hover:bg-[#252525] border border-white/10 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
           >
-            {isPrismaPage ? "Prova Prisma" : "Prenota Call"}
+            {isPrismaPage ? t('navbar.tryPrisma') : t('navbar.bookCall')}
           </a>
           
           <button 
@@ -167,68 +193,84 @@ export const Navbar = () => {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="pointer-events-auto md:hidden w-[calc(100%-2rem)] max-w-sm bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl flex flex-col gap-2 overflow-hidden"
           >
+             {/* Mobile Language Switcher */}
+             <div className="flex justify-center gap-4 py-2 border-b border-white/10 mb-2">
+                 <button 
+                    onClick={() => changeLanguage('it')}
+                    className={`text-sm font-bold px-4 py-1 rounded-full transition-colors ${currentLang.startsWith('it') ? 'bg-white/10 text-white' : 'text-neutral-500'}`}
+                 >
+                    Italiano
+                 </button>
+                 <button 
+                    onClick={() => changeLanguage('en')}
+                    className={`text-sm font-bold px-4 py-1 rounded-full transition-colors ${currentLang.startsWith('en') ? 'bg-white/10 text-white' : 'text-neutral-500'}`}
+                 >
+                    English
+                 </button>
+             </div>
+
             {isHomePage ? (
                 <>
                     <a href="#services" onClick={() => setIsMenuOpen(false)} className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Soluzioni
+                      {t('navbar.solutions')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </a>
                     <a href="#cases" onClick={() => setIsMenuOpen(false)} className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Casi Studio
+                      {t('navbar.caseStudies')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </a>
                     <Link to="/chi-siamo" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Chi Siamo
+                      {t('navbar.about')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
                     <Link to="/templates" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Templates
+                      {t('navbar.templates')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
                 </>
             ) : isPrismaPage ? (
                 <>
                     <Link to="/" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Home
+                      {t('navbar.home')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
                     <button onClick={(e) => handleSmoothScroll(e, 'calculator')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
-                      Scopri
+                      {t('navbar.discover')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
                      <button onClick={(e) => handleSmoothScroll(e, 'timeline')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
-                      Come Funziona
+                      {t('navbar.howItWorks')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
                      <button onClick={(e) => handleSmoothScroll(e, 'pricing')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
-                      Pricing
+                      {t('navbar.pricing')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
                      <button onClick={(e) => handleSmoothScroll(e, 'case-studies')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
-                      Casi Studio
+                      {t('navbar.caseStudies')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
                      <button onClick={(e) => handleSmoothScroll(e, 'faq')} className="w-full px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group uppercase text-left">
-                      FAQ
+                      {t('navbar.faq')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </button>
                 </>
             ) : (
                 <>
                     <Link to="/" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Home
+                      {t('navbar.home')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
                     <Link to="/casi-studio" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Casi Studio
+                      {t('navbar.caseStudies')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
                      <Link to="/chi-siamo" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Chi Siamo
+                      {t('navbar.about')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
                     <Link to="/templates" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
-                      Templates
+                      {t('navbar.templates')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
                 </>

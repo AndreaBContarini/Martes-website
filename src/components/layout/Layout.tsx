@@ -16,7 +16,7 @@ export const Layout = () => {
       
       <Navbar />
       
-      <main className="min-h-screen">
+      <main className="min-h-screen relative z-10">
         <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
           <PageTransition key={location.pathname}>
             <Outlet />

@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "solutions": "Soluzioni",
+    "caseStudies": "Casi Studio",
+    "about": "Chi Siamo",
+    "templates": "Templates",
+    "bookCall": "Prenota Call",
+    "home": "Home",
+    "howItWorks": "Come Funziona",
+    "pricing": "Pricing",
+    "faq": "DOMANDE",
+    "discover": "Scopri",
+    "tryPrisma": "Prova Prisma"
+  },
+  "hero": {
+    "line1_start": "Il tuo",
+    "line1_italic": "Partner AI",
+    "line2_start": "a",
+    "line2_italic": "360 Gradi.",
+    "cta": "Inizia Ora",
+    "secondaryCta": "Scopri i servizi"
+  }
+}

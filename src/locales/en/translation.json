@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "solutions": "Solutions",
+    "caseStudies": "Case Studies",
+    "about": "About Us",
+    "templates": "Templates",
+    "bookCall": "Book a Call",
+    "home": "Home",
+    "howItWorks": "How It Works",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "discover": "Discover",
+    "tryPrisma": "Try Prisma"
+  },
+  "hero": {
+    "line1_start": "Your",
+    "line1_italic": "AI Partner",
+    "line2_start": "for",
+    "line2_italic": "360° Growth.",
+    "cta": "Start Now",
+    "secondaryCta": "Discover Services"
+  }
+}

@@ -3,8 +3,10 @@ import { ArrowRight } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import logoMartes from '../../assets/logos/logo_martes/martes-logo.png';
+import { useTranslation } from 'react-i18next';
 
 export const Hero = () => {
+  const { t } = useTranslation();
   const canvasRef = useRef<HTMLDivElement>(null);
   const spotlightRef = useRef<HTMLDivElement>(null);
 
@@ -150,7 +152,7 @@ export const Hero = () => {
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="block mb-2"
         >
-          Il tuo <span className="serif-italic text-neutral-300">Partner AI</span>
+          {t('hero.line1_start')} <span className="serif-italic text-neutral-300">{t('hero.line1_italic')}</span>
         </motion.span>
         <motion.span
           initial={{ opacity: 0, y: 40 }}
@@ -158,7 +160,7 @@ export const Hero = () => {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="block"
         >
-          a <span className="serif-italic text-green-400">360 Gradi.</span>
+          {t('hero.line2_start')} <span className="serif-italic text-green-400">{t('hero.line2_italic')}</span>
         </motion.span>
       </h1>
 
@@ -173,14 +175,14 @@ export const Hero = () => {
           href="#contact"
           className="hoverable bg-gray-200 hover:bg-white text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wide flex items-center gap-2 group transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]"
         >
-          Inizia Ora
+          {t('hero.cta')}
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
         <a
           href="#services"
           className="hoverable px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wide text-neutral-400 hover:text-white transition-colors flex items-center gap-2 hover:bg-white/5"
         >
-          Scopri i servizi
+          {t('hero.secondaryCta')}
         </a>
       </motion.div>
 
