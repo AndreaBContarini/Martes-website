@@ -23,9 +23,9 @@ const cases = [
     name: 'Dolomiti Strade',
     category: 'Rendicontazione Automatica',
     challenge:
-      'Rendicontazione dai cantieri lenta e caotica. Note vocali perse, fogli di carta e ritardi amministrativi.',
+      'Una gestione caotica: rapportini cartacei persi, dati incompleti e l\'HR costretto a inseguire 30 operai per avere i report.',
     solution:
-      'È qui che è nato Prisma. L\'agente che trascrive messaggi vocali e foto dal cantiere direttamente nel gestionale.',
+      'I dipendenti usano WhatsApp per inviare vocali e foto. Prisma trascrive, organizza i dati e aggiorna la dashboard in tempo reale.',
     results: [
       { value: '450h', label: 'Recuperate al mese' },
       { value: '12,5x', label: 'ROI' },
@@ -103,15 +103,15 @@ export const Cases = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center h-full">
             <div>
-              <div className="mb-8 h-52 flex items-center">
+              <div className="mb-8 h-52 flex items-center justify-center md:justify-start">
                 {cases[activeTab].id === 'bluvacanze' && (
-                  <img src={bluvacanze} alt={cases[activeTab].name} className="h-36 md:h-44 w-auto object-contain brightness-0 invert" />
+                  <img src={bluvacanze} alt={cases[activeTab].name} className="h-60 md:h-60 w-auto object-contain brightness-0 invert" />
                 )}
                  {cases[activeTab].id === 'dolomiti' && (
-                  <img src={dolomitiStrade} alt={cases[activeTab].name} className="h-44 md:h-52 w-auto object-contain brightness-0 invert" />
+                  <img src={dolomitiStrade} alt={cases[activeTab].name} className="h-52 md:h-52 w-auto object-contain brightness-0 invert" />
                 )}
                  {cases[activeTab].id === 'restworld' && (
-                  <img src={restWorld} alt={cases[activeTab].name} className="h-24 md:h-32 w-auto object-contain brightness-0 invert" />
+                  <img src={restWorld} alt={cases[activeTab].name} className="h-32 md:h-32 w-auto object-contain brightness-0 invert" />
                 )}
               </div>
 
