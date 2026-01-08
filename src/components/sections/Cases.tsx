@@ -27,8 +27,8 @@ const cases = [
     solution:
       'È qui che è nato Prisma. L\'agente che trascrive messaggi vocali e foto dal cantiere direttamente nel gestionale.',
     results: [
-      { value: '200h', label: 'Risparmiate al mese' },
-      { value: '100%', label: 'Operai raggiunti' },
+      { value: '450h', label: 'Recuperate al mese' },
+      { value: '12,5x', label: 'ROI' },
     ],
   },
   {
@@ -94,6 +94,11 @@ export const Cases = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+          onMouseMove={(e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            e.currentTarget.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+            e.currentTarget.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+          }}
           className="spotlight-element rounded-3xl p-10 md:p-16 border border-white/5 bg-card-bg"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center h-full">
