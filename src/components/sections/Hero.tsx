@@ -160,7 +160,7 @@ export const Hero = () => {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="block"
         >
-          {t('hero.line2_start')} <span className="serif-italic text-green-400">{t('hero.line2_italic')}</span>
+          {t('hero.line2_start')} <span className="text-martes-green font-medium">{t('hero.line2_italic')}</span>
         </motion.span>
       </h1>
 

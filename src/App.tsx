@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components/layout/Layout';
+import { ScrollToTop } from './components/shared/ScrollToTop';
 import { Home } from './pages/Home';
 
 import { AITransformationPartner } from './pages/AITransformationPartner';
@@ -26,6 +27,7 @@ function App() {
   return (
     <HelmetProvider context={helmetContext}>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

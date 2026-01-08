@@ -74,7 +74,7 @@ export const Navbar = () => {
               transition={{ duration: 0.3 }}
               className="flex items-center gap-3 cursor-pointer hoverable overflow-hidden"
             >
-              <Link to="/" className="flex items-center gap-3">
+              <Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3">
                 <img
                     src={logoMartes}
                     alt="Martes Logo"
@@ -133,10 +133,10 @@ export const Navbar = () => {
                   <Link to="/casi-studio" className="hover:text-white transition-colors hoverable">
                     {t('navbar.caseStudies')}
                   </Link>
-                   <Link to="/chi-siamo" className="hover:text-white transition-colors hoverable">
+                   <Link to="/chi-siamo" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors hoverable">
                     {t('navbar.about')}
                   </Link>
-                  <Link to="/templates" className="hover:text-white transition-colors hoverable">
+                  <Link to="/templates" onClick={() => window.scrollTo(0, 0)} className="hover:text-white transition-colors hoverable">
                     {t('navbar.templates')}
                   </Link>
               </>
@@ -219,11 +219,11 @@ export const Navbar = () => {
                       {t('navbar.caseStudies')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </a>
-                    <Link to="/chi-siamo" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
+                    <Link to="/chi-siamo" onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }} className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
                       {t('navbar.about')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
-                    <Link to="/templates" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
+                    <Link to="/templates" onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }} className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
                       {t('navbar.templates')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
@@ -265,11 +265,11 @@ export const Navbar = () => {
                       {t('navbar.caseStudies')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
-                     <Link to="/chi-siamo" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
+                    <Link to="/chi-siamo" onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }} className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
                       {t('navbar.about')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
-                    <Link to="/templates" className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
+                    <Link to="/templates" onClick={() => { setIsMenuOpen(false); window.scrollTo(0, 0); }} className="px-4 py-3 rounded-xl hover:bg-white/5 text-sm font-medium text-neutral-300 hover:text-white transition-colors flex items-center justify-between group">
                       {t('navbar.templates')}
                       <span className="text-white/20 group-hover:text-white/60 transition-colors">→</span>
                     </Link>
