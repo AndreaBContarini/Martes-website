@@ -296,8 +296,8 @@
           "challenge": "Rendicontazione dai cantieri lenta e caotica. Note vocali perse, fogli di carta e ritardi amministrativi.",
           "solution": "È qui che è nato Prisma. L'agente che trascrive messaggi vocali e foto dal cantiere direttamente nel gestionale.",
           "results": [
-            { "value": "200h", "label": "Risparmiate al mese" },
-            { "value": "100%", "label": "Operai raggiunti" }
+            { "value": "450h", "label": "Recuperate / Mese" },
+            { "value": "12.5x", "label": "ROI" }
           ]
         },
         {

@@ -299,8 +299,8 @@
           "challenge": "Reporting from construction sites slow and chaotic. Lost voice notes, sheets of paper, and administrative delays.",
           "solution": "That's where Prisma was born. The agent that transcribes voice messages and photos from the site directly into the management system.",
           "results": [
-            { "value": "200h", "label": "Saved / Month" },
-            { "value": "100%", "label": "Workers Reached" }
+            { "value": "450h", "label": "Saved / Month" },
+            { "value": "12.5x", "label": "ROI" }
           ]
         },
         {
