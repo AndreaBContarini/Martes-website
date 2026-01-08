@@ -17,8 +17,13 @@ i18n
         translation: translationEN
       }
     },
+    lng: 'it', // Force Italian as default
     fallbackLng: 'it',
-    debug: true,
+    debug: false,
+    detection: {
+      order: ['localStorage', 'navigator'], // Check localStorage first, then browser
+      caches: ['localStorage'] // Save user's choice to localStorage
+    },
     interpolation: {
       escapeValue: false // not needed for react as it escapes by default
     }
