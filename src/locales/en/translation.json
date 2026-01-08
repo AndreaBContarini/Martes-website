@@ -144,10 +144,7 @@
           "q": "Are our data safe? Who has access?",
           "a": "Only you and your authorized team. Data is end-to-end encrypted and saved on European servers (100% GDPR compliant). We at Martes AI maintain the technical infrastructure, but we never access your data without your explicit permission."
         },
-        {
-          "q": "How does the trial period work?",
-          "a": "First 30 days completely free to test Prisma in the field with your real employees. No credit card required upfront. Zero contractual constraints: if you're not convinced, cancel whenever you want without penalties."
-        },
+
         {
           "q": "Can we integrate Prisma with our management software?",
           "a": "Yes. Prisma automatically exports data to Excel/CSV which you can import into your management software. If you want a direct automatic integration with your specific software, that would be a custom integration. Let's evaluate it together on a call to understand feasibility and costs."

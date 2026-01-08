@@ -144,10 +144,7 @@
           "q": "I nostri dati sono al sicuro? Chi ha accesso?",
           "a": "Solo tu e il tuo team autorizzato. I dati sono criptati end-to-end e salvati su server europei (100% GDPR compliant). Noi di Martes AI manteniamo l'infrastruttura tecnica, ma non accediamo mai ai tuoi dati senza un permesso esplicito da parte tua."
         },
-        {
-          "q": "Come funziona il periodo di prova?",
-          "a": "Primi 30 giorni completamente gratis per testare Prisma sul campo con i tuoi dipendenti reali. Nessuna carta di credito richiesta in anticipo. Zero vincoli contrattuali: se non ti convince, cancelli quando vuoi senza penali."
-        },
+
         {
           "q": "Possiamo integrare Prisma con il nostro gestionale?",
           "a": "Sì. Prisma esporta automaticamente i dati in Excel/CSV che puoi importare nel tuo gestionale. Se vuoi un'integrazione automatica diretta con il tuo gestionale specifico, si tratterebbe di un'integrazione custom. Valutiamola insieme in una chiamata per capire fattibilità e costi."
