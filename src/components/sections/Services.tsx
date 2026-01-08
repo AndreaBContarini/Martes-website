@@ -2,31 +2,34 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import boxATP from '../../assets/boxes/box_ATP.png';
 import boxPRISMA from '../../assets/boxes/box_prisma.png';
 
-const services = [
-  {
-    title: "AI Transformation Partner",
-    subtitle: "Formazione, Analisi e Sviluppo.",
-    description: "Insegniamo al tuo team a usare l'AI ogni giorno. Analizziamo i tuoi processi per capire dove implementare l'AI, eliminare i colli di bottiglia e sviluppare soluzioni su misura.",
-    link: "/ai-transformation-partner",
-    linkText: "INIZIA ORA",
-    image: boxATP,
-    alt: "AI Transformation Partner Box"
-  },
-  {
-    title: "Prisma Agent",
-    subtitle: "L'agente AI per la rendicontazione su Whatsapp",
-    description: " Prisma contatta il team e trasforma vocali, foto e messaggi in dati strutturati e report settimanali. Risparmia 20 minuti al giorno per dipendente e libera l’HR da ore di lavoro manuale.",
-    link: "/prisma",
-    linkText: "SCOPRI PRISMA",
-    image: boxPRISMA,
-    alt: "Prisma Agent Box"
-  }
-];
-
 export const Services = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      title: "AI Transformation Partner",
+      subtitle: t('home.services.items.0.subtitle'),
+      description: t('home.services.items.0.description'),
+      link: "/ai-transformation-partner",
+      linkText: t('home.services.items.0.linkText'),
+      image: boxATP,
+      alt: "AI Transformation Partner Box"
+    },
+    {
+      title: "Prisma Agent",
+      subtitle: t('home.services.items.1.subtitle'),
+      description: t('home.services.items.1.description'),
+      link: "/prisma",
+      linkText: t('home.services.items.1.linkText'),
+      image: boxPRISMA,
+      alt: "Prisma Agent Box"
+    }
+  ];
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const cards = document.querySelectorAll('.spotlight-element');
@@ -57,10 +60,10 @@ export const Services = () => {
           className="mb-20 text-center"
         >
           <h2 className="text-4xl md:text-6xl text-white mb-6">
-            Scegli il tuo <span className="text-green-400">percorso</span>.
+            {t('home.services.title_start')} <span className="text-green-400">{t('home.services.title_highlight')}</span>.
           </h2>
           <p className="text-neutral-500 text-lg max-w-xl mx-auto">
-            Automazioni su misura o prodotti pronti all'uso.
+            {t('home.services.subtitle')}
           </p>
         </motion.div>
 

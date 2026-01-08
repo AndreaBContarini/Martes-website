@@ -2,52 +2,48 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import bluvacanze from '../../assets/clients/logo-bluvacanze.png';
 import dolomitiStrade from '../../assets/clients/dolomiti-strade-logo.png';
 import restWorld from '../../assets/clients/restworld.png';
 
-const cases = [
-  {
-    id: 'bluvacanze',
-    name: 'Bluvacanze',
-    category: 'Riattivazione Database',
-    challenge:
-      'Un archivio di migliaia di contatti inattivi. Un vero tesoro commerciale, ma impossibile da gestire manualmente.',
-    solution:
-      'Un agente AI che avvia conversazioni proattive su WhatsApp, profila l\'utente e propone viaggi personalizzati.',
-    result: '€82.271',
-    resultLabel: 'Generati in un solo mese',
-  },
-  {
-    id: 'dolomiti',
-    name: 'Dolomiti Strade',
-    category: 'Rendicontazione Automatica',
-    challenge:
-      'Una gestione caotica: rapportini cartacei persi, dati incompleti e l\'HR costretto a inseguire 30 operai per avere i report.',
-    solution:
-      'I dipendenti usano WhatsApp per inviare vocali e foto. Prisma trascrive, organizza i dati e aggiorna la dashboard in tempo reale.',
-    results: [
-      { value: '450h', label: 'Recuperate al mese' },
-      { value: '12,5x', label: 'ROI' },
-    ],
-  },
-  {
-    id: 'restworld',
-    name: 'Restworld',
-    category: 'Agente Qualifica Lead',
-    challenge:
-      'Un flusso costante di lead non qualificati che rallentava il team commerciale, con tempi di risposta troppo lunghi.',
-    solution:
-      'Un filtro intelligente attivo 24/7. L\'Agente AI analizza le risposte e passa ai commerciali solo le opportunità concrete.',
-    results: [
-      { value: '€35k', label: 'Risparmio/Anno' },
-      { value: '20%', label: 'Conversione Lead' },
-    ],
-  },
-];
-
 export const Cases = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const { t } = useTranslation();
+
+  const cases = [
+    {
+      id: 'bluvacanze',
+      name: 'Bluvacanze',
+      category: t('home.cases.items.0.category'),
+      challenge: t('home.cases.items.0.challenge'),
+      solution: t('home.cases.items.0.solution'),
+      result: t('home.cases.items.0.result'),
+      resultLabel: t('home.cases.items.0.resultLabel'),
+    },
+    {
+      id: 'dolomiti',
+      name: 'Dolomiti Strade',
+      category: t('home.cases.items.1.category'),
+      challenge: t('home.cases.items.1.challenge'),
+      solution: t('home.cases.items.1.solution'),
+      results: [
+        { value: t('home.cases.items.1.results.0.value'), label: t('home.cases.items.1.results.0.label') },
+        { value: t('home.cases.items.1.results.1.value'), label: t('home.cases.items.1.results.1.label') },
+      ],
+    },
+    {
+      id: 'restworld',
+      name: 'Restworld',
+      category: t('home.cases.items.2.category'),
+      challenge: t('home.cases.items.2.challenge'),
+      solution: t('home.cases.items.2.solution'),
+      results: [
+        { value: t('home.cases.items.2.results.0.value'), label: t('home.cases.items.2.results.0.label') },
+        { value: t('home.cases.items.2.results.1.value'), label: t('home.cases.items.2.results.1.label') },
+      ],
+    },
+  ];
 
   return (
     <section id="cases" className="py-24 border-b border-white/5 bg-black relative z-10">
@@ -60,8 +56,8 @@ export const Cases = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-5xl text-white mb-6">
-            Alcune storie di{' '}
-            <span className="serif-italic text-green-400">Successo.</span>
+            {t('home.cases.title_start')}{' '}
+            <span className="serif-italic text-green-400">{t('home.cases.title_highlight')}</span>
           </h2>
         </motion.div>
 
@@ -118,7 +114,7 @@ export const Cases = () => {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-2 opacity-70">
-                    La Sfida
+                    {t('home.cases.challenge_label', 'La Sfida')}
                   </h4>
                   <p className="text-neutral-400 leading-relaxed text-lg font-light">
                     {cases[activeTab].challenge}
@@ -127,7 +123,7 @@ export const Cases = () => {
 
                 <div>
                   <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-2 opacity-70">
-                    La Nostra Soluzione
+                    {t('home.cases.solution_label', 'La Nostra Soluzione')}
                   </h4>
                   <p className="text-neutral-400 leading-relaxed text-lg font-light">
                     {cases[activeTab].solution}
@@ -175,7 +171,7 @@ export const Cases = () => {
             to="/casi-studio"
             className="hoverable inline-flex items-center gap-2 bg-martes-green text-black px-8 py-4 rounded-full text-base font-bold transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(74,222,128,0.4)]"
           >
-            Vedi altri casi studio
+            {t('home.cases.cta')}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>

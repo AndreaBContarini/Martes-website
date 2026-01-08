@@ -278,6 +278,8 @@
     "cases": {
       "title_start": "Some stories of",
       "title_highlight": "Success.",
+      "challenge_label": "The Challenge",
+      "solution_label": "Our Solution",
       "cta": "See other case studies",
       "items": [
         {

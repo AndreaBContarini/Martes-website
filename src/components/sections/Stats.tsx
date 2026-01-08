@@ -1,11 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
-
-const stats = [
-  { number: 60, label: 'Aziende Partner', suffix: '+' },
-  { number: 70, label: 'Soluzioni in Produzione', suffix: '+' },
-  { number: 5, label: 'Utenti Raggiunti', suffix: 'M+' },
-];
+import { useTranslation } from 'react-i18next';
 
 const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -53,6 +48,14 @@ const Counter = ({ target, suffix }: { target: number; suffix: string }) => {
 };
 
 export const Stats = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { number: 60, label: t('home.stats.items.0.label'), suffix: t('home.stats.items.0.suffix') },
+    { number: 70, label: t('home.stats.items.1.label'), suffix: t('home.stats.items.1.suffix') },
+    { number: 5, label: t('home.stats.items.2.label'), suffix: t('home.stats.items.2.suffix') },
+  ];
+
   return (
     <section className="border-y border-white/5 bg-black py-20 relative z-10">
       <div className="max-w-7xl mx-auto px-6">
@@ -64,7 +67,7 @@ export const Stats = () => {
           className="text-center mb-16"
         >
           <h3 className="text-2xl font-medium text-white mb-2">
-            Il Nostro Impatto
+            {t('home.stats.title')}
           </h3>
           <div className="w-12 h-1 bg-green-500 mx-auto rounded-full" />
         </motion.div>
