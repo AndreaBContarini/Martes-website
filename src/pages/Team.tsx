@@ -115,7 +115,7 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
             className={`group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-gradient-to-b from-white/5 to-black/50 hover:border-martes-green/30 transition-all duration-500 shadow-2xl ${isOpen ? 'ring-2 ring-martes-green/50' : ''}`}
         >
              {/* Image Layer */}
-            <div className={`absolute inset-0 flex flex-col justify-center items-center p-2 md:p-4 transition-transform duration-500 ${isOpen ? 'scale-110 blur-md grayscale' : ''}`}>
+            <div className={`absolute inset-0 flex flex-col justify-center items-center p-2 md:p-4 transition-transform duration-500 ${isOpen ? 'scale-110 blur-sm grayscale opacity-30' : ''}`}>
                  {/* Spotlight Effect behind person */}
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-martes-green/10 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full" />
                  
@@ -123,7 +123,7 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
                      <img 
                         src={member.image} 
                         alt={member.name} 
-                        className="w-auto h-auto max-h-[75%] md:max-h-[85%] max-w-[95%] md:max-w-[90%] object-contain transition-transform duration-700 group-hover:scale-105 relative z-10 mb-8 md:mb-0" 
+                        className="w-auto h-auto max-h-[65%] md:max-h-[85%] max-w-[90%] object-contain transition-transform duration-700 group-hover:scale-105 relative z-10 mb-12 md:mb-0" 
                     />
                 ) : (
                     <div className="w-full h-full flex items-center justify-center">
@@ -134,31 +134,34 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
                 )}
             </div>
 
-            {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent transition-opacity duration-500 z-20 ${isOpen ? 'opacity-90' : 'opacity-90 group-hover:opacity-100'}`} />
+            {/* Gradient Overlay - Stronger at bottom for text readability */}
+            <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent transition-opacity duration-500 z-20 ${isOpen ? 'opacity-95 bg-black/90' : 'opacity-80 group-hover:opacity-100'}`} />
             
             {/* Description Overlay (Visible when Open) */}
              <AnimatePresence>
                 {isOpen && (
                     <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        className="absolute inset-0 z-40 flex flex-col items-center justify-center p-6 text-center bg-black/90 backdrop-blur-md"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute inset-0 z-40 flex flex-col items-center justify-center p-4 md:p-6 text-center"
                     >
-                        <p className="text-white text-sm md:text-base leading-relaxed font-medium mb-6">
-                            "{member.description}"
-                        </p>
-                        <div className="flex items-center gap-4">
+                        <div className="flex-1 flex items-center justify-center w-full overflow-y-auto custom-scrollbar">
+                            <p className="text-white text-xs md:text-base leading-relaxed font-medium">
+                                "{member.description}"
+                            </p>
+                        </div>
+                        
+                        <div className="flex items-center gap-4 mt-4 shrink-0">
                             {member.linkedin && (
                                 <a 
                                     href={member.linkedin} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="p-3 bg-white/10 rounded-full hover:bg-martes-green hover:text-black transition-colors"
+                                    className="p-2 md:p-3 bg-white/10 rounded-full hover:bg-martes-green hover:text-black transition-colors"
                                     onClick={(e) => e.stopPropagation()}
                                 >
-                                    <Linkedin size={20} />
+                                    <Linkedin size={18} className="md:w-5 md:h-5" />
                                 </a>
                             )}
                             {member.youtube && (
@@ -166,14 +169,14 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
                                     href={member.youtube} 
                                     target="_blank" 
                                     rel="noopener noreferrer"
-                                    className="p-3 bg-white/10 rounded-full hover:bg-red-600 hover:text-white transition-colors"
+                                    className="p-2 md:p-3 bg-white/10 rounded-full hover:bg-red-600 hover:text-white transition-colors"
                                     onClick={(e) => e.stopPropagation()}
                                 >
-                                    <Youtube size={20} />
+                                    <Youtube size={18} className="md:w-5 md:h-5" />
                                 </a>
                             )}
                         </div>
-                         <div className="mt-8 text-[10px] md:text-xs text-white/30 font-medium uppercase tracking-widest">
+                         <div className="mt-4 md:mt-8 text-[10px] md:text-xs text-white/30 font-medium uppercase tracking-widest shrink-0">
                             {t('team.cards.click_close')}
                         </div>
                     </motion.div>
@@ -181,24 +184,18 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
             </AnimatePresence>
 
 
-            {/* Content (Name & Role) */}
+            {/* Content (Name & Role) - Hidden when open */}
             <motion.div 
-                animate={{ opacity: isOpen ? 0 : 1, y: isOpen ? 20 : 0 }}
-                className="absolute bottom-0 left-0 w-full p-4 md:p-6 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 transition-transform duration-500 z-30 text-center pointer-events-none"
+                animate={{ opacity: isOpen ? 0 : 1 }}
+                className="absolute bottom-0 left-0 w-full p-4 md:p-6 z-30 text-center pointer-events-none"
             >
                 <div className="relative">
-                    <h3 className="text-lg md:text-xl font-bold text-white mb-1 group-hover:text-martes-green transition-colors leading-tight">
+                    <h3 className="text-base md:text-xl font-bold text-white mb-1 group-hover:text-martes-green transition-colors leading-tight">
                         {member.name}
                     </h3>
-                    <p className="text-[10px] md:text-xs font-bold text-martes-green mb-0 md:mb-4 uppercase tracking-widest opacity-80">
+                    <p className="text-[9px] md:text-xs font-bold text-martes-green uppercase tracking-widest opacity-80">
                         {member.role}
                     </p>
-                    
-                    <div className="hidden md:block overflow-hidden h-0 group-hover:h-auto opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75">
-                         <span className="text-[10px] uppercase tracking-widest text-white/50">
-                             {t('team.cards.click_info')}
-                         </span>
-                    </div>
                 </div>
             </motion.div>
         </motion.div>
