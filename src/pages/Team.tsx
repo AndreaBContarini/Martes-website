@@ -135,7 +135,7 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
             </div>
 
             {/* Gradient Overlay - Stronger at bottom for text readability */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent transition-opacity duration-500 z-20 ${isOpen ? 'opacity-95 bg-black/90' : 'opacity-80 group-hover:opacity-100'}`} />
+            <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent transition-opacity duration-500 z-20 ${isOpen ? 'opacity-95 bg-black/95' : 'opacity-80 group-hover:opacity-100'}`} />
             
             {/* Description Overlay (Visible when Open) */}
              <AnimatePresence>
@@ -144,40 +144,47 @@ const TeamCard = ({ member, index }: { member: any, index: number }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="absolute inset-0 z-40 flex flex-col items-center justify-center p-4 md:p-6 text-center"
+                        className="absolute inset-0 z-40 flex flex-col items-center justify-between p-4 md:p-6 text-center"
                     >
-                        <div className="flex-1 flex items-center justify-center w-full overflow-y-auto custom-scrollbar">
-                            <p className="text-white text-xs md:text-base leading-relaxed font-medium">
+                        {/* Spacer for vertical centering */}
+                         <div className="flex-1" />
+                         
+                         {/* Text Content */}
+                        <div className="w-full">
+                            <p className="text-white text-[11px] md:text-base leading-relaxed font-medium">
                                 "{member.description}"
                             </p>
                         </div>
-                        
-                        <div className="flex items-center gap-4 mt-4 shrink-0">
-                            {member.linkedin && (
-                                <a 
-                                    href={member.linkedin} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="p-2 md:p-3 bg-white/10 rounded-full hover:bg-martes-green hover:text-black transition-colors"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    <Linkedin size={18} className="md:w-5 md:h-5" />
-                                </a>
-                            )}
-                            {member.youtube && (
-                                <a 
-                                    href={member.youtube} 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="p-2 md:p-3 bg-white/10 rounded-full hover:bg-red-600 hover:text-white transition-colors"
-                                    onClick={(e) => e.stopPropagation()}
-                                >
-                                    <Youtube size={18} className="md:w-5 md:h-5" />
-                                </a>
-                            )}
-                        </div>
-                         <div className="mt-4 md:mt-8 text-[10px] md:text-xs text-white/30 font-medium uppercase tracking-widest shrink-0">
-                            {t('team.cards.click_close')}
+
+                         {/* Social & Close */}
+                         <div className="flex-1 flex flex-col items-center justify-end w-full pb-2">
+                            <div className="flex items-center gap-3 mt-2 md:mt-4">
+                                {member.linkedin && (
+                                    <a 
+                                        href={member.linkedin} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="p-2 md:p-3 bg-white/10 rounded-full hover:bg-martes-green hover:text-black transition-colors"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <Linkedin size={16} className="md:w-5 md:h-5" />
+                                    </a>
+                                )}
+                                {member.youtube && (
+                                    <a 
+                                        href={member.youtube} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="p-2 md:p-3 bg-white/10 rounded-full hover:bg-red-600 hover:text-white transition-colors"
+                                        onClick={(e) => e.stopPropagation()}
+                                    >
+                                        <Youtube size={16} className="md:w-5 md:h-5" />
+                                    </a>
+                                )}
+                            </div>
+                            <div className="mt-2 md:mt-8 text-[9px] md:text-xs text-white/30 font-medium uppercase tracking-widest">
+                                {t('team.cards.click_close')}
+                            </div>
                         </div>
                     </motion.div>
                 )}
