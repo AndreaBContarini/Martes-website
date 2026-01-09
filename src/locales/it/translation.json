@@ -391,42 +391,42 @@
           {
               "name": "Riccardo Belli Contarini",
               "role": "CEO & Founder",
-              "description": "Ingegnere informatico con la visione di democratizzare l'AI. Condivide la sua expertise attraverso canali di divulgazione e il suo canale YouTube."
+              "description": "Ingegnere informatico. Democratizza l'AI tramite divulgazione e YouTube."
           },
           {
               "name": "Andrea Belli Contarini",
               "role": "CTO & Co-Founder",
-              "description": "Fisico computazionale specializzato in ML. Porta rigore scientifico nello sviluppo di modelli AI, garantendo precisione e affidabilità."
+              "description": "Fisico computazionale specializzato in machine learning. Porta rigore scientifico nello sviluppo di modelli AI."
           },
           {
               "name": "Tommaso Misiti",
               "role": "Senior Software Engineer",
-              "description": "Architetto di sistemi back-end. Costruisce infrastrutture SQL scalabili e performanti che sostengono le nostre soluzioni AI."
+              "description": "Informatico e architetto back-end. Costruisce infrastrutture scalabili per soluzioni AI."
           },
           {
               "name": "Paolo Pagliarini",
               "role": "Software Engineer",
-              "description": "Ingegnere informatico specializzato in ML e architetture back-end. Unisce intelligenza artificiale e database per creare sistemi robusti e intelligenti."
+              "description": "Ingegnere informatico. Unisce AI e back-end per sistemi robusti."
           },
           {
               "name": "Filippo Bartoletti",
               "role": "Software Engineer",
-              "description": "Informatico con focus su machine learning. Sviluppa soluzioni AI intelligenti che risolvono problemi concreti del business."
+              "description": "Informatico. Sviluppa soluzioni AI per risolvere problemi di business concreti."
           },
           {
               "name": "Giovanni Fiore",
               "role": "Software Engineer",
-              "description": "Ingegnere informatico specializzato in front-end e sviluppo di soluzioni AI. Crea interfacce intuitive che rendono l'intelligenza artificiale accessibile."
+              "description": "Ingegnere informatico. Crea interfacce intuitive per rendere l'AI accessibile."
           },
           {
               "name": "Luca Tam",
               "role": "Software Engineer",
-              "description": "Ingegnere informatico specializzato in ML e AI. Innovatore tecnologico che porta soluzioni all'avanguardia in ogni progetto."
+              "description": "Ingegnere informatico. Porta innovazione tecnologica e soluzioni AI all'avanguardia."
           },
           {
               "name": "Ilaria Pretolani",
               "role": "CFO",
-              "description": "CFO con 10 anni di esperienza in aziende come Arthur Andersen e BT Italia. Garantisce solidità finanziaria e crescita sostenibile."
+              "description": "CFO con 10 anni di esperienza (Arthur Andersen, BT Italia). Garantisce crescita sostenibile."
           }
       ]
   },
