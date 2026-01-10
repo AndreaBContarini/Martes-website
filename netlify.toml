@@ -1,24 +1,31 @@
 [build]
-  command = "npm run build"
   publish = "dist"
+  command = "npm install --legacy-peer-deps && npm run build"
 
+[build.environment]
+  NODE_VERSION = "20"
+
+# Netlify Forms supportate nativamente
+
+# SPA fallback redirect - tutto deve andare a index.html per React Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[build.environment]
-  NODE_VERSION = "18"
-
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
+# Headers di sicurezza
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin" 
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Configurazione specifica per le form
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
