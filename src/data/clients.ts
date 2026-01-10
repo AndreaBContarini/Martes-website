@@ -16,7 +16,6 @@ import neutralia from '../assets/clients/neutralia-logo.png';
 import restworld from '../assets/clients/restworld.png';
 import shapeup from '../assets/clients/shapeup-Photoroom.png';
 import swissNaturalMed from '../assets/clients/swiss natural med (1).png';
-import toscanini from '../assets/clients/logo_toscanini.png';
 import turnover from '../assets/clients/turnover-Photoroom.png';
 import winesuite from '../assets/clients/winesuite_logo-Photoroom.png';
 
@@ -27,7 +26,6 @@ export interface Client {
 
 export const allClients: Client[] = [
   { name: 'Build Up', logo: buildUp },
-  { name: 'Toscanini', logo: toscanini },
   { name: 'Fantozzi & Associati', logo: fantozzi },
   { name: 'Dolomiti', logo: dolomiti },
   { name: 'Allcore', logo: allcore },
