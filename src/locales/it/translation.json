@@ -194,6 +194,9 @@
        "result_title": "Risparmio annuo stimato",
        "hours_saved": "ore di lavoro recuperate",
        "disclaimer_prefix": "*Calcolo basato su costo orario medio nazionale (include costi indiretti):",
+       "disclaimer_edile": "€32/ora",
+       "disclaimer_facility": "€28/ora",
+       "disclaimer_other": "€30/ora",
        "recalculate": "Ricalcola",
        "get_result": "Ottienilo",
        "sectors": {
